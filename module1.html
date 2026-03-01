@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块1：Excel基础回顾 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏠 首页</a></li>
+            <li><a href="module1.html" class="active">📗 模块1</a></li>
+            <li><a href="module2.html">📘 模块2</a></li>
+            <li><a href="module3.html">📙 模块3</a></li>
+            <li><a href="module4.html">📕 模块4</a></li>
+            <li><a href="module5.html">📓 模块5</a></li>
+            <li><a href="module6.html">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-green">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-badge">模块1 · 入门 · 生活场景</div>
+        <h1>📗 Excel基础回顾</h1>
+        <p>从零开始，用生活中的场景重新认识Excel<br>打好基础，为后续学习做准备</p>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container">
+    <div class="module-progress">
+        <div class="progress-text" id="progressText">加载中...</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="1" data-total="5"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container">
+    <div class="lesson-list">
+
+        <!-- ============================================
+             课次 1-1：界面认识
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1">
+            <div class="lesson-header" onclick="toggleLesson(1)">
+                <div class="lesson-num">1</div>
+                <h3>认识Excel界面 —— 你的数据工作台</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>Excel是Microsoft Office办公套件中的<strong>电子表格软件</strong>，广泛用于数据记录、计算、分析和可视化。打开Excel后，你会看到以下几个核心区域：</p>
+
+                        <h5>🔹 三大核心概念</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📁 工作簿（Workbook）</h6>
+                                <p>一个Excel文件就是一个工作簿，扩展名为 .xlsx</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📄 工作表（Sheet）</h6>
+                                <p>工作簿中的每一页，底部可以看到Sheet标签，可添加多个</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>⬜ 单元格（Cell）</h6>
+                                <p>行和列交叉形成的格子，用列字母+行号命名，如A1、B3</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 界面六大区域</h5>
+                        <div class="excel-demo">
+                            <div class="excel-titlebar">📊 工作簿1 - Excel &nbsp;&nbsp;&nbsp;[标题栏：显示文件名]</div>
+                            <div class="excel-tabs">
+                                <span>文件</span>
+                                <span class="etab-active">开始</span>
+                                <span>插入</span>
+                                <span>页面布局</span>
+                                <span>公式</span>
+                                <span>数据</span>
+                                <span>审阅</span>
+                                <span>视图</span>
+                            </div>
+                            <div style="padding:4px 12px;font-size:0.7rem;color:var(--text-lighter);background:#fafafa;border-bottom:1px solid #e0e0e0;">
+                                ↑ <strong>功能区/选项卡（Ribbon）</strong>：所有操作命令都在这里
+                            </div>
+                            <div class="excel-formula-bar">
+                                <span class="excel-namebox">A1</span>
+                                <span class="excel-fx">fx</span>
+                                <span class="excel-input">在这里输入或编辑单元格内容</span>
+                            </div>
+                            <div style="padding:2px 12px;font-size:0.65rem;color:var(--text-lighter);background:#fafafa;">
+                                ↑ <strong>名称框</strong>（显示当前单元格地址）&nbsp;&nbsp;|&nbsp;&nbsp;<strong>编辑栏</strong>（显示/编辑单元格内容）
+                            </div>
+                            <table class="excel-grid">
+                                <tr>
+                                    <th></th><th>A</th><th>B</th><th>C</th><th>D</th><th>E</th>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">1</td>
+                                    <td class="active-cell">← 当前选中的单元格</td>
+                                    <td></td><td></td><td></td><td></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">2</td>
+                                    <td></td><td></td><td></td><td></td><td></td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">3</td>
+                                    <td></td><td></td><td></td><td></td><td></td>
+                                </tr>
+                            </table>
+                            <div style="padding:2px 12px;font-size:0.65rem;color:var(--text-lighter);background:#fafafa;">
+                                ↑ <strong>工作区</strong>：由行（数字1,2,3...）和列（字母A,B,C...）构成的网格
+                            </div>
+                            <div class="excel-sheet-tabs">
+                                <span class="est-active">Sheet1</span>
+                                <span>Sheet2</span>
+                                <span>＋</span>
+                            </div>
+                            <div style="padding:2px 12px;font-size:0.65rem;color:var(--text-lighter);">
+                                ↑ <strong>工作表标签</strong>：切换不同的工作表
+                            </div>
+                            <div class="excel-statusbar">就绪 &nbsp;&nbsp;&nbsp;&nbsp; 平均值: — &nbsp;&nbsp; 计数: — &nbsp;&nbsp; 求和: — &nbsp;&nbsp;&nbsp;&nbsp;[状态栏]</div>
+                        </div>
+
+                        <h5>🔹 单元格地址怎么读？</h5>
+                        <p>每个单元格都有唯一的"地址"，由<strong>列字母</strong>+<strong>行号</strong>组成：</p>
+                        <ul>
+                            <li><strong>A1</strong> = 第A列、第1行的单元格</li>
+                            <li><strong>C5</strong> = 第C列、第5行的单元格</li>
+                            <li><strong>D10</strong> = 第D列、第10行的单元格</li>
+                            <li>Excel共有 <strong>16,384列</strong>（A到XFD）和 <strong>1,048,576行</strong></li>
+                        </ul>
+
+                        <h5>🔹 常用文件格式</h5>
+                        <ul>
+                            <li><strong>.xlsx</strong> — 标准Excel格式（最常用）</li>
+                            <li><strong>.xls</strong> — 旧版Excel格式（Excel 2003及以前）</li>
+                            <li><strong>.csv</strong> — 逗号分隔值，纯文本格式，用于数据交换</li>
+                            <li><strong>.pdf</strong> — 用于分享和打印，不可编辑</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：界面探索</h4>
+                        <p>请打开Excel，按以下步骤熟悉各个区域：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开Excel，新建一个<strong>空白工作簿</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">观察顶部<strong>标题栏</strong>，注意文件名显示为"工作簿1"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点击不同的<strong>选项卡</strong>（开始、插入、页面布局…），观察功能区的变化</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">用鼠标<strong>点击不同的单元格</strong>，观察名称框中地址的变化</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在单元格A1中输入"你好Excel"，注意编辑栏同步显示内容</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在底部<strong>右键点击Sheet1标签</strong>，尝试重命名为"练习"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点击底部的<strong>＋号</strong>添加一个新工作表</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">S</kbd> 保存文件，文件名设为"Excel基础练习"</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Home</kbd> 可以快速回到A1单元格</li>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">End</kbd> 跳转到数据区域的右下角</li>
+                            <li>双击选项卡之间的分隔线可以<strong>折叠功能区</strong>，增大工作区面积</li>
+                            <li>右键点击工作表标签可以进行<strong>重命名、移动、复制、删除</strong>等操作</li>
+                            <li>按住 <kbd class="kbd">Ctrl</kbd> 可以同时选中多个<strong>不相邻</strong>的单元格</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范穿插 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>文件命名</strong>：使用有意义的名称，如"2025年3月销售数据"而不是"工作簿1"</li>
+                            <li><strong>工作表命名</strong>：为每个工作表起描述性的名字，如"订单明细""汇总表"</li>
+                            <li><strong>及时保存</strong>：养成 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">S</kbd> 的习惯，每做一些操作就保存一次</li>
+                            <li><strong>多版本备份</strong>：重要文件另存为"文件名_v2"做备份</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 混淆<strong>工作簿</strong>和<strong>工作表</strong>的概念——工作簿是文件，工作表是文件里的页</li>
+                            <li>❌ 把行号和列号搞反——记住：<strong>列是字母（A、B、C...），行是数字（1、2、3...）</strong></li>
+                            <li>❌ 忘记保存文件就关闭——养成随时按 Ctrl+S 的习惯</li>
+                            <li>❌ 保存格式选错——一般使用 .xlsx 格式，需要兼容旧版本才用 .xls</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>完成以下操作并保存文件：</p>
+                        <ol>
+                            <li>新建一个Excel文件，保存为"<strong>我的第一个Excel.xlsx</strong>"</li>
+                            <li>将Sheet1重命名为"<strong>个人信息</strong>"</li>
+                            <li>在A1输入你的姓名，B1输入你的班级</li>
+                            <li>新增一个工作表，命名为"<strong>练习记录</strong>"</li>
+                            <li>在练习记录表的A1输入今天的日期，B1输入"第一次练习"</li>
+                            <li>保存文件</li>
+                        </ol>
+                        <p style="margin-top:8px;color:var(--text-lighter);font-size:0.8rem;">💬 本课为界面认识，无需下载数据文件。</p>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <p>试试这些高级操作：</p>
+                        <ol>
+                            <li>在一个工作簿中创建<strong>5个工作表</strong>，分别命名为"周一"到"周五"</li>
+                            <li>尝试用<strong>鼠标拖动</strong>改变工作表标签的顺序</li>
+                            <li>右键点击工作表标签，选择"<strong>标签颜色</strong>"，为每个工作表设置不同的颜色</li>
+                            <li>尝试找到Excel的<strong>快速访问工具栏</strong>，并添加"撤销"和"重做"按钮</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你的学习效果：</p>
+                        <div id="quiz-1-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 1-2：数据输入
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2">
+            <div class="lesson-header" onclick="toggleLesson(2)">
+                <div class="lesson-num">2</div>
+                <h3>数据输入 —— 制作班级通讯录</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>数据输入是Excel最基本的操作。了解不同<strong>数据类型</strong>的输入方法和注意事项非常重要。</p>
+
+                        <h5>🔹 Excel中的数据类型</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📝 文本</h6>
+                                <p>姓名、地址等，默认左对齐。以单引号'开头可强制文本</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔢 数字</h6>
+                                <p>数值数据，默认右对齐，可用于计算</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📅 日期/时间</h6>
+                                <p>日期格式如2025/3/15或2025-3-15，本质上是数字</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 输入数据的基本方法</h5>
+                        <ul>
+                            <li><strong>直接输入</strong>：点击单元格，直接打字，按 <kbd class="kbd">Enter</kbd> 确认（光标向下移动）</li>
+                            <li><strong>Tab键确认</strong>：按 <kbd class="kbd">Tab</kbd> 确认并向右移动，适合逐行输入表格</li>
+                            <li><strong>编辑栏输入</strong>：点击编辑栏，在其中输入或修改内容</li>
+                            <li><strong>双击编辑</strong>：双击单元格进入编辑模式，可以修改部分内容</li>
+                        </ul>
+
+                        <h5>🔹 特殊数据输入技巧</h5>
+                        <ul>
+                            <li><strong>输入手机号</strong>：手机号以0或1开头，Excel可能当数字处理去掉前导0。解决方法：先将单元格格式设为"文本"，或输入时以<strong>英文单引号'</strong>开头</li>
+                            <li><strong>输入身份证号</strong>：身份证18位，超过15位的数字会显示为科学计数法。必须先设为"文本"格式再输入</li>
+                            <li><strong>输入日期</strong>：用斜杠 / 或短横线 - 分隔，如 2025/3/15 或 2025-3-15</li>
+                            <li><strong>输入分数</strong>：先输入0再空格再输入分数，如"0 1/3"表示三分之一</li>
+                            <li><strong>输入以0开头的编号</strong>：如"001"，需先设为文本格式，否则会变成"1"</li>
+                        </ul>
+
+                        <h5>🔹 自动填充（拖拽填充）</h5>
+                        <p>Excel可以自动识别<strong>规律</strong>并快速填充：</p>
+                        <ul>
+                            <li>输入"1"和"2"，选中两个单元格，拖拽右下角的<strong>填充柄</strong>（小绿十字），自动生成3、4、5…</li>
+                            <li>输入"星期一"，拖拽→自动填充星期二、星期三…</li>
+                            <li>输入"1月"，拖拽→自动填充2月、3月…</li>
+                            <li>输入日期"2025/1/1"，拖拽→自动按天递增</li>
+                        </ul>
+
+                        <h5>🔹 批量输入技巧</h5>
+                        <ul>
+                            <li><strong>多单元格输入相同内容</strong>：选中多个单元格→输入内容→按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Enter</kbd></li>
+                            <li><strong>换行输入</strong>：在同一个单元格内换行→按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">Enter</kbd></li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：制作班级通讯录</h4>
+                        <p>我们用一个班级通讯录来练习各种数据类型的输入。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">新建工作簿，将Sheet1重命名为"<strong>班级通讯录</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在第1行输入表头：A1=<strong>序号</strong>，B1=<strong>姓名</strong>，C1=<strong>性别</strong>，D1=<strong>出生日期</strong>，E1=<strong>手机号</strong>，F1=<strong>宿舍号</strong>，G1=<strong>备注</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在A2输入1，A3输入2，选中A2:A3，用<strong>填充柄</strong>向下拖拽到A41，自动生成1-40的序号</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>重要！</strong>选中E列（手机号列），右键→设置单元格格式→<strong>文本</strong>，然后再输入手机号</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">参照下方提供的数据，逐行输入同学信息（可先下载数据参考）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">输入日期时使用格式：<strong>2007/5/12</strong> 或 <strong>2007-5-12</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">保存文件为"<strong>班级通讯录.xlsx</strong>"</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：班级通讯录</h4>
+                        <p>以下是40位同学的信息（虚拟数据），你可以下载CSV文件后参照输入练习：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-1-2">
+                                <thead>
+                                    <tr><th>序号</th><th>姓名</th><th>性别</th><th>出生日期</th><th>手机号</th><th>宿舍号</th><th>备注</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>陈思涵</td><td>女</td><td>2007/3/15</td><td>13812345601</td><td>301</td><td>班长</td></tr>
+                                    <tr><td>2</td><td>王浩宇</td><td>男</td><td>2007/6/22</td><td>13912345602</td><td>201</td><td></td></tr>
+                                    <tr><td>3</td><td>李欣怡</td><td>女</td><td>2007/1/8</td><td>13712345603</td><td>302</td><td>学习委员</td></tr>
+                                    <tr><td>4</td><td>张子轩</td><td>男</td><td>2007/9/30</td><td>15812345604</td><td>202</td><td></td></tr>
+                                    <tr><td>5</td><td>刘雨萱</td><td>女</td><td>2007/11/5</td><td>13612345605</td><td>301</td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共40条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson1_2Data()">📥 下载班级通讯录数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>输入大量数据时，善用 <kbd class="kbd">Tab</kbd> 键逐列输入，到行末按 <kbd class="kbd">Enter</kbd> 自动跳到下一行开头</li>
+                            <li>输入重复内容时，可以用 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">↓</kbd> 弹出<strong>自动完成列表</strong></li>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">;</kbd>（分号）快速输入<strong>当天日期</strong></li>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">;</kbd> 快速输入<strong>当前时间</strong></li>
+                            <li>输入手机号等长数字前，<strong>一定要先设置单元格为文本格式</strong>！</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>表头在第1行</strong>：每列的第1行应该是字段名称（表头），不要在表头上方留空行</li>
+                            <li><strong>数据连续存放</strong>：数据行之间不要留空行，否则会影响排序和筛选</li>
+                            <li><strong>每列数据类型统一</strong>：一列中不要混合存放文本和数字</li>
+                            <li><strong>日期格式统一</strong>：同一列的日期格式要一致，推荐使用"年/月/日"格式</li>
+                            <li><strong>不要合并单元格存数据</strong>：合并单元格会给后续的排序、筛选、函数计算带来麻烦</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 手机号变成了科学计数法（如1.38E+10）→ 输入前先设为<strong>文本格式</strong></li>
+                            <li>❌ 以0开头的编号"001"变成了"1" → 先设为<strong>文本格式</strong>再输入</li>
+                            <li>❌ 日期显示为一串数字（如45735）→ 设置单元格格式为<strong>日期</strong></li>
+                            <li>❌ 输入内容后按方向键导致内容消失 → 要先按 <kbd class="kbd">Enter</kbd> 或 <kbd class="kbd">Tab</kbd> 确认</li>
+                            <li>❌ 在已有数据的单元格上直接打字覆盖了旧内容 → 双击进入编辑模式或使用编辑栏修改</li>
+                        </ul>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>在通讯录中增加一列"<strong>QQ号</strong>"，输入10个同学的QQ号（注意数据类型）</li>
+                            <li>尝试使用<strong>自动填充</strong>功能：在H1输入"第1周"，然后拖拽填充到"第20周"</li>
+                            <li>在一个新工作表中，练习输入以下特殊内容：
+                                <ul>
+                                    <li>分数：1/2、2/3、3/4</li>
+                                    <li>负数：-100</li>
+                                    <li>百分比：85%</li>
+                                    <li>货币：在数字前加¥符号</li>
+                                </ul>
+                            </li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对数据输入的掌握：</p>
+                        <div id="quiz-1-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+                <!-- ============================================
+             课次 1-3：单元格格式设置
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3">
+            <div class="lesson-header" onclick="toggleLesson(3)">
+                <div class="lesson-num">3</div>
+                <h3>单元格格式设置 —— 美化个人课程表</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>格式设置是让表格变得<strong>美观、专业、易读</strong>的关键。好的格式不仅好看，更能帮助读者快速理解数据。</p>
+
+                        <h5>🔹 字体格式</h5>
+                        <ul>
+                            <li><strong>字体选择</strong>：中文推荐"微软雅黑"或"等线"，正文用11号，标题用14-16号</li>
+                            <li><strong>字体样式</strong>：加粗（<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">B</kbd>）、斜体（<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">I</kbd>）、下划线（<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">U</kbd>）</li>
+                            <li><strong>字体颜色</strong>：用于区分不同类别或突出重点，不宜使用太多颜色</li>
+                        </ul>
+
+                        <h5>🔹 对齐方式</h5>
+                        <ul>
+                            <li><strong>水平对齐</strong>：左对齐（文本默认）、居中（表头常用）、右对齐（数字默认）</li>
+                            <li><strong>垂直对齐</strong>：顶端、居中（最常用）、底端</li>
+                            <li><strong>自动换行</strong>：内容过长时自动换行显示，在"开始→对齐方式→自动换行"</li>
+                            <li><strong>合并居中</strong>：将多个单元格合并为一个，常用于大标题（注意：数据区域不要合并！）</li>
+                        </ul>
+
+                        <h5>🔹 数字格式</h5>
+                        <ul>
+                            <li><strong>常规</strong>：默认格式，自动识别</li>
+                            <li><strong>数值</strong>：可设置小数位数、千分位分隔符，如 1,234.56</li>
+                            <li><strong>货币</strong>：带货币符号，如 ¥1,234.56</li>
+                            <li><strong>百分比</strong>：将数字乘以100显示，如 0.85 → 85%</li>
+                            <li><strong>日期</strong>：多种日期显示格式</li>
+                            <li><strong>文本</strong>：将内容作为纯文本处理</li>
+                        </ul>
+
+                        <h5>🔹 边框</h5>
+                        <ul>
+                            <li><strong>所有边框</strong>：给每个单元格都加上边框线，最常用</li>
+                            <li><strong>外侧边框</strong>：只给选中区域的四周加边框</li>
+                            <li><strong>粗外侧边框</strong>：突出表格的外边框</li>
+                            <li>可以自定义边框的<strong>线条样式</strong>（实线、虚线等）和<strong>颜色</strong></li>
+                        </ul>
+
+                        <h5>🔹 填充颜色（底纹）</h5>
+                        <ul>
+                            <li>给单元格添加<strong>背景色</strong>，可以用于区分标题行、交替行等</li>
+                            <li>浅色背景+深色文字的组合阅读体验最好</li>
+                            <li>同一张表中使用<strong>不超过3-4种</strong>颜色</li>
+                        </ul>
+
+                        <h5>🔹 行高和列宽</h5>
+                        <ul>
+                            <li><strong>手动调整</strong>：拖动行号/列字母之间的分隔线</li>
+                            <li><strong>精确设置</strong>：右键行号/列字母→行高/列宽→输入数值</li>
+                            <li><strong>自动调整</strong>：双击行号/列字母分隔线，自动适应内容宽度</li>
+                            <li><strong>批量调整</strong>：选中多行/多列后一起调整</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：美化个人课程表</h4>
+                        <p>我们来制作一份漂亮的2025年春季学期课程表。可以先下载模板数据，然后按步骤美化。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">下载课程表数据，用Excel打开</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>设置大标题</strong>：选中A1:G1区域→合并居中→输入"2025年春季学期课程表"→字体设为<strong>微软雅黑、16号、加粗</strong>→填充颜色设为<strong>深蓝色</strong>，字体颜色设为<strong>白色</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>设置表头行</strong>（第2行：节次/星期一~星期五）：字体<strong>12号、加粗、居中</strong>→填充颜色设为<strong>浅蓝色</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>设置节次列</strong>（A列）：加粗，居中对齐，填充<strong>浅灰色</strong>背景</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>课程内容区域</strong>：字体11号，<strong>水平居中+垂直居中</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>用颜色区分课程类型</strong>：<br>
+                                    · 专业课（电商基础、网页设计等）→ 浅绿色背景<br>
+                                    · 文化课（语文、数学、英语）→ 浅蓝色背景<br>
+                                    · 体育/活动课 → 浅橙色背景
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>添加边框</strong>：选中整个表格区域→所有边框→然后单独给外侧设置<strong>粗边框</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>调整行高列宽</strong>：标题行行高设为<strong>35</strong>，表头行高<strong>28</strong>，内容行行高<strong>30</strong>；A列列宽<strong>10</strong>，B-G列列宽<strong>14</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">检查整体效果，保存文件为"<strong>我的课程表.xlsx</strong>"</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 美化效果预览 -->
+                    <div class="content-block block-knowledge">
+                        <h4>🎨 美化效果参考</h4>
+                        <p>下面是美化后的效果示意，你可以参照制作：</p>
+                        <div class="excel-demo">
+                            <div class="excel-titlebar">📊 我的课程表.xlsx - Excel</div>
+                            <table class="excel-grid">
+                                <tr>
+                                    <td colspan="7" style="background:#2b5797;color:white;text-align:center;font-weight:bold;font-size:0.9rem;padding:8px;">
+                                        2025年春季学期课程表
+                                    </td>
+                                </tr>
+                                <tr style="background:#d6e8f7;font-weight:bold;text-align:center;">
+                                    <td style="background:#e8e8e8;">节次</td>
+                                    <td>星期一</td><td>星期二</td><td>星期三</td><td>星期四</td><td>星期五</td><td></td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td style="background:#f0f0f0;font-weight:bold;">第1节</td>
+                                    <td style="background:#e8f5e9;">电商基础</td>
+                                    <td style="background:#e3f2fd;">语文</td>
+                                    <td style="background:#e8f5e9;">网页设计</td>
+                                    <td style="background:#e3f2fd;">数学</td>
+                                    <td style="background:#e8f5e9;">数据分析</td>
+                                    <td></td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td style="background:#f0f0f0;font-weight:bold;">第2节</td>
+                                    <td style="background:#e8f5e9;">电商基础</td>
+                                    <td style="background:#e3f2fd;">英语</td>
+                                    <td style="background:#e8f5e9;">网页设计</td>
+                                    <td style="background:#e3f2fd;">语文</td>
+                                    <td style="background:#e8f5e9;">数据分析</td>
+                                    <td></td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td style="background:#f0f0f0;font-weight:bold;">第3节</td>
+                                    <td style="background:#e3f2fd;">数学</td>
+                                    <td style="background:#e8f5e9;">电商基础</td>
+                                    <td style="background:#e3f2fd;">英语</td>
+                                    <td style="background:#fff3e0;">体育</td>
+                                    <td style="background:#e3f2fd;">语文</td>
+                                    <td></td>
+                                </tr>
+                                <tr style="text-align:center;">
+                                    <td style="background:#f0f0f0;font-weight:bold;">第4节</td>
+                                    <td style="background:#e3f2fd;">英语</td>
+                                    <td style="background:#e8f5e9;">PS设计</td>
+                                    <td style="background:#e3f2fd;">数学</td>
+                                    <td style="background:#fff3e0;">体育</td>
+                                    <td style="background:#e8f5e9;">PS设计</td>
+                                    <td></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据下载 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：课程表模板</h4>
+                        <p>下载未格式化的课程表数据，按照步骤进行美化练习：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>节次</th><th>星期一</th><th>星期二</th><th>星期三</th><th>星期四</th><th>星期五</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>第1节</td><td>电商基础</td><td>语文</td><td>网页设计</td><td>数学</td><td>数据分析</td></tr>
+                                    <tr><td>第2节</td><td>电商基础</td><td>英语</td><td>网页设计</td><td>语文</td><td>数据分析</td></tr>
+                                    <tr><td>第3节</td><td>数学</td><td>电商基础</td><td>英语</td><td>体育</td><td>语文</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示部分内容 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson1_3Data()">📥 下载课程表模板 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li><strong>格式刷</strong>（开始→剪贴板→🖌️）：复制一个单元格的格式快速应用到其他单元格。双击格式刷可以<strong>连续多次使用</strong></li>
+                            <li><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">1</kbd> 快速打开<strong>设置单元格格式</strong>对话框</li>
+                            <li>选中区域后，右下角会出现<strong>快速分析按钮</strong>（⚡），可以一键设置格式</li>
+                            <li>使用<strong>套用表格格式</strong>（开始→样式→套用表格格式）可以一键美化表格</li>
+                            <li>按住 <kbd class="kbd">Ctrl</kbd> 可以选中<strong>不连续的区域</strong>一起设置格式</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 美化规范（专业表格设计原则）</h4>
+                        <ul>
+                            <li><strong>字体不超过2种</strong>：标题和正文各用一种字体即可</li>
+                            <li><strong>颜色不超过4种</strong>：一个主色+2-3个辅助色</li>
+                            <li><strong>表头要突出</strong>：使用加粗、背景色、更大字号区分表头和数据</li>
+                            <li><strong>对齐要统一</strong>：同一列的对齐方式要一致</li>
+                            <li><strong>留白要合理</strong>：适当增加行高和列宽，让内容不拥挤</li>
+                            <li><strong>避免花哨</strong>：不要使用太多颜色、花纹、艺术字，专业感 > 花哨感</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 在数据表中大量使用<strong>合并单元格</strong> → 仅标题行可以合并，数据区域不要合并</li>
+                            <li>❌ 颜色太多太杂 → 保持<strong>简洁统一</strong>的配色</li>
+                            <li>❌ 字号大小不统一 → 同一区域使用相同的字号</li>
+                            <li>❌ 内容被列宽截断看不完整 → 调整列宽或设置<strong>自动换行</strong></li>
+                            <li>❌ 格式刷使用后忘记关闭 → 按 <kbd class="kbd">Esc</kbd> 取消格式刷</li>
+                        </ul>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>在课程表下方添加<strong>备注区域</strong>：包含上课时间（第1节 08:00-08:45 等）</li>
+                            <li>尝试使用 <strong>"开始→样式→套用表格格式"</strong> 功能，对比手动格式化的效果</li>
+                            <li>制作一个"<strong>教师联系表</strong>"：包含教师姓名、科目、办公室、联系电话，并美化</li>
+                            <li>尝试使用<strong>条件格式</strong>（预习下一模块）：让"体育"课程自动显示为橙色背景</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对格式设置的掌握：</p>
+                        <div id="quiz-1-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 1-4：行列操作与工作表管理
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4">
+            <div class="lesson-header" onclick="toggleLesson(4)">
+                <div class="lesson-num">4</div>
+                <h3>行列操作与工作表管理 —— 个人月度生活开支</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>在实际工作中，经常需要对表格进行<strong>结构调整</strong>：插入行列、删除行列、隐藏行列、移动数据等。掌握这些操作能让你高效管理数据。</p>
+
+                        <h5>🔹 插入行和列</h5>
+                        <ul>
+                            <li><strong>插入行</strong>：右键点击行号→插入，新行会在当前行<strong>上方</strong>插入</li>
+                            <li><strong>插入列</strong>：右键点击列字母→插入，新列会在当前列<strong>左侧</strong>插入</li>
+                            <li><strong>插入多行/列</strong>：先选中多个行号/列字母，再右键→插入</li>
+                            <li>快捷键：选中行/列后按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">+</kbd></li>
+                        </ul>
+
+                        <h5>🔹 删除行和列</h5>
+                        <ul>
+                            <li>右键点击行号/列字母→删除</li>
+                            <li>快捷键：选中行/列后按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">-</kbd></li>
+                            <li>⚠️ <strong>注意</strong>：删除整行/整列与按Delete清空内容不同！删除会移除整个行列，后面的数据会往上/往左移动</li>
+                        </ul>
+
+                        <h5>🔹 隐藏与取消隐藏</h5>
+                        <ul>
+                            <li><strong>隐藏行/列</strong>：选中→右键→隐藏。数据还在，只是不显示</li>
+                            <li><strong>取消隐藏</strong>：选中隐藏行/列两侧的行/列→右键→取消隐藏</li>
+                            <li>常用于隐藏辅助计算列或敏感信息</li>
+                        </ul>
+
+                        <h5>🔹 移动和复制数据</h5>
+                        <ul>
+                            <li><strong>移动</strong>：选中数据→将鼠标移到边缘（出现十字箭头）→拖拽到目标位置</li>
+                            <li><strong>复制</strong>：拖拽时按住 <kbd class="kbd">Ctrl</kbd> 键</li>
+                            <li><strong>剪切粘贴</strong>：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">X</kbd> 剪切 → 选择目标位置 → <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">V</kbd> 粘贴</li>
+                            <li><strong>选择性粘贴</strong>：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">V</kbd>，可以只粘贴值、格式、公式等</li>
+                        </ul>
+
+                        <h5>🔹 冻结窗格</h5>
+                        <ul>
+                            <li>当数据行很多时，向下滚动会看不到表头。使用<strong>冻结窗格</strong>可以锁定表头</li>
+                            <li>操作：视图→冻结窗格→<strong>冻结首行</strong>（最常用）</li>
+                            <li>也可以冻结首列，或冻结任意位置（点击要冻结位置的下一行下一列的单元格）</li>
+                        </ul>
+
+                        <h5>🔹 工作表管理</h5>
+                        <ul>
+                            <li><strong>新增</strong>：点击底部的"＋"号或右键→插入</li>
+                            <li><strong>删除</strong>：右键工作表标签→删除（⚠️不可撤销！）</li>
+                            <li><strong>重命名</strong>：双击标签或右键→重命名</li>
+                            <li><strong>移动/复制</strong>：拖拽标签改变顺序；按住Ctrl拖拽=复制</li>
+                            <li><strong>标签颜色</strong>：右键→标签颜色，用于分类管理</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：制作个人月度生活开支记录</h4>
+                        <p>我们来制作一份2025年3月的个人生活开支记录表，通过这个任务综合练习行列操作。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">下载开支数据，用Excel打开，将Sheet1重命名为"<strong>3月开支</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>在第1行上方插入一行</strong>作为标题行：合并A1:F1，输入"<strong>2025年3月个人生活开支记录</strong>"，美化标题</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">检查数据，发现缺少"<strong>支付方式</strong>"列→在E列（备注列前）<strong>插入一列</strong>，表头写"支付方式"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">为"支付方式"列填入数据（微信、支付宝、现金、校园卡）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">发现第15行数据是误输入→选中该行→<strong>右键删除整行</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>冻结前两行</strong>（标题行+表头行）：点击A3单元格→视图→冻结窗格→冻结窗格</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>复制工作表</strong>：右键"3月开支"标签→移动或复制→勾选"建立副本"→重命名为"<strong>4月开支</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在4月开支表中<strong>清空数据</strong>（保留表头和格式），为下月使用做准备</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">为两个工作表标签设置不同的<strong>标签颜色</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">格式化表格：为金额列设置<strong>货币格式</strong>（¥），美化表头，添加边框，保存文件</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：3月生活开支</h4>
+                        <p>以下是2025年3月的个人生活开支模拟数据，共30条记录：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-1-4">
+                                <thead>
+                                    <tr><th>日期</th><th>分类</th><th>项目</th><th>金额</th><th>备注</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2025/3/1</td><td>餐饮</td><td>早餐-包子豆浆</td><td>6</td><td></td></tr>
+                                    <tr><td>2025/3/1</td><td>餐饮</td><td>午餐-食堂</td><td>12</td><td></td></tr>
+                                    <tr><td>2025/3/1</td><td>餐饮</td><td>晚餐-食堂</td><td>15</td><td>加了鸡腿</td></tr>
+                                    <tr><td>2025/3/2</td><td>学习</td><td>笔记本</td><td>8.5</td><td></td></tr>
+                                    <tr><td>2025/3/2</td><td>交通</td><td>公交卡充值</td><td>50</td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson1_4Data()">📥 下载3月开支数据 (CSV)</button>
+                    </div>
+
+                    <!-- 快捷键总结 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 本课常用快捷键</h4>
+                        <table class="shortcut-table">
+                            <thead>
+                                <tr><th>快捷键</th><th>功能</th><th>说明</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">+</kbd></td><td>插入行/列/单元格</td><td>根据选中内容决定插入什么</td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">-</kbd></td><td>删除行/列/单元格</td><td>根据选中内容决定删除什么</td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">X</kbd></td><td>剪切</td><td>移动数据</td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">C</kbd></td><td>复制</td><td></td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">V</kbd></td><td>粘贴</td><td></td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">V</kbd></td><td>选择性粘贴</td><td>可选择粘贴值、格式等</td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Z</kbd></td><td>撤销</td><td>误操作后立即撤销</td></tr>
+                                <tr><td><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Y</kbd></td><td>重做/恢复</td><td>恢复撤销的操作</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>删除前确认</strong>：删除行/列前检查是否有需要的数据，特别是隐藏的行列</li>
+                            <li><strong>用冻结窗格</strong>：数据超过一屏时一定要冻结表头，方便查看</li>
+                            <li><strong>工作表有序管理</strong>：按逻辑顺序排列工作表，添加标签颜色</li>
+                            <li><strong>选择性粘贴</strong>：复制有格式的数据到新位置时，考虑是否只需要值</li>
+                            <li><strong>金额数据</strong>：统一使用数值或货币格式，小数位数保持一致</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 按 <kbd class="kbd">Delete</kbd> 和删除行/列搞混 → Delete只清空内容，删除行/列会改变表格结构</li>
+                            <li>❌ 删除工作表后想撤销 → <strong>删除工作表不可撤销！</strong>操作前请确认</li>
+                            <li>❌ 冻结位置不对 → 注意冻结的是<strong>选中单元格上方和左侧</strong>的行列</li>
+                            <li>❌ 在隐藏行中有数据但忘记了 → 定期检查是否有隐藏的行列</li>
+                            <li>❌ 复制粘贴后格式乱了 → 使用<strong>选择性粘贴</strong>，只粘贴值</li>
+                        </ul>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>在开支表末尾添加<strong>汇总行</strong>：使用SUM函数（预习模块2）计算总开支</li>
+                            <li>创建12个工作表（1月-12月），每个设置不同的<strong>标签颜色</strong></li>
+                            <li>尝试<strong>选择性粘贴</strong>的不同选项：
+                                <ul>
+                                    <li>只粘贴值（去除格式和公式）</li>
+                                    <li>只粘贴格式（不粘贴内容）</li>
+                                    <li>转置粘贴（行列互换）</li>
+                                </ul>
+                            </li>
+                            <li>对开支表的"金额"列进行<strong>降序排列</strong>（预习模块3），找出最大的3笔开支</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题：</p>
+                        <div id="quiz-1-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+                <!-- ============================================
+             课次 1-5：打印设置
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5">
+            <div class="lesson-header" onclick="toggleLesson(5)">
+                <div class="lesson-num">5</div>
+                <h3>打印设置 —— 让表格完美呈现在纸上</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>在工作中经常需要将Excel表格<strong>打印</strong>出来或<strong>导出为PDF</strong>。掌握打印设置可以让表格在纸上呈现出最佳效果，避免内容被截断或排版混乱。</p>
+
+                        <h5>🔹 页面布局设置</h5>
+                        <ul>
+                            <li><strong>纸张方向</strong>：
+                                <ul>
+                                    <li><strong>纵向</strong>（Portrait）：适合列数较少的表格，如通讯录</li>
+                                    <li><strong>横向</strong>（Landscape）：适合列数较多的表格，如课程表、销售报表</li>
+                                </ul>
+                            </li>
+                            <li><strong>纸张大小</strong>：最常用A4（210×297mm），操作：页面布局→纸张大小</li>
+                            <li><strong>页边距</strong>：
+                                <ul>
+                                    <li>普通：上下2.54cm，左右1.91cm</li>
+                                    <li>窄边距：适合内容多的表格，上下1.91cm，左右0.64cm</li>
+                                    <li>自定义：可以精确设置每个方向的边距</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h5>🔹 打印区域</h5>
+                        <ul>
+                            <li>默认打印整个有内容的区域，可以<strong>指定打印区域</strong></li>
+                            <li>操作：选中要打印的区域→页面布局→打印区域→<strong>设置打印区域</strong></li>
+                            <li>取消打印区域：页面布局→打印区域→取消打印区域</li>
+                        </ul>
+
+                        <h5>🔹 打印标题（重复标题行）</h5>
+                        <ul>
+                            <li>当数据跨多页时，每页都应显示表头，方便阅读</li>
+                            <li>操作：页面布局→打印标题→在"顶端标题行"中选择表头所在行（如 $1:$2）</li>
+                        </ul>
+
+                        <h5>🔹 页眉和页脚</h5>
+                        <ul>
+                            <li>页眉/页脚可以添加<strong>页码、日期、文件名、公司名称</strong>等信息</li>
+                            <li>操作：插入→页眉和页脚，或页面布局→对话框启动器→页眉/页脚</li>
+                            <li>常用设置：页脚中间显示"第X页/共Y页"</li>
+                        </ul>
+
+                        <h5>🔹 分页预览</h5>
+                        <ul>
+                            <li>视图→<strong>分页预览</strong>，可以看到蓝色虚线/实线表示的分页位置</li>
+                            <li>可以<strong>拖动蓝线</strong>调整分页位置</li>
+                            <li>灰色区域表示不在打印范围内</li>
+                        </ul>
+
+                        <h5>🔹 缩放打印</h5>
+                        <ul>
+                            <li>内容太宽时可以缩放，让所有列打印在一页上</li>
+                            <li>操作：页面布局→调整为合适大小→宽度设为<strong>1页</strong></li>
+                            <li>也可以按比例缩放（如缩放到80%）</li>
+                            <li>⚠️ 注意：缩放太小会导致文字看不清</li>
+                        </ul>
+
+                        <h5>🔹 打印预览</h5>
+                        <ul>
+                            <li>打印前一定要<strong>预览</strong>！操作：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">P</kbd> 或 文件→打印</li>
+                            <li>在预览中检查内容是否完整、排版是否合理、是否有多余空白页</li>
+                        </ul>
+
+                        <h5>🔹 导出为PDF</h5>
+                        <ul>
+                            <li>PDF格式适合<strong>分享和存档</strong>，确保对方看到的效果与你一致</li>
+                            <li>操作：文件→另存为→选择保存类型为<strong>PDF</strong></li>
+                            <li>或：文件→导出→创建PDF/XPS文档</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：将课程表打印为PDF</h4>
+                        <p>使用之前制作的课程表，练习完整的打印设置流程。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开之前制作的"<strong>我的课程表.xlsx</strong>"（如果没有，可以下载课程表数据重新美化一份）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点击 <strong>页面布局</strong> 选项卡，设置纸张方向为<strong>横向</strong>（课程表列数多，横向更合适）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">设置纸张大小为<strong>A4</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">设置页边距为<strong>窄</strong>（让课程表内容有更多空间）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中课程表数据区域（包含标题）→页面布局→打印区域→<strong>设置打印区域</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">设置<strong>页面居中</strong>：页面布局→页边距→自定义边距→勾选"<strong>水平居中</strong>"和"<strong>垂直居中</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">添加<strong>页脚</strong>：插入→页眉和页脚→页脚中间输入"<strong>2025年春季学期</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">P</kbd> 打开<strong>打印预览</strong>，检查效果</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">如果内容没有完全显示在一页内，回到页面布局→调整为合适大小→宽度和高度都设为<strong>1页</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">确认效果满意后，文件→另存为→类型选择<strong>PDF</strong>→保存为"<strong>我的课程表.pdf</strong>"</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 打印检查清单 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 打印前检查清单</h4>
+                        <p>每次打印前，按照以下清单逐项检查：</p>
+                        <ul>
+                            <li>☐ 打印预览中内容是否<strong>完整</strong>，没有被截断？</li>
+                            <li>☐ <strong>纸张方向</strong>选对了吗？（宽表格用横向）</li>
+                            <li>☐ <strong>打印区域</strong>设对了吗？有没有多余的空白区域？</li>
+                            <li>☐ 多页打印时，<strong>每页都有表头</strong>吗？</li>
+                            <li>☐ <strong>页码</strong>是否正确？</li>
+                            <li>☐ 文字缩放后是否<strong>清晰可读</strong>？（建议不低于70%）</li>
+                            <li>☐ 有没有<strong>多余的空白页</strong>？</li>
+                            <li>☐ <strong>网格线</strong>是否需要打印？（页面布局→工作表选项→打印网格线）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>先预览再打印</strong>：永远不要不预览就直接打印，避免浪费纸张</li>
+                            <li><strong>设置打印标题</strong>：多页数据表一定要设置重复标题行</li>
+                            <li><strong>合理使用页眉页脚</strong>：添加日期、页码、文件名等信息，便于整理</li>
+                            <li><strong>优先使用PDF</strong>：需要分享给他人时，优先导出PDF，确保格式不变</li>
+                            <li><strong>环保打印</strong>：尽量使用双面打印，非必要不打印（电子版共享）</li>
+                            <li><strong>黑白打印测试</strong>：如果用黑白打印机，确保彩色区分在黑白模式下仍可辨认</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 打印出来有空白页 → 检查打印区域外是否有<strong>隐藏的内容或空格</strong>。按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">End</kbd> 查看数据实际范围</li>
+                            <li>❌ 表格右边的列被截到第二页 → 调整<strong>纸张方向</strong>为横向，或设置列宽适合一页，或缩放打印</li>
+                            <li>❌ 第二页开始没有表头 → 设置<strong>打印标题</strong>（顶端标题行）</li>
+                            <li>❌ 打印出来太小看不清 → 缩放比例不要低于70%，或减少打印的列数</li>
+                            <li>❌ PDF打出来是空白的 → 检查是否设置了<strong>打印区域</strong>，且区域内有数据</li>
+                            <li>❌ 打印出来没有边框线 → 确认添加了单元格<strong>边框</strong>（不是网格线）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>完成以下综合练习：</p>
+                        <ol>
+                            <li>打开之前制作的"<strong>班级通讯录</strong>"，设置横向打印，将所有列缩放到一页内</li>
+                            <li>设置<strong>打印标题</strong>：让每页都显示表头行</li>
+                            <li>添加页脚：左侧显示"班级通讯录"，中间显示页码"第X页/共Y页"，右侧显示日期</li>
+                            <li>导出为PDF文件</li>
+                            <li>打开"<strong>3月生活开支</strong>"，同样设置打印格式并导出PDF</li>
+                        </ol>
+                        <p style="margin-top:12px;">如果你之前的文件不在了，可以重新下载数据制作：</p>
+                        <div style="display:flex;gap:10px;flex-wrap:wrap;margin-top:8px;">
+                            <button class="btn-download" onclick="downloadLesson1_2Data()">📥 班级通讯录数据</button>
+                            <button class="btn-download" onclick="downloadLesson1_3Data()">📥 课程表数据</button>
+                            <button class="btn-download" onclick="downloadLesson1_4Data()">📥 3月开支数据</button>
+                        </div>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>制作一个<strong>多页数据表</strong>（至少50行数据），练习以下打印设置：
+                                <ul>
+                                    <li>设置每页都显示表头</li>
+                                    <li>设置页码</li>
+                                    <li>在分页预览模式下手动调整分页位置</li>
+                                </ul>
+                            </li>
+                            <li>尝试给课程表添加<strong>自定义页眉</strong>：
+                                <ul>
+                                    <li>左侧：学校名称</li>
+                                    <li>中间：课程表标题</li>
+                                    <li>右侧：插入学校Logo图片（任意图片即可）</li>
+                                </ul>
+                            </li>
+                            <li>尝试<strong>打印网格线</strong>的开关：页面布局→工作表选项→网格线→打印，观察有无网格线的差别</li>
+                            <li>研究<strong>"页面设置"对话框</strong>的四个选项卡（页面、页边距、页眉/页脚、工作表），了解每个选项的作用</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对打印设置的掌握：</p>
+                        <div id="quiz-1-5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结 -->
+<section class="container" style="padding-bottom:60px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <div class="content-block block-knowledge" style="border-left-color:var(--green);">
+            <h4>🎯 模块1 学习总结</h4>
+            <p>恭喜你完成了模块1的学习！在这个模块中，你通过生活场景掌握了：</p>
+            <ul>
+                <li>✅ Excel界面认识与三大核心概念（工作簿、工作表、单元格）</li>
+                <li>✅ 各种数据类型的输入方法和注意事项</li>
+                <li>✅ 单元格格式设置与表格美化技巧</li>
+                <li>✅ 行列操作、冻结窗格与工作表管理</li>
+                <li>✅ 打印设置与PDF导出</li>
+            </ul>
+            <p style="margin-top:12px;">📌 <strong>操作规范要点回顾</strong>：</p>
+            <ul>
+                <li>🔸 文件和工作表使用有意义的名称</li>
+                <li>🔸 表头在第1行，数据连续不留空行</li>
+                <li>🔸 每列数据类型统一，不要混合</li>
+                <li>🔸 格式简洁统一，颜色不超过4种</li>
+                <li>🔸 不在数据区域使用合并单元格</li>
+                <li>🔸 多页表格设置打印标题和页码</li>
+                <li>🔸 养成 Ctrl+S 随时保存的习惯</li>
+            </ul>
+            <p style="margin-top:12px;">接下来进入 <a href="module2.html" style="color:var(--blue);font-weight:bold;">📘 模块2：公式与函数</a>，开始学习Excel最强大的数据计算功能！</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p>适用于中职电商专业数据分析课程 · 2025年春季学期</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块1 数据生成与测验题目
+// ================================================================
+
+// ============ 课次1-2 班级通讯录数据 ============
+function generateClassData() {
+    const surnames = ['陈','王','李','张','刘','杨','黄','赵','周','吴','徐','孙','马','胡','朱','郭','何','罗','高','林'];
+    const maleNames = ['浩宇','子轩','宇轩','浩然','博文','子涵','志远','天佑','明辉','俊杰',
+                       '文博','晨阳','嘉豪','梓豪','宇航','泽宇','鑫磊','骏熙','逸飞','思源'];
+    const femaleNames = ['思涵','欣怡','雨萱','诗琪','梦瑶','紫萱','雅涵','欣妍','佳怡','心怡',
+                         '雨桐','可馨','语嫣','子涵','美琪','雅轩','晓彤','梓萱','诗涵','雨晴'];
+    const roles = ['班长','副班长','学习委员','生活委员','体育委员','文艺委员','团支书','组织委员','宣传委员','纪律委员'];
+    const rows = [];
+
+    for (let i = 0; i < 40; i++) {
+        const gender = i % 2 === 0 ? '女' : '男';
+        const surnameIdx = i % surnames.length;
+        const namePool = gender === '男' ? maleNames : femaleNames;
+        const nameIdx = Math.floor(i / 2) % namePool.length;
+        const name = surnames[surnameIdx] + namePool[nameIdx];
+
+        const month = (i % 12) + 1;
+        const day = (i % 28) + 1;
+        const birth = `2007/${month}/${day}`;
+
+        const phonePrefix = ['138','139','137','158','136','155','188','187','152','135'];
+        const phone = phonePrefix[i % phonePrefix.length] + String(12345601 + i).slice(-8);
+
+        const dorm = (gender === '女' ? 300 : 200) + Math.floor(i / 4) + 1;
+
+        let remark = '';
+        if (i < roles.length) remark = roles[i];
+
+        rows.push([i + 1, name, gender, birth, phone, dorm, remark]);
+    }
+    return rows;
+}
+
+function downloadLesson1_2Data() {
+    const headers = ['序号', '姓名', '性别', '出生日期', '手机号', '宿舍号', '备注'];
+    const rows = generateClassData();
+    downloadCSV('班级通讯录.csv', headers, rows);
+}
+
+// ============ 课次1-3 课程表数据 ============
+function downloadLesson1_3Data() {
+    const headers = ['节次', '星期一', '星期二', '星期三', '星期四', '星期五'];
+    const rows = [
+        ['第1节', '电商基础', '语文', '网页设计', '数学', '数据分析'],
+        ['第2节', '电商基础', '英语', '网页设计', '语文', '数据分析'],
+        ['第3节', '数学', '电商基础', '英语', '体育', '语文'],
+        ['第4节', '英语', 'PS设计', '数学', '体育', 'PS设计'],
+        ['午休', '', '', '', '', ''],
+        ['第5节', '网页设计', '数学', '电商基础', '英语', '班会'],
+        ['第6节', 'PS设计', '数据分析', '语文', 'PS设计', '班会'],
+        ['第7节', '自习', '体育', '社团活动', '自习', ''],
+        ['第8节', '自习', '自习', '社团活动', '自习', '']
+    ];
+    downloadCSV('课程表模板.csv', headers, rows);
+}
+
+// ============ 课次1-4 月度开支数据 ============
+function generateExpenseData() {
+    const categories = {
+        '餐饮': ['早餐-包子豆浆','早餐-面包牛奶','午餐-食堂','午餐-校外','晚餐-食堂','晚餐-校外小吃','夜宵-泡面','奶茶','水果','零食'],
+        '学习': ['笔记本','圆珠笔','文件夹','打印资料','考试用品','参考书'],
+        '交通': ['公交卡充值','地铁','共享单车','打车回家'],
+        '生活': ['洗发水','纸巾','洗衣液','充电线','水杯','衣架'],
+        '通讯': ['话费充值','流量包'],
+        '娱乐': ['电影票','游戏充值','KTV','小说'],
+        '服饰': ['T恤','运动鞋','袜子','帽子']
+    };
+
+    const rows = [];
+    let id = 0;
+    const catKeys = Object.keys(categories);
+
+    for (let day = 1; day <= 31; day++) {
+        // 每天1-3笔开支
+        const count = day <= 28 ? (day % 3 === 0 ? 3 : day % 3 === 1 ? 2 : 1) : 1;
+        for (let c = 0; c < count && id < 30; c++) {
+            const catIdx = id % catKeys.length;
+            const cat = catKeys[catIdx];
+            const items = categories[cat];
+            const item = items[id % items.length];
+
+            let amount;
+            switch (cat) {
+                case '餐饮': amount = [6, 8, 12, 18, 15, 20, 5, 12, 10, 8][id % 10]; break;
+                case '学习': amount = [8.5, 3, 5, 2, 15, 35][id % 6]; break;
+                case '交通': amount = [50, 4, 1.5, 80][id % 4]; break;
+                case '生活': amount = [25, 8, 18, 19.9, 29, 5][id % 6]; break;
+                case '通讯': amount = [50, 10][id % 2]; break;
+                case '娱乐': amount = [35, 30, 60, 15][id % 4]; break;
+                case '服饰': amount = [59, 199, 15, 25][id % 4]; break;
+                default: amount = 10;
+            }
+
+            const remarks = ['', '', '', '加了鸡腿', '', '和同学AA', '', '打折了', '', ''];
+            const remark = remarks[id % remarks.length];
+
+            const dateStr = `2025/3/${day}`;
+            rows.push([dateStr, cat, item, amount, remark]);
+            id++;
+        }
+    }
+    return rows;
+}
+
+function downloadLesson1_4Data() {
+    const headers = ['日期', '分类', '项目', '金额', '备注'];
+    const rows = generateExpenseData();
+    downloadCSV('2025年3月生活开支.csv', headers, rows);
+}
+
+// ================================================================
+//  测验题目（每课10道，共50道）
+// ================================================================
+
+// ===== 课次1-1 界面认识 测验 =====
+const quiz1_1 = [
+    {
+        q: '一个Excel文件（.xlsx）称为什么？',
+        opts: ['工作表', '工作簿', '单元格', '工作区'],
+        ans: 1,
+        explain: '一个Excel文件就是一个工作簿（Workbook），工作簿中可以包含多个工作表。'
+    },
+    {
+        q: '单元格B5表示的位置是？',
+        opts: ['第B行第5列', '第5行第B列', '第2行第5列', '第5行第2列'],
+        ans: 1,
+        explain: '单元格地址由列字母+行号组成，B5表示第B列（第2列）、第5行。'
+    },
+    {
+        q: '以下哪个不是Excel界面的组成部分？',
+        opts: ['功能区（Ribbon）', '编辑栏', '幻灯片面板', '名称框'],
+        ans: 2,
+        explain: '幻灯片面板是PowerPoint的组成部分，不属于Excel界面。'
+    },
+    {
+        q: '在Excel中按Ctrl+S的作用是？',
+        opts: ['另存为', '保存文件', '关闭文件', '新建文件'],
+        ans: 1,
+        explain: 'Ctrl+S是保存当前文件的快捷键，应该养成随时保存的习惯。'
+    },
+    {
+        q: '名称框的作用是？',
+        opts: ['显示文件名', '显示当前单元格地址', '显示工作表名称', '显示公式结果'],
+        ans: 1,
+        explain: '名称框位于编辑栏左侧，显示当前选中单元格的地址（如A1、C5等）。'
+    },
+    {
+        q: 'Excel中一个工作表最多有多少列？',
+        opts: ['256列', '1024列', '16384列', '65536列'],
+        ans: 2,
+        explain: 'Excel 2007及以后版本最多有16,384列（A到XFD）和1,048,576行。'
+    },
+    {
+        q: '如何重命名工作表？',
+        opts: ['单击工作表标签', '双击工作表标签', '右键标题栏', '按F5键'],
+        ans: 1,
+        explain: '双击工作表标签即可进入重命名模式，也可以右键标签选择"重命名"。'
+    },
+    {
+        q: '以下哪个是Excel的标准文件格式？',
+        opts: ['.docx', '.pptx', '.xlsx', '.txt'],
+        ans: 2,
+        explain: '.xlsx是Excel的标准文件格式。.docx是Word，.pptx是PowerPoint。'
+    },
+    {
+        q: '按Ctrl+Home的作用是？',
+        opts: ['回到文件开头', '快速跳转到A1单元格', '回到上一个工作表', '关闭文件'],
+        ans: 1,
+        explain: 'Ctrl+Home快速跳转到当前工作表的A1单元格。'
+    },
+    {
+        q: '关于工作簿和工作表，以下说法正确的是？',
+        opts: [
+            '一个工作簿只能有一个工作表',
+            '一个工作表中可以包含多个工作簿',
+            '一个工作簿可以包含多个工作表',
+            '工作簿和工作表是同一个概念'
+        ],
+        ans: 2,
+        explain: '一个工作簿（Excel文件）可以包含多个工作表（Sheet），就像一本书有多页。'
+    }
+];
+
+// ===== 课次1-2 数据输入 测验 =====
+const quiz1_2 = [
+    {
+        q: '在Excel中输入手机号"13812345678"前，应该先将单元格设为什么格式？',
+        opts: ['数值', '常规', '文本', '货币'],
+        ans: 2,
+        explain: '手机号是11位数字，如果不设为文本格式，可能会被Excel当作数字处理，导致显示异常或精度丢失。'
+    },
+    {
+        q: '在单元格中输入内容后，按什么键确认并向右移动？',
+        opts: ['Enter', 'Tab', 'Space', 'Shift'],
+        ans: 1,
+        explain: 'Tab键确认输入并向右移动到下一个单元格，适合逐列输入数据。Enter则向下移动。'
+    },
+    {
+        q: '以下哪种方式可以在同一个单元格内换行？',
+        opts: ['按Enter', '按Tab', '按Alt+Enter', '按Ctrl+Enter'],
+        ans: 2,
+        explain: 'Alt+Enter可以在同一个单元格内强制换行。Ctrl+Enter是在多个选中单元格中同时输入。'
+    },
+    {
+        q: '如何快速输入当天的日期？',
+        opts: ['Ctrl+D', 'Ctrl+;（分号）', 'Ctrl+T', 'Alt+D'],
+        ans: 1,
+        explain: 'Ctrl+;（分号）可以在单元格中快速输入当天的日期。'
+    },
+    {
+        q: '在A1输入"1"，A2输入"2"，选中A1:A2后拖拽填充柄，会得到什么？',
+        opts: ['全部显示1', '全部显示2', '自动递增3,4,5...', '交替显示1和2'],
+        ans: 2,
+        explain: 'Excel识别到1和2的递增规律（步长为1），会自动继续填充3、4、5...'
+    },
+    {
+        q: '身份证号在Excel中应该使用什么格式存储？',
+        opts: ['数值', '常规', '日期', '文本'],
+        ans: 3,
+        explain: '身份证号有18位，超过15位的数字在Excel中会显示为科学计数法且丢失精度，必须存为文本格式。'
+    },
+    {
+        q: '以下哪个日期输入格式Excel能正确识别为日期？',
+        opts: ['2025年3月15日', '2025/3/15', '2025.3.15', '三月十五日'],
+        ans: 1,
+        explain: '2025/3/15使用斜杠分隔，Excel可以正确识别为日期。也可以用短横线2025-3-15。'
+    },
+    {
+        q: '文本数据在单元格中默认的对齐方式是？',
+        opts: ['右对齐', '居中', '左对齐', '两端对齐'],
+        ans: 2,
+        explain: '文本默认左对齐，数字默认右对齐。如果输入后发现对齐方式不对，可能是数据类型不正确。'
+    },
+    {
+        q: '在多个选中的单元格中同时输入相同内容，应该按？',
+        opts: ['Enter', 'Tab', 'Ctrl+Enter', 'Shift+Enter'],
+        ans: 2,
+        explain: '先选中多个单元格，输入内容后按Ctrl+Enter，可以在所有选中单元格中同时输入相同内容。'
+    },
+    {
+        q: '关于自动填充，以下哪个说法是正确的？',
+        opts: [
+            '只能填充数字序列',
+            '可以填充日期、星期等有规律的序列',
+            '只能向下填充',
+            '自动填充不能自定义步长'
+        ],
+        ans: 1,
+        explain: '自动填充非常智能，可以识别数字、日期、星期、月份等各种有规律的序列，也可以向上、向左、向右填充。'
+    }
+];
+
+// ===== 课次1-3 格式设置 测验 =====
+const quiz1_3 = [
+    {
+        q: '快速打开"设置单元格格式"对话框的快捷键是？',
+        opts: ['Ctrl+F', 'Ctrl+1', 'Ctrl+Shift+F', 'F4'],
+        ans: 1,
+        explain: 'Ctrl+1是打开"设置单元格格式"对话框的快捷键，可以设置数字、对齐、字体、边框、填充等。'
+    },
+    {
+        q: '以下哪种做法不符合专业表格美化规范？',
+        opts: ['表头加粗居中', '使用5种以上鲜艳颜色', '统一字号', '适当增加行高'],
+        ans: 1,
+        explain: '专业表格应保持简洁，颜色不超过3-4种。过多鲜艳颜色会显得杂乱不专业。'
+    },
+    {
+        q: '加粗文字的快捷键是？',
+        opts: ['Ctrl+I', 'Ctrl+B', 'Ctrl+U', 'Ctrl+D'],
+        ans: 1,
+        explain: 'Ctrl+B是加粗（Bold），Ctrl+I是斜体（Italic），Ctrl+U是下划线（Underline）。'
+    },
+    {
+        q: '关于合并单元格，以下说法正确的是？',
+        opts: [
+            '所有情况都应该使用合并单元格',
+            '只有标题行适合使用合并居中，数据区域不建议合并',
+            '合并单元格不会影响排序和筛选',
+            '合并单元格可以让函数计算更方便'
+        ],
+        ans: 1,
+        explain: '合并单元格在数据区域会影响排序、筛选和函数计算，应仅在标题行使用。'
+    },
+    {
+        q: '如何让一列中的数字显示为货币格式（如¥1,234.00）？',
+        opts: ['在数字前手动输入¥', '设置单元格格式为"货币"', '设置为文本格式', '使用合并单元格'],
+        ans: 1,
+        explain: '通过设置单元格格式为"货币"或"会计"，可以自动添加货币符号和千分位分隔符。'
+    },
+    {
+        q: '双击列字母之间的分隔线有什么效果？',
+        opts: ['删除该列', '隐藏该列', '自动调整列宽适应内容', '插入新列'],
+        ans: 2,
+        explain: '双击列字母之间的分隔线可以自动将列宽调整为刚好适应该列中最长内容的宽度。'
+    },
+    {
+        q: '"格式刷"工具的作用是？',
+        opts: ['清除格式', '复制单元格内容', '复制格式并应用到其他单元格', '自动美化表格'],
+        ans: 2,
+        explain: '格式刷可以将一个单元格的格式（字体、颜色、边框等）快速应用到其他单元格。双击格式刷可连续使用。'
+    },
+    {
+        q: '在单元格中内容太长被截断时，可以设置什么让内容完整显示？',
+        opts: ['加粗', '自动换行', '合并单元格', '缩小字号'],
+        ans: 1,
+        explain: '设置"自动换行"后，内容过长时会在单元格内自动换行显示，同时行高会自动增加。'
+    },
+    {
+        q: '以下哪种字体最适合用于中文Excel表格？',
+        opts: ['Times New Roman', '宋体（小四）', '微软雅黑', 'Comic Sans'],
+        ans: 2,
+        explain: '微软雅黑是现代、清晰、美观的中文字体，非常适合电子表格。"等线"也是不错的选择。'
+    },
+    {
+        q: '下列关于数字格式的说法，错误的是？',
+        opts: [
+            '百分比格式会将0.85显示为85%',
+            '数值格式可以设置小数位数',
+            '设为文本格式后数字不能用于计算',
+            '日期格式只有一种显示方式'
+        ],
+        ans: 3,
+        explain: '日期格式有多种显示方式，如"2025/3/15""2025年3月15日""3月15日"等，可以在格式设置中选择。'
+    }
+];
+
+// ===== 课次1-4 行列操作 测验 =====
+const quiz1_4 = [
+    {
+        q: '在Excel中插入一行，新行会出现在当前行的什么位置？',
+        opts: ['下方', '上方', '左侧', '右侧'],
+        ans: 1,
+        explain: '插入行时，新行出现在当前选中行的上方，原有数据自动下移。'
+    },
+    {
+        q: '按Delete键和删除整行有什么区别？',
+        opts: [
+            '没有区别',
+            'Delete只清空内容，删除整行会移除行并使下方数据上移',
+            'Delete会移除行，删除整行只清空内容',
+            '两者都会移除行'
+        ],
+        ans: 1,
+        explain: 'Delete键只清空选中单元格的内容，格式和行列结构不变。删除整行会移除行，下方数据上移。'
+    },
+    {
+        q: '关于"冻结首行"，以下说法正确的是？',
+        opts: [
+            '冻结首行后第一行不能编辑',
+            '冻结首行后向下滚动时第一行始终可见',
+            '冻结首行后不能添加新数据',
+            '冻结首行后数据不能排序'
+        ],
+        ans: 1,
+        explain: '冻结首行后，滚动工作表时第一行保持在顶部始终可见，数据仍然可以正常编辑和操作。'
+    },
+    {
+        q: '插入行/列的快捷键是？',
+        opts: ['Ctrl++', 'Ctrl+Shift++', 'Alt++', 'Shift++'],
+        ans: 1,
+        explain: '选中行或列后按Ctrl+Shift++可以快速插入行或列。'
+    },
+    {
+        q: '关于删除工作表，以下说法正确的是？',
+        opts: [
+            '删除后可以用Ctrl+Z撤销',
+            '删除后不可撤销，需谨慎操作',
+            '删除后工作表会移到回收站',
+            '工作表不能被删除'
+        ],
+        ans: 1,
+        explain: '删除工作表是不可撤销的操作！Excel会弹出警告对话框，确认后就无法恢复。'
+    },
+    {
+        q: '如何隐藏某一列？',
+        opts: [
+            '选中该列→按Delete',
+            '选中该列→右键→隐藏',
+            '选中该列→按Ctrl+H',
+            '选中该列→拖拽列宽为0'
+        ],
+        ans: 1,
+        explain: '选中列→右键→隐藏。隐藏后数据还在，只是不显示。取消隐藏：选中相邻列→右键→取消隐藏。'
+    },
+    {
+        q: '选择性粘贴（Ctrl+Alt+V）可以实现以下哪个功能？',
+        opts: [
+            '只粘贴值，不带格式和公式',
+            '只能粘贴图片',
+            '自动填充数据',
+            '撤销上一步操作'
+        ],
+        ans: 0,
+        explain: '选择性粘贴可以选择只粘贴值、格式、公式、列宽等，还可以实现转置（行列互换）。'
+    },
+    {
+        q: '将鼠标移到选中区域的边缘，按住Ctrl拖拽可以实现？',
+        opts: ['移动数据', '复制数据', '删除数据', '隐藏数据'],
+        ans: 1,
+        explain: '拖拽选中区域边缘是移动数据，按住Ctrl拖拽则是复制数据到目标位置。'
+    },
+    {
+        q: '冻结窗格的操作在哪个选项卡中？',
+        opts: ['开始', '插入', '页面布局', '视图'],
+        ans: 3,
+        explain: '冻结窗格在"视图"选项卡中。点击视图→冻结窗格→选择冻结方式。'
+    },
+    {
+        q: '以下哪种操作可以快速复制一个工作表？',
+        opts: [
+            '按住Ctrl拖拽工作表标签',
+            '双击工作表标签',
+            '按F2键',
+            '点击工作表标签旁的+号'
+        ],
+        ans: 0,
+        explain: '按住Ctrl拖拽工作表标签可以快速复制一个工作表。也可以右键→移动或复制→勾选"建立副本"。'
+    }
+];
+
+// ===== 课次1-5 打印设置 测验 =====
+const quiz1_5 = [
+    {
+        q: '列数较多的表格适合用什么纸张方向打印？',
+        opts: ['纵向', '横向', '没有区别', '只能用A3纸'],
+        ans: 1,
+        explain: '列数多的表格使用横向（Landscape）打印，可以让更多列显示在一页内。'
+    },
+    {
+        q: '打印预览的快捷键是？',
+        opts: ['Ctrl+P', 'Ctrl+F', 'Ctrl+D', 'F5'],
+        ans: 0,
+        explain: 'Ctrl+P打开打印界面，同时可以预览打印效果。'
+    },
+    {
+        q: '多页数据表打印时如何让每页都显示表头？',
+        opts: [
+            '在每页都手动复制表头',
+            '使用"页面布局→打印标题"设置顶端标题行',
+            '使用冻结窗格',
+            '将表头设为粗体'
+        ],
+        ans: 1,
+        explain: '通过"页面布局→打印标题"设置顶端标题行，打印时每页都会自动显示表头。冻结窗格只影响屏幕显示。'
+    },
+    {
+        q: '如何将Excel表格导出为PDF？',
+        opts: [
+            '直接修改文件扩展名为.pdf',
+            '文件→另存为→选择PDF格式',
+            '使用Ctrl+E快捷键',
+            '在打印设置中选择彩色打印'
+        ],
+        ans: 1,
+        explain: '通过"文件→另存为→选择保存类型为PDF"或"文件→导出→创建PDF"来导出。'
+    },
+    {
+        q: '以下哪项不能在页眉页脚中添加？',
+        opts: ['页码', '当前日期', '文件名', '数据透视表'],
+        ans: 3,
+        explain: '页眉页脚可以添加页码、日期、时间、文件名、工作表名等信息，但不能插入数据透视表。'
+    },
+    {
+        q: '在分页预览模式下，蓝色虚线表示什么？',
+        opts: ['打印区域边界', '自动分页位置', '数据结束位置', '页边距位置'],
+        ans: 1,
+        explain: '蓝色虚线表示自动分页位置，可以通过拖动来调整分页。蓝色实线表示手动设置的分页或打印区域。'
+    },
+    {
+        q: '打印时发现有一个空白页，最可能的原因是？',
+        opts: [
+            '打印机故障',
+            '数据区域外有隐藏的内容或空格',
+            '文件格式不对',
+            '纸张不够大'
+        ],
+        ans: 1,
+        explain: '空白页通常是因为数据区域外有隐藏的空格、格式或对象。按Ctrl+End查看实际数据范围。'
+    },
+    {
+        q: '关于缩放打印，以下说法正确的是？',
+        opts: [
+            '缩放比例越小越好',
+            '建议缩放不低于70%以保持可读性',
+            '缩放只能放大不能缩小',
+            '缩放会改变原始数据'
+        ],
+        ans: 1,
+        explain: '缩放可以让更多内容显示在一页内，但过小会导致文字看不清，建议不低于70%。缩放不影响原始数据。'
+    },
+    {
+        q: '设置打印区域的操作路径是？',
+        opts: [
+            '开始→打印区域',
+            '视图→打印区域',
+            '页面布局→打印区域→设置打印区域',
+            '数据→打印区域'
+        ],
+        ans: 2,
+        explain: '选中要打印的区域后，通过"页面布局→打印区域→设置打印区域"来设定。'
+    },
+    {
+        q: '关于打印的操作规范，以下哪项是正确的？',
+        opts: [
+            '直接打印不需要预览',
+            '先预览确认效果再打印，避免浪费纸张',
+            '所有表格都用纵向打印',
+            '页眉页脚是多余的，不需要设置'
+        ],
+        ans: 1,
+        explain: '打印前一定要先预览！确认内容完整、排版合理后再打印，养成好习惯。'
+    }
+];
+
+// ================================================================
+//  初始化所有测验
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-1-1', quiz1_1);
+    initQuiz('quiz-1-2', quiz1_2);
+    initQuiz('quiz-1-3', quiz1_3);
+    initQuiz('quiz-1-4', quiz1_4);
+    initQuiz('quiz-1-5', quiz1_5);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>
