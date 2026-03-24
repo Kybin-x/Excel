@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>公式与函数 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body><!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab active" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">📐 公式与函数</h1>
+      <p class="page-desc">公式是Excel 的灵魂。掌握这些快捷键，让公式编写与调试事半功倍。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共<span id="total-count">14</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">14</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="公式输入">公式输入</button>
+      <button class="sub-filter-btn" data-filter="公式编辑">公式编辑</button>
+      <button class="sub-filter-btn" data-filter="函数插入">函数插入</button>
+      <button class="sub-filter-btn" data-filter="快速公式">快速公式</button>
+      <button class="sub-filter-btn" data-filter="公式显示">公式显示</button>
+      <button class="sub-filter-btn" data-filter="计算控制">计算控制</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div><!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 —悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button>
+        <button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page3-editing.html" class="footer-nav-btn">← 输入编辑</a>
+    <span class="footer-page-info">第 4 / 7 页</span>
+    <a href="page5-format.html" class="footer-nav-btn">格式设置 →</a></footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 公式输入 ===
+      { id: 'form-01', keys: '=', desc: '键入公式（在单元格中输入等号开始编写公式）', subcategory: '公式输入' },
+      { id: 'form-04', keys: 'Ctrl+Shift+Enter', desc: '将公式作为数组公式输入', subcategory: '公式输入' },
+
+      // === 公式编辑 ===
+      { id: 'form-02', keys: 'F2', desc: '关闭单元格编辑状态后，将插入点移动到编辑栏内', subcategory: '公式编辑' },
+      { id: 'form-03', keys: 'Backspace', desc: '在编辑栏内，向左删除一个字符', subcategory: '公式编辑' },
+      { id: 'form-08', keys: 'F3', desc: '将定义的名称粘贴到公式中', subcategory: '公式编辑' },
+
+      // === 函数插入 ===
+      { id: 'form-05', keys: 'Shift+F3', desc: '在公式中，显示"插入函数"对话框', subcategory: '函数插入' },
+      { id: 'form-06', keys: 'Ctrl+A', desc: '当插入点位于公式中函数名称右侧时，弹出"函数参数"对话框', subcategory: '函数插入' },
+      { id: 'form-07', keys: 'Ctrl+Shift+A', desc: '当插入点位于函数名称右侧时，插入参数名和括号', subcategory: '函数插入' },
+
+      // === 快速公式 ===
+      { id: 'form-09', keys: 'Alt+=', desc: '用SUM 函数插入"自动求和"公式', subcategory: '快速公式' },
+      { id: 'form-10', keys: 'Ctrl+Shift+"', desc: '将活动单元格上方单元格中的数值复制到当前单元格或编辑栏', subcategory: '快速公式' },
+      { id: 'form-11', keys: "Ctrl+'", desc: '将活动单元格上方单元格中的公式复制到当前单元格或编辑栏', subcategory: '快速公式' },
+
+      // === 公式显示 ===
+      { id: 'form-12', keys: 'Ctrl+`', desc: '在显示单元格值和显示公式之间切换', subcategory: '公式显示' },
+
+      // === 计算控制 ===
+      { id: 'form-13', keys: 'F9', desc: '计算所有打开的工作簿中的所有工作表', subcategory: '计算控制' },
+      { id: 'form-14', keys: 'Shift+F9', desc: '计算活动工作表', subcategory: '计算控制' }
+    ];
+  </script>
+  <script src="common.js"></script>
+
+</body>
+</html>

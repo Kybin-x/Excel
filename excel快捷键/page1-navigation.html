@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作表导航与移动 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body><!-- ==========顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab active" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">🧭 工作表导航与移动</h1>
+      <p class="page-desc">掌握这些快捷键，让你在 Excel 工作表中快速移动和定位，效率翻倍！</p>
+      <div class="page-stats">
+        <span class="stat-badge">共<span id="total-count">30</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">30</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="基础移动">基础移动</button>
+      <button class="sub-filter-btn" data-filter="翻页滚动">翻页滚动</button>
+      <button class="sub-filter-btn" data-filter="定位查找">定位查找</button>
+      <button class="sub-filter-btn" data-filter="区域内移动">区域内移动</button>
+      <button class="sub-filter-btn" data-filter="窗格切换">窗格切换</button>
+      <button class="sub-filter-btn" data-filter="End模式">End模式</button><button class="sub-filter-btn" data-filter="ScrollLock模式">ScrollLock模式</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div><!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 —悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由 JS 生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button><button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="index.html" class="footer-nav-btn">← 返回首页</a>
+    <span class="footer-page-info">第 1 / 7 页</span><a href="page2-selection.html" class="footer-nav-btn">选定选择 →</a></footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 基础移动 ===
+      { id: 'nav-01', keys: '箭头键', desc: '向上、下、左或右移动一个单元格', subcategory: '基础移动' },
+      { id: 'nav-02', keys: 'Ctrl+箭头键', desc: '移动到当前数据区域的边缘', subcategory: '基础移动' },
+      { id: 'nav-03', keys: 'Home', desc: '移动到行首', subcategory: '基础移动' },
+      { id: 'nav-04', keys: 'Ctrl+Home', desc: '移动到工作表的开头', subcategory: '基础移动' },
+      { id: 'nav-05', keys: 'Ctrl+End', desc: '移动到工作表的最后一个单元格', subcategory: '基础移动' },
+
+      // === 翻页滚动 ===
+      { id: 'nav-06', keys: 'PageDown', desc: '向下移动一屏', subcategory: '翻页滚动' },
+      { id: 'nav-07', keys: 'PageUp', desc: '向上移动一屏', subcategory: '翻页滚动' },
+      { id: 'nav-08', keys: 'Alt+PageDown', desc: '向右移动一屏', subcategory: '翻页滚动' },
+      { id: 'nav-09', keys: 'Alt+PageUp', desc: '向左移动一屏', subcategory: '翻页滚动' },
+      { id: 'nav-12', keys: 'Ctrl+Backspace', desc: '滚动以显示活动单元格', subcategory: '翻页滚动' },
+
+      // === 定位查找 ===
+      { id: 'nav-13', keys: 'F5', desc: '弹出"定位"对话框', subcategory: '定位查找' },
+      { id: 'nav-14', keys: 'Shift+F5', desc: '弹出"查找"对话框', subcategory: '定位查找' },
+      { id: 'nav-15', keys: 'Shift+F4', desc: '重复上一次"查找"操作（等同于"查找下一个"）', subcategory: '定位查找' },
+
+      // === 区域内移动 ===
+      { id: 'nav-16', keys: 'Enter', desc: '在选定区域内从上往下移动', subcategory: '区域内移动' },
+      { id: 'nav-17', keys: 'Shift+Enter', desc: '在选定区域内从下往上移动', subcategory: '区域内移动' },
+      { id: 'nav-18', keys: 'Tab', desc: '在选定区域中从左向右移动。若选定单列单元格，向下移动', subcategory: '区域内移动' },
+      { id: 'nav-19', keys: 'Shift+Tab', desc: '在选定区域中从右向左移动。若选定单列单元格，向上移动', subcategory: '区域内移动' },
+      { id: 'nav-20', keys: 'Ctrl+句号', desc: '按顺时针方向移动到选定区域的下一个角', subcategory: '区域内移动' },
+      { id: 'nav-21', keys: 'Ctrl+Alt+向右键', desc: '在不相邻的选定区域中，向右切换到下一个选定区域', subcategory: '区域内移动' },
+      { id: 'nav-22', keys: 'Ctrl+Alt+向左键', desc: '向左切换到下一个不相邻的选定区域', subcategory: '区域内移动' },
+
+      // === 窗格切换 ===
+      { id: 'nav-10', keys: 'Ctrl+F6', desc: '"窗口"菜单上的"拆分"命令', subcategory: '窗格切换' },
+      { id: 'nav-11', keys: 'Shift+F6', desc: '切换到被拆分的工作表中的上一个窗格', subcategory: '窗格切换' },
+
+      // === End模式 ===
+      { id: 'nav-23', keys: 'End', desc: '打开或关闭"结束"模式', subcategory: 'End模式' },
+      { id: 'nav-24', keys: 'End+箭头键', desc: '在一行或一列内以数据块为单位移动', subcategory: 'End模式' },
+      { id: 'nav-25', keys: 'End+Home', desc: '移动到工作表的最后一个单元格', subcategory: 'End模式' },
+      { id: 'nav-26', keys: 'End+Enter', desc: '移动到当前行中最右边的非空单元格', subcategory: 'End模式' },
+
+      // === ScrollLock模式 ===
+      { id: 'nav-27', keys: 'ScrollLock', desc: '打开或关闭 ScrollLock', subcategory: 'ScrollLock模式' },
+      { id: 'nav-28', keys: 'ScrollLock+Home', desc: '移动到窗口左上角的单元格', subcategory: 'ScrollLock模式' },
+      { id: 'nav-29', keys: 'ScrollLock+End', desc: '移动到窗口右下角的单元格', subcategory: 'ScrollLock模式' },
+      { id: 'nav-30', keys: 'ScrollLock+向上/向下键', desc: '向上或向下滚动一行', subcategory: 'ScrollLock模式' }
+    ];
+  </script><script src="common.js"></script>
+
+</body>
+</html>

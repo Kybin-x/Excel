@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>选定与选择操作 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+  <!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab active" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">🎯 选定与选择操作</h1>
+      <p class="page-desc">快速选定单元格、行列、区域和对象，是高效操作 Excel 的基础。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共<span id="total-count">26</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">26</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="基础选定">基础选定</button>
+      <button class="sub-filter-btn" data-filter="特殊选定">特殊选定</button>
+      <button class="sub-filter-btn" data-filter="公式引用选定">公式引用选定</button>
+      <button class="sub-filter-btn" data-filter="扩展选区">扩展选区</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div>
+
+    <!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 —悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS 生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button><button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page1-navigation.html" class="footer-nav-btn">← 导航移动</a>
+    <span class="footer-page-info">第 2 / 7 页</span><a href="page3-editing.html" class="footer-nav-btn">输入编辑 →</a>
+  </footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 基础选定 ===
+      { id: 'sel-01', keys: 'Ctrl+空格', desc: '选定整列', subcategory: '基础选定' },
+      { id: 'sel-02', keys: 'Shift+空格', desc: '选定整行', subcategory: '基础选定' },
+      { id: 'sel-03', keys: 'Ctrl+A', desc: '选定整张工作表', subcategory: '基础选定' },
+      { id: 'sel-04', keys: 'Shift+Backspace', desc: '在选定了多个单元格的情况下，只选定活动单元格', subcategory: '基础选定' },
+      { id: 'sel-05', keys: 'Ctrl+Shift+空格键', desc: '在选定了一个对象的情况下，选定工作表上的所有对象', subcategory: '基础选定' },
+      { id: 'sel-06', keys: 'Ctrl+6', desc: '在隐藏对象、显示对象和显示对象占位符之间切换', subcategory: '基础选定' },
+
+      // === 特殊选定 ===
+      { id: 'sel-07', keys: 'Ctrl+Shift+*', desc: '选定活动单元格周围的当前区域（由空行和空列围成的数据区域）', subcategory: '特殊选定' },
+      { id: 'sel-08', keys: 'Ctrl+/', desc: '选定包含活动单元格的数组', subcategory: '特殊选定' },
+      { id: 'sel-09', keys: 'Ctrl+Shift+O', desc: '选定含有批注的所有单元格', subcategory: '特殊选定' },
+      { id: 'sel-10', keys: 'Ctrl+\\', desc: '在选定的行中，选取与活动单元格中的值不匹配的单元格', subcategory: '特殊选定' },
+      { id: 'sel-11', keys: 'Ctrl+Shift+|', desc: '在选定的列中，选取与活动单元格中的值不匹配的单元格', subcategory: '特殊选定' },
+      { id: 'sel-16', keys: 'Alt+;', desc: '选取当前选定区域中的可见单元格', subcategory: '特殊选定' },
+
+      // === 公式引用选定 ===
+      { id: 'sel-12', keys: 'Ctrl+[', desc: '选取由选定区域中的公式直接引用的所有单元格', subcategory: '公式引用选定' },
+      { id: 'sel-13', keys: 'Ctrl+Shift+{', desc: '选取由选定区域中的公式直接或间接引用的所有单元格', subcategory: '公式引用选定' },
+      { id: 'sel-14', keys: 'Ctrl+]', desc: '选取包含直接引用活动单元格的公式的单元格', subcategory: '公式引用选定' },
+      { id: 'sel-15', keys: 'Ctrl+Shift+}', desc: '选取包含直接或间接引用活动单元格的公式的单元格', subcategory: '公式引用选定' },
+
+      // === 扩展选区 ===
+      { id: 'sel-17', keys: 'F8', desc: '打开或关闭扩展模式。扩展模式下箭头键可扩展选定区域', subcategory: '扩展选区' },
+      { id: 'sel-18', keys: 'Shift+F8', desc: '将其他区域的单元格添加到选定区域中（添加模式）', subcategory: '扩展选区' },
+      { id: 'sel-19', keys: 'Shift+箭头键', desc: '将选定区域扩展一个单元格', subcategory: '扩展选区' },
+      { id: 'sel-20', keys: 'Shift+Home', desc: '将选定区域扩展到行首', subcategory: '扩展选区' },
+      { id: 'sel-21', keys: 'Ctrl+Shift+Home', desc: '将选定区域扩展到工作表的开始处', subcategory: '扩展选区' },
+      { id: 'sel-22', keys: 'Ctrl+Shift+End', desc: '将选定区域扩展到工作表上最后一个使用的单元格（右下角）', subcategory: '扩展选区' },
+      { id: 'sel-23', keys: 'Shift+PageDown', desc: '将选定区域向下扩展一屏', subcategory: '扩展选区' },
+      { id: 'sel-24', keys: 'Shift+PageUp', desc: '将选定区域向上扩展一屏', subcategory: '扩展选区' },
+      { id: 'sel-25', keys: 'End+Shift+Home', desc: '将选定区域扩展到工作表的最后一个使用的单元格（右下角）', subcategory: '扩展选区' },
+      { id: 'sel-26', keys: 'End+Shift+Enter', desc: '将选定区域扩展到当前行中的最后一个单元格', subcategory: '扩展选区' }
+    ];
+  </script><script src="common.js"></script>
+
+</body>
+</html>

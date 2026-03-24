@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>数据输入与编辑 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body><!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab active" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">✏️ 数据输入与编辑</h1>
+      <p class="page-desc">从输入确认到复制粘贴，从填充操作到日期时间，全面掌握 Excel 编辑快捷键。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共 <span id="total-count">28</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">28</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="输入确认">输入确认</button>
+      <button class="sub-filter-btn" data-filter="编辑操作">编辑操作</button>
+      <button class="sub-filter-btn" data-filter="填充操作">填充操作</button>
+      <button class="sub-filter-btn" data-filter="复制粘贴">复制粘贴</button>
+      <button class="sub-filter-btn" data-filter="删除清除">删除清除</button><button class="sub-filter-btn" data-filter="日期时间">日期时间</button>
+      <button class="sub-filter-btn" data-filter="名称管理">名称管理</button>
+      <button class="sub-filter-btn" data-filter="插入操作">插入操作</button>
+      <button class="sub-filter-btn" data-filter="输入辅助">输入辅助</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div><!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 —悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS 生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button>
+        <button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page2-selection.html" class="footer-nav-btn">← 选定选择</a>
+    <span class="footer-page-info">第 3 / 7 页</span><a href="page4-formula.html" class="footer-nav-btn">公式函数 →</a>
+  </footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 输入确认 ===
+      { id: 'edit-01', keys: 'Enter', desc: '完成单元格输入并选取下一个单元格（向下）', subcategory: '输入确认' },
+      { id: 'edit-02', keys: 'Alt+Enter', desc: '在单元格中换行', subcategory: '输入确认' },
+      { id: 'edit-03', keys: 'Ctrl+Enter', desc: '用当前输入项填充选定的单元格区域', subcategory: '输入确认' },
+      { id: 'edit-04', keys: 'Shift+Enter', desc: '完成单元格输入并向上选取上一个单元格', subcategory: '输入确认' },
+      { id: 'edit-05', keys: 'Tab', desc: '完成单元格输入并向右选取下一个单元格', subcategory: '输入确认' },
+      { id: 'edit-06', keys: 'Shift+Tab', desc: '完成单元格输入并向左选取上一个单元格', subcategory: '输入确认' },
+      { id: 'edit-07', keys: 'Esc', desc: '取消单元格输入', subcategory: '输入确认' },
+
+      // === 编辑操作 ===
+      { id: 'edit-08', keys: 'F4', desc: '重复上一次操作', subcategory: '编辑操作' },
+      { id: 'edit-16', keys: 'Ctrl+Z', desc: '撤销上一次操作', subcategory: '编辑操作' },
+      { id: 'edit-23', keys: 'F2', desc: '编辑活动单元格，将插入点放置到单元格内容末尾', subcategory: '编辑操作' },
+      { id: 'edit-24', keys: 'F7', desc: '弹出"拼写检查"对话框', subcategory: '编辑操作' },
+      { id: 'edit-25', keys: 'Shift+F2', desc: '编辑单元格批注', subcategory: '编辑操作' },
+      { id: 'edit-28', keys: 'Ctrl+Shift+Z', desc: '弹出"自动更正"智能标记时，撤销或恢复上一次的自动更正', subcategory: '编辑操作' },
+
+      // === 填充操作 ===
+      { id: 'edit-09', keys: 'Ctrl+D', desc: '向下填充（将上方单元格内容复制到当前单元格）', subcategory: '填充操作' },
+      { id: 'edit-10', keys: 'Ctrl+R', desc: '向右填充（将左方单元格内容复制到当前单元格）', subcategory: '填充操作' },
+
+      // === 复制粘贴 ===
+      { id: 'edit-17', keys: 'Ctrl+C', desc: '复制选定的单元格', subcategory: '复制粘贴' },
+      { id: 'edit-18', keys: 'Ctrl+X', desc: '剪切选定的单元格', subcategory: '复制粘贴' },
+      { id: 'edit-19', keys: 'Ctrl+V', desc: '粘贴复制的单元格', subcategory: '复制粘贴' },
+
+      // === 删除清除 ===
+      { id: 'edit-20', keys: 'Del', desc: '清除选定单元格的内容（保留格式）', subcategory: '删除清除' },
+      { id: 'edit-21', keys: 'Ctrl+连字符', desc: '删除选定的单元格（弹出删除对话框）', subcategory: '删除清除' },
+      { id: 'edit-22', keys: 'Backspace', desc: '编辑活动单元格，然后清除该单元格，或在编辑时删除前一个字符', subcategory: '删除清除' },
+      { id: 'edit-26', keys: 'Ctrl+Del', desc: '删除插入点到行末的文本', subcategory: '删除清除' },
+
+      // === 日期时间 ===
+      { id: 'edit-14', keys: 'Ctrl+;', desc: '输入当前日期', subcategory: '日期时间' },
+      { id: 'edit-15', keys: 'Ctrl+Shift+:', desc: '输入当前时间', subcategory: '日期时间' },
+
+      // === 名称管理 ===
+      { id: 'edit-11', keys: 'Ctrl+Shift+F3', desc: '由行列标志创建名称', subcategory: '名称管理' },
+      { id: 'edit-12', keys: 'Ctrl+F3', desc: '打开"定义名称"对话框', subcategory: '名称管理' },
+
+      // === 插入操作 ===
+      { id: 'edit-13', keys: 'Ctrl+K', desc: '插入超链接', subcategory: '插入操作' },
+
+      // === 输入辅助 ===
+      { id: 'edit-27', keys: 'Alt+向下键', desc: '显示清单的当前列中的数值下拉列表（自动完成）', subcategory: '输入辅助' }
+    ];
+  </script>
+  <script src="common.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>格式设置 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body><!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!--========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab active" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">🎨 格式设置</h1>
+      <p class="page-desc">数字格式、字体样式、边框设置、行列隐藏……让你的表格美观又专业。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共 <span id="total-count">27</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">27</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="对话框">对话框</button>
+      <button class="sub-filter-btn" data-filter="数字格式">数字格式</button>
+      <button class="sub-filter-btn" data-filter="字体样式">字体样式</button>
+      <button class="sub-filter-btn" data-filter="行列操作">行列操作</button>
+      <button class="sub-filter-btn" data-filter="边框设置">边框设置</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div><!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 —悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button><button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page4-formula.html" class="footer-nav-btn">← 公式函数</a>
+    <span class="footer-page-info">第 5 / 7 页</span>
+    <a href="page6-workbook.html" class="footer-nav-btn">工作簿管理 →</a>
+  </footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 对话框 ===
+      { id: 'fmt-01', keys: "Alt+'", desc: '弹出"样式"对话框', subcategory: '对话框' },
+      { id: 'fmt-02', keys: 'Ctrl+1', desc: '弹出"单元格格式"对话框', subcategory: '对话框' },
+
+      // === 数字格式 ===
+      { id: 'fmt-03', keys:'Ctrl+Shift+~', desc: '应用"常规"数字格式', subcategory: '数字格式' },
+      { id: 'fmt-04', keys: 'Ctrl+Shift+$', desc: '应用带两个小数位的"贷币"格式（负数在括号中）', subcategory: '数字格式' },
+      { id: 'fmt-05', keys: 'Ctrl+Shift+%', desc: '应用不带小数位的"百分比"格式', subcategory: '数字格式' },
+      { id: 'fmt-06', keys: 'Ctrl+Shift+^', desc: '应用带两位小数位的"科学记数"数字格式', subcategory: '数字格式' },
+      { id: 'fmt-07', keys: 'Ctrl+Shift+#', desc: '应用含年、月、日的"日期"格式', subcategory: '数字格式' },
+      { id: 'fmt-08', keys: 'Ctrl+Shift+@', desc: '应用含小时和分钟并标明上午或下午的"时间"格式', subcategory: '数字格式' },
+      { id: 'fmt-09', keys: 'Ctrl+Shift+!', desc: '应用带两位小数位、使用千位分隔符且负数用负号表示的数字格式', subcategory: '数字格式' },
+
+      // === 字体样式 ===
+      { id: 'fmt-10', keys: 'Ctrl+B', desc: '应用或取消加粗格式', subcategory: '字体样式' },
+      { id: 'fmt-11', keys: 'Ctrl+I', desc: '应用或取消字体倾斜格式', subcategory: '字体样式' },
+      { id: 'fmt-12', keys: 'Ctrl+U', desc: '应用或取消下画线', subcategory: '字体样式' },
+      { id: 'fmt-13', keys: 'Ctrl+5', desc: '应用或取消删除线', subcategory: '字体样式' },
+
+      // === 行列操作 ===
+      { id: 'fmt-14', keys: 'Ctrl+9', desc: '隐藏选定行', subcategory: '行列操作' },
+      { id: 'fmt-15', keys: 'Ctrl+Shift+(', desc: '取消选定区域内的所有隐藏行的隐藏状态', subcategory: '行列操作' },
+      { id: 'fmt-16', keys: 'Ctrl+0', desc: '隐藏选定列', subcategory: '行列操作' },
+      { id: 'fmt-17', keys: 'Ctrl+Shift+)', desc: '取消选定区域内的所有隐藏列的隐藏状态', subcategory: '行列操作' },
+
+      // === 边框设置 ===
+      { id: 'fmt-18', keys: 'Ctrl+Shift+&', desc: '对选定单元格应用外边框', subcategory: '边框设置' },
+      { id: 'fmt-19', keys: 'Ctrl+Shift+_', desc: '取消选定单元格的外边框', subcategory: '边框设置' },
+      { id: 'fmt-20', keys: 'Alt+T', desc: '应用或取消上框线', subcategory: '边框设置' },
+      { id: 'fmt-21', keys: 'Alt+B', desc: '应用或取消下框线', subcategory: '边框设置' },
+      { id: 'fmt-22', keys: 'Alt+L', desc: '应用或取消左框线', subcategory: '边框设置' },
+      { id: 'fmt-23', keys: 'Alt+R', desc: '应用或取消右框线', subcategory: '边框设置' },
+      { id: 'fmt-24', keys: 'Alt+H', desc: '如果选定了多行中的单元格，则应用或取消水平分隔线', subcategory: '边框设置' },
+      { id: 'fmt-25', keys: 'Alt+V', desc: '如果选定了多列中的单元格，则应用或取消垂直分隔线', subcategory: '边框设置' },
+      { id: 'fmt-26', keys: 'Alt+D', desc: '应用或取消下对角框线', subcategory: '边框设置' },
+      { id: 'fmt-27', keys: 'Alt+U', desc: '应用或取消上对角框线', subcategory: '边框设置' }
+    ];
+  </script><script src="common.js"></script>
+
+</body>
+</html>

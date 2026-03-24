@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Excel 快捷键学习 - 首页</title>
+  <link rel="stylesheet" href="common.css">
+  <style>
+    /* 首页额外样式 */
+    .hero-search {
+      max-width: 500px;
+      margin: 0 auto 40px;
+      position: relative;
+    }
+    .hero-search input {
+      width: 100%;
+      padding: 14px 20px 14px 48px;
+      border: 2px solid var(--border-color);
+      border-radius: 28px;
+      background: var(--bg-card);
+      color: var(--text-primary);
+      font-size: 1rem;
+      outline: none;
+      transition: border-color var(--transition-fast), box-shadow var(--transition-fast);
+    }
+    .hero-search input:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(33, 115, 70, 0.12);
+    }
+    .hero-search-icon {
+      position: absolute;
+      left: 18px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.2rem;
+      color: var(--text-tertiary);
+      pointer-events: none;
+    }
+    .quick-stats {
+      display: flex;
+      justify-content: center;
+      gap: 32px;
+      margin-bottom: 48px;
+      flex-wrap: wrap;
+    }
+    .quick-stat {
+      text-align: center;
+    }
+    .quick-stat-number {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+    }
+    .quick-stat-label {
+      font-size: 0.85rem;
+      color: var(--text-tertiary);
+      margin-top: 4px;
+    }
+    .section-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 20px;
+    }
+    .view-all-link {
+      font-size: 0.85rem;
+      color: var(--text-link);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题" onclick="ExcelShortcuts.ThemeManager.toggle()">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab active" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- Hero 区域 -->
+    <section class="hero">
+      <h1 class="hero-title">📋 Excel 快捷键速查手册</h1>
+      <p class="hero-subtitle">史上最全 Excel 快捷键合集，支持搜索、收藏、键盘高亮与自测练习</p>
+
+      <!-- 快速统计 -->
+      <div class="quick-stats">
+        <div class="quick-stat">
+          <div class="quick-stat-number">7</div>
+          <div class="quick-stat-label">分类专题</div>
+        </div>
+        <div class="quick-stat">
+          <div class="quick-stat-number">150+</div>
+          <div class="quick-stat-label">快捷键收录</div>
+        </div>
+        <div class="quick-stat">
+          <div class="quick-stat-number" id="fav-count">0</div>
+          <div class="quick-stat-label">已收藏</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 分类入口 -->
+    <section>
+      <div class="section-header">
+        <h2 class="section-title">📚 学习分类</h2>
+      </div>
+      <div class="category-cards">
+
+        <a class="category-card" href="page1-navigation.html">
+          <div class="category-card-icon">🧭</div>
+          <div class="category-card-title">工作表导航与移动</div>
+          <div class="card-desc" style="font-size:0.85rem;">箭头键移动、翻页滚动、定位跳转、窗格切换等</div>
+          <div class="category-card-count">约 30 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page2-selection.html">
+          <div class="category-card-icon">🎯</div>
+          <div class="category-card-title">选定与选择操作</div>
+          <div class="card-desc" style="font-size:0.85rem;">选定整行/列、扩展选区、选定批注/数组/公式引用单元格等</div>
+          <div class="category-card-count">约 22 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page3-editing.html">
+          <div class="category-card-icon">✏️</div>
+          <div class="category-card-title">数据输入与编辑</div>
+          <div class="card-desc" style="font-size:0.85rem;">输入确认、填充、换行、撤销、复制粘贴、日期时间、特殊字符等</div>
+          <div class="category-card-count">约 28 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page4-formula.html">
+          <div class="category-card-icon">📐</div>
+          <div class="category-card-title">公式与函数</div>
+          <div class="card-desc" style="font-size:0.85rem;">键入公式、插入函数、自动求和、数组公式、工作表计算等</div>
+          <div class="category-card-count">约 15 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page5-format.html">
+          <div class="category-card-icon">🎨</div>
+          <div class="category-card-title">格式设置</div>
+          <div class="card-desc" style="font-size:0.85rem;">数字格式、加粗/斜体/下划线、边框设置、隐藏行列等</div>
+          <div class="category-card-count">约 25 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page6-workbook.html">
+          <div class="category-card-icon">📁</div>
+          <div class="category-card-title">工作簿与工作表管理</div>
+          <div class="card-desc" style="font-size:0.85rem;">新建/切换/重命名/删除工作表、拆分窗格等</div>
+          <div class="category-card-count">约 12 个快捷键</div>
+        </a>
+
+        <a class="category-card" href="page7-chart-data.html">
+          <div class="category-card-icon">📊</div>
+          <div class="category-card-title">图表与数据操作</div>
+          <div class="card-desc" style="font-size:0.85rem;">创建图表、图表元素选择、自动筛选、分级显示等</div>
+          <div class="category-card-count">约 20 个快捷键</div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- 收藏列表 -->
+    <section class="favorites-section">
+      <div class="section-header">
+        <h2 class="section-title">⭐ 我的收藏</h2>
+        <span class="view-all-link" id="clear-fav-btn" style="cursor:pointer; display:none;" onclick="clearAllFavorites()">清空收藏</span>
+      </div>
+      <div id="favorites-list">
+        <div class="empty-state">⭐ 还没有收藏任何快捷键<br>浏览各分类页面，点击星标即可收藏</div>
+      </div>
+    </section>
+
+    <!-- 使用指南 -->
+    <section style="margin-top:48px;">
+      <h2 class="section-title">💡 使用指南</h2>
+      <div class="cards-grid" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--color-primary);color:#fff;">🔍</span></div></div>
+          <div class="card-desc"><strong>搜索筛选</strong><br>在搜索栏输入关键词，实时过滤快捷键卡片</div>
+        </div>
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--color-star);color:#fff;">⭐</span></div></div>
+          <div class="card-desc"><strong>收藏标记</strong><br>点击卡片右上角星标收藏，数据自动保存到浏览器</div>
+        </div>
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--color-accent);color:#fff;">⌨️</span></div></div>
+          <div class="card-desc"><strong>键盘高亮</strong><br>悬停卡片时，底部虚拟键盘高亮显示对应按键</div>
+        </div>
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--color-success);color:#fff;">📝</span></div></div>
+          <div class="card-desc"><strong>测验模式</strong><br>点击"开始测验"按钮，根据功能描述输入快捷键</div>
+        </div>
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--text-secondary);color:#fff;">🌙</span></div></div>
+          <div class="card-desc"><strong>深浅切换</strong><br>点击导航栏的主题按钮，切换深色/浅色模式</div>
+        </div>
+
+        <div class="shortcut-card" style="cursor:default;">
+          <div class="card-header"><div class="card-keys"><span class="key-tag" style="background:var(--color-warning);color:#fff;">🖨️</span></div></div>
+          <div class="card-desc"><strong>打印版本</strong><br>点击打印按钮，自动隐藏交互元素，生成清洁版面</div>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ========== 页脚 ========== -->
+  <footer class="page-footer" style="justify-content:center;">
+    <div class="footer-page-info">Excel 快捷键学习 · 共 7 个分类专题 · 数据来源：史上最全Excel快捷键合集</div>
+  </footer>
+
+  <!-- ========== 全局数据（首页用于收藏展示） ========== -->
+  <script>
+    // 首页的全局快捷键数据（用于收藏展示）
+    window.ALL_SHORTCUTS = [
+      // Page 1 - 导航移动
+      {id:'nav-01',keys:'箭头键',desc:'向上、下、左或右移动一个单元格',subcategory:'基础移动'},
+      {id:'nav-02',keys:'Ctrl+箭头键',desc:'移动到当前数据区域的边缘',subcategory:'基础移动'},
+      {id:'nav-03',keys:'Home',desc:'移动到行首',subcategory:'基础移动'},
+      {id:'nav-04',keys:'Ctrl+Home',desc:'移动到工作表的开头',subcategory:'基础移动'},
+      {id:'nav-05',keys:'Ctrl+End',desc:'移动到工作表的最后一个单元格',subcategory:'基础移动'},
+      {id:'nav-06',keys:'PageDown',desc:'向下移动一屏',subcategory:'翻页滚动'},
+      {id:'nav-07',keys:'PageUp',desc:'向上移动一屏',subcategory:'翻页滚动'},
+      {id:'nav-08',keys:'Alt+PageDown',desc:'向右移动一屏',subcategory:'翻页滚动'},
+      {id:'nav-09',keys:'Alt+PageUp',desc:'向左移动一屏',subcategory:'翻页滚动'},
+      {id:'nav-10',keys:'Ctrl+F6',desc:'"窗口"菜单上的"拆分"命令',subcategory:'窗格切换'},
+      {id:'nav-11',keys:'Shift+F6',desc:'切换到被拆分的工作表中的上一个窗格',subcategory:'窗格切换'},
+      {id:'nav-12',keys:'Ctrl+Backspace',desc:'滚动以显示活动单元格',subcategory:'翻页滚动'},
+      {id:'nav-13',keys:'F5',desc:'弹出"定位"对话框',subcategory:'定位查找'},
+      {id:'nav-14',keys:'Shift+F5',desc:'弹出"查找"对话框',subcategory:'定位查找'},
+      {id:'nav-15',keys:'Shift+F4',desc:'重复上一次"查找"操作',subcategory:'定位查找'},
+      {id:'nav-16',keys:'Enter',desc:'在选定区域内从上往下移动',subcategory:'区域内移动'},
+      {id:'nav-17',keys:'Shift+Enter',desc:'在选定区域内从下往上移动',subcategory:'区域内移动'},
+      {id:'nav-18',keys:'Tab',desc:'在选定区域中从左向右移动',subcategory:'区域内移动'},
+      {id:'nav-19',keys:'Shift+Tab',desc:'在选定区域中从右向左移动',subcategory:'区域内移动'},
+      {id:'nav-20',keys:'Ctrl+句号',desc:'按顺时针方向移动到选定区域的下一个角',subcategory:'区域内移动'},
+      {id:'nav-21',keys:'Ctrl+Alt+向右键',desc:'向右切换到下一个不相邻的选定区域',subcategory:'区域内移动'},
+      {id:'nav-22',keys:'Ctrl+Alt+向左键',desc:'向左切换到下一个不相邻的选定区域',subcategory:'区域内移动'},
+      {id:'nav-23',keys:'End',desc:'打开或关闭"结束"模式',subcategory:'End模式'},
+      {id:'nav-24',keys:'End+箭头键',desc:'在一行或一列内以数据块为单位移动',subcategory:'End模式'},
+      {id:'nav-25',keys:'End+Home',desc:'移动到工作表的最后一个单元格',subcategory:'End模式'},
+      {id:'nav-26',keys:'End+Enter',desc:'移动到当前行中最右边的非空单元格',subcategory:'End模式'},
+      {id:'nav-27',keys:'ScrollLock',desc:'打开或关闭ScrollLock',subcategory:'ScrollLock模式'},
+      {id:'nav-28',keys:'ScrollLock+Home',desc:'移动到窗口左上角的单元格',subcategory:'ScrollLock模式'},
+      {id:'nav-29',keys:'ScrollLock+End',desc:'移动到窗口右下角的单元格',subcategory:'ScrollLock模式'},
+      {id:'nav-30',keys:'ScrollLock+向上/向下键',desc:'向上或向下滚动一行',subcategory:'ScrollLock模式'},
+      // Page 2 - 选定选择
+      {id:'sel-01',keys:'Ctrl+空格',desc:'选定整列',subcategory:'基础选定'},
+      {id:'sel-02',keys:'Shift+空格',desc:'选定整行',subcategory:'基础选定'},
+      {id:'sel-03',keys:'Ctrl+A',desc:'选定整张工作表',subcategory:'基础选定'},
+      {id:'sel-04',keys:'Shift+Backspace',desc:'在选定了多个单元格的情况下，只选定活动单元格',subcategory:'基础选定'},
+      {id:'sel-05',keys:'Ctrl+Shift+空格键',desc:'选定工作表上的所有对象',subcategory:'基础选定'},
+      {id:'sel-06',keys:'Ctrl+6',desc:'在隐藏对象、显示对象和显示对象占位符之间切换',subcategory:'基础选定'},
+      {id:'sel-07',keys:'Ctrl+Shift+*',desc:'选定活动单元格周围的当前区域',subcategory:'特殊选定'},
+      {id:'sel-08',keys:'Ctrl+/',desc:'选定包含活动单元格的数组',subcategory:'特殊选定'},
+      {id:'sel-09',keys:'Ctrl+Shift+O',desc:'选定含有批注的所有单元格',subcategory:'特殊选定'},
+      {id:'sel-10',keys:'Ctrl+\\',desc:'在选定的行中，选取与活动单元格中的值不匹配的单元格',subcategory:'特殊选定'},
+      {id:'sel-11',keys:'Ctrl+Shift+|',desc:'在选定的列中，选取与活动单元格中的值不匹配的单元格',subcategory:'特殊选定'},
+      {id:'sel-12',keys:'Ctrl+[',desc:'选取由公式直接引用的所有单元格',subcategory:'公式引用选定'},
+      {id:'sel-13',keys:'Ctrl+Shift+{',desc:'选取由公式直接或间接引用的所有单元格',subcategory:'公式引用选定'},
+      {id:'sel-14',keys:'Ctrl+]',desc:'选取包含直接引用活动单元格的公式的单元格',subcategory:'公式引用选定'},
+      {id:'sel-15',keys:'Ctrl+Shift+}',desc:'选取包含直接或间接引用活动单元格的公式的单元格',subcategory:'公式引用选定'},
+      {id:'sel-16',keys:'Alt+;',desc:'选取当前选定区域中的可见单元格',subcategory:'特殊选定'},
+      {id:'sel-17',keys:'F8',desc:'打开或关闭扩展模式',subcategory:'扩展选区'},
+      {id:'sel-18',keys:'Shift+F8',desc:'将其他区域的单元格添加到选定区域中',subcategory:'扩展选区'},
+      {id:'sel-19',keys:'Shift+箭头键',desc:'将选定区域扩展一个单元格',subcategory:'扩展选区'},
+      {id:'sel-20',keys:'Shift+Home',desc:'将选定区域扩展到行首',subcategory:'扩展选区'},
+      {id:'sel-21',keys:'Ctrl+Shift+Home',desc:'将选定区域扩展到工作表的开始处',subcategory:'扩展选区'},
+      {id:'sel-22',keys:'Ctrl+Shift+End',desc:'将选定区域扩展到工作表上最后一个使用的单元格',subcategory:'扩展选区'},
+      // Page 3 - 输入编辑
+      {id:'edit-01',keys:'Enter',desc:'完成单元格输入并选取下一个单元格',subcategory:'输入确认'},
+      {id:'edit-02',keys:'Alt+Enter',desc:'在单元格中换行',subcategory:'输入确认'},
+      {id:'edit-03',keys:'Ctrl+Enter',desc:'用当前输入项填充选定的单元格区域',subcategory:'输入确认'},
+      {id:'edit-04',keys:'Shift+Enter',desc:'完成单元格输入并向上选取上一个单元格',subcategory:'输入确认'},
+      {id:'edit-05',keys:'Tab',desc:'完成单元格输入并向右选取下一个单元格',subcategory:'输入确认'},
+      {id:'edit-06',keys:'Shift+Tab',desc:'完成单元格输入并向左选取上一个单元格',subcategory:'输入确认'},
+      {id:'edit-07',keys:'Esc',desc:'取消单元格输入',subcategory:'输入确认'},
+      {id:'edit-08',keys:'F4',desc:'重复上一次操作',subcategory:'编辑操作'},
+      {id:'edit-09',keys:'Ctrl+D',desc:'向下填充',subcategory:'填充操作'},
+      {id:'edit-10',keys:'Ctrl+R',desc:'向右填充',subcategory:'填充操作'},
+      {id:'edit-11',keys:'Ctrl+Shift+F3',desc:'由行列标志创建名称',subcategory:'名称管理'},
+      {id:'edit-12',keys:'Ctrl+F3',desc:'定义名称',subcategory:'名称管理'},
+      {id:'edit-13',keys:'Ctrl+K',desc:'插入超链接',subcategory:'插入操作'},
+      {id:'edit-14',keys:'Ctrl+;',desc:'输入日期',subcategory:'日期时间'},
+      {id:'edit-15',keys:'Ctrl+Shift+:',desc:'输入时间',subcategory:'日期时间'},
+      {id:'edit-16',keys:'Ctrl+Z',desc:'撤销上一次操作',subcategory:'编辑操作'},
+      {id:'edit-17',keys:'Ctrl+C',desc:'复制选定的单元格',subcategory:'复制粘贴'},
+      {id:'edit-18',keys:'Ctrl+X',desc:'剪切选定的单元格',subcategory:'复制粘贴'},
+      {id:'edit-19',keys:'Ctrl+V',desc:'粘贴复制的单元格',subcategory:'复制粘贴'},
+      {id:'edit-20',keys:'Del',desc:'清除选定单元格的内容',subcategory:'删除清除'},
+      {id:'edit-21',keys:'Ctrl+连字符',desc:'删除选定的单元格',subcategory:'删除清除'},
+      {id:'edit-22',keys:'Backspace',desc:'编辑活动单元格，然后清除该单元格',subcategory:'删除清除'},
+      {id:'edit-23',keys:'F2',desc:'编辑活动单元格，将插入点放置到内容末尾',subcategory:'编辑操作'},
+      {id:'edit-24',keys:'F7',desc:'弹出"拼写检查"对话框',subcategory:'编辑操作'},
+      {id:'edit-25',keys:'Shift+F2',desc:'编辑单元格批注',subcategory:'编辑操作'},
+      {id:'edit-26',keys:'Ctrl+Del',desc:'删除插入点到行末的文本',subcategory:'删除清除'},
+      {id:'edit-27',keys:'Alt+向下键',desc:'显示清单的当前列中的数值下拉列表',subcategory:'输入辅助'},
+      {id:'edit-28',keys:'Ctrl+Shift+Z',desc:'弹出"自动更正"智能标记时，撤销或恢复上一次的自动更正',subcategory:'编辑操作'},
+      // Page 4 - 公式函数
+      {id:'form-01',keys:'=',desc:'键入公式',subcategory:'公式输入'},
+      {id:'form-02',keys:'F2',desc:'关闭编辑状态后，将插入点移动到编辑栏内',subcategory:'公式编辑'},
+      {id:'form-03',keys:'Backspace',desc:'在编辑栏内，向左删除一个字符',subcategory:'公式编辑'},
+      {id:'form-04',keys:'Ctrl+Shift+Enter',desc:'将公式作为数组公式输入',subcategory:'公式输入'},
+      {id:'form-05',keys:'Shift+F3',desc:'在公式中，显示"插入函数"对话框',subcategory:'函数插入'},
+      {id:'form-06',keys:'Ctrl+A',desc:'当插入点位于公式中函数名称右侧时，弹出"函数参数"对话框',subcategory:'函数插入'},
+      {id:'form-07',keys:'Ctrl+Shift+A',desc:'当插入点位于函数名称右侧时，插入参数名和括号',subcategory:'函数插入'},
+      {id:'form-08',keys:'F3',desc:'将定义的名称粘贴到公式中',subcategory:'公式编辑'},
+      {id:'form-09',keys:'Alt+=',desc:'用SUM函数插入"自动求和"公式',subcategory:'快速公式'},
+      {id:'form-10',keys:'Ctrl+Shift+\"',desc:'将活动单元格上方单元格中的数值复制到当前单元格或编辑栏',subcategory:'快速公式'},
+      {id:'form-11',keys:"Ctrl+'",desc:'将活动单元格上方单元格中的公式复制到当前单元格或编辑栏',subcategory:'快速公式'},
+      {id:'form-12',keys:'Ctrl+`',desc:'在显示单元格值和显示公式之间切换',subcategory:'公式显示'},
+      {id:'form-13',keys:'F9',desc:'计算所有打开的工作簿中的所有工作表',subcategory:'计算控制'},
+      {id:'form-14',keys:'Shift+F9',desc:'计算活动工作表',subcategory:'计算控制'},
+      // Page 5 - 格式设置
+      {id:'fmt-01',keys:'Alt+\'',desc:'弹出"样式"对话框',subcategory:'对话框'},
+      {id:'fmt-02',keys:'Ctrl+1',desc:'弹出"单元格格式"对话框',subcategory:'对话框'},
+      {id:'fmt-03',keys:'Ctrl+Shift+~',desc:'应用"常规"数字格式',subcategory:'数字格式'},
+      {id:'fmt-04',keys:'Ctrl+Shift+$',desc:'应用带两个小数位的"贷币"格式',subcategory:'数字格式'},
+      {id:'fmt-05',keys:'Ctrl+Shift+%',desc:'应用不带小数位的"百分比"格式',subcategory:'数字格式'},
+      {id:'fmt-06',keys:'Ctrl+Shift+^',desc:'应用带两位小数位的"科学记数"数字格式',subcategory:'数字格式'},
+      {id:'fmt-07',keys:'Ctrl+Shift+#',desc:'应用含年、月、日的"日期"格式',subcategory:'数字格式'},
+      {id:'fmt-08',keys:'Ctrl+Shift+@',desc:'应用含小时和分钟的"时间"格式',subcategory:'数字格式'},
+      {id:'fmt-09',keys:'Ctrl+Shift+!',desc:'应用带两位小数位、千位分隔符的数字格式',subcategory:'数字格式'},
+      {id:'fmt-10',keys:'Ctrl+B',desc:'应用或取消加粗格式',subcategory:'字体样式'},
+      {id:'fmt-11',keys:'Ctrl+I',desc:'应用或取消字体倾斜格式',subcategory:'字体样式'},
+      {id:'fmt-12',keys:'Ctrl+U',desc:'应用或取消下画线',subcategory:'字体样式'},
+      {id:'fmt-13',keys:'Ctrl+5',desc:'应用或取消删除线',subcategory:'字体样式'},
+      {id:'fmt-14',keys:'Ctrl+9',desc:'隐藏选定行',subcategory:'行列操作'},
+      {id:'fmt-15',keys:'Ctrl+Shift+(',desc:'取消选定区域内的所有隐藏行的隐藏状态',subcategory:'行列操作'},
+      {id:'fmt-16',keys:'Ctrl+0',desc:'隐藏选定列',subcategory:'行列操作'},
+      {id:'fmt-17',keys:'Ctrl+Shift+)',desc:'取消选定区域内的所有隐藏列的隐藏状态',subcategory:'行列操作'},
+      {id:'fmt-18',keys:'Ctrl+Shift+&',desc:'对选定单元格应用外边框',subcategory:'边框设置'},
+      {id:'fmt-19',keys:'Ctrl+Shift+_',desc:'取消选定单元格的外边框',subcategory:'边框设置'},
+      {id:'fmt-20',keys:'Alt+T',desc:'应用或取消上框线',subcategory:'边框设置'},
+      {id:'fmt-21',keys:'Alt+B',desc:'应用或取消下框线',subcategory:'边框设置'},
+      {id:'fmt-22',keys:'Alt+L',desc:'应用或取消左框线',subcategory:'边框设置'},
+      {id:'fmt-23',keys:'Alt+R',desc:'应用或取消右框线',subcategory:'边框设置'},
+      {id:'fmt-24',keys:'Alt+H',desc:'应用或取消水平分隔线',subcategory:'边框设置'},
+      {id:'fmt-25',keys:'Alt+V',desc:'应用或取消垂直分隔线',subcategory:'边框设置'},
+      // Page 6 - 工作簿管理
+      {id:'wb-01',keys:'Shift+F11',desc:'插入新工作表',subcategory:'工作表操作'},
+      {id:'wb-02',keys:'Alt+Shift+F1',desc:'插入新工作表',subcategory:'工作表操作'},
+      {id:'wb-03',keys:'Ctrl+PageDown',desc:'移动到工作簿中的下一张工作表',subcategory:'工作表切换'},
+      {id:'wb-04',keys:'Ctrl+PageUp',desc:'移动到工作簿中的上一张工作表',subcategory:'工作表切换'},
+      {id:'wb-05',keys:'Shift+Ctrl+PageDown',desc:'选定当前工作表和下一张工作表',subcategory:'工作表选定'},
+      {id:'wb-06',keys:'Shift+Ctrl+PageUp',desc:'选定当前工作表和上一张工作表',subcategory:'工作表选定'},
+      {id:'wb-07',keys:'Alt+O H R',desc:'对当前工作表重命名',subcategory:'工作表操作'},
+      {id:'wb-08',keys:'Alt+E M',desc:'移动或复制当前工作表',subcategory:'工作表操作'},
+      {id:'wb-09',keys:'Alt+E L',desc:'删除当前工作表',subcategory:'工作表操作'},
+      // Page 7 - 图表与数据
+      {id:'cd-01',keys:'F11',desc:'创建当前区域中数据的图表',subcategory:'图表创建'},
+      {id:'cd-02',keys:'Alt+F1',desc:'创建当前区域中数据的图表（嵌入式）',subcategory:'图表创建'},
+      {id:'cd-03',keys:'向下键',desc:'选定图表中的上一组元素',subcategory:'图表导航'},
+      {id:'cd-04',keys:'向上键',desc:'选择图表中的下一组元素',subcategory:'图表导航'},
+      {id:'cd-05',keys:'向右键',desc:'选择分组中的下一个元素',subcategory:'图表导航'},
+      {id:'cd-06',keys:'向左键',desc:'选择分组中的上一个元素',subcategory:'图表导航'},
+      {id:'cd-07',keys:'Alt+向下键',desc:'显示当前列的"自动筛选"列表',subcategory:'自动筛选'},
+      {id:'cd-08',keys:'向下键',desc:'选择"自动筛选"列表中的下一项',subcategory:'自动筛选'},
+      {id:'cd-09',keys:'向上键',desc:'选择"自动筛选"列表中的上一项',subcategory:'自动筛选'},
+      {id:'cd-10',keys:'Alt+向上键',desc:'关闭当前列的"自动筛选"列表',subcategory:'自动筛选'},
+      {id:'cd-11',keys:'Home',desc:'选择"自动筛选"列表中的第一项',subcategory:'自动筛选'},
+      {id:'cd-12',keys:'End',desc:'选择"自动筛选"列表中的最后一项',subcategory:'自动筛选'},
+      {id:'cd-13',keys:'Enter',desc:'根据"自动筛选"列表中的选项筛选区域',subcategory:'自动筛选'},
+      {id:'cd-14',keys:'Alt+Shift+向右键',desc:'对行或列分组',subcategory:'分级显示'},
+      {id:'cd-15',keys:'Alt+Shift+向左键',desc:'取消行或列分组',subcategory:'分级显示'},
+      {id:'cd-16',keys:'Ctrl+8',desc:'显示或隐藏分级显示符号',subcategory:'分级显示'},
+    ];
+  </script>
+
+  <script src="common.js"></script>
+
+  <script>
+    // 首页额外逻辑
+    document.addEventListener('DOMContentLoaded', function() {
+      // 更新收藏计数
+      const favCountEl = document.getElementById('fav-count');
+      if (favCountEl) {
+        favCountEl.textContent = ExcelShortcuts.FavoritesManager.count();
+      }
+
+      // 显示/隐藏清空按钮
+      const clearBtn = document.getElementById('clear-fav-btn');
+      if (clearBtn && ExcelShortcuts.FavoritesManager.count() > 0) {
+        clearBtn.style.display = '';
+      }
+
+      // 渲染收藏列表
+      ExcelShortcuts.renderFavorites();
+    });
+
+    function clearAllFavorites() {
+      if (confirm('确定要清空所有收藏吗？')) {
+        localStorage.removeItem('excel-shortcut-favorites');
+        ExcelShortcuts.renderFavorites();
+        const favCountEl = document.getElementById('fav-count');
+        if (favCountEl) favCountEl.textContent = '0';
+        const clearBtn = document.getElementById('clear-fav-btn');
+        if (clearBtn) clearBtn.style.display = 'none';
+      }
+    }
+  </script>
+
+</body>
+</html>
