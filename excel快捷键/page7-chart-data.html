@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图表与数据工具 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+  <!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab active" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">📊 图表与数据工具</h1>
+      <p class="page-desc">创建图表、导航图表元素、数据筛选分组……让数据可视化与管理更便捷。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共 <span id="total-count">22</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">22</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="图表创建">图表创建</button>
+      <button class="sub-filter-btn" data-filter="图表导航">图表导航</button>
+      <button class="sub-filter-btn" data-filter="数据表单">数据表单</button>
+      <button class="sub-filter-btn" data-filter="筛选排序">筛选排序</button>
+      <button class="sub-filter-btn" data-filter="分级显示">分级显示</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div>
+
+    <!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 — 悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button>
+        <button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page6-workbook.html" class="footer-nav-btn">← 工作簿管理</a>
+    <span class="footer-page-info">第 7 / 7 页</span>
+    <a href="index.html" class="footer-nav-btn">返回首页 🏠</a>
+  </footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 图表创建 ===
+      { id: 'chart-01', keys: 'F11', desc: '创建当前区域中数据的图表（在新的图表工作表中）', subcategory: '图表创建' },
+      { id: 'chart-02', keys: 'Alt+F1', desc: '创建当前区域中数据的嵌入式图表（在当前工作表中）', subcategory: '图表创建' },
+
+      // === 图表导航 ===
+      { id: 'chart-03', keys: 'Ctrl+PageDown', desc: '选定图表工作表：选定工作簿中的下一张工作表，直到选中所需的图表工作表', subcategory: '图表导航' },
+      { id: 'chart-04', keys: 'Ctrl+PageUp', desc: '选定图表工作表：选定工作簿中的上一张工作表，直到选中所需的图表工作表', subcategory: '图表导航' },
+      { id: 'chart-05', keys: '向下键', desc: '选定图表中的上一组元素', subcategory: '图表导航' },
+      { id: 'chart-06', keys: '向上键', desc: '选择图表中的下一组元素', subcategory: '图表导航' },
+      { id: 'chart-07', keys: '向右键', desc: '选择分组中的下一个元素', subcategory: '图表导航' },
+      { id: 'chart-08', keys: '向左键', desc: '选择分组中的上一个元素', subcategory: '图表导航' },
+
+      // === 数据表单 ===
+      { id: 'chart-09', keys: '向下键', desc: '移动到下一条记录中的同一字段', subcategory: '数据表单' },
+      { id: 'chart-10', keys: '向上键', desc: '移动到上一条记录中的同一字段', subcategory: '数据表单' },
+      { id: 'chart-11', keys: 'Enter', desc: '移动到下一条记录的首字段', subcategory: '数据表单' },
+      { id: 'chart-12', keys: 'Shift+Enter', desc: '移动到上一条记录的首字段', subcategory: '数据表单' },
+      { id: 'chart-13', keys: 'PageDown', desc: '移动到前10条记录的同一字段', subcategory: '数据表单' },
+      { id: 'chart-14', keys: 'Ctrl+PageDown', desc: '开始一条新的空白记录', subcategory: '数据表单' },
+      { id: 'chart-15', keys: 'PageUp', desc: '移动到后10条记录的同一字段', subcategory: '数据表单' },
+      { id: 'chart-16', keys: 'Ctrl+PageUp', desc: '移动到首记录', subcategory: '数据表单' },
+
+      // === 筛选排序 ===
+      { id: 'chart-17', keys: 'Alt+向下键', desc: '在包含下拉箭头的单元格中，显示当前列的"自动筛选"列表', subcategory: '筛选排序' },
+      { id: 'chart-18', keys: 'Alt+向上键', desc: '关闭当前列的"自动筛选"列表', subcategory: '筛选排序' },
+      { id: 'chart-19', keys: 'Home', desc: '选择"自动筛选"列表中的第一项（"全部"）', subcategory: '筛选排序' },
+      { id: 'chart-20', keys: 'End', desc: '选择"自动筛选"列表中的最后一项', subcategory: '筛选排序' },
+
+      // === 分级显示 ===
+      { id: 'chart-21', keys: 'Alt+Shift+向右键', desc: '对行或列分组', subcategory: '分级显示' },
+      { id: 'chart-22', keys: 'Alt+Shift+向左键', desc: '取消行或列分组', subcategory: '分级显示' },
+      { id: 'chart-23', keys: 'Ctrl+8', desc: '显示或隐藏分级显示符号', subcategory: '分级显示' }
+    ];
+  </script>
+  <script src="common.js"></script>
+
+</body>
+</html>

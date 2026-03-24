@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>工作簿与工作表管理 - Excel快捷键学习</title>
+  <link rel="stylesheet" href="common.css">
+</head>
+<body>
+
+  <!--========== 顶部导航栏 ========== -->
+  <nav class="top-nav">
+    <div class="top-nav-inner">
+      <a href="index.html" class="nav-brand">
+        <div class="nav-brand-icon">Ex</div>
+        <span>Excel 快捷键学习</span>
+      </a>
+      <div class="nav-search">
+        <span class="nav-search-icon">🔍</span>
+        <input type="text" id="search-input" placeholder="搜索快捷键或功能..." autocomplete="off">
+      </div>
+      <div class="nav-actions">
+        <button class="nav-btn tooltip" id="quiz-start-btn" data-tooltip="开始测验">📝<span class="btn-text">测验</span></button>
+        <button class="nav-btn tooltip" id="theme-toggle-btn" data-tooltip="切换主题">🌙</button>
+        <button class="nav-btn tooltip" id="print-btn" data-tooltip="打印页面">🖨️ <span class="btn-text">打印</span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ========== 分类标签栏 ========== -->
+  <div class="category-bar">
+    <div class="category-bar-inner">
+      <a class="category-tab" href="index.html">🏠 首页</a>
+      <a class="category-tab" href="page1-navigation.html">🧭 导航移动</a>
+      <a class="category-tab" href="page2-selection.html">🎯 选定选择</a>
+      <a class="category-tab" href="page3-editing.html">✏️ 输入编辑</a>
+      <a class="category-tab" href="page4-formula.html">📐 公式函数</a>
+      <a class="category-tab" href="page5-format.html">🎨 格式设置</a>
+      <a class="category-tab active" href="page6-workbook.html">📁 工作簿管理</a>
+      <a class="category-tab" href="page7-chart-data.html">📊 图表数据</a>
+    </div>
+  </div>
+
+  <!-- ========== 主内容 ========== -->
+  <main class="main-content">
+
+    <!-- 页头 -->
+    <div class="page-header">
+      <h1 class="page-title">📁 工作簿与工作表管理</h1>
+      <p class="page-desc">新建、保存、切换、打印……高效管理你的工作簿和工作表。</p>
+      <div class="page-stats">
+        <span class="stat-badge">共 <span id="total-count">18</span> 个快捷键</span>
+        <span class="stat-badge">当前显示 <span id="visible-count">18</span> 个</span>
+      </div>
+    </div>
+
+    <!-- 子分类筛选 -->
+    <div class="sub-filter">
+      <button class="sub-filter-btn active" data-filter="all">全部</button>
+      <button class="sub-filter-btn" data-filter="文件操作">文件操作</button>
+      <button class="sub-filter-btn" data-filter="工作表操作">工作表操作</button>
+      <button class="sub-filter-btn" data-filter="窗口操作">窗口操作</button>
+      <button class="sub-filter-btn" data-filter="打印预览">打印预览</button>
+      <button class="sub-filter-btn" data-filter="宏与VBA">宏与VBA</button>
+    </div>
+
+    <!-- 快捷键卡片 -->
+    <div class="cards-grid" id="shortcuts-container">
+      <!-- 由JS渲染 -->
+    </div>
+
+    <!-- 无结果提示 -->
+    <div class="no-results">
+      <div class="no-results-icon">🔍</div>
+      <p>没有找到匹配的快捷键，试试其他关键词？</p>
+    </div>
+
+    <!-- 虚拟键盘 -->
+    <div class="keyboard-section">
+      <div class="keyboard-title">⌨️ 虚拟键盘 — 悬停卡片查看对应按键高亮</div>
+      <div class="keyboard-container">
+        <!-- 由JS生成 -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- ========== 测验弹窗 ========== -->
+  <div class="quiz-overlay" id="quiz-overlay">
+    <div class="quiz-panel">
+      <div class="quiz-question" id="quiz-question">准备开始测验</div>
+      <div class="quiz-desc" id="quiz-desc">根据功能描述，输入对应的快捷键</div>
+      <input type="text" class="quiz-input" id="quiz-input" placeholder="输入快捷键，如 Ctrl+C" autocomplete="off">
+      <div class="quiz-feedback" id="quiz-feedback"></div>
+      <div class="quiz-actions">
+        <button class="quiz-btn quiz-btn-primary" id="quiz-submit-btn">提交答案</button>
+        <button class="quiz-btn quiz-btn-primary" id="quiz-next-btn" style="display:none;">下一题</button>
+        <button class="quiz-btn quiz-btn-secondary" id="quiz-close-btn">退出测验</button>
+      </div>
+      <div class="quiz-score" id="quiz-score">得分：0 / 0</div>
+    </div>
+  </div>
+
+  <!-- ========== 底部导航 ========== -->
+  <footer class="page-footer">
+    <a href="page5-format.html" class="footer-nav-btn">← 格式设置</a>
+    <span class="footer-page-info">第 6 / 7 页</span>
+    <a href="page7-chart-data.html" class="footer-nav-btn">图表数据 →</a>
+  </footer>
+
+  <!-- ========== 页面数据 ========== -->
+  <script>
+    window.PAGE_SHORTCUTS = [
+      // === 文件操作 ===
+      { id: 'wb-01', keys: 'Ctrl+N', desc: '新建工作簿', subcategory: '文件操作' },
+      { id: 'wb-02', keys: 'Ctrl+O', desc: '打开工作簿', subcategory: '文件操作' },
+      { id: 'wb-03', keys: 'Ctrl+S', desc: '保存当前工作簿', subcategory: '文件操作' },
+      { id: 'wb-04', keys: 'F12', desc: '打开"另存为"对话框', subcategory: '文件操作' },
+      { id: 'wb-05', keys: 'Ctrl+W', desc: '关闭选定的工作簿窗口', subcategory: '文件操作' },
+      { id: 'wb-06', keys: 'Ctrl+F4', desc: '关闭当前工作簿窗口', subcategory: '文件操作' },
+      { id: 'wb-07', keys: 'Alt+F4', desc: '退出 Excel 程序', subcategory: '文件操作' },
+
+      // === 工作表操作 ===
+      { id: 'wb-08', keys: 'Shift+F11', desc: '插入新工作表', subcategory: '工作表操作' },
+      { id: 'wb-09', keys: 'Alt+Shift+F1', desc: '插入新工作表（同 Shift+F11）', subcategory: '工作表操作' },
+      { id: 'wb-10', keys: 'Ctrl+PageDown', desc: '移动到工作簿中的下一张工作表', subcategory: '工作表操作' },
+      { id: 'wb-11', keys: 'Ctrl+PageUp', desc: '移动到工作簿中的上一张工作表', subcategory: '工作表操作' },
+      { id: 'wb-12', keys: 'Shift+Ctrl+PageDown', desc: '选定当前工作表和下一张工作表', subcategory: '工作表操作' },
+      { id: 'wb-13', keys: 'Shift+Ctrl+PageUp', desc: '选定当前工作表和上一张工作表', subcategory: '工作表操作' },
+      { id: 'wb-14', keys: 'Alt+OHR', desc: '对当前工作表重命名', subcategory: '工作表操作' },
+      { id: 'wb-15', keys: 'Alt+EM', desc: '移动或复制当前工作表', subcategory: '工作表操作' },
+      { id: 'wb-16', keys: 'Alt+EL', desc: '删除当前工作表', subcategory: '工作表操作' },
+
+      // === 窗口操作 ===
+      { id: 'wb-17', keys: 'Ctrl+F6', desc: '切换到下一个工作簿窗口', subcategory: '窗口操作' },
+
+      // === 打印预览 ===
+      { id: 'wb-18', keys: 'Ctrl+P', desc: '打开"打印"对话框', subcategory: '打印预览' },
+
+      // === 宏与VBA ===
+      { id: 'wb-19', keys: 'Alt+F8', desc: '打开"宏"对话框', subcategory: '宏与VBA' },
+      { id: 'wb-20', keys: 'Alt+F11', desc: '打开 Visual Basic 编辑器', subcategory: '宏与VBA' }
+    ];
+  </script>
+  <script src="common.js"></script>
+
+</body>
+</html>
