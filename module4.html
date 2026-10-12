@@ -1,0 +1,1506 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块4：图表与可视化 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏠 首页</a></li>
+            <li><a href="module1.html">📗 模块1</a></li>
+            <li><a href="module2.html">📘 模块2</a></li>
+            <li><a href="module3.html">📙 模块3</a></li>
+            <li><a href="module4.html" class="active">📕 模块4</a></li>
+            <li><a href="module5.html">📓 模块5</a></li>
+            <li><a href="module6.html">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-coral">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-badge">模块4 · 进阶 · 电商工作</div>
+        <h1>📕 图表与可视化</h1>
+        <p>一图胜千言<br>把枯燥的数字变成老板一眼就看懂的图</p>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container">
+    <div class="module-progress">
+        <div class="progress-text" id="progressText">加载中...</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="4" data-total="5"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container">
+    <div class="lesson-list">
+
+        <!-- ============================================
+             课次 4-1：图表入门与柱形图
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1">
+            <div class="lesson-header" onclick="toggleLesson(1)">
+                <div class="lesson-num">1</div>
+                <h3>图表入门与柱形图 —— 把数字变成"看得见"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>Excel里的<strong>图表（Chart）</strong>，本质就是把一行行数字"翻译"成图形。老板看报表通常只看三秒，柱子高不高、饼块大不大，比盯着表格里的数字快十倍。本课先认识图表由哪些零件组成，再用<strong>簇状柱形图</strong>做第一个对比图。</p>
+
+                        <h5>🔹 一张图由哪些零件组成？</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📊 数据系列（Series）</h6>
+                                <p>一组要画的数据，比如"女装"每个月的销售额就是一条系列</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>➡️ 类别轴（X轴）</h6>
+                                <p>横轴，放"比什么"：月份、品类、地区等分类标签</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>⬆️ 数值轴（Y轴）</h6>
+                                <p>竖轴，放"多少"：销售额、人数等具体数值，有刻度</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🏷️ 图表区 / 绘图区 / 图例</h6>
+                                <p>图表区=整张图外框；绘图区=画柱子的内部区域；图例=解释颜色代表谁</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 什么样的表格适合做图？</h5>
+                        <p>一句话：<strong>要"对比"才画图</strong>。表格里已经是"分类 + 数值"两列，或者"分类 × 分类"的矩阵，最适合做图。下面这张模拟图，就是某店铺 1–6 月各品类销售额（单位：万元）画出来的样子：</p>
+
+                        <div class="demo-box">
+                            <div class="demo-title">📊 簇状柱形图长什么样？（模拟示意 · 单位：万元）</div>
+                            <div class="bar-chart">
+                                <div class="bar-row"><span class="bar-label">女装</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">120</span></div>
+                                <div class="bar-row"><span class="bar-label">美妆</span><div class="bar-track"><div class="bar-fill g" style="width:67%"></div></div><span class="bar-value">80</span></div>
+                                <div class="bar-row"><span class="bar-label">数码</span><div class="bar-track"><div class="bar-fill o" style="width:50%"></div></div><span class="bar-value">60</span></div>
+                                <div class="bar-row"><span class="bar-label">食品</span><div class="bar-track"><div class="bar-fill p" style="width:33%"></div></div><span class="bar-value">40</span></div>
+                                <div class="bar-row"><span class="bar-label">家居</span><div class="bar-track"><div class="bar-fill c" style="width:25%"></div></div><span class="bar-value">30</span></div>
+                            </div>
+                            <div class="demo-caption">横轴（X轴）= 品类，柱子越高代表销售额越大，一眼看出"女装卖得最好"</div>
+                        </div>
+
+                        <h5>🔹 柱形图 / 条形图 / 圆柱图 怎么选？</h5>
+                        <table class="compare-table">
+                            <thead>
+                                <tr><th>图形</th><th>样子</th><th>什么时候用</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>柱形图</strong></td><td>竖着的柱子</td><td>类别不多（≤12）、要对比高低，最常用</td></tr>
+                                <tr><td><strong>条形图</strong></td><td>横着的条</td><td>类别名称很长、或类别很多（&gt;12）时更好读</td></tr>
+                                <tr><td><strong>圆柱图</strong></td><td>立体圆柱</td><td>纯粹为了好看，<span class="tag tag-coral">不建议</span>正式报表用，立体效果会误导眼睛</td></tr>
+                            </tbody>
+                        </table>
+
+                        <h5>🔹 一个最容易踩的坑：坐标轴不从 0 开始</h5>
+                        <div class="callout callout-danger">
+                            ⚠️ 柱形图的<strong>高度代表数值大小</strong>。如果把 Y 轴最小值从 0 改成 80，原本 120 和 80 的差距会被"放大"成看起来差好几倍，这是典型的<strong>误导老板</strong>。做对比类柱形图，<strong>Y 轴务必从 0 开始</strong>；要突出差异请用折线图或加数据标签，别动坐标轴起点。
+                        </div>
+
+                        <h5>🔹 两个超好用快捷键</h5>
+                        <ul>
+                            <li>选中数据区域后按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">F1</kbd>：在当前工作表<strong>立刻插入默认图表</strong></li>
+                            <li>按 <kbd class="kbd">F11</kbd>：生成一个<strong>独立的图表工作表</strong>（Chart Sheet），不占数据表位置</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：用柱形图对比各品类销售额</h4>
+                        <p>我们用"某店铺1–6月各品类销售额"数据，画一张簇状柱形图。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">把数据整理成<strong>清单式</strong>三列：A列=月份，B列=品类，C列=销售额(元)，表头占第1行</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">用鼠标<strong>拖选整个数据区域</strong>（含表头），注意别漏掉表头行</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点击顶部 <strong>插入</strong> 选项卡 → 在"图表"组里点 <strong>柱形图</strong> → 选 <strong>簇状柱形图</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">图表出现在工作表里。点图表右上角的 <strong>＋</strong> 号，勾选<strong>数据标签</strong>，取消勾选<strong>网格线</strong>（更干净）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点图表标题文字，改成"各品类1–6月销售额对比"，回车确认</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">如果 X 轴变成"月份"、柱子按月份分组不对 → 右键图表 → <strong>选择数据</strong> → 点 <strong>切换行/列</strong>，让 X 轴变成"品类"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在 <strong>图表设计</strong> 选项卡里点 <strong>快速布局</strong>，选一个带标题+图例的样式；再点 <strong>图表样式</strong> 换个配色</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键 Y 轴 → <strong>设置坐标轴格式</strong>，确认"<strong>最小值=0</strong>"，避免误导；最后拖动调整图表大小</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：某店铺1–6月各品类销售额</h4>
+                        <p>下表是 6 个月 × 5 个品类的清单式数据（共 30 行），下载后照着上面的步骤画图，对比哪个品类卖得最好：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-4-1">
+                                <thead>
+                                    <tr><th>月份</th><th>品类</th><th>销售额(元)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1月</td><td>女装</td><td>1200000</td></tr>
+                                    <tr><td>1月</td><td>美妆</td><td>800000</td></tr>
+                                    <tr><td>1月</td><td>数码</td><td>600000</td></tr>
+                                    <tr><td>1月</td><td>食品</td><td>400000</td></tr>
+                                    <tr><td>1月</td><td>家居</td><td>300000</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson4_1Data()">📥 下载各品类销售额数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>选中数据后按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">F1</kbd>，一秒出图，再慢慢美化</li>
+                            <li>"切换行/列"在 <strong>选择数据</strong> 对话框里，柱子分组不对时第一时间想到它</li>
+                            <li>点图表里某一根柱子再按 <kbd class="kbd">Delete</kbd>，可单独删掉一根，不影响数据</li>
+                            <li>想改某系列颜色？<strong>双击</strong>那根柱子，在"设置数据点格式"里换填充色</li>
+                            <li>图表会<strong>跟着源数据自动更新</strong>：改表格里的数字，图立刻变</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>源数据要干净</strong>：一列一类、表头在第1行、行列连续无空行，图表才不抽风</li>
+                            <li><strong>图表标题要说人话</strong>：写清"什么 + 时间 + 单位"，如"各品类2025上半年销售额(万元)"</li>
+                            <li><strong>Y 轴从 0 开始</strong>：对比类柱形图绝不动坐标轴起点，诚信第一</li>
+                            <li><strong>颜色不超过 4 种</strong>：多系列时用同色系深浅区分，别搞成调色盘</li>
+                            <li><strong>不堆 3D 效果</strong>：立体柱形图好看但易误导，正式汇报用平面即可</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 建图时<strong>没选中表头</strong>，导致 Excel 把"销售额"当成一个数据系列画进去</li>
+                            <li>❌ 柱子按月份分组而不是按品类 → 忘记用<strong>切换行/列</strong>修正</li>
+                            <li>❌ 把 Y 轴最小值改成很大的数，<strong>夸大差异骗自己</strong>（诚信红线！）</li>
+                            <li>❌ 数据标签和坐标轴数值<strong>单位不一致</strong>（图写"万"、标签写具体元），对不上</li>
+                            <li>❌ 选了<strong>圆柱/圆锥</strong> 3D 图显高级，结果老板看不出真实高低</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载数据，在 Sheet1 录入 30 行"月份/品类/销售额"</li>
+                            <li>用 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">F1</kbd> 插入<strong>簇状柱形图</strong></li>
+                            <li>打开<strong>选择数据</strong>对话框，练习<strong>切换行/列</strong>，观察 X 轴变化</li>
+                            <li>加上<strong>数据标签</strong>、删除<strong>网格线</strong>、修改图表标题</li>
+                            <li>双击"女装"系列，把它的填充色改成品牌主色</li>
+                            <li>确认 Y 轴最小值为 0，截图保存你的第一张对比图</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>把上图改成<strong>条形图</strong>，对比哪种更适合"品类名称较长"的场景</li>
+                            <li>用 <kbd class="kbd">F11</kbd> 生成一张<strong>独立图表工作表</strong>，并改名</li>
+                            <li>尝试在图表上<strong>添加数据表</strong>（图表设计→添加图表元素→数据表），看是否更清晰</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对柱形图的掌握：</p>
+                        <div id="quiz-4-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 4-2：折线图
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2">
+            <div class="lesson-header" onclick="toggleLesson(2)">
+                <div class="lesson-num">2</div>
+                <h3>折线图 —— 看清趋势与波动</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>柱形图擅长"比高低"，<strong>折线图</strong>擅长"看走势"。当 X 轴是<strong>时间</strong>（月份、季度、年份），你想知道"是涨是跌、有没有季节性波动"，就用折线图。多个系列画在一起，还能比谁涨得快。</p>
+
+                        <h5>🔹 折线图适合什么？</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📈 时间序列</h6>
+                                <p>12个月销售额、每天访客数，看长期趋势</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🌊 波动</h6>
+                                <p>大促前后的陡升陡降，折线最直观</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🆚 多系列对比走势</h6>
+                                <p>今年 vs 去年、A店 vs B店，一起画看谁爬坡快</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 折线图长什么样？（模拟近12个月销售额/万）</h5>
+                        <div class="demo-box">
+                            <div class="demo-title">📈 折线示意图（单位：万元 · 仅示意）</div>
+                            <svg viewBox="0 0 320 150" width="100%" height="150" style="display:block;">
+                                <line x1="30" y1="10" x2="30" y2="130" stroke="var(--border)" stroke-width="1"/>
+                                <line x1="30" y1="130" x2="310" y2="130" stroke="var(--border)" stroke-width="1"/>
+                                <polyline points="30,120 55,110 80,95 105,80 130,90 155,98 180,70 205,55 230,62 255,40 280,28 305,18"
+                                    fill="none" stroke="var(--coral)" stroke-width="2.5"/>
+                                <circle cx="30" cy="120" r="3" fill="var(--coral)"/>
+                                <circle cx="105" cy="80" r="3" fill="var(--coral)"/>
+                                <circle cx="205" cy="55" r="3" fill="var(--coral)"/>
+                                <circle cx="305" cy="18" r="3" fill="var(--coral)"/>
+                                <text x="14" y="124" font-size="9" fill="var(--text-lighter)">0</text>
+                                <text x="300" y="144" font-size="9" fill="var(--text-lighter)">12月</text>
+                                <text x="20" y="14" font-size="9" fill="var(--text-lighter)">高</text>
+                            </svg>
+                            <div class="demo-caption">点连成线，线往右上走=整体上涨；中间的下凹=某月回落，一眼可见</div>
+                        </div>
+
+                        <h5>🔹 空值 / 零值 / #N/A 的区别</h5>
+                        <div class="callout callout-info">
+                            💡 表格里遇到<strong>缺数据</strong>：留空（真正的空单元格）折线会<strong>断开跳过去</strong>；填 <code>0</code> 折线会<strong>掉到地面</strong>当成"零"；填 <code>#N/A</code>（用公式 =NA()）折线会<strong>在该点断开不连</strong>。想让线"断得干净"，用 <code>=NA()</code> 最专业。
+                        </div>
+
+                        <h5>🔹 趋势线：帮老板"看未来"</h5>
+                        <ul>
+                            <li>右键数据系列 → <strong>添加趋势线</strong>，可选<strong>线性 / 指数 / 移动平均</strong></li>
+                            <li>勾选"<strong>显示公式</strong>"和"<strong>显示 R² 值</strong>"：R² 越接近 1，趋势越可信</li>
+                            <li>"<strong>向前预测</strong>"填 3 期，可画出未来 3 个月的走势预测</li>
+                        </ul>
+
+                        <h5>🔹 迷你图：塞进一格子的趋势</h5>
+                        <p>选中一行数据旁空白格 → <strong>插入</strong> → <strong>迷你图</strong> → <strong>折线</strong> → 框选数据范围。一行一个迷你趋势条，适合做"每行商品都带小走势"的汇总表。</p>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：画近12个月经营趋势</h4>
+                        <p>用 24 行"年份/月份/销售额/访客数/订单数/客单价/环比增长率"数据，画多系列折线看走势。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">整理数据：第1行表头，A年份 B月份 C销售额(万) D访客数 E订单数 F客单价 G环比增长率</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中 <strong>C列（销售额）</strong> 数据（含表头），<strong>插入</strong> → <strong>折线图</strong> → <strong>带数据标记的折线图</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键图表 → <strong>选择数据</strong> → <strong>添加</strong>，把"访客数""订单数"也加为系列（记得切换行/列让 X 轴是月份）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点销售额那条线 → 右侧 <strong>添加图表元素</strong> → <strong>数据标签</strong>，只给这条线标数字</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">双击"订单数"线的标记点，在<strong>标记选项</strong>里把最大/最小值的点设为不同颜色，突出高低点</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键销售额线 → <strong>添加趋势线</strong> → 选"线性"，勾<strong>显示公式与 R²</strong>，向前预测 2 期</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在 H 列用<strong>迷你图</strong>给每行店铺画一条趋势线，做"一表多走势"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">把 X 轴标签设为<strong>真实月份</strong>（如"2024-01"），避免只显示 1、2、3 看不出年份</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：近12个月经营趋势（含两年同比）</h4>
+                        <p>24 行数据，含销售额、访客数、订单数、客单价与环比增长率，下载后画折线看走势：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-4-2">
+                                <thead>
+                                    <tr><th>年份</th><th>月份</th><th>销售额(万)</th><th>访客数</th><th>订单数</th><th>客单价(元)</th><th>环比增长率</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2024</td><td>1月</td><td>80.0</td><td>190486</td><td>6667</td><td>120</td><td>0.0</td></tr>
+                                    <tr><td>2024</td><td>2月</td><td>86.0</td><td>201400</td><td>7049</td><td>122</td><td>7.5</td></tr>
+                                    <tr><td>2024</td><td>3月</td><td>95.0</td><td>218886</td><td>7661</td><td>124</td><td>10.5</td></tr>
+                                    <tr><td>2024</td><td>4月</td><td>110.0</td><td>249429</td><td>8730</td><td>126</td><td>15.8</td></tr>
+                                    <tr><td>2024</td><td>5月</td><td>102.0</td><td>227686</td><td>7969</td><td>128</td><td>-7.3</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共24条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson4_2Data()">📥 下载经营趋势数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>多个量级差太多的系列（如销售额 vs 访客数）别硬放一张图，后续课用<strong>次坐标轴</strong></li>
+                            <li>折线太密看不清？在<strong>设置数据系列格式</strong>里勾"平滑线"会更顺眼（但别用来误导趋势）</li>
+                            <li>缺数据的月份填 <code>=NA()</code>，折线<strong>干净断开</strong>而不是掉到 0</li>
+                            <li>想比"今年 vs 去年"？把两年数据都画上，或直接算<strong>同比列</strong>再画</li>
+                            <li>双击坐标轴 → 把"主要单位"调大，刻度线更少，图更清爽</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>X 轴必须是真时间</strong>：月份写成"2024-01"，别只写"1"让人分不清年份</li>
+                            <li><strong>多系列要分色+图例</strong>：谁是谁看颜色，别让老板猜</li>
+                            <li><strong>趋势线要诚实</strong>：标出 R²，R² 太低就别拿去预测未来</li>
+                            <li><strong>环比/同比说清楚</strong>：标题或标签注明"环比"还是"同比"，二者含义不同</li>
+                            <li><strong>标记点别太多</strong>：系列多时只给关键系列加数据标签，避免糊成一片</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 缺数据的月份填 <code>0</code>，折线<strong>掉到地面</strong>像"业绩崩盘"，实际只是没数据</li>
+                            <li>❌ 把"销售额"和"访客数"放同一张折线图，量级差万倍，访客数线<strong>压成一条平地</strong></li>
+                            <li>❌ X 轴被 Excel 当成<strong>文本</strong>排序乱掉（1月、10月、11月…错乱），应先设为日期格式</li>
+                            <li>❌ 趋势线强行套"指数"，R² 只有 0.3 还拿去汇报，误判未来</li>
+                            <li>❌ 同比和环比<strong>混为一谈</strong>，老板问"涨了多少"答非所问</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载数据，录入 24 行，X 轴设为真实"年份-月份"</li>
+                            <li>画<strong>带数据标记的折线图</strong>，销售额系列加数据标签</li>
+                            <li>把"访客数""订单数"也加为系列，观察是否因量级不同而看不清</li>
+                            <li>给销售额添加<strong>线性趋势线</strong>，显示公式与 R²</li>
+                            <li>用<strong>迷你图</strong>在右侧为某店铺画一行趋势条</li>
+                            <li>对比 2024 与 2025 同期，写一句"哪个月涨得最猛"</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>计算<strong>同比</strong>列（今年本月 ÷ 去年本月 −1），再画一条同比折线</li>
+                            <li>尝试"<strong>移动平均</strong>"趋势线（周期=3），看波动是否被平滑</li>
+                            <li>把环比为负的月份标记点改成<strong>红色</strong>，突出回落</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对折线图的掌握：</p>
+                        <div id="quiz-4-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 4-3：饼图与圆环图
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3">
+            <div class="lesson-header" onclick="toggleLesson(3)">
+                <div class="lesson-num">3</div>
+                <h3>饼图与圆环图 —— 讲清"占比"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>柱形图比"高低"、折线图看"走势"，<strong>饼图</strong>只干一件事：讲<strong>部分占整体的百分之多少</strong>。它最适合回答"钱都花在哪了""流量从哪来"。但用错地方，饼图会变成最坑人的图。</p>
+
+                        <h5>🔹 饼图的"使用原则"（务必背下来）</h5>
+                        <div class="callout callout-ok">
+                            ✅ 类别 <strong>≤ 6 类</strong>（多了看不清）；各类别 <strong>合计必须 = 100%</strong>；只用于<strong>部分与整体</strong>的关系。<br>
+                            🚫 <strong>不要</strong>用饼图比绝对值大小；<strong>不要</strong>为了好看做 3D；<strong>不要</strong>类别超过 6 个还硬塞。
+                        </div>
+
+                        <h5>🔹 饼图长什么样？（模拟：流量来源占比）</h5>
+                        <div class="demo-box">
+                            <div class="demo-title">🥧 饼图示意：流量来源占比（合计100%）</div>
+                            <div class="pie-wrap">
+                                <div class="pie" style="background:conic-gradient(#1890ff 0 35%,#52c41a 35% 60%,#fa8c16 60% 78%,#722ed1 78% 90%,#f5222d 90% 97%,#eb2f96 97% 100%);"></div>
+                                <div class="pie-legend">
+                                    <div><span class="pie-dot" style="background:#1890ff;"></span>搜索 35%</div>
+                                    <div><span class="pie-dot" style="background:#52c41a;"></span>直通车 25%</div>
+                                    <div><span class="pie-dot" style="background:#fa8c16;"></span>直播 18%</div>
+                                    <div><span class="pie-dot" style="background:#722ed1;"></span>私域 12%</div>
+                                    <div><span class="pie-dot" style="background:#f5222d;"></span>短视频 7%</div>
+                                    <div><span class="pie-dot" style="background:#eb2f96;"></span>其他 3%</div>
+                                </div>
+                            </div>
+                            <div class="demo-caption">每块扇形的角度 = 该类别占比，一眼看出"搜索+直通车占六成"</div>
+                        </div>
+
+                        <h5>🔹 圆环图 / 复合饼图</h5>
+                        <ul>
+                            <li><strong>圆环图</strong>：中间挖空，可在圆心放<strong>汇总数字</strong>（如总访客数），更高级</li>
+                            <li><strong>复合饼图（子母图）</strong>：把占比小的几类（如"其他"）单独拎出来放大成小饼，解决"小扇区挤成一团"</li>
+                        </ul>
+
+                        <h5>🔹 画饼图的 4 个好习惯</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>先排序</h6><p>画之前把数据<strong>从大到小排</strong>，饼图从 12 点方向顺时针由大到小，最易读</p></div>
+                            <div class="fn-card"><h6>合并"其他"</h6><p>零散小类（都&lt;5%）合并成一个<strong>"其他"</strong>，别让饼图碎成渣</p></div>
+                            <div class="fn-card"><h6>标签加百分比</h6><p>数据标签显示"<strong>值 + 百分比</strong>"，老板不用拿尺子量角度</p></div>
+                            <div class="fn-card"><h6>分离/旋转</h6><p>想强调某块可<strong>扇区分离</strong>；第一块默认从顶部开始，可旋转角度调整起点</p></div>
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：画流量来源占比饼图</h4>
+                        <p>用"流量来源 / 各品类销售"等多组占比数据（共 30 行），画一张清晰的饼图。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">数据排成两列：A=项目（搜索/直通车…），B=数值（访客数），并<strong>先按数值从大到小排序</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中这两列 → <strong>插入</strong> → <strong>饼图</strong> → <strong>饼图</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点图表右侧 <strong>＋</strong> → 勾 <strong>数据标签</strong> → 再点标签右侧小箭头选"<strong>更多选项</strong>"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在标签选项里勾选<strong>类别名称 + 百分比</strong>，取消"值"（或保留值也行），让每块显示"搜索 35%"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">想换成<strong>圆环图</strong>？右键图表 → 更改图表类型 → 选<strong>圆环图</strong>，圆心可加文本框写总数</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">小扇区太多看不清 → 右键 → <strong>更改图表类型</strong> → <strong>复合饼图</strong>，把"其他"类甩进小饼</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">双击某扇区可<strong>扇区分离</strong>（拖开一点）；在"系列选项"里调<strong>第一扇区起始角度</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">删掉冗余<strong>图例</strong>（标签已写明类别），或保留图例删网格——饼图没网格线</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：流量来源占比 + 各品类销售占比</h4>
+                        <p>30 行多维占比数据（流量来源 / 各品类 / 各区域 / 各时段），下载后挑一组画饼图：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-4-3">
+                                <thead>
+                                    <tr><th>维度</th><th>项目</th><th>数值</th><th>占比</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>流量来源</td><td>搜索</td><td>350</td><td>35.0</td></tr>
+                                    <tr><td>流量来源</td><td>直通车</td><td>250</td><td>25.0</td></tr>
+                                    <tr><td>流量来源</td><td>直播</td><td>180</td><td>18.0</td></tr>
+                                    <tr><td>流量来源</td><td>私域</td><td>120</td><td>12.0</td></tr>
+                                    <tr><td>流量来源</td><td>短视频</td><td>70</td><td>7.0</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson4_3Data()">📥 下载占比分析数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>饼图数据标签默认只显示"值"，记得改成<strong>"百分比"或"类别+百分比"</strong></li>
+                            <li>类别超过 6 个？先做一张<strong>透视表</strong>按数值排序，把尾部合并成"其他"再画</li>
+                            <li>圆环图圆心放<strong>汇总数字</strong>，比纯饼图更显"高级感"</li>
+                            <li>复合饼图能拯救"一堆小扇区挤一起"的尴尬，强烈推荐</li>
+                            <li>想临时突出一块，<strong>单击两次</strong>选中该扇区再拖开，只分离它一个</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>类别 ≤ 6 个</strong>：多了就合并"其他"，否则谁也看不清</li>
+                            <li><strong>合计必须等于 100%</strong>：画之前核对数据有没有漏项、重复</li>
+                            <li><strong>只讲占比</strong>：要对比绝对值请用柱形图，饼图不擅长比大小</li>
+                            <li><strong>不做 3D 饼图</strong>：立体角度会扭曲占比，正式汇报禁用</li>
+                            <li><strong>先排序再画</strong>：从大到小顺时针排列，符合阅读习惯</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 把<strong>8 个以上类别</strong>塞进一张饼图，小扇区糊成一团看不出谁大谁小</li>
+                            <li>❌ 用饼图<strong>比两家店铺的销售额绝对值</strong>，饼图根本不擅长比绝对值</li>
+                            <li>❌ 数据标签只显示"值"没显示百分比，老板还得自己算占比</li>
+                            <li>❌ 做了<strong>3D 立体饼图</strong>，前面扇区被放大、后面被压扁，占比失真</li>
+                            <li>❌ 忘记核对<strong>各类别之和=100%</strong>，结果饼图缺一角或多一块</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载数据，先按"数值"从大到小<strong>排序</strong></li>
+                            <li>用<strong>流量来源</strong>组数据画一张饼图，标签显示"类别+百分比"</li>
+                            <li>把饼图改成<strong>圆环图</strong>，圆心用文本框写总访客数</li>
+                            <li>用<strong>各品类销售占比</strong>组画<strong>复合饼图</strong>，把尾部合并进小饼</li>
+                            <li>删除多余图例，检查每块占比之和是否为 100%</li>
+                            <li>对比饼图和柱形图，写一句"什么时候该用饼图"</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用<strong>各区域销售占比</strong>画饼图，并旋转第一扇区起始角度到"华东"在正上方</li>
+                            <li>把"各时段占比"做成<strong>圆环图</strong>，圆心写总订单数</li>
+                            <li>尝试给饼图套用<strong>图表样式</strong>中的"单色系"，看是否更高级</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对饼图与圆环图的掌握：</p>
+                        <div id="quiz-4-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 4-4：组合图表与次坐标轴
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4">
+            <div class="lesson-header" onclick="toggleLesson(4)">
+                <div class="lesson-num">4</div>
+                <h3>组合图表与次坐标轴 —— 一张图讲两个故事</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>前面学的图都是"一个坐标轴讲一件事"。可是电商老板常要同时看<strong>销售额（万）</strong>和<strong>增长率（%）</strong>——一个量级是百万、一个只有百分之几，放同一根 Y 轴，增长率线会趴在地上。这时就要用<strong>组合图表 + 次坐标轴</strong>。</p>
+
+                        <h5>🔹 为什么要次坐标轴？</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📏 单位差太大</h6>
+                                <p>销售额单位是"万"，增长率单位是"%"，差上万倍，必须各用各的轴</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📊 量级差太大</h6>
+                                <p>访客数十万、转化率 3%，同图会淹没小数据</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🧩 两类关系</h6>
+                                <p>柱形比"量"、折线看"率/趋势"，组合最直观</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 组合图长什么样？（柱形=销售额 / 折线=增长率）</h5>
+                        <div class="demo-box">
+                            <div class="demo-title">📊 组合图示意：柱形(主坐标轴) + 折线(次坐标轴)</div>
+                            <div class="bar-chart">
+                                <div class="bar-row"><span class="bar-label">1月</span><div class="bar-track"><div class="bar-fill" style="width:45%"></div></div><span class="bar-value">85</span></div>
+                                <div class="bar-row"><span class="bar-label">4月</span><div class="bar-track"><div class="bar-fill" style="width:55%"></div></div><span class="bar-value">105</span></div>
+                                <div class="bar-row"><span class="bar-label">8月</span><div class="bar-track"><div class="bar-fill" style="width:76%"></div></div><span class="bar-value">145</span></div>
+                                <div class="bar-row"><span class="bar-label">12月</span><div class="bar-track"><div class="bar-fill" style="width:100%"></div></div><span class="bar-value">190</span></div>
+                            </div>
+                            <div class="demo-caption" style="color:var(--coral);">↑ 折线（次坐标轴，右侧%）：0 → 8.2 → 19.3 → 8.6，柱子的"高度"看量、折线的"起伏"看率，两张图合一张</div>
+                        </div>
+
+                        <h5>🔹 怎么做成组合图？</h5>
+                        <ul>
+                            <li>先选中数据 → <strong>插入</strong> → 任意图表（如柱形图）</li>
+                            <li><strong>图表设计</strong> → <strong>更改图表类型</strong> → <strong>组合图</strong></li>
+                            <li>在弹窗里给"增长率"那一行勾选<strong>"次坐标轴"</strong>，并把它的图表类型改成<strong>折线图</strong></li>
+                            <li>另一侧留给"销售额"用<strong>簇状柱形图</strong>（主坐标轴）</li>
+                        </ul>
+
+                        <h5>🔹 主/次坐标轴的"打架"问题</h5>
+                        <div class="callout callout-warn">
+                            ⚠️ 两张轴刻度不一样，左边 0–200(万)、右边 0–20(%)，<strong>别让两套网格线叠一起</strong>。只保留主坐标轴的网格线，次坐标轴关掉网格线；并给右边轴标清楚单位"<strong>增长率 %</strong>"，否则老板会把 % 当成万。
+                        </div>
+
+                        <h5>🔹 数据可视化的"诚实原则"（红线！）</h5>
+                        <div class="callout callout-danger">
+                            🚫 以下做法会<strong>误导</strong>，正式报表绝对禁止：<br>
+                            • <strong>截断坐标轴</strong>：Y 轴不从 0 开始夸大差异<br>
+                            • <strong>双轴滥用</strong>：硬把不相关的两件事放一起制造虚假相关<br>
+                            • <strong>3D 效果</strong>：扭曲真实比例<br>
+                            • <strong>面积夸张</strong>：用面积/体积表示数值却未按比例缩放
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：做"销售额+增长率"组合图</h4>
+                        <p>用 12 行"月份/销售额(万)/增长率(%)"数据，画柱形(主轴)+折线(次轴)。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">整理三列：A月份 B销售额(万) C增长率(%)，表头在第1行</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中区域 → <strong>插入</strong> → <strong>簇状柱形图</strong>（先画销售额）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点图表 → <strong>图表设计</strong> → <strong>更改图表类型</strong> → 选 <strong>组合图</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在组合图对话框里，把"增长率"行的<strong>图表类型</strong>改为"折线图"，并<strong>勾选次坐标轴</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键右侧(次)坐标轴 → 设<strong>最小值0、最大值20</strong>，标题写"增长率 %"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键主坐标轴网格线 → 保留；右键次坐标轴 → 取消<strong>网格线</strong>，避免两套线打架</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">给"增长率"折线加<strong>数据标签</strong>，给柱形也加标签，图例改为"销售额 / 增长率"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">检查左边轴是否从 0 开始，确认没有误导，完成后调整图表大小</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：月度销售额与环比增长率</h4>
+                        <p>12 行数据，金额用柱形（主坐标轴），增长率用折线（次坐标轴）：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-4-4">
+                                <thead>
+                                    <tr><th>月份</th><th>销售额(万)</th><th>增长率</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1月</td><td>85.0</td><td>0.0</td></tr>
+                                    <tr><td>2月</td><td>92.0</td><td>8.2</td></tr>
+                                    <tr><td>3月</td><td>88.0</td><td>-4.3</td></tr>
+                                    <tr><td>4月</td><td>105.0</td><td>19.3</td></tr>
+                                    <tr><td>5月</td><td>118.0</td><td>12.4</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共12条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson4_4Data()">📥 下载销售额与增长率数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>次坐标轴系列建议放<strong>折线</strong>，柱形放主坐标轴，视觉最稳</li>
+                            <li>折线放次轴后，记得<strong>标右轴单位</strong>，否则易被误读</li>
+                            <li>想快速做组合图，可选 <strong>插入 → 推荐的图表 → 所有图表 → 组合</strong></li>
+                            <li>两轴刻度可手动设<strong>最大值</strong>让柱子和折线"对齐视觉高低"，但别截断误导</li>
+                            <li>系列多时，把<strong>次要网格线</strong>全关，图才干净</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>右轴必标单位</strong>：次坐标轴一定要写清"%"或其他单位</li>
+                            <li><strong>只留一套网格线</strong>：主坐标轴保留，次坐标轴关掉</li>
+                            <li><strong>诚实第一</strong>：主坐标轴从 0 开始，不截断、不 3D、不滥用双轴</li>
+                            <li><strong>图例写人话</strong>：用"销售额(万)"和"环比增长率(%)"，别留"系列1/系列2"</li>
+                            <li><strong>数据标签对应轴</strong>：柱形标签看左轴、折线标签看右轴，别标反</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 销售额和增长率<strong>放同一根 Y 轴</strong>，增长率线贴地看不见</li>
+                            <li>❌ 建了次坐标轴却<strong>没标单位</strong>，老板把 % 当万元读</li>
+                            <li>❌ 主次坐标轴<strong>两套网格线叠一起</strong>，图乱成一团</li>
+                            <li>❌ 把次轴最小值设成很大，<strong>夸大增长率波动</strong>骗人</li>
+                            <li>❌ 硬把"销售额"和"天气"这类<strong>不相关数据</strong>放一起，制造假相关</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载数据，录入 12 行"月份/销售额/增长率"</li>
+                            <li>先做柱形图，再<strong>更改图表类型为组合图</strong></li>
+                            <li>把"增长率"设为<strong>折线 + 次坐标轴</strong></li>
+                            <li>设右轴最小值 0、最大值 20，标题写"增长率 %"</li>
+                            <li>关闭次坐标轴网格线，保留主坐标轴网格线</li>
+                            <li>检查主坐标轴从 0 开始，写一句"为什么要用次坐标轴"</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>再加一列"访客数(万)"做<strong>第三个系列</strong>，思考它该放主轴还是次轴</li>
+                            <li>尝试把折线改成<strong>带数据标记的折线</strong>并突出最高增长率点</li>
+                            <li>用<strong>柱形+面积</strong>组合（而非折线）表达，对比哪种更清楚</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对组合图与次坐标轴的掌握：</p>
+                        <div id="quiz-4-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 4-5：图表美化与动态图表
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5">
+            <div class="lesson-header" onclick="toggleLesson(5)">
+                <div class="lesson-num">5</div>
+                <h3>图表美化与动态图表 —— 让图表"高级"起来</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>图会画了，还得"好看又高级"。本课讲三件事：<strong>配色与字体</strong>（减法美学）、<strong>图表模板复用</strong>、以及最实用的<strong>动态图表</strong>——一个下拉框切换不同店铺/月份，图自动变。最后把它们拼成老板爱看的<strong>经营看板</strong>。</p>
+
+                        <h5>🔹 配色原则（一图不超 4 色）</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>🎨 同色系深浅</h6>
+                                <p>多系列用同一颜色的深浅区分，最稳最专业</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔴 重点用对比色</h6>
+                                <p>只让<strong>一个</strong>关键数据用亮色，其余灰掉</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🏢 用企业VI色</h6>
+                                <p>参考店铺/公司主色，报表更统一有辨识度</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🚫 不超过4色</h6>
+                                <p>一张图超过 4 种颜色就显乱，老板眼晕</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 字体与"减法美学"</h5>
+                        <ul>
+                            <li><strong>字体</strong>：标题加粗；中文用"微软雅黑/思源黑体"，数字用<strong>等线体</strong>（更整齐）</li>
+                            <li><strong>减法</strong>：删网格线、删边框、删冗余图例、坐标轴只留<strong>必要刻度</strong>——"少即是多"</li>
+                            <li><strong>数据标签格式</strong>：千分位、加"元/万"单位、保留 1 位小数，例如 <code>1,200,000 元</code></li>
+                        </ul>
+
+                        <h5>🔹 图表模板（.crtx）复用</h5>
+                        <div class="formula-line"><span class="fn">右键图表</span> → <span class="arg">另存为模板</span> → 生成 <span class="fn">.crtx</span> 文件，下次<span class="arg">插入→图表→模板</span>一键套用同款风格</div>
+
+                        <h5>🔹 动态图表：下拉框切店铺</h5>
+                        <div class="flow-row">
+                            <div class="flow-node">建参数表<br>+ 下拉(数据验证)</div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-node">用 OFFSET/INDEX<br>定义名称</div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-node">图表数据源<br>引用名称</div>
+                            <span class="flow-arrow">→</span>
+                            <div class="flow-node">切换下拉<br>图自动变</div>
+                        </div>
+                        <p>核心思路：<strong>数据验证</strong>做下拉（店铺名）→ 用 <code>OFFSET</code> 或 <code>INDEX</code> 配 <code>MATCH</code> 定义<strong>名称</strong> → 图表"选择数据"里把系列值填成这个名称，切换下拉图就跟着变。</p>
+
+                        <h5>🔹 拼经营看板 / 仪表盘</h5>
+                        <div class="callout callout-info">
+                            💡 把多个图表 + 关键数字单元格<strong>摆在同一张工作表</strong>：留白均匀、对齐网格、用分组标题（如"销售概览""流量分析"）分区、配色统一，就是老板朋友圈会转发的<strong>经营看板</strong>。
+                        </div>
+
+                        <h5>🔹 复制到 PPT / Word 的三种方式</h5>
+                        <table class="compare-table">
+                            <thead>
+                                <tr><th>粘贴方式</th><th>操作</th><th>特点</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td><strong>图片</strong></td><td>复制→右键"粘贴为图片"</td><td>最稳、不会乱，但源数据改了图不变</td></tr>
+                                <tr><td><strong>链接数据</strong></td><td>粘贴→"链接的图表对象"</td><td>Excel 改了 PPT 里也跟着改，需带源文件</td></tr>
+                                <tr><td><strong>嵌入工作簿</strong></td><td>粘贴→"Microsoft Excel 图表对象"</td><td>双击可在 PPT 里直接改数据，文件变大</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：美化 + 做一张经营看板</h4>
+                        <p>用 60 行"店铺/月份/销售额/订单量/毛利率/客单价"数据，先美化再拼看板。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">点图表 → <strong>图表设计</strong> → <strong>图表样式</strong> 选一套简洁配色；右键<strong>删除网格线</strong>和多余边框</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">双击标题 → 设<strong>微软雅黑、加粗</strong>；选中数字标签 → 字体改<strong>等线</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键数据标签 → <strong>设置格式</strong> → 勾"千分位分隔符"、加后缀" 万"、保留 1 位小数</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键美化好的图表 → <strong>另存为模板</strong>，存成 <code>店铺看板.crtx</code> 备用</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">做动态图：在空白区用<strong>数据验证</strong>建"店铺"下拉；用 <code>=OFFSET(...)</code> 定义名称指向该店铺数据</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">插入图表 → <strong>选择数据</strong> → 把系列值改为刚定义的名称；切换下拉框，图随之变化</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">在另一张工作表预留白，把 3~4 张图表 + 关键 KPI 单元格<strong>对齐排布</strong>，分两组加标题</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">复制看板到 PPT：选<strong>"链接的图表对象"</strong>粘贴，确保后续可更新</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商月度经营看板数据</h4>
+                        <p>5 个店铺 × 12 个月共 60 行，含销售额、订单量、毛利率、客单价：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-4-5">
+                                <thead>
+                                    <tr><th>店铺</th><th>月份</th><th>销售额(万)</th><th>订单量</th><th>毛利率(%)</th><th>客单价(元)</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>天猫旗舰店</td><td>1月</td><td>96.0</td><td>5333</td><td>38.0</td><td>180</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>2月</td><td>102.0</td><td>5667</td><td>38.5</td><td>180</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>3月</td><td>114.0</td><td>6333</td><td>39.0</td><td>180</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>4月</td><td>120.0</td><td>6667</td><td>39.5</td><td>180</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>5月</td><td>108.0</td><td>6000</td><td>38.0</td><td>180</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson4_5Data()">📥 下载经营看板数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>配色拿不准？直接用<strong>图表样式</strong>里的单色系，最不容易翻车</li>
+                            <li><strong>.crtx 模板</strong>存一次，全班/全公司报表风格统一</li>
+                            <li>动态图嫌公式难，可用<strong>数据透视表 + 切片器</strong>做更简单的"动态图"</li>
+                            <li>看板<strong>留白</strong>比塞满更高级，图表之间留 1~2 列空当</li>
+                            <li>复制到 PPT 优先"<strong>链接</strong>"，月底更新 Excel 不用重做 PPT</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>一图 ≤ 4 色</strong>：颜色克制是专业的表现</li>
+                            <li><strong>标题/标签用对字体</strong>：中文黑体、数字等线，统一不混搭</li>
+                            <li><strong>数据标签带单位</strong>：写清"万/元/%"，不让人猜</li>
+                            <li><strong>看板对齐留白</strong>：像做海报一样排版，别东倒西歪</li>
+                            <li><strong>模板沉淀</strong>：好看的图表存 .crtx，团队复用不重复造轮子</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 一张图塞<strong>五六种荧光色</strong>，像幼儿园涂鸦</li>
+                            <li>❌ 数据标签没单位（只写"120"），老板不知是万还是元</li>
+                            <li>❌ 网格线、边框、图例<strong>全留着</strong>，图又脏又乱</li>
+                            <li>❌ 动态图公式写错，下拉一切换<strong>图表不更新</strong>或报错</li>
+                            <li>❌ 复制进 PPT 用"图片"却忘了源数据已改，<strong>图与数对不上</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载数据，按店铺各画一张销售额折线/柱形图</li>
+                            <li>统一<strong>配色 ≤ 4 色</strong>，删除网格线与冗余图例</li>
+                            <li>把数据标签设为<strong>千分位 + "万"单位 + 1 位小数</strong></li>
+                            <li>把美化好的图<strong>另存为 .crtx 模板</strong></li>
+                            <li>用<strong>数据验证下拉 + 名称</strong>（或透视表切片器）做一张动态图</li>
+                            <li>把 3 张图拼成一张<strong>经营看板</strong>，复制到 PPT 用"链接"方式</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用 <code>OFFSET+MATCH</code> 定义名称，做出"选月份区间"也跟着变的图</li>
+                            <li>在看板顶部加一排<strong>KPI 卡片</strong>（总销售额、总订单、平均毛利率），用单元格美化成卡片</li>
+                            <li>尝试把看板导出为<strong>PDF</strong>，检查黑白打印下配色是否仍可辨</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对图表美化与动态图表的掌握：</p>
+                        <div id="quiz-4-5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结 -->
+<section class="container" style="padding-bottom:60px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <div class="content-block block-knowledge" style="border-left-color:var(--coral);">
+            <h4>🎯 模块4 学习总结</h4>
+            <p>恭喜你完成了模块4的学习！这一模块你从"会画第一张图"进阶到"能做出老板一眼看懂的经营看板"：</p>
+            <ul>
+                <li>✅ <strong>柱形图</strong>：用簇状柱形图做对比，牢记 Y 轴从 0 开始、别动坐标轴起点骗人</li>
+                <li>✅ <strong>折线图</strong>：看时间序列的趋势与波动，会用趋势线、迷你图，懂 #N/A 让线断开</li>
+                <li>✅ <strong>饼图 / 圆环图</strong>：只讲占比，类别 ≤6、合计=100%、先做 3D 是红线</li>
+                <li>✅ <strong>组合图 + 次坐标轴</strong>：一张图同时讲"量"和"率"，并守住数据可视化诚实原则</li>
+                <li>✅ <strong>美化与动态图表</strong>：配色 ≤4 色、减法美学、.crtx 模板复用、下拉切换的动态图与看板</li>
+            </ul>
+            <p style="margin-top:12px;">📌 <strong>操作规范要点回顾</strong>：</p>
+            <ul>
+                <li>🔸 对比用柱形、趋势用折线、占比用饼图，<strong>选对图型</strong>是第一步</li>
+                <li>🔸 坐标轴从 0 开始、不截断、不做 3D、不滥用双轴——<strong>诚信红线</strong></li>
+                <li>🔸 一张图颜色不超过 4 种，标题/标签写清单位，减法美学更显高级</li>
+                <li>🔸 饼图类别 ≤6 且合计=100%，先排序再画、零散项合并"其他"</li>
+                <li>🔸 好图表存成 <code>.crtx</code> 模板，团队复用、风格统一</li>
+            </ul>
+            <p style="margin-top:12px;">接下来进入 <a href="module5.html" style="color:var(--blue);font-weight:bold;">📓 模块5：数据透视表</a>，用"拖一拖"就能把成千上万行数据秒变汇总报表，是电商数据分析最省力的大招！</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p>适用于中职电商专业数据分析课程 · 2026年春季学期· 寇亚彬老师授课</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块4 数据生成与测验题目
+// ================================================================
+
+// ============ 课次4-1 各品类销售额（30行） ============
+const l4_1_months = ['1月', '2月', '3月', '4月', '5月', '6月'];
+const l4_1_cats = ['女装', '美妆', '数码', '食品', '家居'];
+const l4_1_base = [120, 80, 60, 40, 30];   // 万元（基数）
+const l4_1_step = [8, 5, 4, 2.5, 2];        // 万元/月（逐月增量）
+function genLesson4_1() {
+    const rows = [];
+    for (let m = 0; m < 6; m++) {
+        for (let c = 0; c < 5; c++) {
+            const val = (l4_1_base[c] + m * l4_1_step[c]) * 10000;
+            rows.push([l4_1_months[m], l4_1_cats[c], Math.round(val)]);
+        }
+    }
+    return rows;
+}
+
+// ============ 课次4-2 经营趋势（24行，两年） ============
+const l4_2_months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+const l4_2_base = [80, 86, 95, 110, 102, 98, 105, 120, 135, 128, 140, 160]; // 2024 万
+function genLesson4_2() {
+    const rows = [];
+    let prev = null;
+    for (let y = 0; y < 2; y++) {
+        for (let m = 0; m < 12; m++) {
+            const sales = y === 0 ? l4_2_base[m] : Math.round(l4_2_base[m] * 1.18 * 10) / 10;
+            const kd = 120 + m * 2 + y * 10;
+            const orders = Math.round(sales * 10000 / kd);
+            const visitors = Math.round(orders / 0.035);
+            let hb = 0.0;
+            if (prev !== null) hb = Math.round((sales - prev) / prev * 1000) / 10;
+            rows.push([2024 + y, l4_2_months[m], sales.toFixed(1), visitors, orders, kd, hb.toFixed(1)]);
+            prev = sales;
+        }
+    }
+    return rows;
+}
+
+// ============ 课次4-3 占比分析（30行） ============
+const l4_3_groups = [
+    { dim: '流量来源', items: ['搜索', '直通车', '直播', '私域', '短视频', '其他'], vals: [350, 250, 180, 120, 70, 30] },
+    { dim: '各品类销售占比', items: ['女装', '美妆', '数码', '食品', '家居', '母婴', '鞋包', '运动', '图书', '生鲜'], vals: [320, 210, 180, 150, 120, 90, 80, 70, 45, 35] },
+    { dim: '各区域销售占比', items: ['华东', '华南', '华北', '华中', '西南', '西北', '东北', '港澳台', '海外'], vals: [380, 260, 210, 150, 120, 80, 70, 50, 30] },
+    { dim: '各时段占比', items: ['0-8点', '8-12点', '12-18点', '18-22点', '22-24点'], vals: [60, 180, 300, 360, 100] }
+];
+function genLesson4_3() {
+    const rows = [];
+    l4_3_groups.forEach(function (g) {
+        const sum = g.vals.reduce(function (a, b) { return a + b; }, 0);
+        for (let i = 0; i < g.items.length; i++) {
+            const pct = Math.round(g.vals[i] / sum * 1000) / 10;
+            rows.push([g.dim, g.items[i], g.vals[i], pct.toFixed(1)]);
+        }
+    });
+    return rows;
+}
+
+// ============ 课次4-4 销售额与增长率（12行） ============
+const l4_4_months = ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月'];
+const l4_4_sales = [85, 92, 88, 105, 118, 110, 132, 145, 138, 160, 175, 190];
+function genLesson4_4() {
+    const rows = [];
+    for (let m = 0; m < 12; m++) {
+        let g = 0.0;
+        if (m > 0) g = Math.round((l4_4_sales[m] - l4_4_sales[m - 1]) / l4_4_sales[m - 1] * 1000) / 10;
+        rows.push([l4_4_months[m], l4_4_sales[m].toFixed(1), g.toFixed(1)]);
+    }
+    return rows;
+}
+
+// ============ 课次4-5 经营看板（60行） ============
+const l4_5_shops = ['天猫旗舰店', '京东自营店', '抖音直播店', '拼多多店', '私域微店'];
+const l4_5_base = [120, 95, 150, 70, 45];
+const l4_5_factor = [0.8, 0.85, 0.95, 1.0, 0.9, 0.88, 0.95, 1.05, 1.15, 1.1, 1.2, 1.4];
+const l4_5_kd = [180, 160, 210, 90, 260];
+const l4_5_gm = [38, 35, 42, 22, 55];
+function genLesson4_5() {
+    const rows = [];
+    for (let s = 0; s < 5; s++) {
+        for (let m = 0; m < 12; m++) {
+            const sales = l4_5_base[s] * l4_5_factor[m];
+            const orders = Math.round(sales * 10000 / l4_5_kd[s]);
+            const gm = l4_5_gm[s] + (m % 4) * 0.5;
+            rows.push([l4_5_shops[s], l4_4_months[m], sales.toFixed(1), orders, gm.toFixed(1), l4_5_kd[s]]);
+        }
+    }
+    return rows;
+}
+
+// ============ 下载函数 ============
+function downloadLesson4_1Data() {
+    downloadCSV('各品类销售额.csv', ['月份', '品类', '销售额(元)'], genLesson4_1());
+}
+function downloadLesson4_2Data() {
+    downloadCSV('经营趋势.csv', ['年份', '月份', '销售额(万)', '访客数', '订单数', '客单价(元)', '环比增长率'], genLesson4_2());
+}
+function downloadLesson4_3Data() {
+    downloadCSV('占比分析.csv', ['维度', '项目', '数值', '占比'], genLesson4_3());
+}
+function downloadLesson4_4Data() {
+    downloadCSV('销售额与增长率.csv', ['月份', '销售额(万)', '增长率'], genLesson4_4());
+}
+function downloadLesson4_5Data() {
+    downloadCSV('经营看板.csv', ['店铺', '月份', '销售额(万)', '订单量', '毛利率(%)', '客单价(元)'], genLesson4_5());
+}
+
+// ================================================================
+//  测验题目（每课10道，共50道）
+// ================================================================
+
+// ===== 课次4-1 柱形图 测验 =====
+const quiz4_1 = [
+    {
+        q: '在 Excel 图表中，表示"具体数值多少"的竖轴叫什么？',
+        opts: ['数值轴（Y轴）', '类别轴', '图例', '绘图区'],
+        ans: 0,
+        explain: '竖轴是数值轴（Y轴），带刻度表示数值大小；横轴才是类别轴（X轴）。'
+    },
+    {
+        q: '什么时候最适合用图表？（选最贴切的）',
+        opts: ['对比各品类销售额高低', '记录单条客户电话', '写一段商品描述', '计算一个单元格求和'],
+        ans: 1,
+        explain: '图表擅长"对比/趋势/占比"，对比各品类销售额高低正是它的强项。'
+    },
+    {
+        q: '插入"簇状柱形图"的正确路径是？',
+        opts: ['开始→字体→簇状柱形图', '插入→图表→柱形图→簇状柱形图', '插入→表格→柱形图', '数据→排序→柱形图'],
+        ans: 1,
+        explain: '路径是：插入 选项卡 → 图表组 → 柱形图 → 簇状柱形图。'
+    },
+    {
+        q: '柱子按"月份"分组而不按"品类"分组，应该在哪里修正？',
+        opts: ['选择数据对话框→切换行/列', '条件格式', '页面布局', '数据验证'],
+        ans: 0,
+        explain: '右键图表→选择数据→切换行/列，可改变 X 轴的分类依据。'
+    },
+    {
+        q: '选中数据区域后按 Alt+F1 会怎样？',
+        opts: ['清空数据', '打开打印对话框', '生成独立图表工作表', '在当前工作表立刻插入默认图表'],
+        ans: 3,
+        explain: 'Alt+F1 会在当前工作表快速插入一张默认图表；F11 才生成独立图表工作表。'
+    },
+    {
+        q: '按 F11 会生成什么？',
+        opts: ['数据透视表', '迷你图', '独立图表工作表（Chart Sheet）', '新工作簿'],
+        ans: 1,
+        explain: 'F11 生成一张独立的图表工作表，不占用数据表的位置。'
+    },
+    {
+        q: '柱形图的 Y 轴最小值从 0 改成 80，会有什么问题？',
+        opts: ['更清楚', '图表会消失', '没有影响', '会夸大柱子的高度差异、误导读者'],
+        ans: 3,
+        explain: '柱形高度代表数值，不从 0 开始会放大差异造成误导，对比类柱形图 Y 轴务必从 0 开始。'
+    },
+    {
+        q: '类别名称很长、类别很多（>12）时，更适合用？',
+        opts: ['圆柱图', '条形图', '饼图', '面积图'],
+        ans: 1,
+        explain: '条形图是横着的条，适合类别名长或类别多时阅读；圆柱图只为好看且易误导。'
+    },
+    {
+        q: '在图表上"添加数据标签"的作用是？',
+        opts: ['改变图表颜色', '删除网格线', '在柱子旁显示具体数值', '切换行/列'],
+        ans: 2,
+        explain: '数据标签把每个点的具体数值标在图元旁，方便读者直接读数。'
+    },
+    {
+        q: '快速套用一套现成的标题+图例布局，应该用？',
+        opts: ['图表设计→快速布局', '分列', '条件格式', '查找替换'],
+        ans: 0,
+        explain: '图表设计选项卡里的"快速布局"提供多种标题/图例/坐标轴组合模板。'
+    }
+];
+
+// ===== 课次4-2 折线图 测验 =====
+const quiz4_2 = [
+    {
+        q: '折线图最适合表达什么？',
+        opts: ['部分占整体的比例', '时间序列的趋势与波动', '两个类别的绝对值对比', '单一单元格求和'],
+        ans: 1,
+        explain: '折线图擅长表现随时间变化的趋势与波动，X 轴常为时间。'
+    },
+    {
+        q: '某月缺数据，想让折线"干净断开"而不是掉到地面，应填？',
+        opts: ['0', '留空单元格', '=NA()', '删除整行'],
+        ans: 2,
+        explain: '=NA() 会让折线在该点断开不连；填 0 折线会掉到地面当成零。'
+    },
+    {
+        q: '把缺失月份填成 0，折线图会怎样？',
+        opts: ['折线断开跳过', '自动删除该点', '折线掉到 0 位置像业绩崩盘', '没有变化'],
+        ans: 2,
+        explain: '填 0 会被当作真实数值"零"，折线跌到地面，常被误读为业绩暴跌。'
+    },
+    {
+        q: '趋势线的 R² 值越接近多少，说明趋势越可信？',
+        opts: ['0', '1', '-1', '100'],
+        ans: 1,
+        explain: 'R²（决定系数）越接近 1，拟合越好、趋势越可信；太低就别拿去预测。'
+    },
+    {
+        q: '"移动平均"趋势线的主要作用是？',
+        opts: ['预测未来十年', '平滑短期波动看长期走向', '把线变成柱子', '删除数据点'],
+        ans: 1,
+        explain: '移动平均用近 N 期均值平滑波动，帮助看清长期走势。'
+    },
+    {
+        q: '迷你图（Sparklines）插入到哪里？',
+        opts: ['单元格内', '一个独立工作表', '页眉', '文本框'],
+        ans: 0,
+        explain: '迷你图是塞进单个单元格里的小趋势条，适合每行数据带一条走势。'
+    },
+    {
+        q: '勾选"平滑线"后，折线会怎样？',
+        opts: ['变成柱形', '曲线更顺滑', '消失', '加粗变黑'],
+        ans: 1,
+        explain: '平滑线让折线段变成曲线更顺眼，但仅用于美观，别用它扭曲趋势判断。'
+    },
+    {
+        q: '销售额(万)和访客数(十万)量级差太大，放同一张折线图会？',
+        opts: ['访客数线被压成平地看不清', '自动合并', '自动建次轴', '图表报错'],
+        ans: 0,
+        explain: '量级差万倍时小数系列会被压平，需用到下一课的次坐标轴。'
+    },
+    {
+        q: 'X 轴月份显示成"1、10、11、12…"乱序，通常因为？',
+        opts: ['没设日期格式被当文本', '折线图不支持月份', '数据太多', '颜色问题'],
+        ans: 0,
+        explain: '月份被当成文本会按字符排序错乱，应先设为真正的日期格式。'
+    },
+    {
+        q: '趋势线的"向前预测"功能可以？',
+        opts: ['删除已有数据', '改变图表颜色', '画出未来若干期的走势', '导出 PDF'],
+        ans: 2,
+        explain: '向前预测填 N 期，可基于趋势线延伸出未来 N 期的估计走势。'
+    }
+];
+
+// ===== 课次4-3 饼图与圆环图 测验 =====
+const quiz4_3 = [
+    {
+        q: '饼图最适合表达什么关系？',
+        opts: ['随时间的变化', '部分占整体的比例', '两个系列的高低', '单值求和'],
+        ans: 1,
+        explain: '饼图只讲"部分占整体百分之多少"，不适合比绝对值或看趋势。'
+    },
+    {
+        q: '饼图的类别数量建议控制在多少以内？',
+        opts: ['20 类以上', '不超过 6 类', '越多越好', '只能 2 类'],
+        ans: 0,
+        explain: '类别 ≤6 才看得清；多了应合并"其他"或用复合饼图。'
+    },
+    {
+        q: '画饼图前必须确认什么？',
+        opts: ['各类别合计 = 100%', '各系列颜色不同', '必须有 3D', 'X 轴是时间'],
+        ans: 0,
+        explain: '饼图是部分与整体关系，各类别占比之和必须等于 100%，否则图会缺角或多块。'
+    },
+    {
+        q: '以下哪项在正式饼图中应禁止？',
+        opts: ['显示百分比', '先排序再画', '合并其他类', '3D 立体饼图'],
+        ans: 3,
+        explain: '3D 会扭曲扇形角度造成占比失真，正式报表禁用 3D 饼图。'
+    },
+    {
+        q: '圆环图相比饼图，多出的好处是？',
+        opts: ['不用图例', '能显示更多类别', '必须 3D', '中心可放汇总数字'],
+        ans: 3,
+        explain: '圆环图中间挖空，可在圆心放汇总数字（如总访客数），更显高级。'
+    },
+    {
+        q: '复合饼图（子母图）主要解决？',
+        opts: ['颜色太多', '没有标题', '小扇区挤成一团看不清', '数据为负'],
+        ans: 2,
+        explain: '复合饼图把占比小的类别拎出来放大成小饼，解决小扇区拥挤问题。'
+    },
+    {
+        q: '饼图数据标签最推荐显示？',
+        opts: ['值 + 百分比', '只显示颜色', '只显示值', '只显示序号'],
+        ans: 0,
+        explain: '显示"类别名称 + 百分比（或值）"最直观，读者不用拿尺子量角度。'
+    },
+    {
+        q: '画饼图前把数据"从大到小排序"，目的是？',
+        opts: ['好看', '减小文件', '必须操作', '符合从 12 点顺时针由大到小的阅读习惯'],
+        ans: 3,
+        explain: '先排序后饼图从顶部顺时针由大到小排列，最易读。'
+    },
+    {
+        q: '零散的小类别（都<5%）应该怎么处理？',
+        opts: ['各自画一块', '放大显示', '合并成一个"其他"类', '删除不要'],
+        ans: 2,
+        explain: '零散小类合并成"其他"，避免饼图碎成渣、看不出主次。'
+    },
+    {
+        q: '饼图占比"看起来"和标签对不上，最常见的原因是？',
+        opts: ['标签字体太小', '用了 3D 效果', '月份错乱', '没加趋势线'],
+        ans: 1,
+        explain: '3D 立体角度会扭曲扇形真实比例，导致视觉占比与数值不符。'
+    }
+];
+
+// ===== 课次4-4 组合图与次坐标轴 测验 =====
+const quiz4_4 = [
+    {
+        q: '为什么需要"次坐标轴"？',
+        opts: ['数据太少', '想换颜色', '单位/量级差太大（如万 vs %）', '没有图例'],
+        ans: 2,
+        explain: '当两系列单位或量级差太大（销售额万 vs 增长率%），需各用各的轴才能同图显示。'
+    },
+    {
+        q: '把某系列设为次坐标轴，应在哪里操作？',
+        opts: ['更改图表类型→组合图', '数据验证', '页面布局', '条件格式'],
+        ans: 0,
+        explain: '图表设计→更改图表类型→组合图，在弹窗里给系列勾选"次坐标轴"。'
+    },
+    {
+        q: '经典组合图"柱形+折线"中，折线通常放在？',
+        opts: ['主坐标轴', '标题里', '图例里', '次坐标轴'],
+        ans: 3,
+        explain: '柱形放主坐标轴比"量"、折线放次坐标轴看"率/趋势"，视觉最稳。'
+    },
+    {
+        q: '主、次坐标轴网格线应该怎么处理？',
+        opts: ['只留主坐标轴网格线，次轴关掉', '两套都保留', '两套都删掉', '无所谓'],
+        ans: 0,
+        explain: '两套网格线叠一起会打架，通常只保留主坐标轴网格线，次轴关掉。'
+    },
+    {
+        q: '次坐标轴一定要做什么，否则易被误读？',
+        opts: ['隐藏', '标清单位（如"增长率 %"）', '删除刻度', '改成红色'],
+        ans: 3,
+        explain: '次轴单位往往不同（如 %），必须标清，否则老板会把 % 当万元读。'
+    },
+    {
+        q: '把 Y 轴最小值设得很大以"突出差异"，这属于？',
+        opts: ['正确做法', '误导读者的截断坐标轴', '推荐美化', '没有影响'],
+        ans: 1,
+        explain: '截断坐标轴夸大差异是典型误导，对比类图 Y 轴应从 0 开始。'
+    },
+    {
+        q: '数据可视化"诚实原则"禁止以下哪项？',
+        opts: ['标清单位', '从 0 开始', '截断坐标轴/3D/双轴滥用', '写清标题'],
+        ans: 2,
+        explain: '截断坐标轴、3D 效果、双轴滥用都会误导，属诚实红线，正式报表禁止。'
+    },
+    {
+        q: '把"销售额"和"天气"这种不相关数据硬放一张组合图，会？',
+        opts: ['自动纠错', '更清晰', '制造虚假相关误导人', '没有影响'],
+        ans: 2,
+        explain: '双轴滥用会把不相关的两件事摆在一起制造假相关，是误用。'
+    },
+    {
+        q: '组合图最经典的搭配是？',
+        opts: ['饼图+饼图', '柱形（量）+ 折线（率）', '雷达+雷达', '面积+面积'],
+        ans: 3,
+        explain: '柱形比"量"、折线看"率/趋势"，柱形+折线是组合图最经典搭配。'
+    },
+    {
+        q: '给组合图加数据标签时要注意？',
+        opts: ['全部看左轴', '柱形标签看左轴、折线标签看右轴', '全部看右轴', '不用管轴'],
+        ans: 0,
+        explain: '柱形对应主（左）轴、折线对应次（右）轴，标签单位别标反。'
+    }
+];
+
+// ===== 课次4-5 美化与动态图表 测验 =====
+const quiz4_5 = [
+    {
+        q: '一张专业图表，颜色建议不超过几种？',
+        opts: ['只能 1 种', '10 种', '越多越好', '4 种'],
+        ans: 3,
+        explain: '一图不超过 4 种颜色最稳；颜色过多显乱，老板眼晕。'
+    },
+    {
+        q: '图表里数字标签推荐用哪种字体？',
+        opts: ['等线体', '楷体', '隶书', '行书'],
+        ans: 0,
+        explain: '中文用微软雅黑/思源黑体，数字用等线体更整齐对齐。'
+    },
+    {
+        q: '"减法美学"是指？',
+        opts: ['减少数据', '删网格线/边框/冗余图例、坐标轴只留必要刻度', '缩小图表', '少画一张图'],
+        ans: 1,
+        explain: '减法美学即删掉多余装饰（网格线、边框、冗余图例），少即是多更显高级。'
+    },
+    {
+        q: '把美化好的图表存成模板复用，文件扩展名是？',
+        opts: ['.xlsx', '.pdf', '.png', '.crtx'],
+        ans: 3,
+        explain: '右键图表→另存为模板生成 .crtx，下次插入→模板一键套用同款风格。'
+    },
+    {
+        q: '动态图表"切换下拉图就变"的核心技术是？',
+        opts: ['条件格式', '合并单元格', '用 OFFSET/INDEX 定义名称', '分列'],
+        ans: 2,
+        explain: '核心是用 OFFSET/INDEX 配 MATCH 定义名称，图表数据源引用该名称，切换下拉即变。'
+    },
+    {
+        q: '做下拉选择店铺，通常用什么功能？',
+        opts: ['条件格式', '数据验证', '排序', '分列'],
+        ans: 1,
+        explain: '数据验证（数据→数据验证）可做下拉列表，作为动态图的切换控件。'
+    },
+    {
+        q: '把多张图拼成"经营看板"，排版要注意？',
+        opts: ['堆满整页', '不用标题', '每张不同颜色', '留白均匀、对齐、分组标题、配色统一'],
+        ans: 3,
+        explain: '看板要像海报一样排版：留白、对齐、分区标题、统一配色才显专业。'
+    },
+    {
+        q: '把图表复制到 PPT 且"源数据改了 PPT 里也跟着改"，应选？',
+        opts: ['粘贴为图片', '纯文本', '链接的图表对象', '截图'],
+        ans: 2,
+        explain: '选"链接的图表对象"粘贴，Excel 源数据更新后 PPT 里同步更新（需带源文件）。'
+    },
+    {
+        q: '数据标签格式可以设置什么让数字更专业？',
+        opts: ['加下划线', '只改颜色', '千分位 + 单位 + 保留1位小数', '旋转 90 度'],
+        ans: 2,
+        explain: '数据标签可设千分位分隔、加"元/万"单位、保留 1 位小数，如 1,200,000 元。'
+    },
+    {
+        q: '粘贴方式里"嵌入工作簿（Excel 图表对象）"的特点是？',
+        opts: ['变成图片', '永远不变', '最小文件', '双击可在 PPT 内直接改数据'],
+        ans: 3,
+        explain: '嵌入对象双击能在 PPT/Word 里直接编辑数据，但会让文件变大。'
+    }
+];
+
+// ================================================================
+//  初始化所有测验
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-4-1', quiz4_1);
+    initQuiz('quiz-4-2', quiz4_2);
+    initQuiz('quiz-4-3', quiz4_3);
+    initQuiz('quiz-4-4', quiz4_4);
+    initQuiz('quiz-4-5', quiz4_5);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>

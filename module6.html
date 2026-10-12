@@ -1,0 +1,1805 @@
+<!DOCTYPE html>
+<html lang="zh-CN" data-page-node-id="AuYkZC7nArqgkQ77xKHMED">
+<head data-page-node-id="5fwnsJ1FEjVEYeTVuOyYbV">
+    <meta charset="UTF-8" data-page-node-id="qQ6A2gDfOIIfHiWvHwAO3t">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" data-page-node-id="EekOD4I4LRisNejVH7YtFA">
+    <title>模块6：操作规范与效率 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css" data-page-node-id="eFNM35WjD6RAEEvt0UUEwI">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22 data-page-node-id="b0G5AjPFBGzpeDYAdnW0Yh"><text y=%22.9em%22 font-size=%2290%22 data-page-node-id="Sguz9Q1lJ9eURYssp1Sbjv">📊</text></svg>">
+</head>
+<body data-page-node-id="3FKJmB0JhBVgCBHXU5zVAy">
+
+<!-- 导航栏 -->
+<nav class="navbar" data-page-node-id="PnBgrsobxCOhy440s10hVr">
+    <div class="container nav-flex" data-page-node-id="wHuuTwRNuJHNXkSoZZB5sJ">
+        <a href="index.html" class="logo" data-page-node-id="La8WpGRFvxBbBOHNvHkCTc">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单" data-page-node-id="0VqlXFgUIz8Fr31UMau53D">☰</button>
+        <ul class="nav-links" id="navLinks" data-page-node-id="zNdRPVws05CwwoFqR7k1PS">
+            <li data-page-node-id="o6IldE8z5E3CVMH6A3XG8z"><a href="index.html" data-page-node-id="jrMOBQHqmXWON2wlXrleXZ">🏠 首页</a></li>
+            <li data-page-node-id="LBeyJ0TPXUutB1DhBTpfOq"><a href="module1.html" data-page-node-id="vJkoOBChngoxMeq8YWHALD">📗 模块1</a></li>
+            <li data-page-node-id="T8At44wIguqC44NE7WBWnH"><a href="module2.html" data-page-node-id="VOtoBeqKjTVY5fxmqYhKPC">📘 模块2</a></li>
+            <li data-page-node-id="QOPWGCHoFGrDm1GqOOrF8E"><a href="module3.html" data-page-node-id="J9SSdT1IMI5bB5eWA4Cw1Z">📙 模块3</a></li>
+            <li data-page-node-id="xCF630NsdCKu9pu3BTs5HV"><a href="module4.html" data-page-node-id="nU4b9ZcByt2lDdcW0XwVUB">📕 模块4</a></li>
+            <li data-page-node-id="GWGUB5zyXYJ93URRzgh6jk"><a href="module5.html" data-page-node-id="SlHtguhAhjWbUm92cZlOHI">📓 模块5</a></li>
+            <li data-page-node-id="41DgwiJcX5BtzXRyW1wz93"><a href="module6.html" class="active" data-page-node-id="2eRZ66aqcThKehkBjcHfvl">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-pink" data-page-node-id="lQwQ6gCuIcH8DOCCWj9179">
+    <div class="container" style="position:relative;z-index:1;" data-page-node-id="8sWpDeGduHipOmUT6m4Ewt">
+        <div class="hero-badge" data-page-node-id="tTOQ7x2s2txmmtu4QXpqEq">模块6 · 贯穿始终 · 通用技能</div>
+        <h1 data-page-node-id="59HDpKQPJMXjjeH9Fdpp5m">📒 操作规范与效率</h1>
+        <p data-page-node-id="mLfV1OK9HehwdC8vlj5CUe">会做表 ≠ 做好表<br data-page-node-id="qFYUbO8ycWCNA4KRPOJUrt">规范、效率、安全，决定你是"会用Excel"还是"Excel高手"</p>
+    </div>
+    <div class="hero-wave" data-page-node-id="NBGAhbDhAiDgNZBYrusYIT">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none" data-page-node-id="lR6nhXLRAoUCpoJ4P9gSZK">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)" data-page-node-id="pwvqLvCPR0IlY59SmQQBPT"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container" data-page-node-id="Gg4tVNnLbeWmD6ZZnyeixp">
+    <div class="module-progress" data-page-node-id="BmdYDCYLGF1ACtGXslmx4v">
+        <div class="progress-text" id="progressText" data-page-node-id="Q9E7iSeGmX624KuXF5GeRK">加载中...</div>
+        <div class="progress-bar-bg" data-page-node-id="bEFAryCUvT8ITMWwHxEZKg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="6" data-total="6" data-page-node-id="8Xe06KORirbhzOeDqqxSMH"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container" data-page-node-id="rBzgFbotCBNhBtT2V5JoBl">
+    <div class="lesson-list" data-page-node-id="784UNmkSR6m5axTRDOmdqT">
+
+        <!-- ============================================
+             课次 6-1：表格设计规范
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1" data-page-node-id="IUsCDsbVGu1nHVc6GZ6iby">
+            <div class="lesson-header" onclick="toggleLesson(1)" data-page-node-id="TgTGm4uwRpMRg97sEWlsnd">
+                <div class="lesson-num" data-page-node-id="8kbwBvIJcx728V6ppaHItA">1</div>
+                <h3 data-page-node-id="NLJ1IGUYVzZIafnd1BC10C">表格设计规范 —— 先立规矩，再动手</h3>
+                <span class="lesson-toggle" data-page-node-id="DQHxR5Wc2uZVhHP9JhhaZ0">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1" data-page-node-id="Hyz4ewSQxiEU9IFl2u2qAk">
+                <div class="lesson-body-inner" data-page-node-id="0s4RiiKoi1jkOErEQBWOVK">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="YWiQBCdnTZj3n4JnrDq6Nq">
+                        <h4 data-page-node-id="bj5YRpGv7pNZeiByiTH2V8">📖 知识讲解</h4>
+                        <p data-page-node-id="1k9LToE6UvrN0bo8EiOU3s">网店里每天都会产生订单、库存、客户数据，这些表格<strong data-page-node-id="ABaCRCtxsWZuTbvGzk2Eny">不是给自己一个人看的</strong>——同事要接手、老板要查看、财务要核算。一张规范的表格，能让所有人一眼看懂、机器也能算。这一课我们先<strong data-page-node-id="3pdjSiyVRHudZWuG1dqv2Z">立规矩</strong>。</p>
+
+                        <h5 data-page-node-id="UNrACxiE1PZWczDrIR6YjV">🔹 一张规范表格的"三区结构"</h5>
+                        <p data-page-node-id="1zbSCn9VOWKigJgEUtVink">任何一张好表，都可以拆成三个互不重叠的区域：</p>
+                        <div class="concept-cards" data-page-node-id="WkULnYVgSSVYf4PDb7lztD">
+                            <div class="concept-card" data-page-node-id="GgZ2VW77WbZW8btEdJWpsj">
+                                <h6 data-page-node-id="Y8ahxBAstykbQTo2mTqfBK">🟦 标题区</h6>
+                                <p data-page-node-id="zQ72OIWt3p7si974eGi5Fo">只写一句"这是什么表"，放在表格上方独立单元格（或单独一行），<strong data-page-node-id="L72UP0Xno68Bjm9HH9VJb6">不要写在表头行里</strong></p>
+                            </div>
+                            <div class="concept-card" data-page-node-id="KZxSBDQkdkhJl68kvyNB8i">
+                                <h6 data-page-node-id="04iE0JHFKrS2l4Hfj1HI48">🟩 表头区</h6>
+                                <p data-page-node-id="JhZHddSvsSntPa6SvQ6i9i">第1行，每个字段一个词，说明下面每一列是什么。是整个表格的"字典"</p>
+                            </div>
+                            <div class="concept-card" data-page-node-id="IynRE72uM4TUkY0jCYW2r0">
+                                <h6 data-page-node-id="GhasI9UiKLIx37KoP3FAzJ">🟨 数据区</h6>
+                                <p data-page-node-id="cZfgbbBxu3dgBojT1zxG4J">从第2行开始，一行一条记录，<strong data-page-node-id="O3du5x1dJpJDXoHPkRrFBE">连续、不空行</strong>，每列数据类型统一</p>
+                            </div>
+                        </div>
+
+                        <h5 data-page-node-id="ge7P9vbN7hYDhajJQeIUaD">🔹 标题怎么放？别用"合并居中"造标题</h5>
+                        <div class="compare-table-wrap" data-page-node-id="cxJ2KeMxX3PTokPflr7cRB">
+                            <table class="compare-table" data-page-node-id="CVzKLKXotGYh3u1IkRvKLd">
+                                <thead data-page-node-id="4P5GZyBYJVKcnbIC9jsdA0">
+                                    <tr data-page-node-id="gaxaiESg8J1KVyW8rkN8DP"><th data-page-node-id="jtuw7Xyn4D9XR0QMfbCsF3">❌ 错误做法</th><th data-page-node-id="JN42OWaGGQ9kGc5FnOTmHt">✅ 正确做法</th></tr>
+                                </thead>
+                                <tbody data-page-node-id="n9QoinNq9VBWGy0OwxmGNk">
+                                    <tr data-page-node-id="jYhh5dhqjdm5yfbgFvYrIy"><td data-page-node-id="kkeH74rTDrz761WqVYWaur">把 A1 合并到 H1 写"3月销售表"，导致第1行被吃掉，表头和标题混在一起</td><td data-page-node-id="1AEkDITWrVjIDGU87AGtgl">在 A1 单独的单元格写标题（用"跨列居中"或干脆放上方），表头从第2行开始</td></tr>
+                                    <tr data-page-node-id="eURGuvUZSGmVMdctBMZylX"><td data-page-node-id="bpqlBKpyLZlR7xwSkQX0T0">用"合并居中"后，排序、筛选、透视表全部失灵</td><td data-page-node-id="CsUjxoyTqRd1UmD7EZ3gb3">标题区与表头区分离，数据区永远从第1行表头开始</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout callout-info" data-page-node-id="O3BWotfkQBVPXjk6UZUrHF">
+                            💡 <strong data-page-node-id="XHxuqC5EA5bgtPKiUTzUM5">"跨列居中"</strong>在 <code data-page-node-id="tWYkEnHk2adHd2m1c7AU9h">单元格格式 → 对齐 → 水平对齐 → 跨列居中</code>，它只<em data-page-node-id="Fp3YeaamdeZgXaW01EcDGp">看起来</em>跨了多列，实际内容只在 A1，不影响下面数据。
+                        </div>
+
+                        <h5 data-page-node-id="9gnrXi7V6agrS2pzcDyON5">🔹 字段名的"四不原则"</h5>
+                        <ul data-page-node-id="3oUDjuB3dySsAatx1AJgmI">
+                            <li data-page-node-id="D7QTW8w3gdBQ6BQbzeq7BX"><strong data-page-node-id="bi7vn1fhtrFbV6BsDuBKTH">不长</strong>：用"单价"而不是"本商品的销售单价（元）"</li>
+                            <li data-page-node-id="JR8RBunhrE5k00CfeeDXqV"><strong data-page-node-id="PFLy1dtu3Paf34sQKaCSun">不重复</strong>：不要出现两个都叫"备注"的列</li>
+                            <li data-page-node-id="MJBbZ348cDOU7AcgDLiZyU"><strong data-page-node-id="2XjRmhmWb5FOg22FMkzjs0">不带单位</strong>：列名叫"单价"，单位写在单元格格式里（¥、元、件），别写"单价(元)"</li>
+                            <li data-page-node-id="GsYSvZAJtvX1BTodwnnc2A"><strong data-page-node-id="lleWr1uLgWqyCJKBC7Ftbb">不空</strong>：每一列都要有名字，空列直接删掉</li>
+                        </ul>
+
+                        <h5 data-page-node-id="p3hiwHcCIJ8L3HYbWBSH1d">🔹 一表一主题</h5>
+                        <p data-page-node-id="LT7lrVR2gePqVhnARuEhQR">一个工作表里<strong data-page-node-id="NZJHBg1eDUWvBaH3zDR7OZ">只放一张表</strong>。不要在一个 Sheet 里左上角放"订单"、右下角又塞一张"退货"，中间还留一大片空。需要多张表就分多个工作表（Sheet1=订单、Sheet2=退货）。</p>
+
+                        <h5 data-page-node-id="kqCmKe0lkoRJFtf4OPRh8G">🔹 为什么"不用合并单元格"是铁律</h5>
+                        <div class="fn-cards" data-page-node-id="fuVMBT0dT4R3NErZJvGXep">
+                            <div class="fn-card" data-page-node-id="r806pPQUDiDoVDzPBm6bqt"><h6 data-page-node-id="ulibEZKnMmbw9hHHPumfct">❌ 破坏排序</h6><p data-page-node-id="5M6qZCD8BEQgMSXmFhPcGA">合并单元格只有左上角有值，排序后其他格变空白</p></div>
+                            <div class="fn-card" data-page-node-id="jqEAbFCXCTz5qE2rz1ofYP"><h6 data-page-node-id="nXQn5mXlEgQ1xocF3KXOKB">❌ 破坏筛选</h6><p data-page-node-id="8DssKNxfjqsJZlkAJECtfk">筛选会漏掉被合并"藏起来"的行</p></div>
+                            <div class="fn-card" data-page-node-id="0r08gj0vDSDDPuxAhxVFYv"><h6 data-page-node-id="gRZsFjEcgQVGFJOAeeEZMF">❌ 破坏透视</h6><p data-page-node-id="D8AqC1YQtRAWeNwL9I19N3">数据透视表要求每列都有独立字段名</p></div>
+                            <div class="fn-card" data-page-node-id="RPWUnpPJvoSbZvVyBM4qM4"><h6 data-page-node-id="mUn9CAYrIRRbNDyyejyrYj">❌ 破坏公式</h6><p data-page-node-id="nAXyStKripEgrBLWjUqGNM">引用合并区域极易出现 #VALUE! 或算错</p></div>
+                        </div>
+
+                        <h5 data-page-node-id="CCpEx7Tdqyel1ZZeveZvV8">🔹 对齐、配色、字号、命名的小规矩</h5>
+                        <ul data-page-node-id="g4ASOtUX5g2qu9FGDttIXa">
+                            <li data-page-node-id="M7MtKIpd9mnytwYhkJyq5M"><strong data-page-node-id="m16M9rKt518sjzLDWH7VvX">不用空格做对齐</strong>：名字长短不齐，用"对齐设置"（缩进/分散对齐），别在前面敲一堆空格</li>
+                            <li data-page-node-id="vLr52DFmQPY9WGi2r05uGT"><strong data-page-node-id="eRmNOcOPSDPH1TjkO6mztj">配色不超过 4 种</strong>：表头一种、重点一种、警示一种、正文一种，颜色要有含义，不是越花越好</li>
+                            <li data-page-node-id="mHSWEWZpWX4QwjGp0e43cc"><strong data-page-node-id="uN7rtqYij9UNqFzzPVG9Pj">字号层级</strong>：标题 14 号、表头 11 号加粗、正文 10~11 号，一眼能分清主次</li>
+                            <li data-page-node-id="BnsAvKYRY4RfKhn9cBqiDB"><strong data-page-node-id="4SKZtN9gActhUnqTdVBF0M">数字右对齐、文本左对齐、标题居中</strong>；列宽行高统一，数字列用等宽显示</li>
+                            <li data-page-node-id="AFLu5DUS2Y0N3SKrUXagFx"><strong data-page-node-id="wk1sp9JBKoB0oWfJkoBnAY">工作表命名 + 标签配色</strong>：Sheet1 改名"3月订单"，并给标签上色区分模块</li>
+                            <li data-page-node-id="wvzoTbd9MUaUXTBtH1IBGt"><strong data-page-node-id="70zgmewP7LHPEAF6SzVHhj">文件命名规范</strong>：<code data-page-node-id="lFrMFEVEKpnPxrEUuOApHR">项目_内容_日期_版本.xlsx</code>，例如 <code data-page-node-id="zRSQmqR8SLCF27A0KHqfl4">双十一_销售明细_20250318_v2.xlsx</code></li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="TwZlhECGioRWGMnmcn81rh">
+                        <h4 data-page-node-id="3VFVRSs0dSNvTfJckMwINL">🔧 操作步骤：照着规范搭一张订单表</h4>
+                        <div class="step-list" data-page-node-id="yAPaJNEp0CEydgBiJYRFga">
+                            <div class="step-item" data-page-node-id="kqAa3l9JUiuZTxD56lRsCY"><div class="step-content" data-page-node-id="MSBhbPvs5fwIoSr1tV21T0">在 A1 单独单元格输入标题"3月电商订单明细"（<strong data-page-node-id="hclWJj0ClZITBtxr5CqdKe">不合并</strong>，需要的话用跨列居中）</div></div>
+                            <div class="step-item" data-page-node-id="zsIOttp2xfBhl7Jj5XeAU9"><div class="step-content" data-page-node-id="6tpMrkNicN7eaSHLWNHI6l">第2行写表头：订单编号 / 客户姓名 / 商品名称 / 数量 / 单价 / 金额 / 下单日期 / 地区</div></div>
+                            <div class="step-item" data-page-node-id="d0Z1pjwMFDy7rXUynsD8EV"><div class="step-content" data-page-node-id="UXbPyZkXJANPcFD5ueGV1O">选中表头行 → <strong data-page-node-id="wv2IamAz9PrqWSbtuUXKgA">加粗 + 11号 + 居中</strong>，给表头一个浅色填充</div></div>
+                            <div class="step-item" data-page-node-id="WyE8tSW8uzwrusDxgRj6YT"><div class="step-content" data-page-node-id="kfuAR1Wg14d29TvfyGmSpP">"数量/单价/金额"三列设为<strong data-page-node-id="RHKHHVvK3hW0HKqBRYilcP">数字右对齐</strong>；金额列设数字格式 <code data-page-node-id="KczjaYDLI6fqlaupFfOynt">¥#,##0.00</code></div></div>
+                            <div class="step-item" data-page-node-id="7ok7nrc35YmBNAaeVHTlzE"><div class="step-content" data-page-node-id="WZZ8H04Fgs9Dy1yaaB0i7k">调整列宽（双击列标边界自动适配），统一行高，删除所有多余空行空列</div></div>
+                            <div class="step-item" data-page-node-id="ZIXDlEFY3aIG8qrpt7N098"><div class="step-content" data-page-node-id="J25m8D32VHbf7PYi6dJZEM">双击左下的 <strong data-page-node-id="KD6gCBkuXM8Eu8UAW2Nf7E">Sheet1</strong> 标签，改名为"3月订单"，右键标签设一个标签颜色</div></div>
+                            <div class="step-item" data-page-node-id="mdjaYslaX9tFA4jSYbrGGU"><div class="step-content" data-page-node-id="F7FmDXLLvEWGRU4mZ0riiu">按 <kbd class="kbd" data-page-node-id="EVPM9khZOSpBozTCAFJjXl">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="81Dn9ULBdTTierXrJK33KG">S</kbd> 保存，文件名用 <code data-page-node-id="M923GZgAm9tNVqlIuOhypL">店铺_订单明细_20250318_v1.xlsx</code></div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="Uue5sHGFkiTBsfbxUtl0iB">
+                        <h4 data-page-node-id="kbFXoIbq5CMNJT1SDPrECn">📥 练习数据：规范订单模板 vs 反面案例</h4>
+                        <p data-page-node-id="QFd9e6ugZy6KtnXoXNVM6M">下面左边是符合全部规范的<strong data-page-node-id="w3V2aPClI7clpPUDQlQHzq">订单表（前5行）</strong>，右边是"反面案例"——把常见坑都踩了一遍。对照着看，印象最深刻。</p>
+
+                        <h6 style="margin:10px 0 4px;" data-page-node-id="xUg5yC49HYOOWnQtjxrq3q">✅ 规范表格模板（可下载，共20行）</h6>
+                        <div class="data-preview-wrap" data-page-node-id="sLXMqxpmjhLnEqNJSd8KDA">
+                            <table class="data-preview" id="preview-6-1-good" data-page-node-id="gJpYpTq7wuFNEmBmQMOdU8">
+                                <thead data-page-node-id="HQTAmuAoEnEsxkL2gKjhE4">
+                                    <tr data-page-node-id="5Xwdpilo5M9zWcgoTx2a7V"><th data-page-node-id="xqgnMxM2WC1r7Mo2LyLG3C">订单编号</th><th data-page-node-id="a94XeOhtKmGgpmetUsoKqB">客户姓名</th><th data-page-node-id="oCDZmT0Xs7VjVLSwet1E5e">商品名称</th><th data-page-node-id="C5WI5PajyVHr91jsPXbsSZ">数量</th><th data-page-node-id="xTAgA6wZCOnWXtHWEI77zM">单价</th><th data-page-node-id="WjazYQPZilDTzFcHv4CHmV">金额</th><th data-page-node-id="ehA4eAcOF8DUJx98Cm7YFJ">下单日期</th><th data-page-node-id="uPzMPHB9AL1zV6mSQCJXBS">地区</th></tr>
+                                </thead>
+                                <tbody data-page-node-id="cH9SGMsPF0LAQABp57llxs">
+                                    <tr data-page-node-id="z9jHkrTJNAvulZcncbTLIY"><td data-page-node-id="dCf2D6gTDbDF7zcvR4LZE0">DD2025001</td><td data-page-node-id="esuxrhtQiCb8KttGOBSGkA">王悦</td><td data-page-node-id="jObsLPL8ewYyzxNd3GEDgV">蓝牙耳机</td><td data-page-node-id="hK8L3BpznynXB3M799nADJ">1</td><td data-page-node-id="5ubCFiehcI06BhHplmfdpM">10</td><td data-page-node-id="aeIUlKXAOF9PyCYBq7YoQu">10</td><td data-page-node-id="GBNzpRkYPCkrIawKFvumAR">2025-03-01</td><td data-page-node-id="G83KVswLNYBWvMurOA6KKP">华东</td></tr>
+                                    <tr data-page-node-id="EKwzH9guXXubuhYxi6x8XW"><td data-page-node-id="nAOQ48AYNGI1QjXtj9ZKUI">DD2025002</td><td data-page-node-id="hUb0AmS8yytgkaPy3KokWN">李娜</td><td data-page-node-id="AB10Fr17k9WDgOLdJQo7qd">保温杯</td><td data-page-node-id="DaGNVGPVu5dSZQ4bm0swdo">2</td><td data-page-node-id="MdY1jGmVwSwRDvELHX3hAH">20</td><td data-page-node-id="T48MtiGA6xA4mHSdrE9Oee">40</td><td data-page-node-id="MEHHtKYys9GBpYHtTPRs1E">2025-03-02</td><td data-page-node-id="78ER8cN5p05UOckp3b8rJq">华北</td></tr>
+                                    <tr data-page-node-id="TfZj4FMyTzuvzYCsF2Q0wD"><td data-page-node-id="2uaKef1i3OnuPmspycpWXp">DD2025003</td><td data-page-node-id="MsRE3yP13Hr4YUSKK0WAng">张伟</td><td data-page-node-id="neFOlNQg3wEFuZkzlMw4Xu">运动鞋</td><td data-page-node-id="ssLH9BqQC2cfAYcabbWnGI">3</td><td data-page-node-id="p3vlcyANDkFngG1VHHjmOZ">30</td><td data-page-node-id="B3gchWqzEAj8zJsUWMybnS">90</td><td data-page-node-id="DGcTVO0rOJqAA4v7k7ddti">2025-03-03</td><td data-page-node-id="BeGoAwIAfFUMl4mZrKjxcM">华南</td></tr>
+                                    <tr data-page-node-id="YhDjQ6Kq7h4Avw9ym0ARIz"><td data-page-node-id="52S50IQxxh7fPMTVSJmOGm">DD2025004</td><td data-page-node-id="kJ0umbOy2diZUxyVfvWKDe">刘洋</td><td data-page-node-id="XavkonKOvWcRjyMyFxAmGE">零食大礼包</td><td data-page-node-id="Qr9Yl5V3TUF3MDqUwiRkhw">4</td><td data-page-node-id="XPI5FlsUdiEim1HtJQuQSz">40</td><td data-page-node-id="EaBzTFd6h6Jvuo760Ic3qr">160</td><td data-page-node-id="7jd1AZ4hfA8KuIBo6KTQLZ">2025-03-04</td><td data-page-node-id="yDnhGoWOtVxrQdmKhwAvt7">西南</td></tr>
+                                    <tr data-page-node-id="mIz8tBNCEzo4xafzhclaTq"><td data-page-node-id="b3i8DeDIv230mdWjvm0mmU">DD2025005</td><td data-page-node-id="AAAeXbn2ZTvMzPFNeFZBYQ">陈静</td><td data-page-node-id="28LRwsxXxopKQk942cVQ0e">充电宝</td><td data-page-node-id="kORipvffdtbvdcrZIzOxgp">5</td><td data-page-node-id="nnWbw4On860f2xFyY5XhkK">50</td><td data-page-node-id="TxPQAcIwXmtCPb7m0SIqUS">250</td><td data-page-node-id="gWjkW4nvrf3oOgJhTh7TfW">2025-03-05</td><td data-page-node-id="sJfB7uG2FqTjOZVfCj0Fcf">东北</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="objQOANjxPFXCpHGuoQ5pF">显示前5条，共20条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_1Data()" data-page-node-id="2i9n9RB6FYq2smV8xdEOxF">📥 下载规范订单表 (CSV)</button>
+
+                        <h6 style="margin:16px 0 4px;" data-page-node-id="bKPlhKqwVtEPhDXJODNGfu">❌ 反面案例（典型错误节选，仅供对照）</h6>
+                        <div class="demo-box" data-page-node-id="yoqBjLcIoXLxTEAolbIQS5">
+                            <div class="demo-title" data-page-node-id="YJmp0kyFlsx8Twl7bBFXcQ">反面案例：一张"踩坑"订单表</div>
+                            <table class="data-preview" data-page-node-id="9y7ZEk4dDiZnYfx40izzkc">
+                                <thead data-page-node-id="MrzwfzRifTkZMFd8Gmzl8A">
+                                    <tr data-page-node-id="ig0FHggHiL2XMICUXOSw92"><th data-page-node-id="9p9Ex4McgCVKsjKayGGyLK">订单编号</th><th data-page-node-id="so1REB497xn0qKUGhE3jsl">客户姓名</th><th data-page-node-id="YRQGHC8EzFZtjVqKvdX05J">商品名称（含单位）</th><th data-page-node-id="B2weSkA8nlkQGDr6FqjPFq">数量 件</th><th data-page-node-id="JRW5iRkqoUbwFWASewJ8Wg">单价(元)</th><th data-page-node-id="500xExArITCzAEUb8ejBlu">金额</th><th data-page-node-id="ELGBF9H870jQQrI7O7236p">日期</th><th data-page-node-id="zTjfK1q8AZCPRFlTDUZRWY">地区</th></tr>
+                                </thead>
+                                <tbody data-page-node-id="l6QZ6BKaBJQ1dujAdRxtUT">
+                                    <tr data-page-node-id="UgecQqagDLKfXubvx4c6xv"><td data-page-node-id="JuHXGRNTdOZS14AEP6hswK">001</td><td data-page-node-id="CWkNOrfwAOzVLeJ75h8jjo">王悦   </td><td data-page-node-id="VRF35PzM2swEyBtkaC6dEl">蓝牙耳机(黑)</td><td data-page-node-id="XcMMDqpJBrjX6FphmbyKeD">1件</td><td data-page-node-id="ZLM4q4CNDt7uSV3GcZrm5Q">10元</td><td data-page-node-id="nhfRAKKr5GmLNsjGLcHyvu">10</td><td data-page-node-id="q9vWYE3ZfPVGIOE3E72HA6">3月1日</td><td data-page-node-id="YdH86Q5eOxPzXWz0JsWQDy">华东区</td></tr>
+                                    <tr data-page-node-id="sQnoRowCs3sAObTYtPjBHO"><td data-page-node-id="KrQlKkhsIavry12vFXbrdn">002</td><td data-page-node-id="34Tl1tf2DypNY0IbQtrFAW">李娜</td><td colspan="6" style="text-align:center;color:var(--coral);" data-page-node-id="xtmdELV3UVjxAO4PFHVsgr">← 这里用"合并居中"把整行合并写备注，导致排序筛选全坏</td></tr>
+                                    <tr data-page-node-id="t6mITpmX1071SApyuAThHX"><td data-page-node-id="LOgFGVdwiAFbAW6XT1hzDD">003</td><td data-page-node-id="eVVAWDJ8eauxGBsnWbZ4dJ">张伟</td><td data-page-node-id="IbBroqpbXQCuct1W9pBoKA">运动鞋</td><td data-page-node-id="0JfcjPJIJ9Rz5RX93QAfM5">3</td><td data-page-node-id="7r0u7wDni1JW3AlSrfuAqn">30</td><td data-page-node-id="aZSECO0nAfz5Sz4RzPTe5G"></td><td data-page-node-id="rf6dJhVUhcsM4ENtLZuUzV">2025.3.3</td><td data-page-node-id="UErqe2wBfI1PmbrbXHHOI4">华南</td></tr>
+                                    <tr data-page-node-id="5XPGgC8VU50tDmyKpPRVZl"><td data-page-node-id="Ro5hc4QitSB4ZkhDkFZdkB">004</td><td data-page-node-id="0OxPudLUPg6rp3dXOxcNeR">刘洋</td><td data-page-node-id="pGXr6ga591kqAQyX9pqbn7">零食大礼包</td><td data-page-node-id="4Da0enmhdZJorH78tkb0mN">4</td><td data-page-node-id="h0lfRiOOVMV8UTGHtJdvxa">40</td><td data-page-node-id="LyZjnHpZAMos6pUAe2VqXU">160</td><td data-page-node-id="6CEa5V2K6vrEjZDlJo6sNI">3.4</td><td data-page-node-id="9xi6BH6vrkmTrpmKllq8FY">西南区</td></tr>
+                                    <tr data-page-node-id="QwrQTySLSXEcwFRD8QDxUM"><td data-page-node-id="Rtr1AWRuqnfsTD2oRSUcyf">005</td><td data-page-node-id="ERmkw9UlvvqrGPVek1uaFh">陈静</td><td data-page-node-id="Qx0tUbOonWQtHDV2Gd24TS">充电宝</td><td data-page-node-id="0eirgpgAjrSZ9w3OJk44ZS">五</td><td data-page-node-id="ZChXb3ISBsia5428czd0jG">50</td><td data-page-node-id="mv3n9RUh1GapzZNtLeeKyS">250</td><td data-page-node-id="xZVCzmo5MslsQQDOpckYrT">2025/3/5</td><td data-page-node-id="cIjKuiBvzV3tmWuzj9KuHO">东北</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="demo-caption" data-page-node-id="Lg6lK026rfrekpiGEHDBgE">踩坑点：字段名带单位、用空格对齐、金额空着、日期格式乱、合并单元格、编号不统一、数量写成中文数字。</div>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="lzEWkS2KTgiUxzp5rx4pMs">
+                        <h4 data-page-node-id="ILo6hKD4q0mBcfraTJT9G8">💡 技巧提示</h4>
+                        <ul data-page-node-id="Bnyi8HY0FDzgM5xSn3GQVH">
+                            <li data-page-node-id="8zGddwBScFNCWsQz9HFdiK">把常用表头、配色存成<strong data-page-node-id="nPN6iDxNRTGmJ3OQGFshmD">表格样式/模板</strong>，下次直接套用，省得每次重排</li>
+                            <li data-page-node-id="bjpnjZAq0BHzdwt7M7gDbI">标题太长放不下？用<strong data-page-node-id="TjewXFCXG5f83RZW0oR7qb">跨列居中</strong>而不是合并，既好看又不破坏数据</li>
+                            <li data-page-node-id="EVqWu55FfwKnIyXqFA37aQ">数字列先统一设好<strong data-page-node-id="2itkJlTeOqkptY1iox0zbQ">数字格式</strong>，再填数，比事后一个个改快得多</li>
+                            <li data-page-node-id="Ef8BBaTZirezVnoAOpncRN">给工作表标签<strong data-page-node-id="weVwfDf6ToP0CADvMipyhc">上色</strong>，一屏扫过去就知道哪张是订单、哪张是汇总</li>
+                            <li data-page-node-id="zHfVQkXJ1NcADoYSa0P4ze">文件名带<strong data-page-node-id="tH2d7IeGVF2J9tZc3FXCWK">日期和版本</strong>，找文件、回溯修改都不抓瞎</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm" data-page-node-id="fwhU0PIGorHhWFDtrxmWME">
+                        <h4 data-page-node-id="SW9EqySdu84OGHV04dAr9j">📐 操作规范（养成好习惯）</h4>
+                        <ul data-page-node-id="LTfVHWttDKElzbCfN7Myya">
+                            <li data-page-node-id="kCn8q1q2SaKhMc7DVa95Gi">每张表严格分<strong data-page-node-id="eQ9Be7ZDQmRXGQeDEkCLEL">标题区 / 表头区 / 数据区</strong>三层，互不重叠</li>
+                            <li data-page-node-id="R7rtxT5IWeW9Je4EFllLmp">字段名遵守<strong data-page-node-id="XSsNSaCur0jjoJJTne5pfN">四不原则</strong>：不长、不重复、不带单位、不空</li>
+                            <li data-page-node-id="NRnocojGcRBewoGj5gBf4Y"><strong data-page-node-id="8jE0kMhkGLAAOYSMqnl0Nw">一表一主题</strong>，多主题就分开工作表</li>
+                            <li data-page-node-id="qaZHuKGqxbnBdY6OQX2Aiv"><strong data-page-node-id="SrC0B2Tg5AMeIPXZH46TmQ">坚决不用合并单元格</strong>做数据区排版</li>
+                            <li data-page-node-id="nNnAyOoQiRwBvptT9JXdYU">配色 ≤ 4 种、字号有层级、数字右对齐</li>
+                            <li data-page-node-id="8MuRmgRe4kS9d4jbHUugWL">文件命名 <code data-page-node-id="OYZG3nSJi1eBPUpD9PWwuz">项目_内容_日期_版本.xlsx</code></li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="2lM87W5q5KBVJC27Bje3dL">
+                        <h4 data-page-node-id="LpEM39YCDFunQAqpV8Bvzk">⚠️ 常见错误</h4>
+                        <ul data-page-node-id="jiuQL3rbb9vZAdyr5YUNVp">
+                            <li data-page-node-id="tLRXdhToGWPCh5uf7NxUEt">❌ 把标题用"合并居中"塞进表头行，导致整张表无法排序筛选</li>
+                            <li data-page-node-id="EeoI1si8Pd4XypPcEcz8Rb">❌ 字段名写成"单价(元)""数量件"，单位混进列名，后期计算要返工</li>
+                            <li data-page-node-id="UdU2ZwhhrxdHe121roGro7">❌ 一个 Sheet 里堆 5 张表，中间留大块空白，别人完全看不懂</li>
+                            <li data-page-node-id="7NdbyicjNUtuHgdxRgRmHe">❌ 用空格把名字"对齐"，实则制造了一堆不可见字符，查找替换都失灵</li>
+                            <li data-page-node-id="tXq2oUam82jv32xiYAOAwi">❌ 颜色用七八个，重点反而被淹没；或者全表一个色，没有层级</li>
+                            <li data-page-node-id="GgrZRjMupRTLSzUgwn6tZT">❌ 文件名叫"新建 Microsoft Excel 工作表(3).xlsx"，三天后自己都找不到</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="qqaW1l8CbMOEMAXSYJiwRg">
+                        <h4 data-page-node-id="kdxPuFgXCgntaTtNjc8c9v">📥 练习任务</h4>
+                        <ol data-page-node-id="B21C9V70d8jFEAFvriBFRO">
+                            <li data-page-node-id="ySHqYMm0InYqoYEelKVIdp">下载上面的<strong data-page-node-id="OVwDpOMDcm96U269ciiKGF">规范订单表</strong>，观察它的三区结构和字段命名</li>
+                            <li data-page-node-id="u1u8qLIoNvH4qZYCDA6JCZ">仿照模板，新建一张<strong data-page-node-id="4qkOGcSea8QH6InEADEVN8">你店铺的退货表</strong>，字段不少于 6 列</li>
+                            <li data-page-node-id="W8ymDcPfrQqSVGZvClTmfO">把标题放在独立单元格，表头加粗 11 号并浅色填充</li>
+                            <li data-page-node-id="GGWvlps0Z4RGWOCL0Cb7KU">数字列设右对齐与千分位/货币格式，地区列用标签颜色区分</li>
+                            <li data-page-node-id="9sxVZ4WDLHpYNlYYEoQOm8">按规范给文件命名并保存为 <code data-page-node-id="DtBSuTkyUFbMGc1UJXdmls">店铺_退货明细_20250318_v1.xlsx</code></li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="90JQoJY7rfRdAeRn36CN65">
+                        <h4 data-page-node-id="FSJlGs3w1LnWwvfpzCnxXp">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="DekfovTDtnNknIUQCeF3P5">
+                            <li data-page-node-id="KJDXxt0156Vfs73PRgmaPI">打开反面案例表，<strong data-page-node-id="4TC8TwIxNjNiG6uFV70AZO">逐条找出 6 处错误</strong>并写一句话说明错在哪</li>
+                            <li data-page-node-id="xKgetIboEdgUaqJThSjEW4">把反面案例<strong data-page-node-id="Q5rsNGvK6PyXQBCZiUDHW4">改造成规范表</strong>：拆分字段名、取消合并、统一日期格式</li>
+                            <li data-page-node-id="tXJmeoaZtOs989nWxpDjvd">设计一套你自己的<strong data-page-node-id="ulW5TT1VZnoH7FSlFgEmD3">店铺配色方案</strong>（≤4色），并说明每种颜色的用途</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="hEOJuEOi3zo7Y104ZvAsjK">
+                        <h4 data-page-node-id="lkFWYAEEvaBuCP0DolWY7i">📝 理论测试</h4>
+                        <p data-page-node-id="R6I8Tota0G75nrIbaioINg">完成以下10道题，检验你对表格设计规范的掌握：</p>
+                        <div id="quiz-6-1" data-page-node-id="hICYOk1SicC0InQ2GTAGkx"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 6-2：快捷键体系
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2" data-page-node-id="sz0t0jGt7rPt9kZRKcaYh9">
+            <div class="lesson-header" onclick="toggleLesson(2)" data-page-node-id="HO8mItTlawrHZLCqILKaeC">
+                <div class="lesson-num" data-page-node-id="9p0GtzEPWVpBzBs3470vT5">2</div>
+                <h3 data-page-node-id="ACLqnFCP8Io0oiHgmrdjFS">快捷键体系 —— 手速就是效率</h3>
+                <span class="lesson-toggle" data-page-node-id="ZzT6dWiBdr8Gyx0i2NrCg5">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2" data-page-node-id="lFq4oEvfpiioWURLrQS4N7">
+                <div class="lesson-body-inner" data-page-node-id="HLVkADulhoT4H8oqu34MD9">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="M8JijgBc7T6Om89oIpgBgN">
+                        <h4 data-page-node-id="AFr76PXFAxIEdnMgKG3MwW">📖 知识讲解</h4>
+                        <p data-page-node-id="KKfWiyrhqDgusPoQvqZAh8">同样一张表，有人 10 分钟做完，有人半小时还在用鼠标点菜单——差距往往就在<strong data-page-node-id="PqFErCjUDyQqgGfE7Pf1yA">快捷键</strong>。这节课我们按"<strong data-page-node-id="AbLCITecjedcBYb6sueYt8">手不离键盘</strong>"的原则，把最常用的快捷键分组记。</p>
+
+                        <h5 data-page-node-id="O5L5sw5umkm6KFHqd3w7oU">🔹 ① 通用（保命级）</h5>
+                        <div class="shortcut-table-wrap" data-page-node-id="4Atvwc8d3tsolTxSybPBMf">
+                            <table class="shortcut-table" data-page-node-id="nZQfthfQP58QrLSq074tL2">
+                                <thead data-page-node-id="zhGQs9auAWgspWLLNo7KjZ"><tr data-page-node-id="4FsMGETh3cU28qj5RRflmq"><th data-page-node-id="hJgvypkGBI8oGDdePI6NMT">快捷键</th><th data-page-node-id="ApPSGJ2UZyGmBpcIzMkJ1v">功能</th><th data-page-node-id="uYUeUEW065KO7fZzX6rCFf">记忆点</th></tr></thead>
+                                <tbody data-page-node-id="Q9Tt9hBkwm6IylGZ0PJMoU">
+                                    <tr data-page-node-id="2yegZrffQqVi8gEd5fsUsn"><td data-page-node-id="dybNtIDOKYwc2lbCqJ8efu"><kbd class="kbd" data-page-node-id="fwJ6QIEk5EFqLdiwcjEYtD">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="7lnwhPUFyPBY2XSyiU9PcT">S</kbd></td><td data-page-node-id="gmcAoIZFLlErcdg7J6zrjB">保存</td><td data-page-node-id="KpeV8D66HOhY5qFBDPgr9S">每隔几分钟按一次</td></tr>
+                                    <tr data-page-node-id="OvAzlBnD9b4PEp5Y208Pna"><td data-page-node-id="yAZfvxbxxgGDnavOADaXHL"><kbd class="kbd" data-page-node-id="6HYrFOWOJI8yUq1loCcIWp">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="eoaqGT5llXesQ0V9sFmVe7">Z</kbd></td><td data-page-node-id="kskkmIkfo5v9s8pm3StoXk">撤销</td><td data-page-node-id="3aDHP1gf2lkWUE7dvapOzf">做错第一步</td></tr>
+                                    <tr data-page-node-id="poZqYf02KN5m1ApP7tDyax"><td data-page-node-id="NLli6mnCkrTCFWqZAINbzB"><kbd class="kbd" data-page-node-id="TSAZ4ETcxJcRSPu6BZcT0G">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="aoVbqhH67KbS4FVkCTIwfs">Y</kbd></td><td data-page-node-id="kT3CgE8jkcFnfHYZGlBk0r">恢复/重做</td><td data-page-node-id="86PxGnIJQwxLGpSZ3GOKXq">撤销的反向</td></tr>
+                                    <tr data-page-node-id="qMms6L1KMYMcG2oVjEARGF"><td data-page-node-id="rnTOViweSUPSdTwBOhVfiK"><kbd class="kbd" data-page-node-id="JUGBYNDDOT9sIrHk6JCdJk">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="Rfw0DPAQ0DDGyG5U1S9hh9">C</kbd> / <kbd class="kbd" data-page-node-id="dK3wYatKEgVG7hQgYQAZkn">X</kbd> / <kbd class="kbd" data-page-node-id="QgPyJBWe11tvLBt91sEK0O">V</kbd></td><td data-page-node-id="r8clQ4QCBx2HpJsgHMjmQB">复制 / 剪切 / 粘贴</td><td data-page-node-id="2sI4SRIqkYzwMf7FviaJz5">C取 X剪 V贴</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5 data-page-node-id="UFIpcXDWKJSAnHSgmrDQQZ">🔹 ② 导航（在数据里"瞬移"）</h5>
+                        <ul data-page-node-id="STqN7nAAbJkPCmWc0UknqT">
+                            <li data-page-node-id="QO8FP9cMD0DHseXaMhiu9D"><kbd class="kbd" data-page-node-id="78zMyS2CUDgR1zADkuHv3l">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="vJ2RtmnBaoE2If3KVbWXaC">方向键</kbd>：跳到当前数据区域的边缘（像坐了直达电梯）</li>
+                            <li data-page-node-id="RqXskcfR3JUCYHgwFxFUYd"><kbd class="kbd" data-page-node-id="AzpMoJARAqFuQbca05xpv0">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="PGdwj9hiJ7KMCwOrOgB6YA">Shift</kbd>+<kbd class="kbd" data-page-node-id="4kSKnDWdLKGxKKCHNfRuxJ">方向键</kbd>：从当前格一路<strong data-page-node-id="P81TjhUD5VBVo5Xa8YaqNm">选中</strong>到边缘</li>
+                            <li data-page-node-id="VppK7EQgClT47qEukl3JPA"><kbd class="kbd" data-page-node-id="gsH2CTO4W52rb3GLPmp9D8">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="qMfwTZvN7FJ6Ke2NDoqczR">Home</kbd> / <kbd class="kbd" data-page-node-id="RVHoLXnKHquzgm2nXwwaxv">End</kbd>：跳到 A1 / 数据右下角</li>
+                            <li data-page-node-id="L2w9GH2EkOi3mcBYzR1Mnp"><kbd class="kbd" data-page-node-id="6GLtXYdzRlOW1RtxVhIvpO">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="U872XpDKRS1OfHcG2rkLPQ">PageUp</kbd> / <kbd class="kbd" data-page-node-id="kkV9oe3ZXUpAKk0BKbzxXv">PageDown</kbd>：在多个工作表之间切换</li>
+                        </ul>
+
+                        <h5 data-page-node-id="vGQWj2Gm4EpAXDIRuPeIyh">🔹 ③ 编辑</h5>
+                        <ul data-page-node-id="D8oNBJszrTh00ls4l2GK31">
+                            <li data-page-node-id="Er6YyFtB6xWsHreGTSjCgt"><kbd class="kbd" data-page-node-id="De9JhENVd7HvGfZDwiEG4e">F2</kbd>：进入单元格编辑（改字不离手）</li>
+                            <li data-page-node-id="Xq06O7NcSk0kEMNFIqyBc9"><kbd class="kbd" data-page-node-id="h2NjYlNjpiHaCkIJP6AV4J">F4</kbd>：重复上一步操作；在公式里按可<strong data-page-node-id="RJW0qRs4jLJmzdC2XKNbb7">切换引用</strong>（A1→$A$1→A$1→$A1）</li>
+                            <li data-page-node-id="WtwTaRwixBHu1a2PNKDCHF"><kbd class="kbd" data-page-node-id="BDuXlgVX8AMeqNPj2GXepk">Alt</kbd>+<kbd class="kbd" data-page-node-id="NtGkaN5nnLqCWyArX8t3xx">Enter</kbd>：单元格内换行</li>
+                            <li data-page-node-id="5D6hoyM2cCBaTPKku4Q4rl"><kbd class="kbd" data-page-node-id="877gBG8UxaLrkLfhynZcIt">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="z3vha7BHoCN2R6HtUI5LYn">Enter</kbd>：在选中的一片区域<strong data-page-node-id="JJDgRGPYPS7CQsUaIEva2c">同时填入</strong>相同内容</li>
+                        </ul>
+
+                        <h5 data-page-node-id="OYeh9Vvw2zaJ8nmv8Fn8Ym">🔹 ④ 格式</h5>
+                        <ul data-page-node-id="L1kaleGhi4V6ierDLfC272">
+                            <li data-page-node-id="cPC5L9jUAmWCbRQUovZNvl"><kbd class="kbd" data-page-node-id="DHFGM4FnVcIL2TY0nPE3Wm">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="uXoGYGNGCZlYR3gQ4EqPHl">1</kbd>：打开"设置单元格格式"万能对话框</li>
+                            <li data-page-node-id="ZjhISZjPkVVi9FOiZbvUHe"><kbd class="kbd" data-page-node-id="o0YbgCL5LwiIoIWNDu2Ox8">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="8r1WdfLe5E5xYAUe2fJaLM">B</kbd> / <kbd class="kbd" data-page-node-id="l5rgwPHUQbl3XxAk47tZ3y">I</kbd> / <kbd class="kbd" data-page-node-id="zxTKJyc7iSe7WMtacFD0v3">U</kbd>：加粗 / 斜体 / 下划线</li>
+                            <li data-page-node-id="BcuBqIRBqglvy6w0m66Wk8"><kbd class="kbd" data-page-node-id="WqDA2RWyRfXIPEmrYX2FH8">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="Spgnr2duKOmbIgMwLZfWn2">Shift</kbd>+<kbd class="kbd" data-page-node-id="pLGRuSkRabhgUGnomeAPDA">数字</kbd>：一键套数字格式（1=整数、2=两位小数、3=千分位、4=货币、5=百分比、6=科学计数、@=文本）</li>
+                        </ul>
+
+                        <h5 data-page-node-id="Ep9rJOxPVQbryfGET6OKWa">🔹 ⑤ 函数 / ⑥ 快速填充 / ⑦ 时间</h5>
+                        <ul data-page-node-id="Wemk2ChKiQIHNQCjpx4Kxl">
+                            <li data-page-node-id="OFV7WYflovMFYjpQguaptO"><kbd class="kbd" data-page-node-id="lQDuoDnqt9RrRP0xhKe7Ux">Alt</kbd>+<kbd class="kbd" data-page-node-id="stOK5Zc7ovCERcKcODZj6h">=</kbd>：自动求和（秒出 SUM）</li>
+                            <li data-page-node-id="oTlYnkrHlzpjxR0p2HoGIm"><kbd class="kbd" data-page-node-id="NS909XXhiFn6HERY2U2SAA">Shift</kbd>+<kbd class="kbd" data-page-node-id="NMF2NqOYix6sEL0vJUyTHD">F3</kbd>：插入函数对话框</li>
+                            <li data-page-node-id="3FNIP3UGH5rE3VMcQRMCvC"><kbd class="kbd" data-page-node-id="cfKMileW5AQGITtAngI9sS">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="64wCmk5UdAxAvAi7yETNxG">Shift</kbd>+<kbd class="kbd" data-page-node-id="3G74Z9xbBFx9oQeBc9Vv00">Enter</kbd>：老版本输入<strong data-page-node-id="OKEA3xDDh7E2BVoBK8nlts">数组公式</strong>（365 已自动支持，无需此键）</li>
+                            <li data-page-node-id="QiGrgJSnpkAA0S9QDcRhUD"><kbd class="kbd" data-page-node-id="l4SI8bCgjw0aDFh0LSl0CE">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="aCgBZfEaCYEipyFXf2QFz8">E</kbd>：<strong data-page-node-id="9xSBQS8YYNXDpy1CYAnXJi">快速填充</strong>，Excel 自动"猜"你的规律并填充</li>
+                            <li data-page-node-id="ygZtJ3l15xgC7pR7rcRixd"><kbd class="kbd" data-page-node-id="7KlkUpJkWxtgZh2LrHQfQa">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="xW1weBdNgDQVgdpiUoFAne">;</kbd>：输入当天日期；<kbd class="kbd" data-page-node-id="kbqtk5gdyb0pb8UyxyVodb">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="MVGRFnDfrebvU7cuO61ZUP">Shift</kbd>+<kbd class="kbd" data-page-node-id="9gSQy8aQJBfcHA8wDhmDpz">;</kbd>：输入当前时间</li>
+                        </ul>
+
+                        <h5 data-page-node-id="Shv5tTmCwDsxBJ6kKhBNsn">🔹 ⑧ 菜单 & 筛选 / ⑨ 自动适配</h5>
+                        <ul data-page-node-id="nbBWmv5N82h9iQ14499fOy">
+                            <li data-page-node-id="QrUMq48nUR77nyZQGi5XS2">按 <kbd class="kbd" data-page-node-id="Kdg6PFv1dylmn7RCDXFQFN">Alt</kbd> 再按字母，可<strong data-page-node-id="6nbVSqXUfC0XpIym4qXsWz">纯键盘激活功能区</strong>（如 Alt→H→V→V 粘贴）</li>
+                            <li data-page-node-id="pB41KS6kctQImaoCpUSDgb"><kbd class="kbd" data-page-node-id="aJEG8sILekxTz9qO1Ba6n9">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="kkRSBhWyOljN5OtDd5FrNz">Shift</kbd>+<kbd class="kbd" data-page-node-id="2x0EWbsR4g7ODumPSAqAs4">L</kbd>：开关<strong data-page-node-id="VQmQF5xOY0u2bqKzjl52yC">筛选</strong></li>
+                            <li data-page-node-id="Mq4BoHxCy7EYkMfBLHN14U"><strong data-page-node-id="j5M1oMkQArokcJBijhK10m">双击行号/列标边界</strong>：自动调整行高/列宽到内容合适</li>
+                            <li data-page-node-id="msaV7j4bMDfGk5xyAVwveE"><strong data-page-node-id="n7UGcHq9OjlRsEtXtJ9GTb">双击填充柄</strong>：自动向下填充到相邻数据末尾</li>
+                        </ul>
+
+                        <div class="callout callout-ok" data-page-node-id="5mZ7K6eUlEr23IGltFOktO">
+                            📌 <strong data-page-node-id="6cLZyVwNO0XNEtZ1sw7CfH">学习方法</strong>：别贪多！每天只练 <strong data-page-node-id="WZjwFnvJGTdpW60eZBM6sY">5 个</strong>新快捷键，连续用一周就长在手上了。先用通用+导航两组打底，再慢慢加。
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="VgA12aPfGVlOil5yuLRuDE">
+                        <h4 data-page-node-id="FrJvgL6QdEXHHxIYKfJjRI">🔧 操作步骤：用快捷键"瞬移"选中整张表</h4>
+                        <div class="step-list" data-page-node-id="pS7sPKyPYDQrCC6cUybthT">
+                            <div class="step-item" data-page-node-id="Hhf7zzY6XyCfmognHQysjC"><div class="step-content" data-page-node-id="aSwjYTGpbFS0IsYo2VepjO">点进数据区任意一个单元格</div></div>
+                            <div class="step-item" data-page-node-id="2ToDa9ecb9AzJPonSHnVAA"><div class="step-content" data-page-node-id="h8OiaZIOOZrkp3mFn0w49y">按 <kbd class="kbd" data-page-node-id="8PIWnwJdfjlQwzLiAEDRZI">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="HV4RZKoIxeBdXmkf8DZTSV">A</kbd>（或 <kbd class="kbd" data-page-node-id="xJd43AD3oxa9DakBq72i2l">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="Ak45GCFAHyXNJgo98jTVv3">*</kbd>）选中<strong data-page-node-id="ArBaoBRDzjudRUa5gaMYwe">当前连续区域</strong></div></div>
+                            <div class="step-item" data-page-node-id="QJXaK10Q77d8EVxOJ1SapB"><div class="step-content" data-page-node-id="QkYzNesHUQCegRlxILTRQR">按 <kbd class="kbd" data-page-node-id="avUQvQoBIk65KMuZfWtgWU">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="TATQuhMKUNNJMURvf9FcIC">Shift</kbd>+<kbd class="kbd" data-page-node-id="2VCLo06xozYBoZGC4i7Roc">方向键↓</kbd> 验证：从表头一路选中到末行</div></div>
+                            <div class="step-item" data-page-node-id="fy7MBi4GoaY4AmJY80Qd54"><div class="step-content" data-page-node-id="tPA1c7mJWNdw5Pfe6XdwH7">按 <kbd class="kbd" data-page-node-id="PIhv49vVgJ1GaNTlFuReuN">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="DLmqu9UCkAphZcscOGfeZe">Shift</kbd>+<kbd class="kbd" data-page-node-id="kzn2GUJ1Pp4zwnGZB2H1Cd">L</kbd> 一键开启筛选</div></div>
+                            <div class="step-item" data-page-node-id="FkcMHNv8ZyaSmBCAQkJEl0"><div class="step-content" data-page-node-id="ETAZa747jfkjWVU3GrDtWx">按住 <kbd class="kbd" data-page-node-id="DFeA5nx3L0gwtdzsXReYY9">Alt</kbd> 松开，按 <kbd class="kbd" data-page-node-id="vLI6v8Cegdit7ZrISSvcT8">=</kbd> 在下方单元格自动求和</div></div>
+                            <div class="step-item" data-page-node-id="7klAFxdMt6qRUUnYmFJcnf"><div class="step-content" data-page-node-id="jDLryzw5fHjmIvEEc6H93n">全程手不碰鼠标，体验"手不离键"的爽感</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="bJ6zu1PfVD5C51fzDutADG">
+                        <h4 data-page-node-id="dThidJrEOQtztAczNaXU0o">📥 练习数据：快捷键自测表</h4>
+                        <p data-page-node-id="yyqZT3bRH2XQphXrDutqXZ">下面是一份"必背 20 个快捷键"速查表（前5行），完整 30 行可下载自测。每练熟一个，就在"我记住了吗"打个✓。</p>
+                        <div class="data-preview-wrap" data-page-node-id="fdMMXFoBf4HCdwha06rlLB">
+                            <table class="data-preview" id="preview-6-2" data-page-node-id="Msi7pIU8MEN46smLpIegNz">
+                                <thead data-page-node-id="0WmK7UrBxVEL6WmB0yYxSC"><tr data-page-node-id="NAfAwnAGh2lIaWCFnvSRwG"><th data-page-node-id="DhLffcH9gHvQWrCtGj21pc">快捷键</th><th data-page-node-id="2K8vwAHp1cPZSYU0Qy2C8S">功能</th><th data-page-node-id="SxpZgnbYizQn5WzbPJNIWP">我记住了吗</th></tr></thead>
+                                <tbody data-page-node-id="XwtGOl19ieZyVHjunlyhuI">
+                                    <tr data-page-node-id="NaCQ5glpgOTRLiynn4JWsI"><td data-page-node-id="tKkacDFGj3Pd6rT3426Ilq">Ctrl+S</td><td data-page-node-id="BVJMqRdgnmoXvivmNXyAxl">保存</td><td data-page-node-id="bsUHSoG3vVTHdcf3hMEWYA"></td></tr>
+                                    <tr data-page-node-id="RDVzSlYkJDtbx2GK6iOZkk"><td data-page-node-id="eZFfQWtOjc2mwMyMWwoqvu">Ctrl+Z</td><td data-page-node-id="kA8mA9x7B52eC2nEvhKwSG">撤销</td><td data-page-node-id="3OUbgS2D2omhMLrx3GGWKA"></td></tr>
+                                    <tr data-page-node-id="LTGTt2nAe4k6AKdzCfeiVz"><td data-page-node-id="N5kHe8V9EeeZA2JrQ5mdCI">Ctrl+Y</td><td data-page-node-id="6zLNsFHy4WDUOMhvx1VE8A">恢复（重做）</td><td data-page-node-id="Jiv6SEi9EnmFoPUYhKhtpD"></td></tr>
+                                    <tr data-page-node-id="Wl3qEBkQ8df8O3VZeALf58"><td data-page-node-id="J2jxuDCEDDyKq8phRL2vHt">Ctrl+C</td><td data-page-node-id="cdhh31tgS3W0UFIIQgQK8h">复制</td><td data-page-node-id="yqf1p6WenlJi1dGyF1slej"></td></tr>
+                                    <tr data-page-node-id="hRE5RHPNzGHRE5AsGTlLFO"><td data-page-node-id="ZApWCjWes78ZNUAQttDdvC">Ctrl+V</td><td data-page-node-id="Ht9eMciZTJKd2Br8o52aaf">粘贴</td><td data-page-node-id="NffUD5sNOYVs7UN3f6lUl8"></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="LuZKQ1XnI7YF4Jtd1MNVjb">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_2Data()" data-page-node-id="mAvju1aeudJ38r7bdzM4x3">📥 下载快捷键自测表 (CSV)</button>
+
+                        <h6 style="margin:16px 0 6px;" data-page-node-id="pGMx15xLcK1s29JmgWVa0x">📚 必背 20 个快捷键一览</h6>
+                        <table class="shortcut-table" data-page-node-id="86b6vmb2EjwWSYFNCX23E0">
+                            <thead data-page-node-id="P3LMjxsUciRqY6gMHw6zCI"><tr data-page-node-id="25AEonPmyLfuFfbmmMF9Jp"><th data-page-node-id="DRNmU9N1GJZo6smFLNGe5E">分类</th><th data-page-node-id="0bnl1MQLliyaWZXBxlZDWt">快捷键</th><th data-page-node-id="FLPZo4sHf683Rr1Ahu2kSv">功能</th></tr></thead>
+                            <tbody data-page-node-id="lHW1ATK0yVryavrzDyGXRK">
+                                <tr data-page-node-id="nF5MtxEQPiEZ7HAtEVdCBL"><td data-page-node-id="pz5vMqoWSeuo2ehmvgSs4J">通用</td><td data-page-node-id="kTnvzVAknYByseT6TZuvh3"><kbd class="kbd" data-page-node-id="FFFOOiApE0ymVoCFHD3HFu">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="zXH9iFNNLWkzmP7EIEhW1D">S</kbd></td><td data-page-node-id="k6TQne3tqlLkSweIURPtsy">保存</td></tr>
+                                <tr data-page-node-id="ceSLEdVpVyNJ30eQuCbGC2"><td data-page-node-id="pyGJfezGao9XWkUJ4XOop2">通用</td><td data-page-node-id="gBvubmKKODRObxnOoDDv6F"><kbd class="kbd" data-page-node-id="lUDcXRYcVnsXRZEaSpR0A8">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="CvhPw0OxsNyBuFeuzRGDRj">Z</kbd> / <kbd class="kbd" data-page-node-id="fsPFXwGQP4PaLAZrJJmwEu">Y</kbd></td><td data-page-node-id="ouLAVMNDfiIDZALEBEG9Ov">撤销 / 恢复</td></tr>
+                                <tr data-page-node-id="1YFtQ7X4xbpHIz38YAMeie"><td data-page-node-id="0RE6u0HYJjfVfko5aDEIoi">通用</td><td data-page-node-id="DZX1sLQFiGuZptkaPjHzRY"><kbd class="kbd" data-page-node-id="NhEOBMcigO2RqHxHuWk4Db">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="09nKqKjNeU1fH3cxVGkjKj">C</kbd> / <kbd class="kbd" data-page-node-id="b50qJCbh7xmEDB7GhDsP78">X</kbd> / <kbd class="kbd" data-page-node-id="MkZ37r6XZYFbOOwfvdeoPu">V</kbd></td><td data-page-node-id="SgBJistDOeOv72qwoGpbPG">复制 / 剪切 / 粘贴</td></tr>
+                                <tr data-page-node-id="StO92GBAEk4HtpHLCxfFMF"><td data-page-node-id="tK5bJz4df5j6oPyGHd9RVY">导航</td><td data-page-node-id="gX9jO6acXordH3ZpI0TFij"><kbd class="kbd" data-page-node-id="pulxAsEF83TJAlo0vTeOVD">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="5HPH33DbjWool7D76X9DSD">方向键</kbd></td><td data-page-node-id="OhLmAN3gCAns7hBphJWpVt">跳到数据边缘</td></tr>
+                                <tr data-page-node-id="gznwgEfPbtdlayBEMAwDeP"><td data-page-node-id="SU0TvCK5eMhbo8g9UKMJz9">导航</td><td data-page-node-id="YkWDaNAZcmBZb47OfmVhHl"><kbd class="kbd" data-page-node-id="BLpSCutRCqOnbJpulmbdVh">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="ICWEiwBa52JKcewtHKKlNI">Shift</kbd>+<kbd class="kbd" data-page-node-id="mXBqujlJyYSUmEsATxD2PD">方向键</kbd></td><td data-page-node-id="pDpnSwJN8Xz2wt94VPX0vz">选中到边缘</td></tr>
+                                <tr data-page-node-id="AZxQB5jIOOJY1SO4aebzTG"><td data-page-node-id="eaHA3Gh8sFAIDcUd2uaF61">导航</td><td data-page-node-id="0Qqywnhmfc57fvWH6MtDCo"><kbd class="kbd" data-page-node-id="XU4L5MREaKq9j9g8uygr1N">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="tNog5qkJZfqZ7LfWl1iSNn">Home</kbd> / <kbd class="kbd" data-page-node-id="5kyCncHOwv3r09ZAFgemql">End</kbd></td><td data-page-node-id="WWLAcPAoEDfnFm9PP1n37F">跳 A1 / 右下角</td></tr>
+                                <tr data-page-node-id="r77NdCJb6Bi0tneisaVuVC"><td data-page-node-id="g4HXbwT4Rq6OMpVcnAsg96">导航</td><td data-page-node-id="edd4KYKvvCrY9XOUpW7Okj"><kbd class="kbd" data-page-node-id="3f6VZACUI0psEtVo3l47Zw">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="GjRTwfozSrv9GEeXmsJlhi">PageUp</kbd> / <kbd class="kbd" data-page-node-id="bHRHi6T08EzyqP1e4hvjcn">PageDown</kbd></td><td data-page-node-id="J3rb6ri4VxBXxGARdC80MH">切换工作表</td></tr>
+                                <tr data-page-node-id="VMjujDDxa3fWlHVzvLPZzC"><td data-page-node-id="Yo6Io0rDo6fy0NzOBeex1B">编辑</td><td data-page-node-id="9WBzy1Qp04L0lkQ1dfgKW2"><kbd class="kbd" data-page-node-id="H4vred2EZ56tPI1JvkZ5Fx">F2</kbd></td><td data-page-node-id="RFS1bBYE7AiMBRZUiPaZZt">编辑单元格</td></tr>
+                                <tr data-page-node-id="8pcO0JNRsnpDyKABj9J3tl"><td data-page-node-id="BwRQWcM8gMeQPKln46eXCZ">编辑</td><td data-page-node-id="KpDv18Sp4fLrcYHmMw5QsK"><kbd class="kbd" data-page-node-id="uYCtsp1v6KQfYIgseQ6AGm">F4</kbd></td><td data-page-node-id="hnM882FDeD3TkMrw53gEOb">重复操作/切换引用</td></tr>
+                                <tr data-page-node-id="OquI1HS9DxYOtObsyyHIeF"><td data-page-node-id="upP5DrbjEFYQ0PRm53UR5e">编辑</td><td data-page-node-id="OOqWvYoDsBcY5EfL8aZmaM"><kbd class="kbd" data-page-node-id="yM2XQ0rSxVa50LstZwHK6n">Alt</kbd>+<kbd class="kbd" data-page-node-id="wvE1B2eGKDSuK0Knp7XFps">Enter</kbd></td><td data-page-node-id="IIJouHg9UdjWOPGSAKwK5s">单元格内换行</td></tr>
+                                <tr data-page-node-id="EDB8mwwzJXpRQEkS8h4VaG"><td data-page-node-id="doWerTGPCiKKUf6EoDLovI">编辑</td><td data-page-node-id="V98kpgnLTprsUedvC8eKG9"><kbd class="kbd" data-page-node-id="JBlENLC7RHhuJ6hzIbS8Kp">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="UmwARpRuNWal8s8ssJAA70">Enter</kbd></td><td data-page-node-id="pvA57QQZZ8p7NKu5SjUDkS">区域批量填充</td></tr>
+                                <tr data-page-node-id="2E5Dq9z7Lm6YSmdfXmQjp5"><td data-page-node-id="VaUWlkP9dKBDrZ998oVXfu">格式</td><td data-page-node-id="8RS3Az0FiBQ1NNc4zaVs3f"><kbd class="kbd" data-page-node-id="KEqvrFWRAmw90PEO8y5R0g">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="VWxKNcIi5Kk99nn06vJ8EZ">1</kbd></td><td data-page-node-id="iGHtbGwEyWoytEHCj0uOit">设置单元格格式</td></tr>
+                                <tr data-page-node-id="uJGLhdP5tDVuEWZHVi4lTg"><td data-page-node-id="orXTMRxvebEkcsRpTAxmdd">格式</td><td data-page-node-id="YiA26tPK2JrSBmhFiKGtn8"><kbd class="kbd" data-page-node-id="yxHlVofn7sIMsEpJxiTZz2">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="mKKBzX2xQvAf61ioE1aSCM">B</kbd> / <kbd class="kbd" data-page-node-id="0BeJpfQDhHgL7krT6BZeFA">I</kbd> / <kbd class="kbd" data-page-node-id="Fnbm1RBGT8CUwXHR4llXDa">U</kbd></td><td data-page-node-id="gYLCEF2jVz3bOFJL7THOoR">加粗/斜体/下划线</td></tr>
+                                <tr data-page-node-id="SmSExVO2OOA7fj8cdy7d4V"><td data-page-node-id="TCEwcbFJVXNg5gAeIjrdPj">格式</td><td data-page-node-id="QC65xziB5D2M3W8M4HGytt"><kbd class="kbd" data-page-node-id="tZjDOIs4lZ9Psn9RHTnCEO">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="LXzkqZURKoHpCGC2btJBTd">Shift</kbd>+<kbd class="kbd" data-page-node-id="NBnNb9efFKZrfSBDoXjfAA">1~5</kbd></td><td data-page-node-id="q8cDhHp1PQpMYYEjhobLRf">数字格式快捷</td></tr>
+                                <tr data-page-node-id="4OVPu0MlnK6VDENQ1tDhSi"><td data-page-node-id="LjOnRtwkYrFR7EpFlI0y4D">函数</td><td data-page-node-id="XBcr3YvX80jEojJbgigLYT"><kbd class="kbd" data-page-node-id="LE9gsTZOzCDPWi9SxXcAmR">Alt</kbd>+<kbd class="kbd" data-page-node-id="AHGqqdwEr9gJ39JzANXoSr">=</kbd></td><td data-page-node-id="C3Co5W6IgYEcgG3YAcjH60">自动求和</td></tr>
+                                <tr data-page-node-id="6zI8ww4F7RpidxxzBME13b"><td data-page-node-id="o2kcojXBdVszVnQ9NncpwD">函数</td><td data-page-node-id="NN70bnf78tvIKc4j7P7EBD"><kbd class="kbd" data-page-node-id="C3DUoIXnaRT1PWRqy4rBsZ">Shift</kbd>+<kbd class="kbd" data-page-node-id="g7MkUVkHRMSBG8GChBJtyD">F3</kbd></td><td data-page-node-id="vkqsGkSiA1FrQBAX6B7PTy">插入函数</td></tr>
+                                <tr data-page-node-id="rCt9GBr5PNJpGW6IynY1Io"><td data-page-node-id="3ZhezQJZqXSV1NnpYpKXep">填充</td><td data-page-node-id="2aFbdvCkFsy8SsVyR9rE3F"><kbd class="kbd" data-page-node-id="NxyAh9ILSHTAYC57PiBvzq">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="KKHfbn01p4Q3a5nxNaeC8a">E</kbd></td><td data-page-node-id="sWjsSdxisjmamyiP7Rr9VB">快速填充</td></tr>
+                                <tr data-page-node-id="ZxBJXrzLascUeOkHUopy0A"><td data-page-node-id="CF9zZM5LSxnK7nNidbSHat">时间</td><td data-page-node-id="OHA3IhxwfK4WawErsfvUe9"><kbd class="kbd" data-page-node-id="DAD43TnAb4Wtx044GfkyO9">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="JbMXENYDVRhRKzDB31P6F5">;</kbd> / <kbd class="kbd" data-page-node-id="SmBxwSzwsS7w2UgUgx8C9R">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="1bDLkaoZRi8BODBj8IFOqW">Shift</kbd>+<kbd class="kbd" data-page-node-id="TXf4My7FenPcpYDGdD5yfO">;</kbd></td><td data-page-node-id="20ctv76Xi2Ate0YSqvxDEn">日期 / 时间</td></tr>
+                                <tr data-page-node-id="ZnejlNtEkNieLHmb1mozSj"><td data-page-node-id="GpNuQMx0t6UPzB30If22UN">筛选</td><td data-page-node-id="cAAaAarbXdInxArYQbzJOV"><kbd class="kbd" data-page-node-id="lQETi8ASbTFBIbKTFTvAph">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="SfgzIYsp5BVd3qFucM9wqW">Shift</kbd>+<kbd class="kbd" data-page-node-id="wtrJGE8ehXcDS0sIBpSmzA">L</kbd></td><td data-page-node-id="OikTP2a6buA90lcRmtVDwn">开关筛选</td></tr>
+                                <tr data-page-node-id="hNtYgDcGKG7pOLfyQBOHsH"><td data-page-node-id="b66d6Ek7OQKngU3rM6xHP1">适配</td><td data-page-node-id="byOfKcV0ZfAUFyLjOeCFdi">双击边界 / 双击填充柄</td><td data-page-node-id="7lqZNsdVuKQ10iYFKOhojT">自动列宽/填充</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 醒目入口卡片：快捷键速查手册 -->
+                    <div class="content-block block-tips" data-page-node-id="C3M7R9tWivKnS23cgAPvHi">
+                        <div class="callout callout-info" style="padding:18px;" data-page-node-id="HwiaeYu7YYyJl6UhTnLozQ">
+                            <div style="font-size:1.05rem;font-weight:700;margin-bottom:6px;" data-page-node-id="mSGSLstNiHRuFi4iemIaRm">⌨️ 本站配套 · 快捷键速查手册</div>
+                            <p style="margin:0 0 12px;" data-page-node-id="RLmEgzVzg0S5YlaCtMlw9U">本手册支持<strong data-page-node-id="2J4FJmZ9i5iIpCWfo1EJmO">搜索</strong>、<strong data-page-node-id="2hCh0HwXWtP0asCiaC1OEz">虚拟键盘演示</strong>和<strong data-page-node-id="eeMFTdejAE2d0fbl8yUBJZ">随机测验</strong>，涵盖 7 大分类、160+ 快捷键。建议每天花 <strong data-page-node-id="KCIYFguT80oc6W8svdAIkZ">5 分钟</strong>刷一刷，把今天的 5 个新键练成肌肉记忆。</p>
+                            <a href="excel快捷键/index.html" class="btn-download" style="display:inline-block;" data-page-node-id="cLneZFztm1Ufjt1JcEYVH1">⌨️ 打开 160+ 快捷键速查手册</a>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="Df3feRzwwx02NYLfSg9VLg">
+                        <h4 data-page-node-id="B88N1ORpXd4CvDwvf6fyBb">💡 技巧提示</h4>
+                        <ul data-page-node-id="WlYV2sQs48uJQjeThXLftE">
+                            <li data-page-node-id="XqXFvdhDPjCF0CXyQDaUqT"><kbd class="kbd" data-page-node-id="iPILtUFLNPLvCRYfm3VGgZ">F4</kbd> 改公式引用超级好用：写完 <code data-page-node-id="kzuKTWuwcnD1UGpIKMVCPu">=A1</code> 后把光标放 A1 上，反复按 F4 在四种引用间切换</li>
+                            <li data-page-node-id="2k44gtwt0jiUhi9DC6fXfX"><kbd class="kbd" data-page-node-id="V2bb9E9YpTa0nXjx6V1tkT">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="wmvRSL6YArlUZAZRBMCTUa">Shift</kbd>+<kbd class="kbd" data-page-node-id="eAQCXQM0hYJV0zCuC8AScf">L</kbd> 比用鼠标点"筛选"按钮快得多，且随时开关</li>
+                            <li data-page-node-id="M4aVtHwE6ITSfTt3m7rbMG"><strong data-page-node-id="j7Peek4RmCRVuh0ELt2JMV">双击填充柄</strong>向下填充时，Excel 会自动匹配左边列的长度，不会多也不会少</li>
+                            <li data-page-node-id="coB2ifKtbnYxKO2f5opt0C">记不住组合键？先记住 <kbd class="kbd" data-page-node-id="lD3eqkUv8pG5mskOwPuDez">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="48Vq2jbAG8DDLGSsN4PN3E">1</kbd>（格式）和 <kbd class="kbd" data-page-node-id="MxFUm45Gxa6psdEbEvywuP">Alt</kbd>+<kbd class="kbd" data-page-node-id="FnMiWh4qPrfrfUprcRSVbI">=</kbd>（求和）这两个性价比最高的</li>
+                            <li data-page-node-id="zTBGTYPvAzkco21eWqzcd7">打开 <kbd class="kbd" data-page-node-id="AZyUFODh9dtTLZuJclX54S">Alt</kbd> 键盘提示后，不需要记完整路径，看着屏幕上的字母按就行</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm" data-page-node-id="P6Azvg3sR8KGQZCzkIO98i">
+                        <h4 data-page-node-id="Cx1yEGFhEGWrR4QUCDHDXM">📐 操作规范（养成好习惯）</h4>
+                        <ul data-page-node-id="SNgRLhzoDA1HDwHr7Pp96Y">
+                            <li data-page-node-id="mbx449CI5SHsMqiFz58SQf"><strong data-page-node-id="EZXNXz85AmFKvLOTLFKWfs">每天只练 5 个</strong>新快捷键，贪多记不牢</li>
+                            <li data-page-node-id="gYLQ8jcvsr3MrUbucklquY"><strong data-page-node-id="uJGegW4pTtB51ZYbIGEVsf">Ctrl+S 形成肌肉记忆</strong>，做一步存一步，断电也不怕</li>
+                            <li data-page-node-id="a20tO4NXdc9HTgEPVR0Oo0">把"导航 + 通用"两组练到不用想，效率地基就打好了</li>
+                            <li data-page-node-id="E4zVc54bL2UjVdO3R5zmmw">发现自己在<strong data-page-node-id="GVyuI84BSPTQgTBcV4I9Iu">反复用鼠标点同一个菜单</strong>，就去查它有没有快捷键</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="27xpJLkwVYrC4BlTGrFGSL">
+                        <h4 data-page-node-id="0kHGsfrAG7y9rV2FnAUJaU">⚠️ 常见错误</h4>
+                        <ul data-page-node-id="LPNga2whrD866ZtRhvXgpA">
+                            <li data-page-node-id="AzesJH74FqIwDTPCBJ9EOl">❌ 一上来背 160 个，三天后忘光——没掌握"每天 5 个"的节奏</li>
+                            <li data-page-node-id="nP5jEo5G3bwGraBMeI3jT2">❌ 以为 <kbd class="kbd" data-page-node-id="q5BVSWX6mvVu6XR31SXrP8">F4</kbd> 只能"重复格式"，不知道它还能切引用</li>
+                            <li data-page-node-id="ZFS6IvYijpeS5VuamqLAml">❌ 用鼠标拖选大表，其实 <kbd class="kbd" data-page-node-id="q5G2KeAJTkMwbZs9pwE6jx">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="1Ews3qeP473CTNTHnYfgkN">Shift</kbd>+<kbd class="kbd" data-page-node-id="6m2JHQrx11MRbUTJYwFsCL">方向键</kbd> 一秒选完</li>
+                            <li data-page-node-id="dFjU5ATZ7aLJ4sF0M91xJC">❌ 忘记 <kbd class="kbd" data-page-node-id="Xu6uHiujDPuUUe7DvtgFeE">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="o7f4Toq6ahWEwtEgtIutP6">;</kbd> 输日期，手动打字还格式不统一</li>
+                            <li data-page-node-id="QIEuR4MR72FQZP30ddpfNH">❌ 关了筛选却以为还开着，数据"不见了"其实是被筛掉了</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="4QTUocg1BArxOnKFp2DHVu">
+                        <h4 data-page-node-id="dCqIRE3WUG0E82r1XUtpbk">📥 练习任务</h4>
+                        <ol data-page-node-id="PgHROirBV1FptpZyfKSWMn">
+                            <li data-page-node-id="svWWB9VGpGRsytyKCNtmY0">下载<strong data-page-node-id="y9KTWcMn3sYebErNfyGpdP">快捷键自测表</strong>，今天先挑 5 个练熟并打勾</li>
+                            <li data-page-node-id="I7qOBTp7PeMHMv5WGnTK59">用 <kbd class="kbd" data-page-node-id="oqhCYqUqrLYk6l0pjpjoMz">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="LseoURnU5BITMXmtNRGoIp">方向键</kbd> 在一张大表里"瞬移"到四个角</li>
+                            <li data-page-node-id="661zQ292huWYU7VLP789yE">用 <kbd class="kbd" data-page-node-id="HUuVLM46gd0tY0SaBNoJE1">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="irJCAgomsfkO0sytW6COZA">Shift</kbd>+<kbd class="kbd" data-page-node-id="4agkCMDSplbiQQaO33PvPC">方向键</kbd> 选中一整块区域</li>
+                            <li data-page-node-id="Ur6bGFpUpnVDc8asQ369R4">选中一片空单元格，输入"待整理"后按 <kbd class="kbd" data-page-node-id="h8O1wVuePoWPezK58FAhCk">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="bK0DE6mAZOFFXjCHAKy5R5">Enter</kbd> 批量填充</li>
+                            <li data-page-node-id="r889OwXkOiyHFUf4uL2ANF">打开 <a href="excel快捷键/index.html" style="color:var(--blue);" data-page-node-id="KaaGjTUNMJfCIHrzasmkCv">快捷键速查手册</a>，做一遍随机测验</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="Aiv78NcJPq3K987lcAbtfw">
+                        <h4 data-page-node-id="jcfCgPUgH7LJtPK0cPmIWL">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="Q6MHOWA9elREYUOSVUKoCk">
+                            <li data-page-node-id="nyKAiyNDbXMO2DwJzZ9Gfb">给自己定一个"<strong data-page-node-id="FcTSZ6ag1oQY8P8CT8lyg7">一周快捷键计划</strong>"，每天 5 个，写到本子上</li>
+                            <li data-page-node-id="uWTFzgbNJ4UNpmINaWO71G">尝试用 <kbd class="kbd" data-page-node-id="z9NmUgjYdynmhPDXGOeGSh">Alt</kbd> 键盘导航完成一次"复制→粘贴→加粗"全流程，手不碰鼠标</li>
+                            <li data-page-node-id="pORzCgZ0epOPwd2ozesAnS">在速查手册里找 3 个你从没用过但觉得有用的键，明天就用上</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="eksLELK5e1DKGesExFBqtQ">
+                        <h4 data-page-node-id="egedjIbFwXLnhUJmhCP5xD">📝 理论测试</h4>
+                        <p data-page-node-id="dc5SYah0YQAGH3H5xpalZp">完成以下10道题，检验你对快捷键的掌握：</p>
+                        <div id="quiz-6-2" data-page-node-id="HfETQ7Pk5bfyxlkcxnqulu"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================
+             课次 6-3：数据美化与排版
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3" data-page-node-id="HNB0XTnADVnCwehY2HeUlP">
+            <div class="lesson-header" onclick="toggleLesson(3)" data-page-node-id="QeSF7sR0j63liXqJ7iqX90">
+                <div class="lesson-num" data-page-node-id="wcYbVPAc8thQte0IXj7Onv">3</div>
+                <h3 data-page-node-id="WMvOLiOGyNCvPjVfH6ELaF">数据美化与排版 —— 让表格专业起来</h3>
+                <span class="lesson-toggle" data-page-node-id="dMRCCgYeDCqoH7kud4VuZK">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3" data-page-node-id="CucmWdhMBwUaR2tpV6Jkhw">
+                <div class="lesson-body-inner" data-page-node-id="n8VjEaQwtbJ5HaLADdvaMT">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="i1NB9OqPDuliBbIQfaimQE">
+                        <h4 data-page-node-id="D5DUL7gHaRPPYUdhUfkW2X">📖 知识讲解</h4>
+                        <p data-page-node-id="y91gGusEdp1uAIX7ctiII7">"能用"和"好看"之间，差的就是排版。给老板看的销售报表，<strong data-page-node-id="WfAsShW0NI1N5qeucunc8E">同样的数据</strong>，排得专业就显水平。这节课讲怎么用 Excel 自带的工具做出"高级感"。</p>
+
+                        <h5 data-page-node-id="ghuiiiKXqJ5KMRKQ4q6k7w">🔹 表格样式：套用还是自建？</h5>
+                        <div class="concept-cards" data-page-node-id="gcsb5tqNButD4CL9W1CVc3">
+                            <div class="concept-card" data-page-node-id="AqGFvzRD8Qt3AjrosL8DBa">
+                                <h6 data-page-node-id="hom8YxHCXX12nsfrTWVNoZ">🎨 套用表格格式</h6>
+                                <p data-page-node-id="iuNmHwqqiIEoSWKlplOU4w"><code data-page-node-id="F6EyBcwEYeAJbIsKX8kAV9">开始 → 套用表格格式</code>：一键带条纹、筛选按钮、自动扩展。缺点是样式固定、改起来费劲</p>
+                            </div>
+                            <div class="concept-card" data-page-node-id="HwNEn46VeutSCxTqzSiGQf">
+                                <h6 data-page-node-id="k850K0HGa3wbaeoEYigQq4">🧱 单元格样式</h6>
+                                <p data-page-node-id="aZEc3fsFr6H0suEaCVaEEo"><code data-page-node-id="rElJL4aqpzcNRhL3taucTJ">开始 → 单元格样式</code>：标题/表头/强调等预设样式，适合搭自己的版式，更可控</p>
+                            </div>
+                        </div>
+
+                        <h5 data-page-node-id="Z4WhU2LHJVOo8OQb5YZQX7">🔹 主题与主题色</h5>
+                        <p data-page-node-id="bmAJyPRVnkn9HmkoxyPmFl"><code data-page-node-id="teXLCQ7Ax5yHAkfzHYqh0h">页面布局 → 主题</code> 可以一次性换掉整套配色。改主题，所有用到主题色的单元格跟着变——<strong data-page-node-id="LpdKC9BqSITfAsCxkYiMan">做系列报表时超省事</strong>。</p>
+
+                        <h5 data-page-node-id="3OKlk89WN6w6WgIONinGc6">🔹 数字格式（这一块最容易被忽略）</h5>
+                        <p data-page-node-id="U4CV1KgoOGrHFfuR6qSV7B">数字格式<strong data-page-node-id="FjTu4sY0OUfl1D3ituYJnB">只改变显示，不改变真实值</strong>，所以放心设。常用自定义格式：</p>
+                        <div class="formula-line" data-page-node-id="tVsRMqSp9LDR9m8aEQ8cqU"><span class="fn" data-page-node-id="KXDnS1sBSfj7PoaPHlnYKA">#,##0.00</span> → 千分位两位小数，如 <span class="arg" data-page-node-id="1i4PHDJ8BUoebTR1hCKjED">1,234.50</span></div>
+                        <div class="formula-line" data-page-node-id="26VdhQ9YuYnh7vDx80sEJ4"><span class="fn" data-page-node-id="JG5trgaR1KsaEZSiMo3X7e">¥#,##0.00</span> → 带人民币符号，如 <span class="arg" data-page-node-id="6VZruAaqScW17ew8zcUWyr">¥1,234.50</span></div>
+                        <div class="formula-line" data-page-node-id="8bG9xWXcT2bCH2XaIXnGiy"><span class="fn" data-page-node-id="xKXaQs4sPaESY7Ohuc7Pi1">0.0%</span> → 百分比保留一位，如 <span class="arg" data-page-node-id="ZTCnKxRVxScfPOEJ7EFQts">12.3%</span></div>
+                        <div class="formula-line" data-page-node-id="hhEk3VRyMcwwhHkFwYJesj"><span class="fn" data-page-node-id="Y6RcwA1ae9EA3oBqw2ZubG">yyyy-mm-dd</span> → 统一日期，如 <span class="arg" data-page-node-id="igARYNnr4Z7ev1xo0bI4w5">2025-03-18</span></div>
+                        <div class="formula-line" data-page-node-id="n8tO3E1vZDTZnhla8Va4cp"><span class="fn" data-page-node-id="iBcgts1egeoLqGU3JU56N8">0"件"</span> → 数字后加单位显示，如 <span class="arg" data-page-node-id="kdjk33OSHAZ0VlWbWUEm3o">5件</span>（真实值仍是 5）</div>
+                        <div class="formula-line" data-page-node-id="nXztuoxfmufBdHRqfoxhNl"><span class="fn" data-page-node-id="GzcgWCdXNF38Op86DAwdQi">;;;</span> → 三个分号，<strong data-page-node-id="YF0TEcQJOGejBwJooL5biP">把内容隐藏</strong>起来（工资表常用）</div>
+
+                        <h5 data-page-node-id="pOUtye7ZDOwKOSQj3X7O6A">🔹 对齐的黄金法则</h5>
+                        <ul data-page-node-id="GZL1vzi2GEttxkc59KQosd">
+                            <li data-page-node-id="6nFLL8iJV0ZI4J0gDTKha1"><strong data-page-node-id="2bxqleSTw3SSQm1EC1LIk5">文本左、数字右、标题居中</strong>——这是 Excel 的默认，别去破坏它</li>
+                            <li data-page-node-id="go5dfp0HlRmCUP0VHjXiaE">长文本用<strong data-page-node-id="PLAI2CfGrRyj2Hmc7Fjc2i">自动换行</strong>或<strong data-page-node-id="ZHFtWyCIOFzXzNVjXuNk47">缩进</strong>，别敲空格</li>
+                            <li data-page-node-id="TG4WakX4lwPXzTDdTAEcF9">表头可居中并加粗，数据列按类型对齐</li>
+                        </ul>
+
+                        <h5 data-page-node-id="jEcvTw5OpUuP8ccEOiJBZ6">🔹 边框美学</h5>
+                        <ul data-page-node-id="JX7BljvyoMmiIit5kufD4E">
+                            <li data-page-node-id="uFZLnfJkBOdtFiI0LIBpt6">表头下用一条<strong data-page-node-id="rsC89MSDA1nchQH8EgtNZI">粗线</strong>，数据区间用<strong data-page-node-id="tjTHKhSUiqw7XvFlqL0B99">细线</strong>（外粗内细）</li>
+                            <li data-page-node-id="OkoO2y8FayfpTxFc0gtJ6C">财务表常用<strong data-page-node-id="r6gd307WdDa3BdeZH5gGYe">只用横线</strong>、不要竖线，干净清爽</li>
+                            <li data-page-node-id="VkUAeub6pgXj90gW0MGDHN">不要用"全框线"把所有格子都框死，会显得很满</li>
+                            <li data-page-node-id="Dk1MA1yS0BvyXmFUqkGwXF">重要区间<strong data-page-node-id="1UoHJsglD5e5mInYjrtBlR">留白</strong>，让眼睛有休息的地方</li>
+                        </ul>
+
+                        <h5 data-page-node-id="CksLv8nulK6Akr9ySEmZSp">🔹 行高列宽与条件格式</h5>
+                        <ul data-page-node-id="7CuzVQoQ65j0xdxMOkGDpi">
+                            <li data-page-node-id="lVVDUAAJTRkhBb11NfTKMD">正文行高设 <strong data-page-node-id="Lm62arWNBBAATC0xuRdEBZ">18 磅</strong>、表头 <strong data-page-node-id="KhwQVA4Zb3GWq94foUyIyJ">20 磅</strong>，阅读最舒服</li>
+                            <li data-page-node-id="j4lC9Dwq0U8gLj2BRjGfaB">条件格式<strong data-page-node-id="FQfy8LUzxLnhB8HwEscwnq">克制使用</strong>：只高亮真正异常的值（如销量<0、库存告急），别满屏红绿</li>
+                            <li data-page-node-id="Qeo3R9ZTauAEwEJpjPsXee">打印前到 <code data-page-node-id="fJ9L1T93ak1FtadrTqhceQ">页面布局 → 工作表选项</code> 把<strong data-page-node-id="lFZQQhubJRieXnibdsOBGV">网格线关掉</strong>，表格立刻高级</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="NnRdxs1KzUKINu2xKJQyy0">
+                        <h4 data-page-node-id="xDkv9u7GkK6QV3flFdPW3T">🔧 操作步骤：把一张乱表变专业</h4>
+                        <div class="step-list" data-page-node-id="pXWxGGw6F9FD7807zWltIJ">
+                            <div class="step-item" data-page-node-id="BssraRvSvzAxgviZ4uT7ad"><div class="step-content" data-page-node-id="kNobIAMdAnTOplHZFokqCq">选中数据区域 → <code data-page-node-id="9nRxMMPdKClagUyWe7EFA8">开始 → 套用表格格式</code>，选一个素雅的样式</div></div>
+                            <div class="step-item" data-page-node-id="cf8VaFAqpGQ0a8PoCRafp5"><div class="step-content" data-page-node-id="EQeEyaShhGvs9n04iwvq3S">选中"金额"列 → 右键 <code data-page-node-id="kz9pphBrCk6IxGUbiavTA4">设置单元格格式 → 数字 → 货币</code>，选 <code data-page-node-id="PwrGpwMTrfhqHL1Yb0nzUO">¥#,##0.00</code></div></div>
+                            <div class="step-item" data-page-node-id="Xr9dZy40hFiXBhH7uxfiez"><div class="step-content" data-page-node-id="YP63ENHXZORV5xbfIcj83z">选中"日期"列 → 数字格式 → 自定义 → 输入 <code data-page-node-id="otrPQroYLPZYqO2aEEeqXG">yyyy-mm-dd</code></div></div>
+                            <div class="step-item" data-page-node-id="yDbpPHMGM6fHFLEVPcGSFe"><div class="step-content" data-page-node-id="whfq1D6O30Y0yEFM2LEzN6">表头加粗 11 号、居中；把行高设为 18、表头行 20</div></div>
+                            <div class="step-item" data-page-node-id="m48Jtsyrpk2X6oGCE3g94d"><div class="step-content" data-page-node-id="FhjLrjC1t0AKMCE6iXBEo7">给表头下边框设为<strong data-page-node-id="BHNvnK4ynHmlM8DdahGOjH">粗线</strong>，其余细线（外粗内细）</div></div>
+                            <div class="step-item" data-page-node-id="WGHVgTCEIlH15MlzUae4NH"><div class="step-content" data-page-node-id="IPo483xgzIwivfswwnNmLV">选中"销量"列 → <code data-page-node-id="yHBhzIqavv7pTASvGI5uum">开始 → 条件格式 → 突出显示 → 小于 100</code> 标浅红</div></div>
+                            <div class="step-item" data-page-node-id="xbEdr4T9sARvbJl5MfLfVW"><div class="step-content" data-page-node-id="A27COncYEcrStdbMuRog9I">打印预览 → 关闭网格线，缩放调整到一页宽，导出 PDF</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="06gTTjU885lCEKtlPrp3Bt">
+                        <h4 data-page-node-id="MoYvxxg7YCF8xJCPEZC66x">📥 练习数据：待美化销售表</h4>
+                        <p data-page-node-id="Uh1HbOhOxQgOqqHDQwd880">下面是一份"没排过版"的表（前5行）：列宽乱、文本数字混在一起、没有格式。下载后按上面的步骤把它变专业。</p>
+                        <div class="data-preview-wrap" data-page-node-id="46spsEJWzbksADJ6shL1d1">
+                            <table class="data-preview" id="preview-6-3" data-page-node-id="WXAvarSDvlmGaqxBMSIA5k">
+                                <thead data-page-node-id="4BhdS31OcxGojkdxctPE56"><tr data-page-node-id="KuUem02XK6ftpd06AoIQvM"><th data-page-node-id="MzJreeeLnFkv4Pj0oe74yl">月份</th><th data-page-node-id="isGYa1FFXMoHveB4ufNKnH">商品</th><th data-page-node-id="QPHWTfjWVkbyJ7GLqDhGzo">销量</th><th data-page-node-id="TIEXf45vNBtjpfAIE9qGCC">单价</th><th data-page-node-id="YqRpvG57zUfq4x1OfUIVVh">销售额</th><th data-page-node-id="9YwAimQpIjVpJr0eF6PjuV">备注</th></tr></thead>
+                                <tbody data-page-node-id="QGdGeCGHS4ZOZcO2QdTwIj">
+                                    <tr data-page-node-id="CEpEfYUFV9pNuz7ZkheLfZ"><td data-page-node-id="uQeMkUSH8zDaUxWIPNoGK1">1月</td><td data-page-node-id="s2r3qwxiQvFwhyZ4aoZ5rm">蓝牙耳机</td><td data-page-node-id="BlDIVEQCnR7R7FQtvsHrDW">120</td><td data-page-node-id="KciueySG3wMjJcK8jUdSrZ">89</td><td data-page-node-id="IY85eFfLbVShzFc3H8RmH2">10680</td><td data-page-node-id="ZBRN6Vul8yvjjj6Leocgu6"></td></tr>
+                                    <tr data-page-node-id="DKCkyaE52uxHAtmaIZUzRR"><td data-page-node-id="OgyS8WxQT8wYaqPw5SlrD8">2月</td><td data-page-node-id="rQb9ywaTedYCB1cjSg0RGR">保温杯</td><td data-page-node-id="dPQVAryXSJ7K2wYJ4gwyB2">200</td><td data-page-node-id="qOxFdzYvmnyHKQRiSo5zaG">45</td><td data-page-node-id="SJqDfJD5gvAM3Lier0wH7x">9000</td><td data-page-node-id="GTwlneACCVj8V1WduuWLBp">促销</td></tr>
+                                    <tr data-page-node-id="Sk9wT3NIU9wJ3IFRl7Y3QY"><td data-page-node-id="BBUdWHbxwS7Jw6ZcHPgSYL">3月</td><td data-page-node-id="7Ck5ihcbduCVeLd4pHhnC2">运动鞋</td><td data-page-node-id="bGjNFQ7xWOFjF8vgBeBkWu">80</td><td data-page-node-id="arYtNPUdh9NX8QKRMQLJ7E">199</td><td data-page-node-id="VhHSCpHhcEPAnPG8P9zgZG">15920</td><td data-page-node-id="XUy5ClfVS6PfwsGFrllSBk"></td></tr>
+                                    <tr data-page-node-id="c8RHAaigAJICo5xmdfKtAD"><td data-page-node-id="A7CtN1uVByt6mwS5VUD50L">4月</td><td data-page-node-id="ep1q0gVIyeHaMZG82VKyOw">零食</td><td data-page-node-id="3DTDJPMMJb72S6LsTkvYUu">350</td><td data-page-node-id="SjKuii018CpTdIrqd7LsCu">39</td><td data-page-node-id="1NlovYuHapLBMjnR2W9rO8">13650</td><td data-page-node-id="TMHRDUy7iWKF5jL01W6tfM">爆款</td></tr>
+                                    <tr data-page-node-id="oXiAUDn62BtJE7ZfysbglN"><td data-page-node-id="KUDVM0IE68bYKip4PcsDBm">5月</td><td data-page-node-id="HOYyX9i4R70faP8SMSDVF9">充电宝</td><td data-page-node-id="EDwgrNvsy6lACgFmWfz2MF">150</td><td data-page-node-id="DJdEYOT8HnHAhYMz1ixxNJ">99</td><td data-page-node-id="kcfDSRVR1v1p6y5ZC1N1Nx">14850</td><td data-page-node-id="eFHY33uFivGFhwgLWynVt0"></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="aQNQHvGzPcrEngSuetCfOf">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_3Data()" data-page-node-id="UEQrFHqaeGwF5PZcF2y8BV">📥 下载待美化销售表 (CSV)</button>
+                        <div class="callout callout-ok" style="margin-top:12px;" data-page-node-id="XCJtU3TV5NbldKZKtkyzZC">
+                            🎯 <strong data-page-node-id="OvTwXziDz8mr72m5XweAKv">目标效果</strong>：标题加粗居中、表头浅色填充+粗下边框、销售额用 <code data-page-node-id="bgsLyFFycgAuwmCzkCiZlZ">¥#,##0</code>、日期统一、行高 18、打印无网格线。自己先想清楚目标，再动手。
+                        </div>
+                    </div>
+
+                    <!-- 美化前后对照 demo -->
+                    <div class="content-block block-tips" data-page-node-id="0WZKwbfezXIvIlu09M6LqJ">
+                        <h4 data-page-node-id="XHIg7H2mNJcCZmDFT2kge1">💡 美化前 vs 美化后（视觉对照）</h4>
+                        <div style="display:grid;grid-template-columns:1fr 1fr;gap:14px;flex-wrap:wrap;" data-page-node-id="6y0QBcRC3CkifdxEO8cq5H">
+                            <div class="demo-box" data-page-node-id="nxfB0C2RudwjdbbqzhpNMD">
+                                <div class="demo-title" style="color:var(--coral);" data-page-node-id="KRUuzqeXX49Z4M235RdrLW">❌ 美化前</div>
+                                <table style="width:100%;border-collapse:collapse;font-size:0.78rem;" data-page-node-id="2lGovutMR1Qdcm5Ex5vglH">
+                                    <tr data-page-node-id="4DOfjL3Wt66FgoEoNK4AGl"><td style="border:1px solid #ccc;padding:3px;background:#ccc;" data-page-node-id="rdjpyIAkTC1BjstBAxG6nG">月份</td><td style="border:1px solid #ccc;padding:3px;background:#ccc;" data-page-node-id="MZ4BsFBp3zglxPbAjT8Jdr">商品</td><td style="border:1px solid #ccc;padding:3px;background:#ccc;" data-page-node-id="jo6hnF4ctylNypM8Q4QbBx">销售额</td></tr>
+                                    <tr data-page-node-id="uLCvAHnGoYwnGWjjGBrpJJ"><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="Y4velUZBlts4lCIUVuXGVQ">1月</td><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="j9D4jjhciVoS7qYvhKvxU4">蓝牙耳机</td><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="iip6XhLmjokmfKVyVGfkUn">10680</td></tr>
+                                    <tr data-page-node-id="30Ex0QOZr4bu72EHpat1fe"><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="Gjj7MN2gGGrXCYuSxPrhcx">2月</td><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="cl8IN6IVvRKDxxKQMaTuN9">保温杯</td><td style="border:1px solid #ccc;padding:3px;" data-page-node-id="zLYvqE2s0fUCJQOgykDi3c">9000</td></tr>
+                                </table>
+                                <div class="demo-caption" data-page-node-id="kREcLpUJxgaITOXSancPz7">全框线、灰扑扑、数字没格式、像草稿纸。</div>
+                            </div>
+                            <div class="demo-box" data-page-node-id="TRRntKRyClWxD5dFQd3Fem">
+                                <div class="demo-title" style="color:var(--green);" data-page-node-id="C4Gcm0j9zmM400OxRKmKc9">✅ 美化后</div>
+                                <table style="width:100%;border-collapse:collapse;font-size:0.78rem;" data-page-node-id="MfOJIFSBIgwikMLiA1qOOq">
+                                    <tr style="background:#1f6feb;color:#fff;font-weight:bold;" data-page-node-id="TFkXzlQOJP4NW7PCCq9yXi"><td style="padding:4px 6px;border-bottom:2px solid #0d5a91;" data-page-node-id="ajLDGrkr4Tab0df62AIeMQ">月份</td><td style="padding:4px 6px;border-bottom:2px solid #0d5a91;" data-page-node-id="5HHsiJcAvVZQTqxe5nryq9">商品</td><td style="padding:4px 6px;border-bottom:2px solid #0d5a91;text-align:right;" data-page-node-id="sobpxhWn6DnCkWEPxRgUUF">销售额</td></tr>
+                                    <tr data-page-node-id="45xNdlNE4seOBE0dm5gXiF"><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;" data-page-node-id="oLvFaV8yAeI68Bdpi2DMc5">1月</td><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;" data-page-node-id="lrhALWEpc1PT6IiLrUMaFL">蓝牙耳机</td><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;text-align:right;color:#c0392b;" data-page-node-id="soSnZIQB0NOhbjrIVpBt3w">¥10,680</td></tr>
+                                    <tr data-page-node-id="K8dRlIJnto88gGRQlLbScA"><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;" data-page-node-id="HxBhkrX1mCfIhhkzbshHxC">2月</td><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;" data-page-node-id="Ih7FZx4MUm3A43U0umxG2j">保温杯</td><td style="padding:4px 6px;border-bottom:1px solid #e0e0e0;text-align:right;color:#c0392b;" data-page-node-id="tAHr8nubOKGn8F4BgQFFpw">¥9,000</td></tr>
+                                </table>
+                                <div class="demo-caption" data-page-node-id="muqomZtNANDqJKyl5awmWQ">蓝色表头+粗下边框、数字右对齐带货币符、只用横线、清爽专业。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="sEtK8nK0FFWC5Hv62SFHM3">
+                        <h4 data-page-node-id="ODm2IdwMJX5twRC7YO9DTN">💡 技巧提示</h4>
+                        <ul data-page-node-id="l0JKGwJ70wKWQgd708BjsY">
+                            <li data-page-node-id="1ICDEjO9F3p1MEGpC5ZywG">用 <code data-page-node-id="OoViIC4QZK5aOXKPkYU96U">;;;</code> 隐藏工资等敏感数字，打印出来一片空白但单元格仍有值</li>
+                            <li data-page-node-id="xsXJqDBZQgJMHPTvkzwGKT"><kbd class="kbd" data-page-node-id="OLlGV6VETvCibAOv41lImc">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="c2IHuSDhBdAPMvoYN3rKj2">Shift</kbd>+<kbd class="kbd" data-page-node-id="TixahpzJYJcTuv7WBbzFoN">1</kbd> 秒变千分位，<kbd class="kbd" data-page-node-id="QKCh0fIiC9Owk6MCrbCSLc">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="1CsfxoLqnfE0XHsK8l0Glw">Shift</kbd>+<kbd class="kbd" data-page-node-id="zsAqKto91Y2qweqIk8YRDq">5</kbd> 秒变百分比</li>
+                            <li data-page-node-id="9mDgv6FlT3qpaEUOtxL1WN">想统一全表颜色？改<strong data-page-node-id="HcMcGLW6cGhBMm5h8cQU3d">主题</strong>比一个一个改单元格快 10 倍</li>
+                            <li data-page-node-id="kUAl0CrILQmJpCLZyjgIgF">双击行号/列标边界可<strong data-page-node-id="ejzaFqZaL2U38hijuxJg9L">一键适配</strong>，别手动拖来拖去</li>
+                            <li data-page-node-id="jNZIddy9SA807vHpVHFBxs">条件格式"管理规则"里可以调优先级，避免多条规则打架</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm" data-page-node-id="PBNPsr291uXMWFsoQAcpXg">
+                        <h4 data-page-node-id="5Aw7sQNBnYxoq4Zket62kY">📐 操作规范（养成好习惯）</h4>
+                        <ul data-page-node-id="IiTLDfJhikPr4qdZG5d3Qz">
+                            <li data-page-node-id="XRC0dYVdOgTdisFBbZpdwO">数字格式只改显示不改值，<strong data-page-node-id="9Xzr14F31K4CEjSo0H7whV">放心大胆设</strong></li>
+                            <li data-page-node-id="Jtqgp7OMMxaDDovEjkmxTn">颜色 ≤ 4 种，且每种都有含义（表头/重点/警示）</li>
+                            <li data-page-node-id="2izjrXaOG45thpEOK3QoHJ">边框<strong data-page-node-id="7MotYg30x21kezopnIBQ7x">外粗内细、能省则省</strong>，优先只用横线</li>
+                            <li data-page-node-id="1KIdLcTr7X1oQ0PVe02VAJ">行高 18 / 表头 20，全表统一；数字右对齐</li>
+                            <li data-page-node-id="tiHzYhaIzT7yLMyfIEVUop">条件格式<strong data-page-node-id="flC0Am6ToeIo7CkBTfk9j4">克制</strong>，只标真正异常的值</li>
+                            <li data-page-node-id="MeIDjpIDrD8mWmAuZ2jwUr">打印交付物前<strong data-page-node-id="RxXNr1HFUqrxOBp5CKVASb">关掉网格线</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="64KrqmNHBEAANje3KWJ26O">
+                        <h4 data-page-node-id="KEQt4OTrjSyjlOLAciXdqF">⚠️ 常见错误</h4>
+                        <ul data-page-node-id="mDUPHGMc6OV5ArcDP69oRJ">
+                            <li data-page-node-id="ZVQL4l3q9Zl4Nhfp4UYm9W">❌ 把数字硬改成"100元"文本，导致不能求和——应用数字格式而非改内容</li>
+                            <li data-page-node-id="KMnlKspuuj35W02naw0Kio">❌ 全表套满框线，密密麻麻像监狱，反而看不清重点</li>
+                            <li data-page-node-id="RO5RGYFiUrpEDKqXGA1Mtf">❌ 颜色用一片红绿，条件格式变成"视觉噪音"</li>
+                            <li data-page-node-id="Lz8jh8gdzQ6l4X6B9BSLBK">❌ 用空格把数字"对齐"，破坏了列的数据类型</li>
+                            <li data-page-node-id="E3l4OO694kO8HsktoixUEt">❌ 直接打印带网格线的草稿表交给老板，显得不专业</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="vV3KQb4aD4TRp9pmcT0AY5">
+                        <h4 data-page-node-id="JzmU2fFtETbgvez6Tf387n">📥 练习任务</h4>
+                        <ol data-page-node-id="gwBngSJFcag0CA0FqooNbl">
+                            <li data-page-node-id="pEuMF3zLZOZ7JiDyOTnPsX">下载<strong data-page-node-id="4pRpRzKDvuQv94FF2QIJ5U">待美化销售表</strong>，先规划"目标效果"再动手</li>
+                            <li data-page-node-id="NX5hOF5AOGhfWW4L078A2B">套用表格格式，销售额设 <code data-page-node-id="Suftl9HSPDAjFGW1EZCq4B">¥#,##0</code>，日期统一 <code data-page-node-id="70KVM4HG432snn45dtEDxL">yyyy-mm-dd</code></li>
+                            <li data-page-node-id="V8BgwESV4lAa8GBZBcYhLB">表头加粗居中、粗下边框，正文行高 18</li>
+                            <li data-page-node-id="r678vWV5dCjvAMZ2GKAbXi">给销量列加一条条件格式，标出低于 100 的</li>
+                            <li data-page-node-id="MtQkDZvMDYDnmmzHodKVYf">关掉网格线打印预览，确认清爽后导出 PDF</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="E1tGAbMHX6bDuIsM7khFe5">
+                        <h4 data-page-node-id="Huo79mhffFK1enoZ81WvQK">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="EKD1EUlE2ZGnaSyt7zpvCE">
+                            <li data-page-node-id="nZUED0Cb7fn4zEw4xhS8Ps">换一个<strong data-page-node-id="Fnkbj5biWO3fwx6T1TRkx6">主题色</strong>，观察全表配色如何一键变化</li>
+                            <li data-page-node-id="qtwIqzbfoPAi2qZXNSUptO">用 <code data-page-node-id="7UvoiqAspeFpufGNPsDHoJ">0"件"</code> 格式把销量显示为"120件"，并验证求和仍正确</li>
+                            <li data-page-node-id="491XYRF0haQpY6LiCbJQdg">用 <code data-page-node-id="9qaJRKvvKbJ5dK70GGzRZL">;;;</code> 隐藏"备注"以外的某列敏感数据，演示给别人看</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="ES8RHfhtOxHcDqYPWBXW2W">
+                        <h4 data-page-node-id="TZ6zYp7djEcJN4HERAM1sU">📝 理论测试</h4>
+                        <p data-page-node-id="6Ya0wbdG3XDgafZmY5DN0f">完成以下10道题，检验你对数据美化的掌握：</p>
+                        <div id="quiz-6-3" data-page-node-id="n8B8C7DQDK6YfmZKdoQxYz"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 6-4：效率技巧
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4" data-page-node-id="EzHl87ryDFTvStuJFOycXt">
+            <div class="lesson-header" onclick="toggleLesson(4)" data-page-node-id="t9NW2BkEbH3Cj10dHYN4SE">
+                <div class="lesson-num" data-page-node-id="MY2eAmWVZY3yn9aMw3YFAd">4</div>
+                <h3 data-page-node-id="zQ8oshziMUKuMmaxv3Wxrl">效率技巧 —— 少做无用功</h3>
+                <span class="lesson-toggle" data-page-node-id="yNDlGG17qD6px8DeTWEfhj">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4" data-page-node-id="ByS0yMMDKGsS64wQNQCTFZ">
+                <div class="lesson-body-inner" data-page-node-id="5mdg59LyRo8XBv0Y6hHqQT">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="5v62DpyGHq2zV0VdNicrH7">
+                        <h4 data-page-node-id="pWDIShtRT022UmlFWRwq0R">📖 知识讲解</h4>
+                        <p data-page-node-id="MsR2GdJmAtVYCS5CQHN2WJ">电商人每天和成百上千行数据打交道，<strong data-page-node-id="qz8uL6pLcFCZFLxoglXftB">一个技巧能省一小时</strong>。这节课全是"偷懒神技"——但偷得漂亮。</p>
+
+                        <h5 data-page-node-id="eo6cwptwCxH4eAdIGBm92r">🔹 ① Ctrl+E 快速填充（最爱）</h5>
+                        <p data-page-node-id="fAOAvOC0Vl0fQNylkYwJAy">在旁边列写<strong data-page-node-id="FUYVygf1vtk0cqXZGiqcfS">一个示例</strong>，按 <kbd class="kbd" data-page-node-id="CNJLFZPCXtlBvSGJsB9Mqu">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="X2Qh1gBC7gGFvRb6zSfYJk">E</kbd>，Excel 自动"猜"你的规律并填充整列。拆分、合并、提取、加格式都能干。</p>
+                        <div class="formula-line" data-page-node-id="gPLhwt1AYlediCEogLChN8">原始 <span class="arg" data-page-node-id="eLB056JLQhRXnm9uHeCok1">SP-2025-红-L</span> → 写示例 <span class="arg" data-page-node-id="3bpeG957wZaKAAGk9pnUud">红</span> → <kbd class="kbd" data-page-node-id="uAQPxkaBe8GsAEl4jKa2GB">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="ZAJYxKy1ieRU8NRyTZwklQ">E</kbd> → 整列自动提取颜色</div>
+
+                        <h5 data-page-node-id="r5T1KKyz633qrENkhUtPt6">🔹 ② 填充柄与序列</h5>
+                        <ul data-page-node-id="qJgpXTynsbwM8Af1EqYEiu">
+                            <li data-page-node-id="TncdA3sXr5L7CSbBmgP90p">拖填充柄：等差（1,2,3）、日期、星期、月份都能自动续</li>
+                            <li data-page-node-id="600rAGjMXojIXYCTrVZMvX"><strong data-page-node-id="EWfBPH7hND2ijieDjTyQfE">双击填充柄</strong>：自动填到左侧数据末尾，不用手动拖</li>
+                            <li data-page-node-id="l5RtyKzokS6Zwn3dvCX36c"><code data-page-node-id="KsuHGXDr3eoGdGpYXyUVSl">右键拖</code>填充柄可选"等比序列""工作日"等</li>
+                            <li data-page-node-id="DfPHqQI44uBBIcSCm8CxML"><code data-page-node-id="ujpRq3xC4MiFHAGMB0VqAj">文件 → 选项 → 高级 → 编辑自定义列表</code> 可建<strong data-page-node-id="dw5CMwyIGCHYjwElbYmdGD">自定义序列</strong>（如"华北,华东,华南"）</li>
+                        </ul>
+
+                        <h5 data-page-node-id="YPKN9cnIDXQu6osGBXLQLO">🔹 ③ 选择性粘贴（被低估的宝藏）</h5>
+                        <div class="fn-cards" data-page-node-id="z4gnE4DlljbvFXK4gGDf48">
+                            <div class="fn-card" data-page-node-id="byRTK0AtAQhOTZFSH0lT19"><h6 data-page-node-id="SzUobnxMnrb0yG19aApxuD">数值</h6><p data-page-node-id="jrzrGvKXhNvByS1gMwU59Y">只粘结果、去公式，避免引用错乱</p></div>
+                            <div class="fn-card" data-page-node-id="wCP8Ap42L0RN75eMBa0PoD"><h6 data-page-node-id="raadtVnPPRClntTdCASn2t">格式 / 列宽</h6><p data-page-node-id="svIwMfRqqrbeiCfXG6jAik">只搬样式，不搬内容</p></div>
+                            <div class="fn-card" data-page-node-id="Hrou76LjcXMIhssDzQ4jsH"><h6 data-page-node-id="NODt3GBwNNcI9susAmsYFw">转置</h6><p data-page-node-id="Y77tRmDzEsgQCfIVFvpUZ6">行变列、列变行</p></div>
+                            <div class="fn-card" data-page-node-id="vpXJrHg2b9dHgGg4Z9cHa8"><h6 data-page-node-id="aXUCTmrhee42aqa7JFUzUv">运算</h6><p data-page-node-id="846EIlN4vEGF2MX0yNSHqf">粘的同时批量加/减/乘/除</p></div>
+                            <div class="fn-card" data-page-node-id="CgM8nPefEln1WBGVL6u6S1"><h6 data-page-node-id="gsjzmQ1P9TNpMKelCRMIk1">跳过空单元格</h6><p data-page-node-id="dso0TagdKnLonunWZqILaz">只填空白、不覆盖已有值</p></div>
+                        </div>
+                        <div class="callout callout-danger" data-page-node-id="Om4JfD49RTkDg5e1puV8lH">
+                            ⚠️ <strong data-page-node-id="y9sVAhCFWii5KUZsUlRvmv">大坑</strong>：对<strong data-page-node-id="apE4SfsHMVWMt9uAmRSZLm">筛选后的表</strong>直接粘贴，会悄悄填到被隐藏的行！正确做法：选中可见单元格（<kbd class="kbd" data-page-node-id="rnspyhRFwUqlKXFfNh2ut5">Alt</kbd>+<kbd class="kbd" data-page-node-id="FJPPM6ukm8r4ddlcT7GBiU">;</kbd> 或 <kbd class="kbd" data-page-node-id="YO5dOgFXrgfHF1510GvW1A">F5</kbd>→定位条件→可见单元格）再粘贴。
+                        </div>
+
+                        <h5 data-page-node-id="qPyN84CAwH9uzUSxLQf9yk">🔹 ④ Ctrl+G 定位（批量操作的钥匙）</h5>
+                        <ul data-page-node-id="V0S6MqiiwdvaPH35cnXdj0">
+                            <li data-page-node-id="tiEiNZhWLHQRmMWP4BDRSe"><kbd class="kbd" data-page-node-id="tOBHYZXsBBqnX8dLWRvpCH">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="pTaNXgpKTeIC1FkC4QfOF3">G</kbd> → <strong data-page-node-id="DKXFuw1TcfEOCDSv4oDQyL">定位条件</strong> → 空值：选中所有空单元格，输入内容按 <kbd class="kbd" data-page-node-id="2Awb1iEMDM11tIPChpslWU">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="adra4kjMP2DpECCHNNojT2">Enter</kbd> 批量补</li>
+                            <li data-page-node-id="Noj079g7hNhnoTOPjCMZOz">定位<strong data-page-node-id="uz9MoKxXLeB7EWHT9A1KNP">常量 / 公式 / 可见单元格</strong>，一键圈定同类</li>
+                        </ul>
+
+                        <h5 data-page-node-id="Dl64rUxUFHik6FFdlyBFhT">🔹 ⑤ 格式刷 & ⑥ 分列 & ⑦ 查找替换</h5>
+                        <ul data-page-node-id="XdmVGE6C0EUitHXmJzRge0">
+                            <li data-page-node-id="uuVSh04yDUhCXVjwSUATsl"><strong data-page-node-id="PnbGiuu9psi6lmZ1yIgWJk">格式刷双击</strong>：连续刷多个区域，按 Esc 退出</li>
+                            <li data-page-node-id="auxAvHSRmLwmjkWtxqUcQr"><strong data-page-node-id="k8zkqWBWbxkS4mSfzO57uj">分列</strong>（数据 → 分列）：按分隔符或固定宽度，把"省-市-区"拆开，也能把<strong data-page-node-id="fw5aiPQfBYekl9GnGnyrjW">文本数字转成真数字</strong></li>
+                            <li data-page-node-id="FnmN2QydIIxcjE2dKmmT3k"><kbd class="kbd" data-page-node-id="MEqKGRBXgJmxASAKYhebWR">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="wtiud2cuT9yLuYFqDP51uu">H</kbd> 查找替换：勾<strong data-page-node-id="OxMXo0qphwx1ivxHCKtHM7">单元格匹配</strong>可精确替换；通配符 <code data-page-node-id="hef0Fn7Lkkftsi0z9BBdJq">*</code>（任意多字符）、<code data-page-node-id="effF8hB6ohaqCbjXhFbEHO">?</code>（单个字符）</li>
+                        </ul>
+
+                        <h5 data-page-node-id="fAwNRA9tBi44ABXoYvT3zE">🔹 ⑧ 超级表 Ctrl+T & ⑨ 模板 & ⑩ 拖动技巧</h5>
+                        <ul data-page-node-id="Fe9vIwDMp8MFbBiflW2okB">
+                            <li data-page-node-id="kAQH0d6FkgejoqW0LCeZnp">选中区域按 <kbd class="kbd" data-page-node-id="xrCppjOmqRDRTVmN739SL5">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="u0d62eiRXZ5lwYhcFsv0TN">T</kbd> 变<strong data-page-node-id="CQjsduC6bBAFIWGz7VkFmI">超级表</strong>：新增行自动扩展格式与公式</li>
+                            <li data-page-node-id="5L1tD83QgkKcXtK1tXGucB">常用表<strong data-page-node-id="6cq9Lfj4bM1GvWYHh48kTz">另存为模板 .xltx</strong>，以后新建直接套</li>
+                            <li data-page-node-id="rzUgjaK7JDUdZzwZuFZKzy"><strong data-page-node-id="gsMaQv7yZHHdEkG7bJWGjt">Shift+拖动</strong> 移动整列；<strong data-page-node-id="BeLM9M9CIOb17pnlnkWE1e">Alt+拖动</strong> 交换两列内容</li>
+                            <li data-page-node-id="N8GRlWJTO7OikYU6yzy1PB">核心心法：<strong data-page-node-id="BQKJ5RgpzB45wpeCDAIyux">先规划再动手</strong>，别边做边改，返工最费时</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="VkNkYFDxmlMuNY9sRbY3hw">
+                        <h4 data-page-node-id="RqJfF7Q8z5Z6ObKUeiqKyF">🔧 操作步骤：用 Ctrl+E 拆分商品编号</h4>
+                        <div class="step-list" data-page-node-id="Cw6DfbwVFE8TY1vDOvQnxc">
+                            <div class="step-item" data-page-node-id="Avo6row5bJBQVgj1o3KCNu"><div class="step-content" data-page-node-id="OeWS79HKOshjtXhooPK51F">A 列放完整编号 <code data-page-node-id="yVmLeBJ6hSOc7Z5M6ARPIl">SP-2025-0318-A类-红-L</code></div></div>
+                            <div class="step-item" data-page-node-id="MXisJkTdstUGQsDZIrPuQl"><div class="step-content" data-page-node-id="HY1gYwtOABNvw5kJwMq1gM">在 B2 手动写出第一行的"年份"示例 <code data-page-node-id="1KnRAydZgg0KmqjPumgJAV">2025</code></div></div>
+                            <div class="step-item" data-page-node-id="I4HBNyCLqvvyyHgQSKLcMA"><div class="step-content" data-page-node-id="qxCMrIMpX0H9XTYm20wbwZ">选中 B2 下方区域，按 <kbd class="kbd" data-page-node-id="ATjmBuCoL0EnqAa6S66okH">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="xm36FO3rdq5aBQEuMPAH4p">E</kbd></div></div>
+                            <div class="step-item" data-page-node-id="6L657MLR2AaaPbq5uWVuVq"><div class="step-content" data-page-node-id="wBaMwA8NqzZnpWDspr4dPb">Excel 自动提取整列年份；同理拆出类别、颜色、尺码</div></div>
+                            <div class="step-item" data-page-node-id="ji1nTbsrTgovXPj3KG3Ct3"><div class="step-content" data-page-node-id="s3x0Wh1A2CWOlwW7Omkfir">若结果错，先改 B2 示例再重按 <kbd class="kbd" data-page-node-id="fegIZpr6rWn3udD8U9bndn">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="dSf7YclEyK714I6A2FJZGJ">E</kbd> 修正</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="VYVr5vJC0EqHZqidyBET34">
+                        <h4 data-page-node-id="wsGuOd8Toj22X1z4QckC4M">📥 练习数据：商品编号与规格拆分</h4>
+                        <p data-page-node-id="UjOQY02huZj3SoQ2I9TQbW">下面是 40 个商品编号（前5行），请用 <kbd class="kbd" data-page-node-id="PEBUmqrpMEGzA96cqS0NXy">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="o1VELZhV7sKY3U54x9lFsH">E</kbd>、分列或文本函数，把"年份/批次/类别/颜色/尺码"拆到不同列。</p>
+                        <div class="data-preview-wrap" data-page-node-id="a5HWqkt8evCHQNH9EQCnCy">
+                            <table class="data-preview" id="preview-6-4" data-page-node-id="PKZudH25XJKGXg8V1e3KVK">
+                                <thead data-page-node-id="hzKcwsuHws3XOBzEkGWvwe"><tr data-page-node-id="qjsdohn6pAYOorstuG4nYC"><th data-page-node-id="OA29kG8qyi0Fx1sBMmCbXd">完整编号</th><th data-page-node-id="I35XdrgeIqeoY6LGH0luvf">年份</th><th data-page-node-id="QTZGvJNbRWKt5HWjAQtplP">批次</th><th data-page-node-id="5frGQJbk0oMNVM8OExr8VF">类别</th><th data-page-node-id="z3zgpiO2nYNEBgNwhNkIgc">颜色</th><th data-page-node-id="rhqHpGbtUVrT8tWODlypbE">尺码</th></tr></thead>
+                                <tbody data-page-node-id="GLHxqNqHmsSwUwUNc6cpNg">
+                                    <tr data-page-node-id="nPSGBPKJEmExsMOQOxQFTr"><td data-page-node-id="bBJNMuLC31ZHhry6dNgRES">SP-2025-0101-A类-红-L</td><td data-page-node-id="6k2SGH6jKodsNF1NCZ6pdX"></td><td data-page-node-id="GubZA0sXfiodVupOMCuIgk"></td><td data-page-node-id="JaEwkCd6IahA22aRgXwkBZ"></td><td data-page-node-id="52PSLirsTR7otMGpRBdM7w"></td><td data-page-node-id="yiPilL3tFL2FLEC8SJBZCi"></td></tr>
+                                    <tr data-page-node-id="gMdNDCK1kBsA7wpH0A1EHF"><td data-page-node-id="xflt9RINGukHtsaOLavdRk">SP-2025-0202-B类-蓝-M</td><td data-page-node-id="KJtcIpXZYwbvAvdJOFwsEB"></td><td data-page-node-id="YOAlW2nrQ7mg00RADyRjSu"></td><td data-page-node-id="NOxXPNVmBvk7AdQbbgMFKA"></td><td data-page-node-id="XlpUetl8Di0TxwU56vSqZ6"></td><td data-page-node-id="f5UM5U0gTB6X8qlwekAEd5"></td></tr>
+                                    <tr data-page-node-id="OMOadUTb1LJlxghsat9pC8"><td data-page-node-id="4nRbWLsggCXMRRrO8C2GSD">SP-2025-0303-C类-绿-S</td><td data-page-node-id="Rvg5P0QaYUgAGsbiY9DMs7"></td><td data-page-node-id="Vjph1DaS4pjhWOsTCCAx0K"></td><td data-page-node-id="Kbsm8XOAiGC0CCSFTZHAq2"></td><td data-page-node-id="c6DkqwIKEoMb4r660URHp4"></td><td data-page-node-id="idl3BX0f9RBl9AZwh3XmT5"></td></tr>
+                                    <tr data-page-node-id="EXvVH0ihMH2Y01VlmHXs1X"><td data-page-node-id="imVlHWkGDMZXYrudPeBIHR">SP-2025-0404-D类-黑-XL</td><td data-page-node-id="uFcCwbk7kFlXsIYCiCxeig"></td><td data-page-node-id="L2DRb88ZkFexxGOFJC27S6"></td><td data-page-node-id="tBL5hLtrg5g5qnSk9YPNmH"></td><td data-page-node-id="ZqJHEAQdoT8i09O65rp2AR"></td><td data-page-node-id="AnK8yNDRFg2pSwr2K2fHwn"></td></tr>
+                                    <tr data-page-node-id="9RtPNZrtWBqrUszaAzoQFB"><td data-page-node-id="TOKnwzhmPgSkgWX5UMYPyP">SP-2025-0505-A类-红-L</td><td data-page-node-id="ELTaIDki3OW6qvtGqyMBeJ"></td><td data-page-node-id="FM4H0kp7by5qn9QnrVJB1r"></td><td data-page-node-id="Sl4qHaEb1vKHZLCZW8jMAg"></td><td data-page-node-id="n32EdnA23Va3yGxA6CSs9S"></td><td data-page-node-id="EVrs2RUBQvVLWYYf4HiOfI"></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="J6yzanD5JVOnfNiGAvk1pw">显示前5条，共40条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_4Data()" data-page-node-id="i6A2ZiuY9AjdWskIkAU2Hi">📥 下载商品编号数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="EuBMeBQ96S2ND6gFjBahsL">
+                        <h4 data-page-node-id="8Rqi7tJAE9JINlfeEtzuMs">💡 技巧提示</h4>
+                        <ul data-page-node-id="LFMu43d6JpWxM2RigZm0QP">
+                            <li data-page-node-id="UPkfQp210kQg9cPonyaZfN"><kbd class="kbd" data-page-node-id="8dCB2sn1w9vQhzHGmTjbMH">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="zA25XDjkORHPkvZIX7XXdG">E</kbd> 比写公式快，但数据有规律才准，乱的要先理</li>
+                            <li data-page-node-id="ZUxpD2sDxZ7NOIY7CcHkFp">文本数字（左上角带绿三角）用<strong data-page-node-id="zOcv1eUesImzGOCx8jMvNp">分列</strong>一键转真数字</li>
+                            <li data-page-node-id="JJXEWEA3FlgO4nF2MHOCls"><kbd class="kbd" data-page-node-id="DRcUyDsfFN8NFiRe2FrIaW">Alt</kbd>+<kbd class="kbd" data-page-node-id="GBrKMrNz4SWLwROiZ43g4v">;</kbd> 选中可见单元格，是"筛选后粘贴"的救命键</li>
+                            <li data-page-node-id="jFjeLVV2zrXhbiAp5ywlgo">重复劳动超过 3 次，就想想能不能用<strong data-page-node-id="Oj70AOhU0Ak8MxUSa2jD3i">模板/公式/宏</strong>一次性解决</li>
+                            <li data-page-node-id="y6mUEWOl5hIMqOTaeq69kS">自定义序列让"华北华东华南"也能自动拖拽填充</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm" data-page-node-id="YCBDy7WdaUhi1HrGe9lzid">
+                        <h4 data-page-node-id="9KZXyXqokb65BnAzCCkkqK">📐 操作规范（养成好习惯）</h4>
+                        <ul data-page-node-id="1UkhFi7jRnD9SyqxNBBUW2">
+                            <li data-page-node-id="zcmsDu2kRMpccGzy8vK7yO"><strong data-page-node-id="BE27VHj7B6uCmpQIfxjcYE">先规划再动手</strong>，列好字段和步骤再开表</li>
+                            <li data-page-node-id="bHaDu40RHFLKDD5p0LCo9B">常用表<strong data-page-node-id="TiaA1148rhYKjKdfWNhVej">存成 .xltx 模板</strong>，避免重复搭建</li>
+                            <li data-page-node-id="N24biVJUu9gomrY52y8g9I">粘贴前想清楚要不要"只粘数值"或"跳过空单元格"</li>
+                            <li data-page-node-id="txmfoiHzCjBbIDKRDifIKk">筛选后粘贴务必先选<strong data-page-node-id="e6Wg4QWQKd7QJrqrB3H5ea">可见单元格</strong></li>
+                            <li data-page-node-id="lr7TFDR2XaEnx7dK5SX8e3">重复操作≥3次，立刻找更高效的方法</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="BX8zdROc4DiY4lbmtIQG3i">
+                        <h4 data-page-node-id="vWmm0EDHAFF9VtTEg2Hxh8">⚠️ 常见错误</h4>
+                        <ul data-page-node-id="SzFezk8VK17oQ5pWcdnvUQ">
+                            <li data-page-node-id="mmceoLd3CobkMDTkf9hBF7">❌ 筛选后直接粘贴，数据"漏"进了隐藏行，对账对不上</li>
+                            <li data-page-node-id="IxqFPMcJYw448yhdDWNtCx">❌ 复制公式结果时不"粘数值"，导致引用错位变 #REF!</li>
+                            <li data-page-node-id="8HOBQHvOMA4PjHIAVXE5TT">❌ 用分列把日期拆坏，没注意目标列格式</li>
+                            <li data-page-node-id="wNs7LjEzdw9jsjthaD2Fk2">❌ 每次都从头建表，从不复用模板，浪费大量时间</li>
+                            <li data-page-node-id="BWIna6qrNQbwoHEB7lvV5A">❌ 把"文本型数字"当数字算，求和结果为 0</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="6dpPfURjMZldmnAT4xDNUE">
+                        <h4 data-page-node-id="hxTGlek4jRKer41IHpojnm">📥 练习任务</h4>
+                        <ol data-page-node-id="tvOnkAJbl7HSOCGyEkFQWB">
+                            <li data-page-node-id="5mxZNubtYvURapLs6PtKz6">下载<strong data-page-node-id="7gGIQ3FVW0UkDsbVgkGR9b">商品编号数据</strong>，用 <kbd class="kbd" data-page-node-id="OWFBQLEr9akEWwQPjDF6a2">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="6B0dgP8QAhPOhBo8NZ0Lnf">E</kbd> 拆出年份</li>
+                            <li data-page-node-id="0vVDjtSKSmLhQvBhQsjiIV">再用分列把"类别-颜色-尺码"拆成独立列</li>
+                            <li data-page-node-id="013HPbxg2GfYfIHRJNzuDX">用 <kbd class="kbd" data-page-node-id="b0r6RdyNMCPz8ScvLuGYjG">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="WQfHkCjVTyM85VN2kmzJu4">G</kbd> 定位空值，给空白行批量填"待补"</li>
+                            <li data-page-node-id="5HnbkEgRUmqE7Hvly4Du6R">把处理好的表<strong data-page-node-id="4sRo7xQo6NooDgT9le8C1N">另存为模板 .xltx</strong></li>
+                            <li data-page-node-id="pZgSSBGd3CMrlWsGfT9BoP">用 <kbd class="kbd" data-page-node-id="QvkiGXYHnGoeawNrl52vQP">Alt</kbd>+<kbd class="kbd" data-page-node-id="DHoraxPDHSJCs5ME9o4TdA">拖动</kbd> 交换两列，体会不覆盖的技巧</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="2POo2j6V840DByVdZ36Kub">
+                        <h4 data-page-node-id="FdoMRcTEDk4qBR0r27dsDP">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="cMW6wbxY1FGD0W68AsgzIN">
+                            <li data-page-node-id="DmvNrB5l6kCznCPKJttIlD">用<strong data-page-node-id="43C512bHpRh8hWQBdiCD67">查找替换通配符</strong>把所有"*类"替换成对应的纯类别名</li>
+                            <li data-page-node-id="9SfD36SmNwXpxud1l7GhPa">建一个<strong data-page-node-id="T8Ge51Op8huEULiyFvyZP5">自定义序列</strong>（如你的 6 个仓库名），验证能自动填充</li>
+                            <li data-page-node-id="ZW72Mw7EwCR9M40N3XUhEn">用 <kbd class="kbd" data-page-node-id="sU1j7nzltrhl1YmmOyKTcZ">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="FazEjgNSXBv2BbuBSFQK79">T</kbd> 把表转成超级表，新增一行看格式是否自动扩展</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="9RjkFgcstq3pHfZjzQj3Qc">
+                        <h4 data-page-node-id="3DUiPPNpQQxdOtthskVP4H">📝 理论测试</h4>
+                        <p data-page-node-id="rlDgTcJDClrVnJgP1jPnsF">完成以下10道题，检验你对效率技巧的掌握：</p>
+                        <div id="quiz-6-4" data-page-node-id="vBELmDFySey6cAWhXX4FVo"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 6-5：数据安全与保护
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5" data-page-node-id="KEEOEITwh6VyU2fp0pMzA7">
+            <div class="lesson-header" onclick="toggleLesson(5)" data-page-node-id="UgjPEjP9AGOTipAOc0W2HQ">
+                <div class="lesson-num" data-page-node-id="4SubabuzpDtQXEQhrgxCV6">5</div>
+                <h3 data-page-node-id="YAfrfBNVK0qWDC5O3xwVef">数据安全与保护 —— 别让辛苦白费</h3>
+                <span class="lesson-toggle" data-page-node-id="A1SKhl01ANWDmhaa7BXWLW">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5" data-page-node-id="PMyMFi93VpX5KJp15o7J4F">
+                <div class="lesson-body-inner" data-page-node-id="n1qjKDae8cSxCaB8aHdPx4">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="ZJInCivTxTB9tlzKr0fx1s">
+                        <h4 data-page-node-id="ooKEu9ixURnS55AClu09KN">📖 知识讲解</h4>
+                        <p data-page-node-id="HIOEWhc2faeB7CwajjNPcu">熬了一夜做的报价单、客户名单，要是被同事误改、被误删、或者文件损坏，哭都来不及。这一课教你给数据"<strong data-page-node-id="mWjvhYGgvKL6VkZqMHd2Sv">上锁</strong>"。</p>
+
+                        <h5 data-page-node-id="c1sHrKdY3r25SUlvxyWWku">🔹 单元格锁定 + 工作表保护（正确顺序！）</h5>
+                        <div class="flow-row" data-page-node-id="0IahC3ZAhdnAp7bRGEXmkp">
+                            <div class="flow-node" data-page-node-id="NZz4piLMuMYCioyJcAG8Xh">① 默认所有单元格都是"锁定"的</div>
+                            <div class="flow-arrow" data-page-node-id="GD9aiRfRYvW6PZexJbuIwr">→</div>
+                            <div class="flow-node" data-page-node-id="w6GSm735EO8kpLleFtMsnV">② 选中允许编辑的区域</div>
+                            <div class="flow-arrow" data-page-node-id="2qauFcBLMgp71vtXMwQP0s">→</div>
+                            <div class="flow-node" data-page-node-id="UrNiM4f6xO8HeOJxdIl4Ux">③ Ctrl+1→保护→<strong data-page-node-id="hUm7GPcOoeefkjnCBbODUk">取消勾选"锁定"</strong></div>
+                            <div class="flow-arrow" data-page-node-id="F72Q2lJPuawnbIWmE4jBIZ">→</div>
+                            <div class="flow-node" data-page-node-id="hGkw8ycuQIE1wgEsDyZwmY">④ 审阅→保护工作表→设密码</div>
+                        </div>
+                        <div class="callout callout-warn" data-page-node-id="V8TlyT8R8IQfxBN6SQrJti">
+                            ⚠️ <strong data-page-node-id="s7GA4bJnBmgh4MbIkKSoQG">关键</strong>：很多人直接点"保护工作表"，结果整张表都改不了。记住——<strong data-page-node-id="VQzWdcC8DoEs21RoypTTnD">先放开允许编辑的区域，再保护</strong>。
+                        </div>
+
+                        <h5 data-page-node-id="1oTLq7AXjR3WbazPp4P4FX">🔹 保护工作表时可勾选的权限</h5>
+                        <ul data-page-node-id="wOmPAJKJkUZ8YnpiGyd9Fl">
+                            <li data-page-node-id="BiV7sGp1HJcrc96SEt3bXt">选定锁定单元格 / 选定未锁定单元格</li>
+                            <li data-page-node-id="wo6e7bMQ47KhZsa8JSC5YL">插入行 / 删除行、设置列格式、排序、<strong data-page-node-id="d7gxFOcV8DXDQdEcf1Wmlv">使用自动筛选</strong></li>
+                            <li data-page-node-id="bGrHXeuuYzBQr8aGWdVeww">"允许用户编辑区域"：指定某几块区域谁可以改（可设不同密码）</li>
+                        </ul>
+
+                        <h5 data-page-node-id="oU3JQFsD2woWOQBbjlCw1U">🔹 保护工作簿结构 & 隐藏公式</h5>
+                        <ul data-page-node-id="PiEtBYzwn88FrK8XnPR17f">
+                            <li data-page-node-id="qth93FeCdWMm48obADLQgo"><code data-page-node-id="weHXEHnaHa4lGrrN4xCFZg">审阅 → 保护工作簿</code>：禁止<strong data-page-node-id="oPxdt9p7aNV5gQUfumOyBb">增删/重排工作表</strong>，结构不乱</li>
+                            <li data-page-node-id="waGbOYgyko8wHUJPISTLjM">想藏住公式？选中含公式的单元格 → <kbd class="kbd" data-page-node-id="f5Cj2mTeBSTXK7zElcMkmw">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="SKA6bBtQiAIFOPB3TTwZQ1">1</kbd> → 保护 → 勾<strong data-page-node-id="BzzVGLlSczRGtUz5xYV5vB">隐藏</strong>，再保护表，编辑栏就看不到公式了</li>
+                        </ul>
+
+                        <h5 data-page-node-id="5AHQbmA3KXeYgBM1Tt6IEF">🔹 文件加密</h5>
+                        <p data-page-node-id="4FXMZlsSTZEsgnLzBK2Tz6"><code data-page-node-id="DrRQFbIsBQd8kGtic46EBb">文件 → 另存为 → 工具 → 常规选项</code>：可设<strong data-page-node-id="JVCQZDf6FTQDbCnuxdxmgq">打开权限密码</strong>（看不到内容）和<strong data-page-node-id="8RRzNRymGn79CpNKfW3LLH">修改权限密码</strong>（只读）。</p>
+
+                        <h5 data-page-node-id="lx22pD3DBuPTbmZKEZioOw">🔹 标记为最终版本 & 只读</h5>
+                        <p data-page-node-id="cHu3N5AcnA69ilKn34pgfn"><code data-page-node-id="lUUYkCfimjYP4fTQAeX5rk">文件 → 信息 → 标记为最终版本</code>，让文件变只读提示"已完成"，减少误改。</p>
+
+                        <h5 data-page-node-id="uUr1nJc9PvU2iXFZhH1OzK">🔹 批注、共享与备份</h5>
+                        <ul data-page-node-id="YL62H0bxcJ9c56DZCQ3mlP">
+                            <li data-page-node-id="4uT2cGrhHANKhXtrdZqPfk">右键单元格 → <strong data-page-node-id="roL4DZz6vVmQHOBLefaSio">新建批注/备注</strong>，做审核意见；共享审阅时很有用</li>
+                            <li data-page-node-id="eYwTpGAigwCkmi5zAVG45Q"><strong data-page-node-id="T7B10NH5lZufJmHEiY5lAi">备份策略</strong>：文件名带日期与版本（<code data-page-node-id="N0aKRW6Ed6XIYJ4s9ODKVZ">_v1/_v2</code>）、存云盘、每周归档</li>
+                            <li data-page-node-id="L6fuFQtKH0a8wwnxXEOBGQ"><strong data-page-node-id="K8qjh3Z0nnNWnuQL06TB8k">误删恢复</strong>：<kbd class="kbd" data-page-node-id="WZmmNyBLusyBSM0DO7St1N">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="4OHtCrvZtMzfe0oc5osVeM">Z</kbd> 撤销；崩了可到 <code data-page-node-id="j7vxtv81up474Khf0WWXd6">文件 → 信息 → 管理工作簿 → 恢复未保存的版本</code></li>
+                            <li data-page-node-id="jPaMni0PPix3wO6m5GnR5w">铁律：<strong data-page-node-id="ZM7jbjX2H8AWoXiPyyiL3B">重要数据不要只存一份</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="jgpsmKiXmX641A2IS9VHS6">
+                        <h4 data-page-node-id="mPtCk0pF8ZHyibbxb9PJ7Y">🔧 操作步骤：给报价表上锁（允许改价格）</h4>
+                        <div class="step-list" data-page-node-id="genswBTeJ3ZSUQ0Op1CF89">
+                            <div class="step-item" data-page-node-id="F2gN4DsdH8dSc8LYAiJ7rv"><div class="step-content" data-page-node-id="zvkE2w34arDJni6YylN8aC">打开报价表，选中"单价""备注"等<strong data-page-node-id="FIbHx7q5w4mvYJVsHuZoXi">允许同事改</strong>的列</div></div>
+                            <div class="step-item" data-page-node-id="xhEyOI6EN9bHOyb6VvTNds"><div class="step-content" data-page-node-id="IYpStMiI3SFj4JYSI301Rp">按 <kbd class="kbd" data-page-node-id="4ZLTlhyd4tBHKIpJlqCkw6">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="aUY8Fl4hR8kypiCoFL8FUY">1</kbd> → 保护 → <strong data-page-node-id="Unmc2c89EwbYdUyA3PqUHR">取消勾选"锁定"</strong> → 确定</div></div>
+                            <div class="step-item" data-page-node-id="CuEgPUlFouUWR6zJB27ecQ"><div class="step-content" data-page-node-id="U2mKDYA9falDfBi3PdqKVS"><code data-page-node-id="OOpLLH0kckH1cv0KFX8Ej8">审阅 → 保护工作表</code>，输入密码，勾选"选定未锁定单元格"</div></div>
+                            <div class="step-item" data-page-node-id="derJ6ogLiDir2Km7HbYT6e"><div class="step-content" data-page-node-id="4jcnKmNxmUD5ZqsXZHzSrG">确定后试试：能改单价，改不了表头和其他公式</div></div>
+                            <div class="step-item" data-page-node-id="47AoYenu3gPhD9dnWHzyWB"><div class="step-content" data-page-node-id="qPhffkR7WqHo0SsFm8KpAG"><code data-page-node-id="qppO7earLGFEunODQGbXFN">审阅 → 保护工作簿</code>，禁止别人增删工作表</div></div>
+                            <div class="step-item" data-page-node-id="DFUMOrewD2WKZH9DV9yWHt"><div class="step-content" data-page-node-id="s5qCnTx2vmhcyg6oWd2u9H"><code data-page-node-id="zdD7umrrADeqvNlAbvxQRS">文件 → 另存为 → 工具 → 常规选项</code> 设打开密码，另存备份</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="a3BV0POnPlQBYZetz6e18C">
+                        <h4 data-page-node-id="fev3W2tTnPPXRtqbmR5Pyh">📥 练习数据：供应商价格表 & 客户名单</h4>
+                        <p data-page-node-id="pfa63VWls73geBhyDKAMHQ">下面是<strong data-page-node-id="pS8vHkxAtEofEjQHq4c22H">供应商价格表</strong>（前5行，共25行可下载）。客户名单（含手机号等敏感字段）放在下方 demo 中对照练习保护设置。</p>
+                        <div class="data-preview-wrap" data-page-node-id="IKAO3wOjB6EszsjvIHYfF1">
+                            <table class="data-preview" id="preview-6-5" data-page-node-id="t4MZ2HUQVlBMkNiaKTYF5I">
+                                <thead data-page-node-id="MEGyi1Utb9Sevh6xfi0yL8"><tr data-page-node-id="Lwx1QhHHHT8RO8rY82V2U7"><th data-page-node-id="66rfpNVh5TuYlpx8tnHBhM">供应商</th><th data-page-node-id="iLgh7coQFG72Djo4s7TxeK">商品</th><th data-page-node-id="yigltYAY7RBUGHga0TInzh">报价</th><th data-page-node-id="23VR5fR0H7HomeZl9hNBZp">起订量</th><th data-page-node-id="tlCCinCHsXmCjXjinOyDog">交货周期</th><th data-page-node-id="10sJYw22KNhMrAaZrJta2L">联系方式</th></tr></thead>
+                                <tbody data-page-node-id="YklOWCsts3ADGE3ITj3psc">
+                                    <tr data-page-node-id="ivPnJq70fAfFV54ns1Ze5A"><td data-page-node-id="N3nmjr5Q7R2TX3Rpp5q7rI">宏达科技</td><td data-page-node-id="x0vsKrCAN73cbSOktUEcPS">蓝牙耳机</td><td data-page-node-id="bSbSOtqolbTK6rqfEK3d3R">65</td><td data-page-node-id="ml6IOFYeWAzPPGr71o4yla">100</td><td data-page-node-id="PlGJ201jvvzAFuRuhqLYAx">7天</td><td data-page-node-id="nnMmAhgFMIKzqZA2E30cLs">13800001111</td></tr>
+                                    <tr data-page-node-id="cKAWQWF8smYMKCdWzRVKmP"><td data-page-node-id="MUTkj4pcVhDfAc3v6klJmf">优品供应链</td><td data-page-node-id="5skvs8RHFwcfzxoD1zCvAH">保温杯</td><td data-page-node-id="xOQ0rPBWFZpkGzIOfoOoiZ">22</td><td data-page-node-id="xhO5rsH0788JkRzZYE4HRL">200</td><td data-page-node-id="TrlgGvQkget3o0O4Ho9xdJ">5天</td><td data-page-node-id="jASVei2eNjfCIxuvGWw1hZ">13900002222</td></tr>
+                                    <tr data-page-node-id="i6rjsZ1bsZanCqG6V6nCWl"><td data-page-node-id="bXrvKZDx2ybAGIgbnhU2JL">速运仓储</td><td data-page-node-id="EiYPo2cDi3dzCyMWTOUf7R">运动鞋</td><td data-page-node-id="sNKOKyDyyKEya32HR7NkQH">120</td><td data-page-node-id="heMKpTjiop88lqKmlxOgVE">50</td><td data-page-node-id="kDKgb0YcqUbMQBkdRwFxpD">10天</td><td data-page-node-id="YJRnbsp9xg3OQXMNRkxWfC">13700003333</td></tr>
+                                    <tr data-page-node-id="fW2blo4BOh5kpRhc4VBgef"><td data-page-node-id="OnIR0cfRong5vZauAO2WF0">云端制造</td><td data-page-node-id="ebabSvWtU6C1Y71DZQMvX8">零食大礼包</td><td data-page-node-id="cxOt0ZwrKOUrPxt5rUCTb0">18</td><td data-page-node-id="SXkkTmXJxO4bEkm3VhWskQ">300</td><td data-page-node-id="9g7u38RQgO4TceF6FCdXwu">3天</td><td data-page-node-id="D6ZniJGfoB6tLEjT6GW36J">13600004444</td></tr>
+                                    <tr data-page-node-id="0QzvycrF49aNgB2YSB3789"><td data-page-node-id="fOY1H4jS2OnCK77huFZQZU">恒通贸易</td><td data-page-node-id="JEhCyYE5oz3n6IUmTFV20p">充电宝</td><td data-page-node-id="I3tqR5THEvZHvWRiY6HTlR">55</td><td data-page-node-id="JF65imOVADf3M4FFVxTwWV">150</td><td data-page-node-id="JgaIE7JlGD4t7ap1IpaVyD">6天</td><td data-page-node-id="q0URD19tcIsOCufwfjGdhr">13500005555</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="TVgb8EyaLpqOqgQTytvmo6">显示前5条，共25条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_5Data()" data-page-node-id="KmHns9loaRUCEjrcWJsItl">📥 下载供应商价格表 (CSV)</button>
+
+                        <div class="demo-box" style="margin-top:14px;" data-page-node-id="hyvu27ieWC8RgBPtLGtA7f">
+                            <div class="demo-title" data-page-node-id="HvIrIifPIwQq2Fqc65NAPP">📋 客户名单（敏感字段示例，练习"隐藏+保护"）</div>
+                            <table class="data-preview" data-page-node-id="BdfINDe52soQhyakbMYTpN">
+                                <thead data-page-node-id="dCML0EYy20haCURIKQSTbC"><tr data-page-node-id="TSGKMhXuEHdspbS18I3gAm"><th data-page-node-id="Gm5vscBD6LK1fxOqAqcEg9">客户ID</th><th data-page-node-id="6yr6JwwYnVgedEkx3PTQdY">姓名</th><th data-page-node-id="BwpPoxQyMKiW2BR6K4WPko">手机号</th><th data-page-node-id="jQMSHzi6HfGLcspzpHuF5u">累计消费</th><th data-page-node-id="MFOJsjidEWXKrSiDW7KsEo">等级</th></tr></thead>
+                                <tbody data-page-node-id="pE1r4FtJrHu2KsWu3hMbyU">
+                                    <tr data-page-node-id="AHQ9Bm3rOeoaOuTWEZXrUJ"><td data-page-node-id="gE4TMDRFuGUbAMiWVoRW8t">C001</td><td data-page-node-id="EmbO82AQvzGElqtu4N3qtv">王悦</td><td data-page-node-id="Tmt7l2G4Xp23SBUTNKjaZG">138****0011</td><td data-page-node-id="tXxTHKfjRs4cFuLDUnjsBs">5280</td><td data-page-node-id="OXss31bRscICfZzw1G38nc">VIP</td></tr>
+                                    <tr data-page-node-id="DYhVZlDmrlKIFSWNSlLqaE"><td data-page-node-id="ThA5gr77PjUCOwitbDUsKb">C002</td><td data-page-node-id="YqFmpnR813qDyQ7i6ntd4j">李娜</td><td data-page-node-id="IJyRAX362iFGvGNkVIPlrP">139****0022</td><td data-page-node-id="kDv4l0Yvrg3dXQjtY6bHsV">3120</td><td data-page-node-id="fbZj9K6NmjdQXctbF9j9Vx">普通</td></tr>
+                                    <tr data-page-node-id="PWsIX82HjjiZnx3A0M66vf"><td data-page-node-id="WaAhRqcDlBxhUO3piB1wrn">C003</td><td data-page-node-id="VNA3xVRZDYCVSCRH87EgCn">张伟</td><td data-page-node-id="pVSc4ZtYHFznoDyh8WWf6S">137****0033</td><td data-page-node-id="ZoFc0FXKmYP6ijyvQSvNoW">8900</td><td data-page-node-id="82sH8QCWQhtS46Eh2ayduR">VIP</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="demo-caption" data-page-node-id="dvNgHj0jXRldh9G8zcsGCG">练习：把"手机号"列隐藏公式/内容，再保护工作表，只留"等级"可改。</div>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="9s22tdmPyj2woEtzwvZ701">
+                        <h4 data-page-node-id="rY4YDrsICb5Z45sPkAXyG6">💡 技巧提示</h4>
+                        <ul data-page-node-id="8IA6FB6nyIA66IGBSKQchJ">
+                            <li data-page-node-id="CEzoDCd4qyY3Zi6qq2bfCt">密码<strong data-page-node-id="xDMfKnnmpAHlyhOLon0eiR">自己一定要记在别处</strong>，Excel 密码忘了基本没法找回</li>
+                            <li data-page-node-id="G4pVLJrTJnL0MKgGAFM2wx">"允许用户编辑区域"能给不同人不同权限，比整表保护细得多</li>
+                            <li data-page-node-id="fOQfrm0sR9CSub1toa5Dyd">隐藏公式后别忘了<strong data-page-node-id="fnofuJVqjgp6kUV7JmDtjj">保护工作表</strong>，否则别人仍能看到</li>
+                            <li data-page-node-id="LdEMGAqct4EtnxWaWnhGGH">云盘 + 本地 + 版本号，三备份最稳妥</li>
+                            <li data-page-node-id="3Gy8KHEw8uYkIg1QVR1pPv">养成<strong data-page-node-id="chBcgVG8WnUJM3ZFtmnBOU">下班前另存一个 _v 版本</strong>的习惯，崩了不心慌</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm" data-page-node-id="vXAEH7TDotW1tyi5YsA2rF">
+                        <h4 data-page-node-id="E8L3oSG3eXweTG8bNs3Xxa">📐 操作规范（养成好习惯）</h4>
+                        <ul data-page-node-id="Ib2ZEYPIOZsbga07OFLNai">
+                            <li data-page-node-id="jmQdIApIbFNEysFyg9tT08">保护表前<strong data-page-node-id="8sIGRrh2JbeDG3hxqSZCr1">先放开允许编辑区</strong>，顺序不能反</li>
+                            <li data-page-node-id="FJzbI9Rl1GoiUpSMhlX65g">敏感列（手机号、身份证）<strong data-page-node-id="kCC5lZjAi2VMfESzdYSvNp">隐藏并保护</strong></li>
+                            <li data-page-node-id="wnjDgGFnfS9aRnbwvgPDyx">重要文件<strong data-page-node-id="WcQgdGXwUfW8yU1RAALkw9">设打开/修改密码</strong>并另存备份</li>
+                            <li data-page-node-id="vOhQhXBBnwVQAjZtVDqjWW">文件名带<strong data-page-node-id="USDyEBpgi29rEnDPjS7FXc">日期+版本</strong>，定期归档</li>
+                            <li data-page-node-id="CeiCv74weNlOeuLR1kiDL7">重要数据<strong data-page-node-id="FTGE0n2T2kue0uhi09H9Z7">至少两份</strong>异地/云盘存储</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="R6dmXtHWYRmyQU3E1ZibuE">
+                        <h4 data-page-node-id="mbchQIWa5Dp9aIdd2JHsTk">⚠️ 常见错误</h4>
+                        <ul data-page-node-id="HuHDG0SHHCJ0cJwnFiWMM2">
+                            <li data-page-node-id="V4hk3ATgapr8dEshCt7cOt">❌ 直接点"保护工作表"，整张表锁死自己都改不了</li>
+                            <li data-page-node-id="BwPbIZnNsSWHKAuJyTeqC3">❌ 设了密码转头就忘，文件再也打不开</li>
+                            <li data-page-node-id="vrzLlrGgBruojlUDUfh84P">❌ 只隐藏行/列不保护，别人一取消隐藏全露馅</li>
+                            <li data-page-node-id="4dqAbakvWykw0bXquaH3bf">❌ 文件只存桌面一份，电脑一坏全没了</li>
+                            <li data-page-node-id="aBwlH1SjrfVU3ksghDs4EZ">❌ 把客户名单随便发群里，泄露隐私还违规</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="H7X693QJsDFTae3eb01huY">
+                        <h4 data-page-node-id="lgDOvPdbfyFMh7ThBnY34G">📥 练习任务</h4>
+                        <ol data-page-node-id="HFWtVEEGW3iooGxQWM0oJ5">
+                            <li data-page-node-id="BjFD9QBh0WDsNcWyTkYuNS">下载<strong data-page-node-id="mkdQM5gZSLxeP3mfwWuaZK">供应商价格表</strong>，把"报价"列设为允许编辑、其余锁定</li>
+                            <li data-page-node-id="JqLVrGU5RnlEPLTFDDrWCu">保护工作表并设密码，验证只能改报价</li>
+                            <li data-page-node-id="xPLtdXUgyzyGar7nFVAhA2">把价格表的公式单元格<strong data-page-node-id="6sdGeqHbsp486clPjsDekH">隐藏</strong>后再保护</li>
+                            <li data-page-node-id="2Z4rymoKqFtbMePp9YpvQ8">对"客户名单"demo，把手机号列隐藏并保护</li>
+                            <li data-page-node-id="fXwtlg43NWnwNIljkQIhR1">给文件设打开密码，另存为 <code data-page-node-id="YeO39yVWvErpVHvq9ezFx8">报价_20250318_v1.xlsx</code> 备份</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="wmUb983u6yoPYYueTZRdyf">
+                        <h4 data-page-node-id="vaVGDbn02ESt2qqmmXC3cg">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="qQQNic9MDVda8QCRi3zx2U">
+                            <li data-page-node-id="IIkUXVMeBwiwNNbtxcA2s0">用<strong data-page-node-id="LOrkTMryZXEdlZmiLQBlDz">允许用户编辑区域</strong>给"单价"和"备注"设不同密码</li>
+                            <li data-page-node-id="oMg397HV6xviQ883FJnc0t">开启<strong data-page-node-id="MEhrnEZkDUFwsEt9e4p2xE">保护工作簿结构</strong>，让同事不能增删工作表</li>
+                            <li data-page-node-id="Y3rvxTWNZTtMSYR1ngVXUF">模拟一次"未保存崩潰"，去"管理工作簿"找自动恢复版本</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="aX7AbhIg6FAFDpYbfIFRrw">
+                        <h4 data-page-node-id="tKxNQnEaL9CPlOFtvulGuh">📝 理论测试</h4>
+                        <p data-page-node-id="HhMrIWGGA4KDTBm6ShkbuB">完成以下10道题，检验你对数据安全的掌握：</p>
+                        <div id="quiz-6-5" data-page-node-id="pTCrAiB2rIpG2Uv1WMUwgM"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================
+             课次 6-6：综合实战
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-6" data-page-node-id="9k9Ede0lSHetEmZ37Q5r26">
+            <div class="lesson-header" onclick="toggleLesson(6)" data-page-node-id="AdE2cMCCueosr5YCaOqSto">
+                <div class="lesson-num" data-page-node-id="Z8iN6nfku04NShySPUAiXb">6</div>
+                <h3 data-page-node-id="GKGrlfFnTR5VootjQ1vr3B">综合实战 —— 从原始数据到分析报告</h3>
+                <span class="lesson-toggle" data-page-node-id="hSouqhZW20AC4cZIDu0xmd">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-6" data-page-node-id="QiVH6oJe6xrUfkARpkdVIS">
+                <div class="lesson-body-inner" data-page-node-id="xkSB571EcGYqTLBBAueKv2">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge" data-page-node-id="FuKx5nHnCRGZuG5CFEwa3S">
+                        <h4 data-page-node-id="evHemQOu8wNdVYwmA232kt">📖 知识讲解</h4>
+                        <p data-page-node-id="3DGJFRAoIAtZKTF9SpA2XE">前面 5 个模块你都学过了，这节课把它们<strong data-page-node-id="kkQmtxfJStyToYEfR8gbyq">串成一条完整的工作流</strong>。真实职场里，老板丢给你一份乱七八糟的原始数据，你要交回去的是一份<strong data-page-node-id="t9LyjfO5sszfv0kHVnq6Ku">干净、清晰、能决策</strong>的分析报告。</p>
+
+                        <h5 data-page-node-id="x9jZhtDichESugfs3plrsE">🔹 完整工作流（10 步）</h5>
+                        <div class="flow-row" style="flex-wrap:wrap;" data-page-node-id="W32dSue8ffyQS0MkgA1I1V">
+                            <div class="flow-node" data-page-node-id="Ak43BSH8WGo9dUTWrgtLOT">① 收到原始数据</div>
+                            <div class="flow-arrow" data-page-node-id="hAlQxzQEeeuOxCAXIcUhIh">→</div>
+                            <div class="flow-node" data-page-node-id="oQtyzWYnfQXpYnkrkf8gvF">② 建副本备份</div>
+                            <div class="flow-arrow" data-page-node-id="jt8spQ7YCMB3FR12e93Wad">→</div>
+                            <div class="flow-node" data-page-node-id="0fZByGG15MTFG1th5MaZzA">③ 规范表结构</div>
+                            <div class="flow-arrow" data-page-node-id="3EhrHgXYVgIrQGnRicH2Sz">→</div>
+                            <div class="flow-node" data-page-node-id="W0Ndhj0LwvwPS3chrnREk6">④ 数据清洗</div>
+                            <div class="flow-arrow" data-page-node-id="pOHCMgUCAQFcSHbAtKulu1">→</div>
+                            <div class="flow-node" data-page-node-id="R7kNOLZtuKqMjFMDk9pLIk">⑤ 公式函数计算</div>
+                            <div class="flow-arrow" data-page-node-id="cnDM6rXpLroTe37SgSgSVN">→</div>
+                            <div class="flow-node" data-page-node-id="P0VOYmjKkzW1K7DTPLdg8i">⑥ 排序筛选/条件格式</div>
+                            <div class="flow-arrow" data-page-node-id="myE045hdVsFW0U1iD6JVbt">→</div>
+                            <div class="flow-node" data-page-node-id="mPkZ16oaSCiegNj0nlNUYp">⑦ 透视表汇总</div>
+                            <div class="flow-arrow" data-page-node-id="6NFeIXYKiuXS1efyeCKsSA">→</div>
+                            <div class="flow-node" data-page-node-id="7Kqeg7hSECaXxN0qsZlLSX">⑧ 图表可视化</div>
+                            <div class="flow-arrow" data-page-node-id="9xph7Vh43qhHtGSb9G5u0q">→</div>
+                            <div class="flow-node" data-page-node-id="kw9PNS71r5fxaD4GXi1jUH">⑨ 排版成报告</div>
+                            <div class="flow-arrow" data-page-node-id="HqSPkYVIJlwpzlXEs2e3Dj">→</div>
+                            <div class="flow-node" data-page-node-id="GD3dUAIk5ETe6mMcK6hbhe">⑩ 检查与提交</div>
+                        </div>
+
+                        <h5 data-page-node-id="DYoPeUe41qra6sraYdQxUH">🔹 每一步的要点（回顾对应模块）</h5>
+                        <ul data-page-node-id="Ra3g6ASwSEtGjZg55lBIpU">
+                            <li data-page-node-id="d2cQYoninIqBhAA0Hx0HdU"><strong data-page-node-id="FG93XrFcg26yiQf3K5ee9s">② 建副本备份</strong>：先另存 <code data-page-node-id="BAHWNEpHYDqPfg8IpctPNm">_v1</code>，原始数据<strong data-page-node-id="A9HTnW8E4X7yFXOGtssDTL">绝不改动</strong>（模块6·数据安全）</li>
+                            <li data-page-node-id="RF5GWqwHXJwRkYBQPD4GJY"><strong data-page-node-id="YzAfm0eOxoQwDROuyK0d6m">③ 规范表结构</strong>：三区结构、四不原则、不用合并单元格（模块6·设计规范）</li>
+                            <li data-page-node-id="Jz12RUUj8B9W4ie8HEHHHI"><strong data-page-node-id="VxpOcQVCtY2fp35wCcuewE">④ 数据清洗</strong>：去空行、去重、统一日期、文本转数字、去空格（模块4·数据整理）</li>
+                            <li data-page-node-id="l09G7HQmlSWc4bj1rcGSOb"><strong data-page-node-id="OG9cA79YMAz3ML1ftCdVIH">⑤ 公式函数</strong>：SUM/AVERAGE/IF/VLOOKUP/XLOOKUP 算指标（模块2·函数）</li>
+                            <li data-page-node-id="62Yf0ABC05NfyoRL358YKo"><strong data-page-node-id="PIk1elGu2nsaEHuLVLBZoE">⑥ 排序筛选/条件格式</strong>：找出 Top 商品、异常值（模块3·排序筛选）</li>
+                            <li data-page-node-id="jEasaC9DGVvLbAvoOnXSNP"><strong data-page-node-id="PX0KOXayplH7LQKOUF4XUz">⑦ 透视表汇总</strong>：按地区/商品多维度汇总（模块5·透视表）</li>
+                            <li data-page-node-id="4oe2YkbbXUPmE2SMkzTMKO"><strong data-page-node-id="eMWW0bTguJgnZglor7Hk7s">⑧ 图表可视化</strong>：柱图看对比、折线看趋势、饼图看占比（模块5·图表）</li>
+                            <li data-page-node-id="WJre0lcR2DHjnMOIU7IIVE"><strong data-page-node-id="YSirPmEKLknYITkfJQRzq4">⑨ 排版成报告</strong>：配色≤4、数字格式、关网格线（模块6·美化）</li>
+                            <li data-page-node-id="Z1TpVsqDmvandllf1UOvbK"><strong data-page-node-id="NdaQ6e6yY5D7zUpWBYcIQi">⑩ 检查与提交</strong>：走下面的 CHECK 清单（模块6·规范与安全）</li>
+                        </ul>
+
+                        <div class="callout callout-info" data-page-node-id="CVHmq0rIEBsYSwIhCzqBMd">
+                            🧭 全程记住<strong data-page-node-id="r2oc1EMi4ucdV9lpF5m7k4">快捷键</strong>（模块6·快捷键）和<strong data-page-node-id="36jFWmCoAUU8lAZqg5hHw5">效率技巧</strong>（模块6·效率），手速决定下班时间。
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps" data-page-node-id="uDMNH5sqaz98Gk2LCaiTa8">
+                        <h4 data-page-node-id="HYxzVSp3kjpwxivFfZzufx">🔧 操作步骤：把一份脏数据做成报告</h4>
+                        <div class="step-list" data-page-node-id="7laPjz5oSCQ3NntdirR4Yp">
+                            <div class="step-item" data-page-node-id="TFxsUMhbh52FfX0Sin4PFs"><div class="step-content" data-page-node-id="BGWam4Gs7CZrApMHMhICBl">下载<strong data-page-node-id="NxUAGIJtkkSXoXC9hXG8hP">电商原始订单数据</strong>，立刻另存为 <code data-page-node-id="7vAbZfuv7lLz0FCbgGHR4k">订单分析_20250318_v1.xlsx</code> 备份</div></div>
+                            <div class="step-item" data-page-node-id="wTG5QHJDjGmxxDcHmhHUM7"><div class="step-content" data-page-node-id="2CzDvXar1y1MHOOIGjstW1">删除空行、用<strong data-page-node-id="8gAdl9bQprSLrVUqWKPyfv">数据→删除重复值</strong>去重，统一日期为 <code data-page-node-id="fkvQ9cvhguPfGCP2WxFtpE">yyyy-mm-dd</code></div></div>
+                            <div class="step-item" data-page-node-id="wt4Cp9km6GCOtLKz4LKytN"><div class="step-content" data-page-node-id="Ne3ns0EKY3RueFmgWHfuQV">分列/快速填充把"数量""单价"中的文本数字转成真数字，去多余空格</div></div>
+                            <div class="step-item" data-page-node-id="RxwvzCGrNmBpZAKWeYtMm5"><div class="step-content" data-page-node-id="S00hUVWwiK9Eb0su6NHakV">新增"金额"列，用 <code data-page-node-id="GcDENfew1Uy3nQjjCFXXvi">=数量*单价</code> 计算；用 SUM/AVERAGE 算 totals</div></div>
+                            <div class="step-item" data-page-node-id="o09HE3JaXn7zEx0GlIsGsw"><div class="step-content" data-page-node-id="TTTCrBmFFTG00UYCHR1xUG">按金额排序找 Top10，条件格式标出异常订单</div></div>
+                            <div class="step-item" data-page-node-id="tzIBXmdEfb6byGGunKpHeg"><div class="step-content" data-page-node-id="v7GFIBWsKBQUzggYvaS8cj">插入<strong data-page-node-id="hKv042sq21kRU6y5ckJyU2">数据透视表</strong>，按"地区"和"商品"汇总销售额</div></div>
+                            <div class="step-item" data-page-node-id="rilPoxzesDslOq9XrrTaEH"><div class="step-content" data-page-node-id="rbRIAilf8UQImMuieA8yrX">基于透视表做<strong data-page-node-id="PzHkG6v2RE7VbcDhGT0nMN">柱形图+饼图</strong>，对比各地区、各商品占比</div></div>
+                            <div class="step-item" data-page-node-id="NxaXGLYgKtJUHVX7LJg4oy"><div class="step-content" data-page-node-id="13gFhZei7vnezmWZsf7lk6">排版：标题、表头、货币格式、关网格线，套用主题</div></div>
+                            <div class="step-item" data-page-node-id="7Op8OYeT8wNwdKaAuNK7aJ"><div class="step-content" data-page-node-id="BUbvfTAdeVCGpZxO76Qgzg">走完下方<strong data-page-node-id="rtgj2yUmiQC6fh2INGxmxL">提交前 CHECK 清单</strong>，确认无误后导出 PDF 提交</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice" data-page-node-id="Aa5IcLlhublrou3ytN4iwH">
+                        <h4 data-page-node-id="FPsBMnJinFNFqf3GQDfGSt">📥 练习数据：电商原始订单数据（脏数据）</h4>
+                        <p data-page-node-id="77a4zp9p10snyqr1CMT0nn">下面是一份"从老板那接过来的"原始数据（前5行），里面藏着<strong data-page-node-id="8WSOUQraX10YsssrfE8Rpf">空行、文本数字、不规范日期、重复行、多余空格</strong>。请把整条工作流走完，输出一页分析报告。</p>
+                        <div class="data-preview-wrap" data-page-node-id="8HGB3QWqNsEoxdH7NggKDO">
+                            <table class="data-preview" id="preview-6-6" data-page-node-id="akDOUgRr0dXJlJ7Dl8T4Eq">
+                                <thead data-page-node-id="ozkyPxdGFcZJvgwoA1h5Ji"><tr data-page-node-id="VaHttBIQcYsWqLXjMg60cu"><th data-page-node-id="tpTVZLpD3HSlb51FtcgVHZ">订单号</th><th data-page-node-id="gwjLsodCAwH3lhSAnVAXba">客户</th><th data-page-node-id="NsUh6YBWt9YwOCxSad7gjs">商品</th><th data-page-node-id="pqfNPibp776RdGBBzabQqn">数量</th><th data-page-node-id="DYAN3L7ePhmaJxh0xlyFrk">单价</th><th data-page-node-id="SgIqKgsIgW8FPQ8Yzkrzxn">下单日期</th><th data-page-node-id="VUgYEY7XWsWwVGEUGU5xWH">地区</th><th data-page-node-id="2MKHQbCXjOpI5WrbjKXfck">备注</th></tr></thead>
+                                <tbody data-page-node-id="TQub7NuzUwlfVQGrWpR9JW">
+                                    <tr data-page-node-id="F5YkO9Jsm8x656JMsx14rj"><td data-page-node-id="vPotBOCTTNp5M24bDvopGF">DD-001</td><td data-page-node-id="RAZYwxbJiLYbHql2MWMpbM">王悦 </td><td data-page-node-id="6EYTQib488ji9ExaMnySF4">蓝牙耳机</td><td data-page-node-id="WhbilJy59ZldswGlyrQCyX">3</td><td data-page-node-id="0BskJbmQHhFGHRSBxvjjtT">89</td><td data-page-node-id="ljROGQIlnjDKUjxWoOYKls">2025/3/1</td><td data-page-node-id="zMNYOozCAiXi15BWO0v55C">华东</td><td data-page-node-id="24X89Jhp5NAS1hFq5bPCu2"></td></tr>
+                                    <tr data-page-node-id="JyXZ55kqnArvoj2mEy4Hj4"><td data-page-node-id="Hvuz73sNKD65JKixZ6OgHE">DD-002</td><td data-page-node-id="H6GDh3iNCSQAbxGsr4ZMu7">李娜</td><td data-page-node-id="NcJrFjtexsNHBQkhmU2YPp">保温杯</td><td data-page-node-id="trJyoZ8KJLwQ0pyHXqvZJz">5</td><td data-page-node-id="1KHPn7NGBWLhNK2DcijtRA">45</td><td data-page-node-id="KQ28yKHbPRFV9eZsCm3k3G">2025-03-02</td><td data-page-node-id="8LDcInXnzF261x0gxUF4R0">华北</td><td data-page-node-id="hOliRMZposMPdl18TX3PmI">促销</td></tr>
+                                    <tr data-page-node-id="S8oAXraqAKcjNlXHbt7EKx"><td data-page-node-id="SL8dXFXm1BgVY2J1U0E9Zl">DD-003</td><td data-page-node-id="XqvW38DQnRhOBci5PQgC0k">张伟</td><td data-page-node-id="UdISJyM5uhGM6FVJ4wLoDF">运动鞋</td><td data-page-node-id="Aj65IQZc3FXRb0bFywZVo9"> 2</td><td data-page-node-id="2MuRGMQVaaTIvzJxEkmZYM">199</td><td data-page-node-id="3AKKucARnA5nkQThQ5uIji">2025/3/3</td><td data-page-node-id="OTDzK4xSqxXFrlQrw3Wiom">华南</td><td data-page-node-id="Bt1vREk8iQ6SD7IlHjTPoH"></td></tr>
+                                    <tr data-page-node-id="VVULagAKfDQHPbzygERiWx"><td data-page-node-id="CnPGvyS1nMF9RRa7igMjYm">DD-003</td><td data-page-node-id="QDeDA2uybOyFDxITpXCOJP">张伟</td><td data-page-node-id="M7O8H0ZDzKUmwC0ELuNh05">运动鞋</td><td data-page-node-id="xUtroCQFQgqXkVGZq6Ajmj">2</td><td data-page-node-id="Ndg7Uxc4A9mk7HNQlORX4a">199</td><td data-page-node-id="0BCOxXvECQ5PfUQT1fIwkU">2025/3/3</td><td data-page-node-id="Kjih7HGEybj43yXlxHLsHL">华南</td><td data-page-node-id="qCMuJmcxtAmQFWFN64KI0T">重复行</td></tr>
+                                    <tr data-page-node-id="lwOjNBkmyDeMZ2t6jNNPqQ"><td data-page-node-id="EnaAkmhmzd7oCXFK8KGqHQ">DD-004</td><td data-page-node-id="rftLsKW7S0JJBKr9c1Pi5w">刘洋</td><td data-page-node-id="GIdpNYVIEWsV0NH8FPUfBI">零食</td><td data-page-node-id="WbmNhAmtxtaqDKj2b8NOZE">10</td><td data-page-node-id="b8M5kDXndhmKLR73EBJH30">￥39</td><td data-page-node-id="w2DwXQCVESRegOOpy2kUvb">2025-03-04</td><td data-page-node-id="r2MXUlOZDbtxhrlNx8CkS4">西南</td><td data-page-node-id="E87fAuH3TBlQ3y5FzF2uRE"></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more" data-page-node-id="5Dfyp43eQi2ubE0viUsb2e">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson6_6Data()" data-page-node-id="ok4GIb6EQDAwIofH1eXG1s">📥 下载电商原始订单数据 (CSV)</button>
+                    </div>
+
+                    <!-- 提交前 CHECK 清单 -->
+                    <div class="content-block block-norm" data-page-node-id="joIfcM0COUPMcbYS5DDjbH">
+                        <h4 data-page-node-id="mNTzHuMdqJv8WMth9TtgfE">📐 提交前 CHECK 清单（12 条）</h4>
+                        <ul data-page-node-id="DcXwbCV9egmDTpy1Z9LOqC">
+                            <li data-page-node-id="4hxhJ7DhjxqLlWPkrTEw7b">🔸 已保留<strong data-page-node-id="HwnuzmGJQMlMl05Ct03L0n">原始数据备份</strong>，分析都在副本上做</li>
+                            <li data-page-node-id="S23hoK2s4KyIHKq6lLbxqV">🔸 表头规范、无合并单元格、字段名遵守四不原则</li>
+                            <li data-page-node-id="0EUZGiaJfxR9goaydJyY8C">🔸 无空行、无重复行，每列数据类型统一</li>
+                            <li data-page-node-id="COd0XnZXjYwq6he0oefMIj">🔸 日期格式统一为 <code data-page-node-id="6LwIsroeJmnkZnkHeBxiIJ">yyyy-mm-dd</code></li>
+                            <li data-page-node-id="ek4WcV5q2ggkqO4n9EMqwI">🔸 文本数字已转成真数字，计算无误</li>
+                            <li data-page-node-id="T7HQZGXEluafB0EP4yv2jh">🔸 金额/单价已设货币或千分位格式</li>
+                            <li data-page-node-id="lDZQmGhZiEbM9qaqyj1u3M">🔸 公式结果已<strong data-page-node-id="Q2cuqKgva604xbKwQEIqxq">粘数值</strong>或确认引用正确</li>
+                            <li data-page-node-id="CM92SOK10jVl4PQHOPOJ9i">🔸 透视表能正确汇总，无遗漏分类</li>
+                            <li data-page-node-id="THkYE000OspH8ODAnfVO7k">🔸 图表标题、坐标轴、图例齐全且易读</li>
+                            <li data-page-node-id="gPqkZFBTBmZBnuKGmhySQY">🔸 配色 ≤ 4 种、关闭网格线、行高统一</li>
+                            <li data-page-node-id="7nFBTy0Fro514HxjZaFMEv">🔸 敏感字段已隐藏/保护，文件已命名带版本</li>
+                            <li data-page-node-id="2l3SXreskwchIMmhxN4jsc">🔸 打印预览一页能看清，或已导出 PDF</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors" data-page-node-id="7onW4pSpogGZCOnScWksAp">
+                        <h4 data-page-node-id="loTs5UgZcY9AYYWSAJivLx">⚠️ 全课程最容易犯的 10 个错</h4>
+                        <ul data-page-node-id="VCcsJLHb5o0JkRJfFan2uY">
+                            <li data-page-node-id="QKroXuA7SYmgMhMQHy3CUu">❌ 在<strong data-page-node-id="1xEUViGbu4AGUnM5xX097A">原始数据</strong>上直接改，改乱了没法回退</li>
+                            <li data-page-node-id="563kAkA7BqU4Pnzwvvn2oZ">❌ 用<strong data-page-node-id="U3Ga6gkPWmprho4y6fKGjq">合并单元格</strong>做标题，导致后续全失灵</li>
+                            <li data-page-node-id="rdoRk4uAH7GwLPUbYHHKWH">❌ 把数字存成文本，求和得 0 还找不到原因</li>
+                            <li data-page-node-id="6X8AQRpJsLd6KTPh09WH5T">❌ 日期格式乱七八糟，透视按"月"汇总失败</li>
+                            <li data-page-node-id="OJ6qSUWLU9cFVJFvhv5yEU">❌ VLOOKUP 忘锁区域（<code data-page-node-id="wC8LHzwrQoclUDHvz9XHmy">$</code>），下拉全错</li>
+                            <li data-page-node-id="W0vmTDbXjJKFx2T3EHQQkA">❌ 公式没粘数值，交出去被人一改就崩</li>
+                            <li data-page-node-id="23OOnWJNcT4YK40etFK25z">❌ 透视表数据源没随新增行扩展，漏算</li>
+                            <li data-page-node-id="bBjQ8iwaPAHt1Y5ZppINfD">❌ 图表不加标题/坐标轴，别人看不懂</li>
+                            <li data-page-node-id="oPFZ1GIwGYWePWY5AkJrI3">❌ 条件格式滥用，满屏红绿没重点</li>
+                            <li data-page-node-id="HBoDF0tWjcl1F6STIsVMRx">❌ 文件不备份不命名版本，重要数据只有一份</li>
+                        </ul>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips" data-page-node-id="QscdhCF8CSeX67KTjkta9o">
+                        <h4 data-page-node-id="sCuZ8vmXPxiE3QaL5BXyJX">💡 技巧提示 & 进阶方向</h4>
+                        <ul data-page-node-id="2ttXhoucUEaNg38GdNEPpi">
+                            <li data-page-node-id="Ro0n5tHbgZwAnC7TYugsY3">走流程时多用 <kbd class="kbd" data-page-node-id="AQeAa63kdF1G0rRBgGv2Y4">Ctrl</kbd>+<kbd class="kbd" data-page-node-id="JySq0V7IrZoa0IfXNJxwfk">E</kbd>、分列、定位空值，清洗能快十倍</li>
+                            <li data-page-node-id="DMPJzEcvx1gN4ABiNmmAP5">把这套流程<strong data-page-node-id="GILGJhe245bs0IiTIi468N">存成模板</strong>，下次接数据直接套</li>
+                            <li data-page-node-id="QDN8WAXaAUZ1ApBepyUemA"><strong data-page-node-id="NHdxFnQT9GSQOtNXJ8SZAZ">进阶：Power Query</strong>——一键把"脏数据清洗"自动化，重复活交给它</li>
+                            <li data-page-node-id="or53GL86TKvNCti6n21RZJ"><strong data-page-node-id="hEyCOoNG0XtkpscVFYzdRP">Power Pivot</strong>——处理百万行、多表关联建模</li>
+                            <li data-page-node-id="8goFlnz95jgpA7epxyw7as"><strong data-page-node-id="BCOaYhtAbqqh2gc6AOHB2p">VBA</strong>——把重复操作录成宏，一键执行</li>
+                            <li data-page-node-id="oXZmO1LyMPhYSu4FzjJyDx"><strong data-page-node-id="MdjkgR20guPTVWjxHsU2S5">Excel ↔ BI 工具</strong>（如 Power BI）：Excel 做轻量分析，BI 做大型可视化看板，两者数据是打通的</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice" data-page-node-id="RjwjkzAM9ARZdOVpXnnnIp">
+                        <h4 data-page-node-id="mecnNBuQuVmxJfFsc4IcLG">📥 练习任务</h4>
+                        <ol data-page-node-id="7amB9CHviLhRp88HAoGDNz">
+                            <li data-page-node-id="cvFCus3awZI3lmR4PzpBIz">下载<strong data-page-node-id="4ax6LA5wGoeD9l3Tp7Xpot">电商原始订单数据</strong>，另存备份副本</li>
+                            <li data-page-node-id="o1mBn2YxTCCOfOqlzTyptZ">完成<strong data-page-node-id="cNC48iAmOpziC9YWET26Je">清洗</strong>：去空行、去重、统一日期、文本转数字、去空格</li>
+                            <li data-page-node-id="F3CzN0GbE1hdUsrWltlfT0">用公式算"金额"，用透视表按<strong data-page-node-id="0N2Iuhyi8euwX2y9UEWu0y">地区</strong>汇总销售额</li>
+                            <li data-page-node-id="jwqvM5MkszHAHNk1e5JFcW">做柱形图（各地区）+ 饼图（各商品占比）</li>
+                            <li data-page-node-id="yrzpaY8us4oCm3uvJta0Sd">排版成<strong data-page-node-id="hcDTQXOiogEvaaKdkPxzS3">一页分析报告</strong>，走完 12 条 CHECK 清单后导出 PDF</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge" data-page-node-id="Sm0IwfPmulSFMKSeK778gM">
+                        <h4 data-page-node-id="7hRXEBV7BOIUhWOzWEVJFH">🏆 挑战任务（选做）</h4>
+                        <ol data-page-node-id="BwmW9kcahzDpsvTeaZ39UR">
+                            <li data-page-node-id="wBu7w3BHC4YSEsjOT30qaw">用 <strong data-page-node-id="xK2iDXyZuexyykVDRZDUzN">Power Query</strong>（数据→获取数据）把清洗步骤做成可刷新流程</li>
+                            <li data-page-node-id="wcAzf4DlLS4iPyqbjX8Bsp">在报告里加一个<strong data-page-node-id="0BxodugxKwFlIyzb1eph7l">动态图表</strong>（用切片器联动透视表）</li>
+                            <li data-page-node-id="UFPudNKjJicz1VDTR5IzL7">把报告模板化，让同事用同一模板交月度分析</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge" data-page-node-id="8o0sSBpmxp0JCxi5jzV2zk">
+                        <h4 data-page-node-id="es3nsNyABxU6fKBTtGNKm1">📝 理论测试</h4>
+                        <p data-page-node-id="9BPr9EnZVhYSonfuwDLh3Y">完成以下10道题，检验你对综合实战的掌握：</p>
+                        <div id="quiz-6-6" data-page-node-id="hRVWcnFdiYyDsP9tIRkqlV"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结：回顾全课程 -->
+<section class="container" style="padding-bottom:60px;" data-page-node-id="VH0WQ7zRKYpnvNVsNfyrmL">
+    <div style="max-width:900px;margin:0 auto;" data-page-node-id="pe3qgnNg6sjVb7cdUWzhwc">
+        <div class="content-block block-knowledge" style="border-left-color:var(--pink);" data-page-node-id="XPO00vyugLUyCCipt0qYBf">
+            <h4 data-page-node-id="UQZpqALx1FvfAt5L3t3A0D">🎯 模块6 学习总结 · 全课程回顾</h4>
+            <p data-page-node-id="4A3yCZc0ABxztSTEtNiyEG">恭喜你走完了《Excel从入门到精通 · 电商数据分析》的<strong data-page-node-id="M86eC30mvRrxauGqHOF8TS">全部 6 个模块</strong>！从界面认识到综合实战，你已经具备一名电商数据助理的核心能力。</p>
+            <ul data-page-node-id="SLyIINClqQNOPdjSClIIjH">
+                <li data-page-node-id="6HW8Lw9ZUKdf6A15yFIBR0">✅ <strong data-page-node-id="axTMEHea4UC7OfioqpZIDY">模块1 基础回顾</strong>：界面、输入、格式、打印——打牢地基</li>
+                <li data-page-node-id="1uwKoaro1gRZotKVikOYMI">✅ <strong data-page-node-id="MfetR4gBE7beUgbMRkHhfk">模块2 公式与函数</strong>：SUM/IF/VLOOKUP 等，让 Excel 替你算</li>
+                <li data-page-node-id="Wx3fo8rs4OxxKqobWXZcwI">✅ <strong data-page-node-id="cdYH4UGWNLTgzWgW0XHgPl">模块3 排序筛选</strong>：从海量订单里快速找到想要的信息</li>
+                <li data-page-node-id="m9dCpHupqpU23QZASYGb78">✅ <strong data-page-node-id="EyFg0v3V8rEUh4imOFcLxA">模块4 数据整理</strong>：分列、去重、文本函数，把脏数据变干净</li>
+                <li data-page-node-id="sJY2Qa5UPvAZG2t0wttmrK">✅ <strong data-page-node-id="tAUAtHDuHNj9N5pSDAye86">模块5 透视表与图表</strong>：多维度汇总 + 可视化呈现</li>
+                <li data-page-node-id="UPbI61UUmmLBb5JwO5SisS">✅ <strong data-page-node-id="TJpQpdA2CLGxHja81jBo3C">模块6 操作规范与效率</strong>：规范、快捷键、美化、效率、安全、实战</li>
+            </ul>
+            <p style="margin-top:12px;" data-page-node-id="3LGyhOEjmnm9CBcJC8jXCh">📌 <strong data-page-node-id="uwsuOeODuIpBozhsnybYZY">操作规范要点回顾</strong>：</p>
+            <ul data-page-node-id="sxNaonrFUb73iHiOgZGRut">
+                <li data-page-node-id="KyvaHt6ABnnAJh8DdtO41C">🔸 表格三区结构、四不原则、不用合并单元格</li>
+                <li data-page-node-id="GOz9MVYMvTEI4iR3qpAh0V">🔸 每天练 5 个快捷键，手速就是效率</li>
+                <li data-page-node-id="qrUZWdXchtlChyUQgIVHEj">🔸 数字格式只改显示不改值，配色≤4种、关网格线</li>
+                <li data-page-node-id="wKmTQWAuUgZkCxqxU9KhWC">🔸 Ctrl+E、选择性粘贴、定位空值等效率神技</li>
+                <li data-page-node-id="LfAVvoGeXJD5aMiVWKxQ00">🔸 先放开再保护，重要数据多备份、带版本</li>
+                <li data-page-node-id="QG4Kc2UYFxmFxH3dEHokEU">🔸 交报告前走完 CHECK 清单，原始数据绝不改</li>
+            </ul>
+            <p style="margin-top:12px;" data-page-node-id="lVpIxl1sEHGyNolgrZoSiK">🏠 回到课程起点复习：<a href="index.html" style="color:var(--blue);font-weight:bold;" data-page-node-id="YlMmEqberJGEFyfVXBuzSx">🏠 首页 / 课程总览</a>；想继续刷快捷键，打开 <a href="excel快捷键/index.html" style="color:var(--blue);font-weight:bold;" data-page-node-id="jiH1voEcNXUjPUUXsuSLWw">⌨️ 160+ 快捷键速查手册</a>（支持搜索、虚拟键盘与随机测验）。</p>
+            <p style="margin-top:8px;" data-page-node-id="c9sbGEEtO9KbIdCDSMQaAM">🚀 <strong data-page-node-id="VWrcs2LOnkn3Q9tazgzRdx">进阶建议</strong>：掌握了基础后，可以向 <strong data-page-node-id="vAbtjHFRRouvWDAxyrof0c">Power Query（自动清洗）</strong>、<strong data-page-node-id="C9eHphClTsrWOexhsMtka4">Power Pivot（数据建模）</strong>、<strong data-page-node-id="HX8JaVJvY0fC3sgLbPIpmV">VBA（自动化）</strong> 以及 <strong data-page-node-id="aQcUf1wpxFyihlWRk4DUPH">Power BI</strong> 等方向深入，把"会做表"升级成"数据驱动决策"。</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer" data-page-node-id="QEDJvn4CkQ82J2aRaqvB7W">
+    <div class="container" data-page-node-id="yWH6kunwAfWHMDoyCYnaok">
+        <p data-page-node-id="AGp3aKxAN7wyweEAjWTi8p">📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p data-page-node-id="OnlwJIdGokjOAbTaH72LaL">适用于中职电商专业数据分析课程 · 2026年春季学期· 寇亚彬老师授课</p>
+    </div>
+</footer>
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块6 数据生成与测验题目
+// ================================================================
+
+// ============ 课次6-1 规范订单表 ============
+function downloadLesson6_1Data() {
+    const customers = ['王悦','李娜','张伟','刘洋','陈静','赵磊','孙倩','周涛','吴敏','郑凯','冯雪','何强','许丽','邓超','曹颖','彭飞','萧雅','袁泉','贺鹏','于娜'];
+    const products = ['蓝牙耳机','保温杯','运动鞋','零食大礼包','充电宝','护肤套装','书包','台灯','无线鼠标','机械键盘','补水面膜','纯棉毛巾','折叠雨伞','陶瓷餐具','毛绒玩具','记忆抱枕','皮质笔记本','保温水杯','运动袜子','居家拖鞋'];
+    const regions = ['华东','华北','华南','西南','东北'];
+    const headers = ['订单编号','客户姓名','商品名称','数量','单价','金额','下单日期','地区'];
+    const rows = [];
+    for (let i = 0; i < 20; i++) {
+        const qty = (i % 5) + 1;
+        const price = (i % 6 + 1) * 10;
+        const day = i + 1;
+        const date = '2025-03-' + (day < 10 ? '0' + day : day);
+        rows.push([
+            'DD' + (2025001 + i),
+            customers[i],
+            products[i],
+            qty,
+            price,
+            qty * price,
+            date,
+            regions[i % 5]
+        ]);
+    }
+    downloadCSV('规范订单表.csv', headers, rows);
+}
+
+// ============ 课次6-2 快捷键自测表 ============
+function downloadLesson6_2Data() {
+    const list = [
+        ['Ctrl+S', '保存'],
+        ['Ctrl+Z', '撤销'],
+        ['Ctrl+Y', '恢复（重做）'],
+        ['Ctrl+C', '复制'],
+        ['Ctrl+X', '剪切'],
+        ['Ctrl+V', '粘贴'],
+        ['Ctrl+A', '全选当前区域'],
+        ['Ctrl+方向键', '跳到数据边缘'],
+        ['Ctrl+Shift+方向键', '选中到边缘'],
+        ['Ctrl+Home', '跳到A1'],
+        ['Ctrl+End', '跳到数据右下角'],
+        ['Ctrl+PageUp/PageDown', '切换工作表'],
+        ['F2', '编辑单元格'],
+        ['F4', '重复操作/切换引用'],
+        ['Alt+Enter', '单元格内换行'],
+        ['Ctrl+Enter', '区域批量填充'],
+        ['Ctrl+1', '设置单元格格式'],
+        ['Ctrl+B', '加粗'],
+        ['Ctrl+I', '斜体'],
+        ['Ctrl+U', '下划线'],
+        ['Ctrl+Shift+1', '千分位整数'],
+        ['Ctrl+Shift+2', '时间格式'],
+        ['Ctrl+Shift+3', '日期格式'],
+        ['Ctrl+Shift+4', '货币格式'],
+        ['Ctrl+Shift+5', '百分比格式'],
+        ['Alt+=', '自动求和'],
+        ['Shift+F3', '插入函数'],
+        ['Ctrl+E', '快速填充'],
+        ['Ctrl+;', '输入当天日期'],
+        ['Ctrl+Shift+;', '输入当前时间']
+    ];
+    const headers = ['快捷键', '功能', '我记住了吗'];
+    const rows = list.map(function (it) { return [it[0], it[1], '']; });
+    downloadCSV('快捷键自测表.csv', headers, rows);
+}
+
+// ============ 课次6-3 待美化销售表 ============
+function downloadLesson6_3Data() {
+    const months = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+    const products = ['蓝牙耳机','保温杯','运动鞋','零食大礼包','充电宝','护肤套装','书包','台灯','数据线','机械键盘','补水面膜','纯棉毛巾','折叠雨伞','陶瓷餐具','毛绒玩具','记忆抱枕','笔记本电脑','保温水杯','运动袜子','居家拖鞋','蓝牙音箱','护手霜','羊毛围巾','坚果礼盒','加湿器','瑜伽垫','香薰蜡烛','无线鼠标','挂耳咖啡','收纳盒'];
+    const qty = [120,200,80,350,150,90,260,180,300,75,210,160,400,130,95,220,310,140,180,260,110,290,170,330,85,240,200,150,360,190];
+    const price = [89,45,199,39,99,59,25,129,15,299,69,35,19,179,49,79,33,109,89,55,25,45,159,29,99,65,39,129,49,79];
+    const headers = ['月份','商品','销量','单价','销售额','备注'];
+    const rows = [];
+    for (let i = 0; i < 30; i++) {
+        const q = qty[i];
+        const p = price[i];
+        const remark = (i % 5 === 1) ? '促销' : (i % 7 === 3 ? '爆款' : '');
+        rows.push([months[i % 12], products[i], q, p, q * p, remark]);
+    }
+    downloadCSV('待美化销售表.csv', headers, rows);
+}
+
+// ============ 课次6-4 商品编号与规格拆分 ============
+function downloadLesson6_4Data() {
+    const cats = ['A类', 'B类', 'C类', 'D类'];
+    const colors = ['红', '蓝', '绿', '黑', '白'];
+    const sizes = ['L', 'M', 'S', 'XL'];
+    const headers = ['完整编号', '年份', '批次', '类别', '颜色', '尺码'];
+    const rows = [];
+    for (let i = 0; i < 40; i++) {
+        const mm = (i % 12) + 1;
+        const dd = (i % 28) + 1;
+        const mmdd = (mm < 10 ? '0' + mm : mm) + (dd < 10 ? '0' + dd : dd);
+        const code = 'SP-2025-' + mmdd + '-' + cats[i % 4] + '-' + colors[i % 5] + '-' + sizes[i % 4];
+        rows.push([code, '', '', '', '', '']);
+    }
+    downloadCSV('商品编号数据.csv', headers, rows);
+}
+
+// ============ 课次6-5 供应商价格表 ============
+function downloadLesson6_5Data() {
+    const suppliers = ['宏达科技','优品供应链','速运仓储','云端制造','恒通贸易','联创电子','盛源食品','百汇百货','金辉实业','同顺贸易','华美工艺','德邦物流','星辰科技','绿野农产','万家供应链','锐翔制造','安达贸易','佳和百货','锦绣纺织','鼎力科技','宏图电子','润泽食品','盛世贸易','飞跃物流','众信供应链'];
+    const products = ['蓝牙耳机','保温杯','运动鞋','零食大礼包','充电宝','护肤套装','书包','台灯','数据线','机械键盘'];
+    const quotes = [65,22,120,18,55,30,15,45,8,99];
+    const moqs = [100,200,50,300,150,80,120,60,500,200];
+    const leads = ['7天','5天','10天','3天','6天','4天','8天','12天','5天','7天'];
+    const prefixes = ['138','139','137','136','135','188','187','152','155','186'];
+    const headers = ['供应商','商品','报价','起订量','交货周期','联系方式'];
+    const rows = [];
+    for (let i = 0; i < 25; i++) {
+        const phone = prefixes[i % 10] + '0000' + (1111 * (i + 1));
+        rows.push([
+            suppliers[i],
+            products[i % 10],
+            quotes[i % 10],
+            moqs[i % 10],
+            leads[i % 10],
+            phone
+        ]);
+    }
+    downloadCSV('供应商价格表.csv', headers, rows);
+}
+
+// ============ 课次6-6 电商原始订单数据（脏数据） ============
+function downloadLesson6_6Data() {
+    const customers = ['王悦','李娜','张伟','刘洋','陈静','赵磊','孙倩','周涛','吴敏','郑凯','冯雪','何强','许丽','邓超','曹颖','彭飞','萧雅','袁泉','贺鹏','于娜','夏雨','秦风','白露','顾远','沈梦','韩冰','叶辰','苏晴','路明','柏宇','柳青','唐婉','宋扬','楚云','卫东','蒋雯','沈括','韩立','萧敬','叶开','柳岩','唐磊','白雪','顾铭','邵华','孟非','常乐','万茜','杜淳','范冰'];
+    const products = ['蓝牙耳机','保温杯','运动鞋','零食大礼包','充电宝','护肤套装','书包','台灯','数据线','机械键盘','补水面膜','纯棉毛巾','折叠雨伞','陶瓷餐具','毛绒玩具','记忆抱枕','笔记本电脑','保温水杯','运动袜子','居家拖鞋'];
+    const regions = ['华东','华北','华南','西南','东北'];
+
+    const headers = ['订单号','客户','商品','数量','单价','下单日期','地区','备注'];
+    const rows = [];
+
+    // 前 5 行：与页面预览表完全一致（含脏数据特征）
+    rows.push(['DD-001', '王悦 ', '蓝牙耳机', 3, 89, '2025/3/1', '华东', '']);
+    rows.push(['DD-002', '李娜', '保温杯', 5, 45, '2025-03-02', '华北', '促销']);
+    rows.push(['DD-003', '张伟', '运动鞋', ' 2', 199, '2025/3/3', '华南', '']);
+    rows.push(['DD-003', '张伟', '运动鞋', 2, 199, '2025/3/3', '华南', '重复行']);
+    rows.push(['DD-004', '刘洋', '零食', 10, '￥39', '2025-03-04', '西南', '']);
+
+    // 其余 55 行：带各种"脏"特征
+    for (let i = 5; i < 60; i++) {
+        if (i === 15 || i === 40) {            // 空行
+            rows.push(['', '', '', '', '', '', '', '']);
+            continue;
+        }
+        const day = i + 1;
+        const date = (i % 3 === 1) ? ('2025-03-' + (day < 10 ? '0' + day : day)) : ('2025/3/' + day);
+        const q = (i % 9) + 1;
+        const p = ((i * 7) % 90) + 10;
+        const r = i % 7;
+        let qty, price;
+        if (r === 0) { qty = q + '件'; price = p; }
+        else if (r === 1) { qty = ' ' + q; price = p; }
+        else if (r === 2) { qty = q + ' '; price = p; }
+        else if (r === 3) { qty = q; price = '￥' + p; }
+        else { qty = q; price = p; }
+        let note = '';
+        if (i % 11 === 0) note = '待核对';
+        else if (i % 13 === 5) note = '异常';
+        const cust = customers[i % customers.length] + ((i % 4 === 1) ? ' ' : '');
+        rows.push([
+            'DD-' + (i + 1 < 10 ? '00' + (i + 1) : (i + 1 < 100 ? '0' + (i + 1) : (i + 1))),
+            cust,
+            products[i % products.length],
+            qty,
+            price,
+            date,
+            regions[i % 5],
+            note
+        ]);
+    }
+    downloadCSV('电商原始订单数据.csv', headers, rows);
+}
+
+// ================================================================
+//  测验题目（每课10道，共60道）
+// ================================================================
+
+// ===== 课次6-1 表格设计规范 测验 =====
+const quiz6_1 = [
+    {
+        q: '一张规范表格的"三区结构"不包含以下哪一项？',
+        opts: ['标题区', '页脚区', '数据区', '表头区'],
+        ans: 1,
+        explain: '规范表格只分标题区、表头区、数据区三层，没有"页脚区"这个概念。'
+    },
+    {
+        q: '标题（如"3月销售表"）应该放在哪里最规范？',
+        opts: ['用合并居中塞进表头行', '随便哪都行', '数据区中间', '单独单元格或表格上方'],
+        ans: 3,
+        explain: '标题应放在独立单元格（用跨列居中或放在上方），不能占用表头行，否则会破坏排序筛选。'
+    },
+    {
+        q: '字段名的"四不原则"中，哪一项本身是错的？',
+        opts: ['带单位', '不重复', '不长', '不空'],
+        ans: 0,
+        explain: '四不原则是"不长、不重复、不带单位、不空"，单位应写在数字格式里而不是列名中。'
+    },
+    {
+        q: '为什么数据区应尽量避免使用合并单元格？',
+        opts: ['占用内存', '会破坏排序/筛选/透视/公式', '让颜色变丑', '打印不出来'],
+        ans: 1,
+        explain: '合并单元格只有左上角有值，会导致排序错乱、筛选漏行、透视失败、公式算错。'
+    },
+    {
+        q: '"一表一主题"的意思是？',
+        opts: ['一列一个主题', '一个文件只能有一个表', '一个工作表只放一张表', '一行一个主题'],
+        ans: 2,
+        explain: '一个工作表（Sheet）里只放一张主题明确的表，多主题请分多个工作表。'
+    },
+    {
+        q: '数字类型的数据在单元格中默认的对齐方式是？',
+        opts: ['右对齐', '居中', '左对齐', '分散对齐'],
+        ans: 0,
+        explain: '文本默认左对齐、数字默认右对齐、标题通常居中，这是 Excel 的排版黄金法则。'
+    },
+    {
+        q: '一张专业表格建议使用的配色数量是？',
+        opts: ['越多越专业', '必须只用单色', '不超过 4 种', '至少 10 种'],
+        ans: 2,
+        explain: '颜色不超过 4 种且有明确含义（表头/重点/警示），过多反而杂乱不专业。'
+    },
+    {
+        q: '规范表格中，标题的推荐字号是？',
+        opts: ['14 号', '11 号', '10 号', '20 号'],
+        ans: 0,
+        explain: '字号层级：标题 14 号、表头 11 号加粗、正文 10~11 号，形成清晰主次。'
+    },
+    {
+        q: '符合规范的电商文件命名方式是？',
+        opts: ['项目_内容_日期_版本.xlsx', 'a.xlsx', '新建文档1.xlsx', '随便命名'],
+        ans: 0,
+        explain: '推荐用"项目_内容_日期_版本.xlsx"，如 双十一_销售明细_20250318_v2.xlsx。'
+    },
+    {
+        q: '用空格把名字"对齐"列宽，主要危害是？',
+        opts: ['没有任何危害', '看起来更整齐', '加快输入速度', '制造不可见字符破坏数据'],
+        ans: 3,
+        explain: '空格是不可见字符，会导致查找替换失灵、排序异常，应该用对齐设置而非敲空格。'
+    }
+];
+
+// ===== 课次6-2 快捷键体系 测验 =====
+const quiz6_2 = [
+    {
+        q: 'Ctrl+S 的作用是？',
+        opts: ['关闭文件', '打印', '另存为', '保存'],
+        ans: 3,
+        explain: 'Ctrl+S 是保存，应养成随时保存的习惯，避免辛苦白费。'
+    },
+    {
+        q: '想快速跳回 A1 单元格，应使用？',
+        opts: ['Ctrl+End', 'Ctrl+方向键', 'Ctrl+Home', 'Ctrl+PageUp'],
+        ans: 2,
+        explain: 'Ctrl+Home 跳到当前工作表 A1；Ctrl+End 跳到数据区右下角。'
+    },
+    {
+        q: 'F4 键的主要作用不包括？',
+        opts: ['重复上一步操作', '在公式中切换引用方式', '插入函数', '以上都不是'],
+        ans: 2,
+        explain: 'F4 用于重复操作和切换引用（$A$1 等），插入函数用 Shift+F3。'
+    },
+    {
+        q: '在同一个单元格内换行，应按？',
+        opts: ['Enter', 'Tab', 'Alt+Enter', 'Ctrl+Enter'],
+        ans: 2,
+        explain: 'Alt+Enter 在单元格内强制换行；Ctrl+Enter 是在多个选中单元格同时输入。'
+    },
+    {
+        q: 'Ctrl+Shift+L 的作用是？',
+        opts: ['开关筛选', '保存', '自动求和', '打开单元格格式'],
+        ans: 0,
+        explain: 'Ctrl+Shift+L 一键开关筛选，比用鼠标点筛选按钮快得多。'
+    },
+    {
+        q: '自动求和（快速生成 SUM）的快捷键是？',
+        opts: ['F4', 'Shift+F3', 'Ctrl+E', 'Alt+='],
+        ans: 3,
+        explain: 'Alt+= 可在当前单元格上方/左侧自动生成求和公式。'
+    },
+    {
+        q: 'Excel 的"快速填充"功能是按哪个键？',
+        opts: ['Ctrl+C', 'Ctrl+D', 'Ctrl+E', 'F4'],
+        ans: 2,
+        explain: 'Ctrl+E 根据一个示例自动识别规律并填充整列，拆分/合并/提取都好用。'
+    },
+    {
+        q: '快速输入"当天日期"的快捷键是？',
+        opts: ['Ctrl+;', 'Ctrl+Shift+;', 'Ctrl+:', 'Alt+;'],
+        ans: 0,
+        explain: 'Ctrl+; 输入当天日期；Ctrl+Shift+; 输入当前时间。'
+    },
+    {
+        q: '双击填充柄（小绿十字）的效果是？',
+        opts: ['只填充一格', '自动填充到相邻数据末尾', '删除内容', '打开格式对话框'],
+        ans: 1,
+        explain: '双击填充柄会自动向下填充到左侧数据列的末尾，不会多也不会少。'
+    },
+    {
+        q: '对筛选后的表粘贴时，为避免填进隐藏行，应先？',
+        opts: ['Ctrl+G', 'F5', 'Alt+;（选中可见单元格）', 'Ctrl+;'],
+        ans: 2,
+        explain: '按 Alt+; 或 F5→定位条件→可见单元格，只选中可见格再粘贴，隐藏行才不会被误填。'
+    }
+];
+
+// ===== 课次6-3 数据美化与排版 测验 =====
+const quiz6_3 = [
+    {
+        q: '设置数字格式（如货币、百分比）会怎样影响真实值？',
+        opts: ['改变真实值', '只改文本', '有时改变', '只改显示不改真实值'],
+        ans: 3,
+        explain: '数字格式只改变显示方式，底层真实值不变，所以可以放心设置。'
+    },
+    {
+        q: '自定义格式 ¥#,##0.00 的效果是？',
+        opts: ['百分比', '货币符号+千分位+两位小数', '日期', '隐藏内容'],
+        ans: 1,
+        explain: '如 1234.5 显示为 ¥1,234.50，常用于金额列。'
+    },
+    {
+        q: '想让单元格内容"显示但打印看不见"，可用格式？',
+        opts: ['yyyy-mm-dd', '0"件"', ';;;', '0.0%'],
+        ans: 2,
+        explain: '三个分号 ;; 表示不显示任何内容，但单元格仍有值，适合隐藏工资等敏感数字。'
+    },
+    {
+        q: '对齐的黄金法则是？',
+        opts: ['全部左对齐', '全部居中', '文本左、数字右、标题居中', '全部右对齐'],
+        ans: 2,
+        explain: '文本左对齐、数字右对齐、标题居中，一眼能分清类型且便于阅读。'
+    },
+    {
+        q: '关于边框美学，哪种做法更专业？',
+        opts: ['外粗内细、常用横线', '全表框线', '不要任何边框', '边框越密越好'],
+        ans: 0,
+        explain: '表头下用粗线、数据区间用细线，财务表常用只画横线，干净清爽。'
+    },
+    {
+        q: '推荐的正文与表头行高分别是？',
+        opts: ['30 / 30 磅', '18 / 20 磅', '5 / 5 磅', '10 / 12 磅'],
+        ans: 0,
+        explain: '正文行高约 18 磅、表头约 20 磅，阅读最舒服且全表统一。'
+    },
+    {
+        q: '数字格式 0"件" 的效果是？',
+        opts: ['变成文本', '变成百分比', '隐藏', '显示为"5件"但真实值仍是 5'],
+        ans: 3,
+        explain: '真实值仍为 5，仅显示为"5件"，求和计算不受影响。'
+    },
+    {
+        q: '打印交付物前，建议关掉什么让表格更高级？',
+        opts: ['网格线', '标题', '边框', '文字'],
+        ans: 0,
+        explain: '在页面布局→工作表选项里关闭网格线打印，表格立刻显得专业。'
+    },
+    {
+        q: '页面布局里的"主题"主要作用是？',
+        opts: ['更换字体', '一键更换整套配色', '加速计算', '文件加密'],
+        ans: 1,
+        explain: '主题可一次性更换所有主题色，做系列报表时改色效率极高。'
+    },
+    {
+        q: '条件格式应该怎么用才克制？',
+        opts: ['满屏红绿都标', '完全不用', '只高亮真正异常的值', '只用红色'],
+        ans: 2,
+        explain: '只突出真正异常的值（如销量<0、库存告急），否则会变成视觉噪音。'
+    }
+];
+
+// ===== 课次6-4 效率技巧 测验 =====
+const quiz6_4 = [
+    {
+        q: 'Ctrl+E（快速填充）最适合做什么？',
+        opts: ['自动求和', '快速填充示例规律', '复制内容', '保存文件'],
+        ans: 1,
+        explain: 'Ctrl+E 根据一个示例自动识别规律，用于拆分、合并、提取、加格式。'
+    },
+    {
+        q: '对"筛选后"的表直接粘贴，会怎样？',
+        opts: ['完全正常', '悄悄填进被隐藏的行', '速度更快', '直接报错'],
+        ans: 1,
+        explain: '直接粘贴会填到隐藏行导致数据错乱，必须先选中可见单元格再粘贴。'
+    },
+    {
+        q: '选中"可见单元格"（用于筛选后粘贴）的快捷键是？',
+        opts: ['Alt+;', 'F4', 'Ctrl+E', 'Ctrl+G'],
+        ans: 0,
+        explain: 'Alt+; 可一键选中当前可见单元格，避免误填隐藏行。'
+    },
+    {
+        q: 'Ctrl+G → 定位条件 → 空值，常用于？',
+        opts: ['求和', '批量给空单元格补内容', '排序', '筛选'],
+        ans: 1,
+        explain: '定位空值后输入内容按 Ctrl+Enter，可批量填充所有空格。'
+    },
+    {
+        q: '选择性粘贴中的"跳过空单元格"是指？',
+        opts: ['覆盖所有内容', '转置', '只粘贴格式', '只填充空白、不覆盖已有值'],
+        ans: 3,
+        explain: '跳过空单元格可只补空白区域，不会把已有数据冲掉。'
+    },
+    {
+        q: '"分列"功能不能实现以下哪一项？',
+        opts: ['把文本数字转成真数字', '按分隔符拆分', '合并两列', '按固定宽度拆分'],
+        ans: 2,
+        explain: '分列用于拆分和类型转换，合并要用 & 或 CONCAT，不是分列。'
+    },
+    {
+        q: '查找替换中通配符 * 表示？',
+        opts: ['单个字符', '任意多个字符', '仅数字', '仅空格'],
+        ans: 1,
+        explain: '* 匹配任意多个字符，? 匹配单个字符，配合 Ctrl+H 很强大。'
+    },
+    {
+        q: 'Ctrl+T 把区域变成"超级表"的好处是？',
+        opts: ['新增行自动扩展格式与公式', '自动求和', '转置', '分列'],
+        ans: 0,
+        explain: '超级表会在新增数据时自动扩展格式和公式，特别省心。'
+    },
+    {
+        q: 'Shift+拖动列 与 Alt+拖动列 的区别是？',
+        opts: ['Shift 移动列、Alt 交换两列内容', '都是删除', '都是复制', '没有区别'],
+        ans: 0,
+        explain: 'Shift+拖动移动整列位置，Alt+拖动则交换两列内容而不覆盖。'
+    },
+    {
+        q: '面对重复超过 3 次的操作，最好？',
+        opts: ['继续手动做', '放弃不做', '用模板/公式/宏自动化', '手写记录'],
+        ans: 2,
+        explain: '重复劳动应封装成模板、公式或宏，把时间花在更有价值的事上。'
+    }
+];
+
+// ===== 课次6-5 数据安全与保护 测验 =====
+const quiz6_5 = [
+    {
+        q: '保护工作表的正确顺序是？',
+        opts: ['直接点保护工作表', '先放开允许编辑的区域，再保护', '先隐藏公式', '先设文件密码'],
+        ans: 1,
+        explain: '默认所有单元格都锁定，必须先选中允许编辑区→Ctrl+1→取消锁定，再保护工作表。'
+    },
+    {
+        q: '新建工作簿时，单元格默认的锁定状态是？',
+        opts: ['解锁', '锁定', '隐藏', '只读'],
+        ans: 1,
+        explain: '所有单元格默认都是"锁定"的，保护工作表后才会生效，所以要先放开该编辑的区域。'
+    },
+    {
+        q: '要隐藏公式不让别人在编辑栏看到，正确做法是？',
+        opts: ['Ctrl+1→保护→勾"隐藏"→再保护工作表', '删除公式', '重命名', '直接保护工作表'],
+        ans: 0,
+        explain: '需在设置单元格格式→保护里勾选"隐藏"，再保护工作表，编辑栏才不显示公式。'
+    },
+    {
+        q: '给文件设置"打开权限密码"的位置是？',
+        opts: ['开始选项卡', '审阅选项卡', '视图选项卡', '另存为→工具→常规选项'],
+        ans: 3,
+        explain: '文件→另存为→工具→常规选项，可设打开密码和修改密码。'
+    },
+    {
+        q: '"保护工作簿结构"的作用是？',
+        opts: ['禁止增删/重排工作表', '文件加密', '隐藏公式', '设置打开密码'],
+        ans: 0,
+        explain: '保护工作组结构可禁止他人新增、删除、移动工作表，保持结构不乱。'
+    },
+    {
+        q: '误删了重要内容，首先应该尝试？',
+        opts: ['无法恢复', '重启电脑', '重装软件', 'Ctrl+Z 或恢复未保存版本'],
+        ans: 3,
+        explain: '先按 Ctrl+Z 撤销；若文件崩了，可到"文件→信息→管理工作簿"恢复未保存版本。'
+    },
+    {
+        q: '合理的备份策略是？',
+        opts: ['只存一份', '不备份', '文件名带日期版本+云盘+定期归档', '只存桌面'],
+        ans: 2,
+        explain: '文件名带日期和版本（_v1/_v2）、存云盘、每周归档，重要数据至少两份。'
+    },
+    {
+        q: '"允许用户编辑区域"可以实现？',
+        opts: ['整表锁死', '给不同人设置不同可编辑区域与密码', '只允许老板改', '不能设置'],
+        ans: 1,
+        explain: '它允许对同一张表的不同区域设不同密码，权限管理比整表保护更细。'
+    },
+    {
+        q: '"标记为最终版本"会怎样？',
+        opts: ['加密文件', '删除内容', '文件变为只读提示"已完成"', '隐藏数据'],
+        ans: 2,
+        explain: '标记为最终版本后文件以只读提示呈现，减少被误改的概率。'
+    },
+    {
+        q: '筛选后要把数据粘贴到可见单元格，正确做法是？',
+        opts: ['直接粘贴', '随便粘贴', '关电脑', '先选中可见单元格再粘贴'],
+        ans: 3,
+        explain: '务必先按 Alt+; 选中可见单元格，否则数据会悄悄进入被隐藏的行。'
+    }
+];
+
+// ===== 课次6-6 综合实战 测验 =====
+const quiz6_6 = [
+    {
+        q: '拿到原始数据后的第一步应该是？',
+        opts: ['先建副本备份', '直接在原始表上改', '直接美化', '直接交报告'],
+        ans: 0,
+        explain: '先另存副本、原始数据绝不改动，万一改乱了还能回退。'
+    },
+    {
+        q: '关于原始数据，正确的做法是？',
+        opts: ['只删行', '随便改', '绝不改动，只在副本上操作', '只加列'],
+        ans: 2,
+        explain: '保留原始数据是数据安全底线，所有清洗计算都在备份副本上进行。'
+    },
+    {
+        q: '"数据清洗"不包含以下哪一项？',
+        opts: ['去空行', '去重', '统一日期格式', '用合并单元格排版'],
+        ans: 3,
+        explain: '清洗是去空行、去重、统一格式、文本转数字等，合并单元格反而破坏数据。'
+    },
+    {
+        q: '数据透视表的主要用途是？',
+        opts: ['画图表', '多维度汇总', '输入数据', '文件加密'],
+        ans: 1,
+        explain: '透视表可快速按地区、商品、时间等维度汇总，是分析核心工具。'
+    },
+    {
+        q: '提交分析报告前应该？',
+        opts: ['直接发给老板', '文件加密即可', '删除源数据', '走一遍 CHECK 清单'],
+        ans: 3,
+        explain: '提交前走完 12 条 CHECK 清单（备份、格式、计算、图表、命名等），避免低级错误。'
+    },
+    {
+        q: '发现订单表有重复行，应？',
+        opts: ['全部保留', '用"删除重复值"清理', '忽略不管', '标记为重要'],
+        ans: 1,
+        explain: '数据→删除重复值可一键去除重复行，是清洗的标准动作。'
+    },
+    {
+        q: '图表在报告中的主要作用是？',
+        opts: ['做计算', '保护工作表', '输入原始数据', '把数据可视化、便于决策'],
+        ans: 3,
+        explain: '柱图看对比、折线看趋势、饼图看占比，图表让结论一目了然。'
+    },
+    {
+        q: '学完基础后，以下哪些是合理进阶方向？',
+        opts: ['只学 VLOOKUP 就够了', '不用再学', 'Power Query / Power Pivot / VBA / BI 工具', '只练打印'],
+        ans: 2,
+        explain: 'Power Query 自动清洗、Power Pivot 建模、VBA 自动化、Power BI 可视化都是自然进阶。'
+    },
+    {
+        q: '把"文本型数字"当数字去求和，结果会？',
+        opts: ['没有影响', '更快', '更精确', '求和得 0 或报错'],
+        ans: 3,
+        explain: '文本型数字无法参与计算，求和常得 0，需用分列转成真数字。'
+    },
+    {
+        q: '把常用报表存成模板（.xltx）的价值是？',
+        opts: ['没有用处', '复用结构、避免重复搭建', '占用更多空间', '用于加密'],
+        ans: 1,
+        explain: '模板可让同事用同一规范出月度报告，避免每次从零搭建、保证格式统一。'
+    }
+];
+
+// ================================================================
+//  初始化
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-6-1', quiz6_1);
+    initQuiz('quiz-6-2', quiz6_2);
+    initQuiz('quiz-6-3', quiz6_3);
+    initQuiz('quiz-6-4', quiz6_4);
+    initQuiz('quiz-6-5', quiz6_5);
+    initQuiz('quiz-6-6', quiz6_6);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>

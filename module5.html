@@ -1,0 +1,1663 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块5：数据透视表 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏠 首页</a></li>
+            <li><a href="module1.html">📗 模块1</a></li>
+            <li><a href="module2.html">📘 模块2</a></li>
+            <li><a href="module3.html">📙 模块3</a></li>
+            <li><a href="module4.html">📕 模块4</a></li>
+            <li><a href="module5.html" class="active">📓 模块5</a></li>
+            <li><a href="module6.html">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-purple">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-badge">模块5 · 精通 · 数据分析</div>
+        <h1>📓 数据透视表</h1>
+        <p>Excel 里最强的数据分析工具<br>拖几下鼠标，几千行订单变成一张汇总表</p>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container">
+    <div class="module-progress">
+        <div class="progress-text" id="progressText">加载中...</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="5" data-total="5"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container">
+    <div class="lesson-list">
+
+        <!-- ============================================
+             课次 5-1：透视表入门
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1">
+            <div class="lesson-header" onclick="toggleLesson(1)">
+                <div class="lesson-num">1</div>
+                <h3>透视表入门 —— 30 秒搞定一张汇总表</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>想象一下：老板丢给你一份 <strong>5000 行的订单清单</strong>，问你"每个省份卖了多少钱？哪家店铺最赚钱？"。用 <code>SUMIF</code> 也能算，但要写好几个公式、还要手动拖、一改数据重算一遍……太累了！</p>
+                        <p>这时候就要请出 Excel 的"数据分析大杀器"——<strong>数据透视表（PivotTable）</strong>。它专门用来对"清单式"数据做<strong>动态汇总</strong>：你把字段（列名）像搭积木一样拖到不同区域，Excel 立刻帮你算好。数据变了，点一下"刷新"就更新，<strong>不用写任何公式</strong>。</p>
+
+                        <h5>🔹 数据源的 4 条铁律（建表前必看）</h5>
+                        <div class="callout callout-danger">
+                            <strong>透视表的"干净数据源"是成功的一半！</strong>以下 4 条哪条没满足，透视表都会"抽风"或算错：
+                        </div>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>① 一维清单</h6>
+                                <p>每一行是一条完整记录，每一列是一个字段。<strong>不要做"交叉表"</strong>（左边是商品、上面是月份那种二维表）</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>② 表头唯一且在首行</h6>
+                                <p>第一行是列名，<strong>不能重复、不能有合并</strong>。重复列名 Excel 会自动加 _2、_3</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>③ 无空行空列</h6>
+                                <p>数据中间不能有整行/整列的空白，否则 Excel 会误以为"数据到这里结束"</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>④ 无合并单元格</h6>
+                                <p>数据区<strong>绝对不要合并</strong>。同类别想分组，用透视表本身就行</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 四个区域：行为分类、列为对比、值为计算</h5>
+                        <p>建好透视表后，右侧会出现"字段列表"，里面有你的所有列名。把它们拖进下面的 4 个框，就完成了一张透视表：</p>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>🔍 筛选器（页字段）</h6>
+                                <p>像"总开关"，先选好范围再汇总。例如只看"双11"期间、只看"广东"的数据</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📏 行</h6>
+                                <p>按什么<strong>分组</strong>，通常是类别、店铺、省份等维度，纵向排列</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📐 列</h6>
+                                <p>横向<strong>对比</strong>的维度，例如把各月份、各店铺摆成列</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔢 值</h6>
+                                <p>真正要<strong>计算</strong>的数字，如求和、计数、平均，是透视表的核心</p>
+                            </div>
+                        </div>
+
+                        <div class="flow-row">
+                            <div class="flow-node" style="border-color:var(--purple);">📦 类目 → 行</div>
+                            <div class="flow-node" style="border-color:var(--orange);">🏪 店铺 → 列</div>
+                            <div class="flow-node" style="border-color:var(--blue);">💰 订单金额 → 值(求和)</div>
+                            <span class="flow-arrow">➜</span>
+                            <div class="flow-node" style="border-color:var(--green);font-weight:700;">📊 自动汇总表</div>
+                        </div>
+
+                        <div class="callout callout-info">
+                            <strong>口诀记住：行 = 分类，列 = 对比，值 = 计算。</strong> 行标签和列标签的本质都是"分组"——把相同的内容归到一起，再对每组的"值"做统计。
+                        </div>
+
+                        <h5>🔹 透视表长什么样？</h5>
+                        <div class="demo-box">
+                            <div class="demo-title">演示：按"类目"分行、按"店铺"分列，对"订单金额"求和</div>
+                            <table class="excel-grid">
+                                <tr>
+                                    <th>求和项:订单金额</th>
+                                    <th>京东自营店</th>
+                                    <th>天猫旗舰店</th>
+                                    <th>抖音小店</th>
+                                    <th>总计</th>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">女装</td>
+                                    <td>12,000</td><td>9,800</td><td>6,500</td><td>28,300</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">男装</td>
+                                    <td>8,500</td><td>11,200</td><td>4,300</td><td>24,000</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">美妆</td>
+                                    <td>5,400</td><td>7,600</td><td>9,100</td><td>22,100</td>
+                                </tr>
+                                <tr>
+                                    <td class="row-header">总计</td>
+                                    <td>25,900</td><td>28,600</td><td>19,900</td><td>74,400</td>
+                                </tr>
+                            </table>
+                            <div class="demo-caption">↑ 行标签=类目，列标签=店铺，值=订单金额求和。改一个字段，整张表立刻重算。</div>
+                        </div>
+
+                        <h5>🔹 几个让老师省心的小技巧</h5>
+                        <ul>
+                            <li><strong>刷新数据</strong>：源数据改了，右键透视表 → <strong>刷新</strong>，或按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd>。多张表一起更新用"分析 → 全部刷新"</li>
+                            <li><strong>数据源会变长？</strong>：先选中数据区按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd> 转成"表格（Table）"，再建透视表，以后新增行会自动纳入统计</li>
+                            <li><strong>经典布局</strong>：右键透视表 → "显示经典数据透视表布局"，字段列表变成拖放区域，老老师更习惯</li>
+                            <li><strong>字段列表不见了？</strong>：点透视表任意位置 → 顶部出现"数据透视表分析"选项卡 → 最左"字段列表"按钮即可找回</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：用订单明细建第一张透视表</h4>
+                        <p>我们用下面的"电商订单明细"练习数据，做出"每个店铺、每个类目的销售金额汇总"。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开练习文件，<strong>单击数据区域内任意一个单元格</strong>（不用全选，Excel 会自动识别连续区域）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点顶部 <strong>插入</strong> 选项卡 → 左侧 <strong>数据透视表</strong> → 弹出创建对话框</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">确认"选择一个表或区域"已自动填好；下方<strong>选择放置位置</strong>：选"新工作表"（最常用、最干净），点确定</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右侧出现<strong>数据透视表字段</strong>列表。把 <strong>店铺</strong> 拖到"列"区域，<strong>类目</strong> 拖到"行"区域，<strong>订单金额</strong> 拖到"值"区域</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">立刻看到一张"店铺×类目"的金额汇总表！"值"默认是<strong>求和</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">想只看某省？把 <strong>省份</strong> 拖到"筛选器"，点下拉箭头选省份即可</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">源数据有变动？右键透视表 → <strong>刷新</strong>（或 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd>）一键更新</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">想换布局？右键透视表 → <strong>显示经典数据透视表布局</strong>，回到熟悉的拖放框</div>
+                            </div>
+                        </div>
+                        <div class="callout callout-info">
+                            <strong>新工作表 vs 现有工作表：</strong>初学者一律选"新工作表"，干净、不会挡住源数据；等要把透视表和图表拼成"看板"时，才选"现有工作表"并指定位置。
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商订单明细</h4>
+                        <p>一份干净的一维订单清单，共 60 行，字段含：订单号、订单日期、店铺、省份、类目、商品名称、数量、单价、订单金额、订单状态、客服。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>订单号</th><th>订单日期</th><th>店铺</th><th>省份</th><th>类目</th><th>商品名称</th><th>数量</th><th>单价</th><th>订单金额</th><th>订单状态</th><th>客服</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>D202510001</td><td>2025/1/1</td><td>天猫旗舰店</td><td>广东</td><td>女装</td><td>连衣裙</td><td>1</td><td>99</td><td>99</td><td>已付款</td><td>小美</td></tr>
+                                    <tr><td>D202510002</td><td>2025/1/4</td><td>京东自营店</td><td>浙江</td><td>男装</td><td>手机壳</td><td>2</td><td>59</td><td>118</td><td>已发货</td><td>小强</td></tr>
+                                    <tr><td>D202510003</td><td>2025/1/7</td><td>抖音小店</td><td>江苏</td><td>美妆</td><td>卫衣</td><td>3</td><td>39</td><td>117</td><td>已完成</td><td>阿杰</td></tr>
+                                    <tr><td>D202510004</td><td>2025/1/10</td><td>拼多多专卖店</td><td>北京</td><td>数码</td><td>保温杯</td><td>4</td><td>19</td><td>76</td><td>退款中</td><td>丽丽</td></tr>
+                                    <tr><td>D202510005</td><td>2025/1/13</td><td>天猫旗舰店</td><td>上海</td><td>家居</td><td>连衣裙</td><td>5</td><td>29</td><td>145</td><td>已付款</td><td>小美</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson5_1Data()">📥 下载电商订单明细 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>建表前先按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd> 把数据源转成"表格"，以后<strong>加行自动纳入</strong>透视范围</li>
+                            <li>双击透视表里的一个<strong>汇总数字</strong>，Excel 会自动新建一张表，列出"这个数字是由哪些明细组成的"——查数神器</li>
+                            <li>字段太多找不到？在字段列表搜索框输入关键字即可快速定位</li>
+                            <li>值区域想换计算方法，右键数字 → <strong>值字段设置</strong>，下一课细讲</li>
+                            <li><kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd> 刷新当前透视表，<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd> 全部刷新</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>建表前先检查"4 条铁律"</strong>：一维清单、表头唯一在首行、无空行空列、无合并单元格</li>
+                            <li><strong>源数据放单独工作表</strong>，透视表放新工作表，互不干扰，改源数据不会误删透视结果</li>
+                            <li><strong>命名工作表</strong>：源数据叫"订单明细"，透视表叫"店铺类目汇总"，一眼看懂</li>
+                            <li><strong>数据源会变长就用 Ctrl+T</strong>，避免每次手动改数据区域</li>
+                            <li><strong>改完源数据记得刷新</strong>，否则透视表还是旧数字，最容易闹笑话</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 拿"交叉表"（左边商品、上边月份）直接建透视表 → 透视表要的是<strong>一维清单</strong>，先把交叉表"逆透视"成清单</li>
+                            <li>❌ 表头有合并单元格或重复名称 → Excel 自动加 _2 后缀，字段一多就乱套</li>
+                            <li>❌ 数据中间有空行 → Excel 以为"数据到空行就结束了"，后面的行没被统计</li>
+                            <li>❌ 源数据改了但忘记刷新 → 透视表显示旧数，汇报时当场翻车</li>
+                            <li>❌ 把字段拖错区域（如把"订单金额"拖到行）→ 出现一堆重复数字而非汇总，检查口诀"行分类、列对比、值计算"</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载"电商订单明细"，用 <code>Ctrl+T</code> 把数据转成表格</li>
+                            <li>插入数据透视表（新工作表），做出"<strong>行=类目，列=店铺，值=订单金额求和</strong>"的汇总</li>
+                            <li>把"省份"拖到<strong>筛选器</strong>，分别查看"广东"和"浙江"的汇总</li>
+                            <li>把"客服"拖到行区域，看看每位客服接了多少订单金额</li>
+                            <li>修改源数据里某一行的订单金额，回到透视表<strong>刷新</strong>，确认数字更新了</li>
+                            <li>尝试"显示经典数据透视表布局"，感受两种布局的区别</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>同时把"类目"和"店铺"都拖到<strong>行</strong>区域（嵌套分组），观察逐级展开/折叠的效果</li>
+                            <li>用"订单状态"做筛选器，分别统计"已完成"和"退款中"的金额差异</li>
+                            <li>把"数量"也加到值区域，做出"金额 + 数量"双指标汇总</li>
+                            <li>研究右键透视表里的"<strong>数据透视表选项</strong>"，把"更新时自动调整列宽"关掉看看变化</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对透视表入门的掌握：</p>
+                        <div id="quiz-5-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 5-2：透视表的计算与显示
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2">
+            <div class="lesson-header" onclick="toggleLesson(2)">
+                <div class="lesson-num">2</div>
+                <h3>透视表的计算与显示 —— 让数字说人话</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>上节课你做出了一张汇总表，但默认只是"求和"。现实中我们要的远不止求和：想知道<strong>平均客单价</strong>、<strong>各商品占比</strong>、<strong>每月累计</strong>……这些都在"值字段"里调。</p>
+
+                        <h5>🔹 值字段设置：8 种汇总方式</h5>
+                        <p>右键透视表里的任意汇总数字 → <strong>值字段设置</strong>，可以看到一堆计算方式：</p>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>➕ 求和</h6>
+                                <p>默认方式，适合金额、数量等可累加的数值</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔢 计数</h6>
+                                <p>数"有多少条记录"。<strong>注意：当值是文本时会自动变计数</strong></p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📊 平均值</h6>
+                                <p>求每组的平均，如平均客单价、平均订单金额</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>⬆️ 最大值 / ⬇️ 最小值</h6>
+                                <p>找单笔最高/最低，比如最大订单金额</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>✖️ 乘积</h6>
+                                <p>把一组数相乘，特殊场景偶尔用</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔢 数值计数</h6>
+                                <p>只数"数字单元格"，忽略文本和空值</p>
+                            </div>
+                        </div>
+
+                        <div class="callout callout-warn">
+                            <strong>为什么有时默认是"计数"而不是"求和"？</strong> 因为那一列混入了文本或空单元格（比如订单金额里有"暂无"两个字），Excel 无法相加就只能计数。检查数据源是否<strong>全是数字</strong>。
+                        </div>
+
+                        <h5>🔹 数字格式：千分位、货币、百分比</h5>
+                        <p>透视表算出来的数字默认是"常规"格式，一长串不好看。右键值 → <strong>值字段设置 → 数字格式</strong>（或直接右键 → 数字格式），设置：</p>
+                        <ul>
+                            <li><strong>千分位分隔符</strong>：12,345 比 12345 易读</li>
+                            <li><strong>货币 ¥</strong>：金额类用 <code>¥#,##0.00</code></li>
+                            <li><strong>两位小数</strong>：平均值、比率保留 2 位</li>
+                            <li><strong>百分比</strong>：占比类用 <code>0.0%</code></li>
+                        </ul>
+
+                        <h5>🔹 一个字段拖两次：求和 + 占比</h5>
+                        <p>想在同一张表里既看"金额"，又看"金额占比"？把 <strong>订单金额</strong> 拖进"值"区域两次：</p>
+                        <ul>
+                            <li>第一个保留"求和"</li>
+                            <li>第二个右键 → 值字段设置 → <strong>值显示方式 → 占总计的百分比</strong></li>
+                        </ul>
+                        <div class="demo-box">
+                            <div class="demo-title">同一张表：销售额求和 + 占总计百分比</div>
+                            <table class="excel-grid">
+                                <tr><th>行标签</th><th>求和项:销售额</th><th>占总计百分比</th></tr>
+                                <tr><td class="row-header">女装</td><td>28,300</td><td>38.0%</td></tr>
+                                <tr><td class="row-header">男装</td><td>24,000</td><td>32.3%</td></tr>
+                                <tr><td class="row-header">美妆</td><td>22,100</td><td>29.7%</td></tr>
+                                <tr><td class="row-header">总计</td><td>74,400</td><td>100.0%</td></tr>
+                            </table>
+                            <div class="demo-caption">↑ 同一个字段拖两次到"值"，第二份用"值显示方式"切换成占比。</div>
+                        </div>
+
+                        <h5>🔹 值显示方式（进阶但超实用）</h5>
+                        <p>右键值 → 值字段设置 → <strong>值显示方式</strong>，能把"裸数字"变成"有含义的相对值"：</p>
+                        <div class="compare-table">
+                            <thead><tr><th>值显示方式</th><th>作用</th><th>电商例子</th></tr></thead>
+                            <tbody>
+                                <tr><td>占总计的百分比</td><td>占整体比例</td><td>女装占全店 38%</td></tr>
+                                <tr><td>行汇总的百分比</td><td>在所在行内占比</td><td>某店内女装占该店比例</td></tr>
+                                <tr><td>列汇总的百分比</td><td>在所在列内占比</td><td>某月占该列比例</td></tr>
+                                <tr><td>差异</td><td>与基准项相减</td><td>本月比1月多卖多少</td></tr>
+                                <tr><td>差异百分比</td><td>与基准项相比%</td><td>本月比1月增长 25%</td></tr>
+                                <tr><td>按某一字段汇总的累计值</td><td>逐月累加</td><td>1~12月累计销售额</td></tr>
+                                <tr><td>排名</td><td>降序名次</td><td>各店铺销售额排名第几</td></tr>
+                            </tbody>
+                        </div>
+
+                        <h5>🔹 多值字段的排列 & 分类汇总</h5>
+                        <p>当"值"区域有多个字段时，可在<strong>值字段设置 → 布局与打印</strong>里选：</p>
+                        <ul>
+                            <li><strong>表格形式显示</strong>：每个值字段占一列（最常用、最清晰）</li>
+                            <li><strong>大纲形式 / 压缩形式</strong>：值字段叠在一起</li>
+                        </ul>
+                        <p>行/列标签上方默认有<strong>分类汇总（小计）</strong>。不需要时：右键标签 → <strong>取消显示分类汇总</strong>；在"设计"选项卡也能整体开关。列宽可用 <strong>开始 → 格式 → 自动调整列宽</strong> 一键适配。</p>
+
+                        <div class="callout callout-danger">
+                            <strong>经典陷阱："算完之后再平均" ≠ "先平均再汇总"！</strong> 比如先算出各店的"平均客单价"，再把几家店的平均客单价<strong>取平均</strong>，结果和"全店总销售额÷总订单数"完全不同（因为各店订单量不同）。正确做法：用<strong>平均值</strong>汇总方式，或直接用"总销售额/总订单数"。
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：算占比、累计、排名</h4>
+                        <p>用"店铺商品销售明细"做出带"占比、累计、排名"的分析表。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开数据，插入透视表（新工作表），把 <strong>商品</strong> 拖到行，<strong>销售额</strong> 拖到值</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">把 <strong>销售额</strong> 再拖一次到值区域 → 现在值区有两个"求和项:销售额"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键第二个销售额 → 值字段设置 → <strong>值显示方式 → 占总计的百分比</strong>，改名为"占比"</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中第一个销售额 → 值字段设置 → <strong>数字格式 → 货币 ¥</strong>，加千分位、2 位小数</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">做<strong>累计</strong>：再拖一次销售额到值，值显示方式选 <strong>"按某一字段汇总的累计值"（按月份）</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">做<strong>排名</strong>：再拖一次销售额到值，值显示方式选 <strong>"排名"</strong>（降序）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键任意销售额 → 值字段设置 → <strong>布局与打印 → 表格形式显示</strong>，让多个指标各占一列</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点 <strong>开始 → 格式 → 自动调整列宽</strong>，让所有列整齐显示</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：店铺商品销售明细</h4>
+                        <p>含店铺、品类、商品、月份、销量、销售额、成本额，共 50 行，非常适合练占比、累计、排名。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>店铺</th><th>品类</th><th>商品</th><th>月份</th><th>销量</th><th>销售额</th><th>成本额</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>天猫旗舰店</td><td>女装</td><td>连衣裙</td><td>1</td><td>1</td><td>99</td><td>59</td></tr>
+                                    <tr><td>京东自营店</td><td>男装</td><td>面膜</td><td>2</td><td>2</td><td>38</td><td>23</td></tr>
+                                    <tr><td>抖音小店</td><td>美妆</td><td>抱枕</td><td>3</td><td>3</td><td>387</td><td>232</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>数码</td><td>卫衣</td><td>4</td><td>4</td><td>100</td><td>60</td></tr>
+                                    <tr><td>京东自营店</td><td>家居</td><td>充电宝</td><td>5</td><td>5</td><td>195</td><td>117</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共50条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson5_2Data()">📥 下载店铺商品销售明细 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>值区域可放<strong>同一个字段多次</strong>，分别设不同"值显示方式"，一张表同时看求和/占比/排名</li>
+                            <li>右键值 → <strong>值字段设置 → 数字格式</strong>，透视表刷新后<strong>格式会保留</strong>，不用重设</li>
+                            <li>想快速把占比变成"行内占比"？值显示方式选 <strong>"行汇总的百分比"</strong> 即可</li>
+                            <li>不需要分类汇总时，点 <strong>设计 → 分类汇总 → 不显示分类汇总</strong>，表格更清爽</li>
+                            <li>双击汇总数字可"下钻"看明细，是核对数据的好办法</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>金额必设货币/千分位格式</strong>，汇报时领导一眼能看懂</li>
+                            <li><strong>占比、比率用百分比格式</strong>，不要手写成"38%"字符串（那是文本，不能计算）</li>
+                            <li><strong>多指标用"表格形式显示"</strong>，每列一个指标，避免叠在一起看错</li>
+                            <li><strong>列名要改得人话</strong>：把"求和项:销售额"重命名为"销售额"，把"求和项:销售额2"改成"占比"</li>
+                            <li><strong>平均要谨慎</strong>：涉及加权平均时，用"总÷总"而非"平均的平均"</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 值是文本导致<strong>默认变成计数</strong> → 检查源数据该列是否混入了文字或空值</li>
+                            <li>❌ 把占比结果<strong>再求平均</strong>当整体占比 → 占比是相对值，不能直接平均，应用"总÷总"</li>
+                            <li>❌ 改了数字格式但<strong>刷新后消失</strong> → 应在"值字段设置"里设格式，而非直接设单元格格式</li>
+                            <li>❌ 多值字段<strong>叠在一起看串行</strong> → 改"表格形式显示"让每列独立</li>
+                            <li>❌ 忘了"差异/排名"要选<strong>基准字段和基准项</strong> → 不设置基准项会算不出正确结果</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用"店铺商品销售明细"建透视表：<strong>行=商品，值=销售额（求和）</strong></li>
+                            <li>把销售额拖两次，第二份设为 <strong>占总计百分比</strong>，并改名为"占比"</li>
+                            <li>给销售额设置 <strong>货币 ¥ + 千分位 + 2 位小数</strong> 格式</li>
+                            <li>增加"按月份累计值"和"排名"两个值字段</li>
+                            <li>切换为 <strong>表格形式显示</strong>，并自动调整列宽</li>
+                            <li>把"品类"加到行区域做嵌套，观察分类汇总（小计）的出现</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用"销售额 - 成本额"算出毛利额，并做<strong>毛利率（值显示方式=列汇总的百分比不行，需用计算字段，下节课学）</strong>的近似展示</li>
+                            <li>对"销量"用<strong>平均值</strong>汇总，体会"平均销量"和"总销量÷记录数"的一致性</li>
+                            <li>尝试"值显示方式 → 差异百分比（与上一月）"，看每月增长率</li>
+                            <li>把分类汇总改成<strong>在组底部显示</strong>，对比默认在顶部显示的区别</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对计算与显示的掌握：</p>
+                        <div id="quiz-5-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 5-3：分组与筛选
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3">
+            <div class="lesson-header" onclick="toggleLesson(3)">
+                <div class="lesson-num">3</div>
+                <h3>分组与筛选 —— 按时间、按区间看数据</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>透视表最厉害的地方之一，就是能<strong>自动把数据"分组"</strong>。你不用在源数据里手动加"季度""档次"列，透视表自己就能把日期按月、把金额按 500 元一档归类。</p>
+
+                        <h5>🔹 日期自动分组（年 / 季 / 月 / 日）</h5>
+                        <p>当行或列里放的是<strong>真正的日期</strong>字段时，右键该标签 → <strong>组合</strong>（或"创建组"），Excel 会自动拆成 年、季度、月，甚至日。想取消？右键 → <strong>取消组合</strong> 即可。</p>
+                        <div class="callout callout-info">
+                            注意：只有字段本身是"日期格式"才能自动分组。如果你的"订单日期"是文本（如"2025年3月"），要先转成真正的日期，否则右键没有"组合"选项。
+                        </div>
+
+                        <h5>🔹 数值分组（按步长分段）</h5>
+                        <p>把<strong>数字型</strong>字段（如销售额、年龄）拖到行，右键 → <strong>组合</strong>，设置"起始值 / 终止值 / 步长"：</p>
+                        <ul>
+                            <li>销售额：<strong>每 500 元一档</strong> → 步长填 500</li>
+                            <li>年龄：<strong>每 10 岁一档</strong> → 步长填 10</li>
+                        </ul>
+
+                        <h5>🔹 文本手动组合（多选分组）</h5>
+                        <p>选中两个及以上<strong>文本标签</strong>（按住 <kbd class="kbd">Ctrl</kbd> 多选），右键 → <strong>组合</strong>，可以把"广东、浙江、江苏"合并成"华东区"一组。</p>
+
+                        <h5>🔹 报表筛选器（页字段）</h5>
+                        <p>把字段拖到"筛选器"区域，透视表顶部出现下拉框，选一个值就只看这一类，比如只看"省份=广东"。</p>
+
+                        <h5>🔹 切片器 & 日程表（最直观的筛选）</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>🔪 切片器</h6>
+                                <p>"分析"选项卡 → <strong>插入切片器</strong>，点一下按钮就筛选，比下拉框直观 10 倍</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🗓️ 日程表 / 时间线</h6>
+                                <p>专门给<strong>日期</strong>用的滑块，按季度、月、日拖动筛选</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🔗 报表连接</h6>
+                                <p>一个切片器<strong>同时控制多张透视表</strong>：右键切片器 → 报表连接 → 勾选要联动的表</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 值筛选 / 标签筛选 / 排序</h5>
+                        <ul>
+                            <li><strong>值筛选</strong>：按计算结果筛，如 <strong>前 10 项</strong>、<strong>前 10%</strong>、<strong>大于平均值</strong></li>
+                            <li><strong>标签筛选</strong>：按文字筛，支持 <strong>包含 / 开头是 / 通配符 *</strong>（如"华东*"）</li>
+                            <li><strong>排序</strong>：按值大小（销售额从高到低）或按标签（A~Z）。右键标签 → 排序</li>
+                        </ul>
+
+                        <div class="callout callout-info">
+                            <strong>在透视表上筛选 vs 在源数据上筛选？</strong> 源数据筛选会"藏起"行、可能误删；透视表筛选只影响汇总视图，<strong>源数据原封不动</strong>，更安全、更灵活。
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：按季度、按月份分组 + 切片器</h4>
+                        <p>用"多月份订单汇总数据"做出按季度汇总，并加一个店铺切片器。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开数据（订单日期是真正的日期），建透视表：<strong>行=订单日期，值=销售额求和</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键行区的日期 → <strong>组合</strong> → 勾选"年、季度、月" → 确定，瞬间变成"年→季→月"三级分组</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">把 <strong>店铺</strong> 拖到列区域，形成"各店铺各月"的矩阵</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点透视表任意位置 → <strong>分析 → 插入切片器</strong> → 勾选"省份" → 确定</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-item" style="padding-left:0;">
+                                    <div class="step-content">点切片器里的"广东"，整张表只显示广东的数据</div>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">再插入 <strong>日程表（时间线）</strong>，拖动滑块只看 Q2（第二季度）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">右键"销售额"标签 → <strong>值筛选 → 前 10 项</strong>，只看销售额最高的 10 个月</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">想取消分组？右键日期组 → <strong>取消组合</strong> 回到原始日期</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：多月份订单汇总数据</h4>
+                        <p>订单日期分布在 2025 全年 12 个月，含店铺、品类、省份、销售额、订单数，共 70 行，专门用于按季度、按月分组练习。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>订单日期</th><th>店铺</th><th>品类</th><th>省份</th><th>销售额</th><th>订单数</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>2025/1/1</td><td>天猫旗舰店</td><td>女装</td><td>广东</td><td>1200</td><td>1</td></tr>
+                                    <tr><td>2025/1/6</td><td>京东自营店</td><td>男装</td><td>浙江</td><td>2300</td><td>2</td></tr>
+                                    <tr><td>2025/1/11</td><td>抖音小店</td><td>美妆</td><td>江苏</td><td>1800</td><td>3</td></tr>
+                                    <tr><td>2025/1/16</td><td>拼多多专卖店</td><td>数码</td><td>北京</td><td>3500</td><td>4</td></tr>
+                                    <tr><td>2025/1/21</td><td>天猫旗舰店</td><td>家居</td><td>上海</td><td>900</td><td>5</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共70条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson5_3Data()">📥 下载多月份订单汇总数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>切片器样式可美化：右键切片器 → <strong>切片器设置</strong>，改列数、配色，让看板更专业</li>
+                            <li>一个切片器控制多张表：右键切片器 → <strong>报表连接</strong> → 勾选其他透视表</li>
+                            <li>多个切片器可以 <strong>Alt 多选</strong>，组合筛选（如"广东 + 女装"）</li>
+                            <li>日期分组后，点行标签前的 <strong>+ / -</strong> 可展开收起层级，汇报时点几下很帅</li>
+                            <li>标签筛选用通配符 <strong>*</strong> 很方便，如"*东"能匹配"广东、山东"</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>源数据的日期必须是真日期</strong>，否则无法分组，录入时就用标准日期格式</li>
+                            <li><strong>筛选优先用切片器/日程表</strong>，别去动源数据的自动筛选，避免误删行</li>
+                            <li><strong>多表联动用报表连接</strong>，保证老板点一个按钮所有图一起变</li>
+                            <li><strong>分组命名清晰</strong>：季度组叫"Q1~Q4"，金额档叫"0-500、500-1000"，一眼看懂</li>
+                            <li><strong>汇报前复位筛选</strong>：交出去的表记得把切片器回到"全部"，不然别人看到的是筛选后的局部</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 右键日期没有"组合"选项 → 该列是<strong>文本不是日期</strong>，先转成真正日期格式</li>
+                            <li>❌ 数值分组步长填错 → 步长 500 表示每 500 一档，填成 5000 就只分两档</li>
+                            <li>❌ 切片器只能控制一张表 → 忘了设置 <strong>报表连接</strong>，其他表不联动</li>
+                            <li>❌ 在源数据上筛选后误删行 → 筛选应在透视表端做，源数据保持完整</li>
+                            <li>❌ 前 10% 和前 10 项混淆 → "前 10 项"是 10 行，"前 10%"是总量的 10% 行数</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用数据建透视表：<strong>行=订单日期，值=销售额求和</strong></li>
+                            <li>对日期<strong>组合</strong>成"年→季→月"三级分组</li>
+                            <li>把"店铺"拖到列，形成店铺×月份的矩阵</li>
+                            <li>插入 <strong>省份切片器</strong>，分别点"广东""浙江"观察变化</li>
+                            <li>插入 <strong>日程表</strong>，只保留第二季度数据</li>
+                            <li>对销售额做 <strong>值筛选 → 前 10 项</strong>，找出最旺的 10 个月</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>把"销售额"字段用<strong>数值分组</strong>，按每 1000 元一档，看各档订单分布</li>
+                            <li>把"广东、浙江、江苏"用 <strong>文本组合</strong> 成"华东区"一组</li>
+                            <li>设置<strong>报表连接</strong>，让一个切片器同时控制"按店铺"和"按品类"两张透视表</li>
+                            <li>用<strong>标签筛选 → 开头是"女"</strong>，只看女装相关品类的汇总</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对分组与筛选的掌握：</p>
+                        <div id="quiz-5-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 5-4：计算字段与计算项
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4">
+            <div class="lesson-header" onclick="toggleLesson(4)">
+                <div class="lesson-num">4</div>
+                <h3>计算字段与计算项 —— 透视表里的"自定义公式"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>有时候"值"区域只有原始字段还不够，你想算 <strong>客单价 = 销售额 ÷ 订单数</strong>、<strong>毛利额 = 销售额 - 成本</strong>。这时不用回头改源数据，直接在透视表里加"计算字段"就行。</p>
+
+                        <h5>🔹 计算字段（整个字段的自定义公式）</h5>
+                        <p>点透视表 → <strong>分析 → 字段、项目和集 → 计算字段</strong>，在公式框里写：</p>
+                        <div class="formula-line">
+                            <span class="fn">客单价</span> = <span class="arg">销售额</span> / <span class="arg">订单数</span>
+                        </div>
+                        <div class="formula-line">
+                            <span class="fn">毛利额</span> = <span class="arg">销售额</span> - <span class="arg">成本</span>
+                        </div>
+                        <div class="formula-line">
+                            <span class="fn">毛利率</span> = <span class="arg">毛利额</span> / <span class="arg">销售额</span>
+                        </div>
+                        <div class="callout callout-warn">
+                            <strong>关键操作：</strong>公式里的字段名<strong>必须从下方"字段"列表双击插入</strong>，不要手打！手打容易拼错或多了空格，Excel 会当成普通文字而非字段。
+                        </div>
+
+                        <h5>🔹 计算项（同一字段内的比较）</h5>
+                        <p>计算<strong>项</strong>是在"某个字段内部"新建一项。比如字段"区域"里有华东、华南，想算 <strong>华南 - 华东</strong> 的差距：</p>
+                        <ul>
+                            <li>选中行/列标签里的某个字段项 → <strong>分析 → 字段、项目和集 → 计算项</strong></li>
+                            <li>名称填"华南减华东"，公式：<code>华南 - 华东</code></li>
+                        </ul>
+
+                        <h5>🔹 计算字段 vs 在源数据加列（怎么选？）</h5>
+                        <div class="compare-table">
+                            <thead><tr><th>方式</th><th>优点</th><th>缺点 / 注意</th></tr></thead>
+                            <tbody>
+                                <tr><td>计算字段</td><td>不改源数据，随透视表刷新自动更新</td><td>占用资源；<strong>不能按类别单独计算</strong>；是"先汇总再计算"</td></tr>
+                                <tr><td>源数据加辅助列</td><td>逐行计算，结果最准确</td><td>要改源数据，数据变长要重新拉公式</td></tr>
+                            </tbody>
+                        </div>
+
+                        <div class="callout callout-danger">
+                            <strong>⚠️ 经典大坑："平均值的平均 ≠ 整体平均"！</strong><br>
+                            计算字段是对<strong>已汇总后的数字</strong>再套公式。例如"毛利率"如果写 <code>毛利额/销售额</code>，Excel 会先对各组求和再相除——这通常是对的。但如果你想要"先算每行毛利率再平均"，计算字段<strong>做不到</strong>（它不会回到逐行）。正确做法：要么用<strong>平均值</strong>汇总方式，要么在源数据加"毛利率"辅助列再透视。
+                        </div>
+
+                        <h5>🔹 GETPIVOTDATA：引用透视结果</h5>
+                        <p>在透视表外写公式引用透视结果时，Excel 会自动生成 <code>=GETPIVOTDATA("销售额",$A$3,"店铺","天猫旗舰店")</code>。好处是<strong>结构稳定</strong>，透视表刷新、重排后引用仍有效。想关掉自动生成：<strong>分析 → 选项（下拉）→ 生成 GetPivotData → 取消勾选</strong>。</p>
+
+                        <h5>🔹 计算项的常见报错与顺序</h5>
+                        <ul>
+                            <li><strong>"无法在透视表外使用"</strong>：计算项只能在透视表内的字段上建，不能在普通区域</li>
+                            <li><strong>顺序问题</strong>：计算项公式里引用的项，必须<strong>已经存在于字段中</strong>，否则报"找不到字段"</li>
+                            <li>计算项会<strong>参与分类汇总</strong>，可能让小计变大，注意检查</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：加"客单价、毛利额、毛利率"计算字段</h4>
+                        <p>用"门店经营数据"做出带自定义指标的门店分析。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开数据，建透视表：<strong>行=门店，值=销售额、成本、订单数（均求和）</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点透视表 → <strong>分析 → 字段、项目和集 → 计算字段</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">名称填"客单价"，在公式框先输 <code>=</code>，<strong>双击字段列表里的"销售额"</strong>，输 <code>/</code>，再双击"订单数" → 确定</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">再建计算字段"毛利额" = <strong>销售额 - 成本</strong>（字段都双击插入）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">再建计算字段"毛利率" = <strong>毛利额 / 销售额</strong>，设数字格式为百分比</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">观察：透视表自动多出三列自定义指标，且随源数据刷新自动更新</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">想关掉 GetPivotData：<strong>分析 → 选项下拉 → 生成 GetPivotData 取消勾选</strong></div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：门店经营数据</h4>
+                        <p>含门店、城市、月份、销售额、成本、订单数、退货额，共 60 行，适合练客单价、毛利、计算项。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>门店</th><th>城市</th><th>月份</th><th>销售额</th><th>成本</th><th>订单数</th><th>退货额</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>旗舰体验店</td><td>杭州</td><td>1</td><td>12000</td><td>6600</td><td>5</td><td>360</td></tr>
+                                    <tr><td>社区便利店</td><td>成都</td><td>2</td><td>18000</td><td>9900</td><td>6</td><td>540</td></tr>
+                                    <tr><td>校园店</td><td>武汉</td><td>3</td><td>9500</td><td>5225</td><td>7</td><td>285</td></tr>
+                                    <tr><td>商圈店</td><td>西安</td><td>4</td><td>22000</td><td>12100</td><td>8</td><td>660</td></tr>
+                                    <tr><td>仓储会员店</td><td>南京</td><td>5</td><td>15000</td><td>8250</td><td>9</td><td>450</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson5_4Data()">📥 下载门店经营数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>计算字段公式里的字段<strong>必须双击插入</strong>，手打极易出错</li>
+                            <li>计算字段也能设 <strong>数字格式</strong>（如毛利率设百分比），右键值 → 数字格式</li>
+                            <li>想删除计算字段：<strong>分析 → 字段、项目和集 → 计算字段</strong> → 下拉选它 → 删除</li>
+                            <li>需要"逐行平均"时，与其用计算字段，不如<strong>先在源数据加辅助列</strong>再透视</li>
+                            <li>GETPIVOTDATA 引用稳定，做<strong>看板外的汇总公式</strong>时建议保留</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>字段名从列表双击插入</strong>，杜绝手打拼错</li>
+                            <li><strong>涉及"先逐行后汇总"的指标</strong>（如平均毛利率）优先用源数据辅助列</li>
+                            <li><strong>计算字段命名带单位</strong>：如"客单价(元)""毛利率(%)"，别人一看就懂</li>
+                            <li><strong>计算项会进小计</strong>，汇报前确认分类汇总是否要包含它</li>
+                            <li><strong>改动计算字段后刷新</strong>，确保整张表同步更新</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 手打字段名导致 <strong>"字段名无效"</strong> → 一定双击插入字段</li>
+                            <li>❌ 用计算字段算"平均毛利率"得到错误值 → 它先汇总再除，不是逐行平均，应加辅助列</li>
+                            <li>❌ 计算项报"找不到字段" → 公式引用的项<strong>尚未存在于字段中</strong>，先确认项名</li>
+                            <li>❌ 在透视表<strong>外</strong>建计算项 → 计算项只能建在透视表内的字段上</li>
+                            <li>❌ 计算字段参与分类汇总数值翻倍 → 检查是否被重复计入小计</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用"门店经营数据"建透视表：<strong>行=门店，值=销售额、成本、订单数</strong></li>
+                            <li>加计算字段 <strong>客单价 = 销售额 / 订单数</strong></li>
+                            <li>加计算字段 <strong>毛利额 = 销售额 - 成本</strong></li>
+                            <li>加计算字段 <strong>毛利率 = 毛利额 / 销售额</strong>，设百分比格式</li>
+                            <li>理解并验证"<strong>平均值的平均 ≠ 整体平均</strong>"，用总销售额÷总订单数核对客单价</li>
+                            <li>试试把"城市"作为字段，建一个计算项比较两座城市</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>加计算字段 <strong>退货率 = 退货额 / 销售额</strong>，找出退货率最高的门店</li>
+                            <li>在源数据加"毛利率"辅助列，对比<strong>计算字段毛利率</strong>与<strong>辅助列平均</strong>的差异</li>
+                            <li>用 GETPIVOTDATA 在透视表外引用"旗舰体验店"的销售额，做一张汇总卡</li>
+                            <li>关闭"生成 GetPivotData"后，观察普通单元格引用方式的变化</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对计算字段与计算项的掌握：</p>
+                        <div id="quiz-5-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 5-5：数据透视图与仪表盘
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5">
+            <div class="lesson-header" onclick="toggleLesson(5)">
+                <div class="lesson-num">5</div>
+                <h3>数据透视图与仪表盘 —— 让透视结果"说话"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>数字再准，老板也懒得看表。把透视表变成<strong>图</strong>，再加上<strong>切片器</strong>让老板自己点着看，这就是"经营看板（Dashboard）"。一张好看的看板，比十页 Excel 都有说服力。</p>
+
+                        <h5>🔹 数据透视图</h5>
+                        <p>点透视表（或源数据）→ <strong>分析 → 数据透视图</strong>（或 <strong>插入 → 数据透视图</strong>）。它和普通图表最大的区别：</p>
+                        <div class="compare-table">
+                            <thead><tr><th>对比点</th><th>数据透视图</th><th>普通图表</th></tr></thead>
+                            <tbody>
+                                <tr><td>数据联动</td><td>随透视表筛选<strong>自动联动</strong></td><td>筛选源数据才变，不联动</td></tr>
+                                <tr><td>字段按钮</td><td>图上有<strong>字段按钮</strong>，可隐藏</td><td>无</td></tr>
+                                <tr><td>改结构</td><td>拖字段即改图</td><td>要重选数据区域</td></tr>
+                            </tbody>
+                        </div>
+
+                        <h5>🔹 选什么图？</h5>
+                        <div class="concept-cards">
+                            <div class="concept-card">
+                                <h6>📊 柱形图</h6>
+                                <p>比大小最直观，如各店铺销售额对比</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>📈 折线图</h6>
+                                <p>看趋势，如 12 个月销售走势</p>
+                            </div>
+                            <div class="concept-card">
+                                <h6>🥧 饼图</h6>
+                                <p>看占比，如各品类结构（不超过 5~6 类）</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 切片器同时控制"图 + 表"</h5>
+                        <p>插入切片器后，设<strong>报表连接</strong>同时勾选透视表和透视图，点一下切片器，图和表一起变。一个按钮统一操控全部。</p>
+
+                        <h5>🔹 拼一张"经营看板"</h5>
+                        <p>把多张透视表 + 多张透视图摆在同一张工作表上，就是看板。排版要点：</p>
+                        <div class="fn-cards">
+                            <div class="fn-card">
+                                <h6>① 统一风格</h6>
+                                <p>配色、字号统一（主色 + 2~3 辅助色），别五颜六色</p>
+                            </div>
+                            <div class="fn-card">
+                                <h6>② 切片器集中</h6>
+                                <p>把切片器放<strong>左上角</strong>，像控制台一样</p>
+                            </div>
+                            <div class="fn-card">
+                                <h6>③ 用文本框分组</h6>
+                                <p>插入 → 文本框 写"销售概览""品类结构"当小标题</p>
+                            </div>
+                            <div class="fn-card">
+                                <h6>④ 清理画面</h6>
+                                <p>隐藏网格线、工作表标签，<strong>冻结窗格</strong>固定标题区</p>
+                            </div>
+                        </div>
+
+                        <h5>🔹 数据条 + 一键刷新 + 交付</h5>
+                        <ul>
+                            <li><strong>条件格式数据条</strong>：给透视表的数值列加数据条，长短一眼比大小（开始 → 条件格式 → 数据条）</li>
+                            <li><strong>一键全部刷新</strong>：数据更新后，<strong>数据 → 全部刷新</strong>（或 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd>）</li>
+                            <li><strong>交付</strong>：打印/导出 PDF 发给老板，或截图贴进 PPT 汇报</li>
+                        </ul>
+
+                        <div class="callout callout-ok">
+                            <strong>看板不是炫技，是"让老板 3 秒看懂"。</strong> 每张图只讲一件事，标题写结论（如"Q2 天猫店销售额第一"），而不是干巴巴的"销售额图表"。
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：做一张电商经营看板</h4>
+                        <p>用"电商月度经营数据"做出含柱形图、饼图、切片器的看板。</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">打开数据，建透视表 <strong>行=店铺，值=销售额求和</strong>，再建一张 <strong>行=月份，值=销售额</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中第一张透视表 → <strong>分析 → 数据透视图 → 簇状柱形图</strong></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">选中第二张 → 数据透视图 → <strong>折线图</strong>（看月度趋势）</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">插入一张 <strong>饼图</strong>：行=类目(若数据有)、值=销售额，看品类结构</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">点任意图 → <strong>分析 → 插入切片器（店铺）</strong> → 右键切片器 → <strong>报表连接</strong> 勾选所有图与表</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">把三张图 + 切片器<strong>拖到同一工作表</strong>，切片器放左上角，图按"上趋势、下结构"排</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">插入 <strong>文本框</strong> 写小标题（"销售概览""月度趋势""品类结构"），统一配色字号</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>视图 → 显示 → 取消网格线</strong>，隐藏工作表标签，<strong>冻结首行</strong>固定看板标题</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">给数值列加 <strong>条件格式 → 数据条</strong>；最后 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd> 全部刷新，导出 PDF 发给老板</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商月度经营数据</h4>
+                        <p>含店铺、月份、销售额、订单量、客单价、毛利额、毛利率，多店铺多月份，共 60 行，是做看板的主数据。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview">
+                                <thead>
+                                    <tr><th>店铺</th><th>月份</th><th>销售额</th><th>订单量</th><th>客单价</th><th>毛利额</th><th>毛利率</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>天猫旗舰店</td><td>1</td><td>32000</td><td>20</td><td>1600</td><td>8960</td><td>28.0%</td></tr>
+                                    <tr><td>京东自营店</td><td>2</td><td>28000</td><td>21</td><td>1333</td><td>7840</td><td>28.0%</td></tr>
+                                    <tr><td>抖音小店</td><td>3</td><td>45000</td><td>22</td><td>2045</td><td>12600</td><td>28.0%</td></tr>
+                                    <tr><td>天猫旗舰店</td><td>4</td><td>38000</td><td>23</td><td>1652</td><td>10640</td><td>28.0%</td></tr>
+                                    <tr><td>京东自营店</td><td>5</td><td>50000</td><td>24</td><td>2083</td><td>14000</td><td>28.0%</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson5_5Data()">📥 下载电商月度经营数据 (CSV)</button>
+
+                        <h5 style="margin-top:16px;">📋 看板数据（按店铺汇总，供你拼看板参考）</h5>
+                        <p>把上面的明细透视汇总后，得到这样一张"看板底表"，用它做柱形图最合适：</p>
+                        <div class="demo-box">
+                            <div class="demo-title">看板数据：各店铺销售额、订单量、毛利率汇总</div>
+                            <table class="excel-grid">
+                                <tr><th>店铺</th><th>总销售额</th><th>总订单量</th><th>平均客单价</th><th>毛利率</th></tr>
+                                <tr><td class="row-header">天猫旗舰店</td><td>428,000</td><td>260</td><td>1,646</td><td>28.0%</td></tr>
+                                <tr><td class="row-header">京东自营店</td><td>396,000</td><td>252</td><td>1,571</td><td>28.0%</td></tr>
+                                <tr><td class="row-header">抖音小店</td><td>432,000</td><td>264</td><td>1,636</td><td>28.0%</td></tr>
+                            </table>
+                            <div class="demo-caption">↑ 这是"看板数据"的样貌：一行一个维度（店铺），一列一个指标，干净清爽，直接喂给图表。</div>
+                        </div>
+                    </div>
+
+                    <!-- 可视化示意：柱形图 + 饼图 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📊 看板效果示意</h4>
+                        <p>下面用页面组件模拟一张"各店铺销售额"柱形图 + "品类结构"饼图，帮助你理解看板长什么样：</p>
+                        <div class="bar-chart">
+                            <div class="bar-row"><div class="bar-label">天猫店</div><div class="bar-track"><div class="bar-fill p" style="width:82%;"></div></div><div class="bar-value">42.8万</div></div>
+                            <div class="bar-row"><div class="bar-label">京东店</div><div class="bar-track"><div class="bar-fill o" style="width:76%;"></div></div><div class="bar-value">39.6万</div></div>
+                            <div class="bar-row"><div class="bar-label">抖音店</div><div class="bar-track"><div class="bar-fill g" style="width:83%;"></div></div><div class="bar-value">43.2万</div></div>
+                        </div>
+                        <div class="pie-wrap">
+                            <div class="pie" style="background:conic-gradient(var(--purple) 0 42%, var(--orange) 42% 80%, var(--green) 80% 100%);"></div>
+                            <div class="pie-legend">
+                                <div><span class="pie-dot" style="background:var(--purple);"></span>天猫旗舰店 42%</div>
+                                <div><span class="pie-dot" style="background:var(--orange);"></span>京东自营店 38%</div>
+                                <div><span class="pie-dot" style="background:var(--green);"></span>抖音小店 20%</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>透视图上的<strong>字段按钮</strong>很占地方，右键图 → <strong>隐藏图表上的字段按钮</strong></li>
+                            <li>切片器设<strong>报表连接</strong>后，一个按钮同时控制所有图与表，看板才"活"起来</li>
+                            <li>图太多卡顿？把不常变的图<strong>复制为图片</strong>粘贴，减轻刷新负担</li>
+                            <li>看板配色用 <strong>主色 + 2~3 辅助色</strong>，全站统一，别用彩虹色</li>
+                            <li>交付前 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Alt</kbd>+<kbd class="kbd">F5</kbd> <strong>全部刷新</strong>，保证图和数据一致</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>一张图只讲一件事</strong>，标题写结论而非字段名</li>
+                            <li><strong>配色不超过 4 种</strong>，全看板统一，符合公司 VI 更佳</li>
+                            <li><strong>切片器集中放左上角</strong>，像控制台，老板秒懂</li>
+                            <li><strong>交付前隐藏网格线/标签、冻结标题</strong>，截图或 PDF 都干净</li>
+                            <li><strong>数据更新后必点"全部刷新"</strong>，再截图发出，避免图旧数新</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 用普通图表做看板 → 切片器<strong>联动不了</strong>，应改用数据透视图</li>
+                            <li>❌ 忘了设<strong>报表连接</strong> → 切片器只控制一张图，其他图不动</li>
+                            <li>❌ 看板五颜六色、图挤一堆 → 没留白、没对齐，老板看不懂</li>
+                            <li>❌ 截图前没<strong>全部刷新</strong> → 图和表数据对不上，闹笑话</li>
+                            <li>❌ 饼图塞太多类（10+）→ 变成"彩虹饼"看不清，超 6 类改用柱形图</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用"电商月度经营数据"建 <strong>店铺销售额透视表 + 柱形透视图</strong></li>
+                            <li>再建 <strong>月份销售额透视表 + 折线透视图</strong>（看趋势）</li>
+                            <li>插入 <strong>店铺切片器</strong>，设报表连接同时控制两张图</li>
+                            <li>把三张元素摆到同一工作表，<strong>切片器放左上角</strong>，加文本框小标题</li>
+                            <li>隐藏网格线和工作表标签，<strong>冻结首行</strong></li>
+                            <li>给销售额列加<strong>数据条</strong>，最后全部刷新并导出 PDF</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>增加"毛利率"透视图，用<strong>折线图</strong>对比三店毛利走势</li>
+                            <li>用<strong>日程表（时间线）</strong>替代店铺切片器，让看板按月份滑动</li>
+                            <li>把做好的看板<strong>截图嵌入一份 PPT</strong>，写一句结论式标题</li>
+                            <li>研究<strong>切片器样式</strong>，做出和公司主题色一致的按钮</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对透视图与看板的掌握：</p>
+                        <div id="quiz-5-5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结 -->
+<section class="container" style="padding-bottom:60px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <div class="content-block block-knowledge" style="border-left-color:var(--purple);">
+            <h4>🎯 模块5 学习总结</h4>
+            <p>恭喜你完成了模块5的学习！这一模块你拿下了 Excel 里最强大的数据分析武器——<strong>数据透视表</strong>，学会了把一堆乱糟糟的订单，几秒钟变成老板爱看的汇总和看板。</p>
+            <ul>
+                <li>✅ <strong>透视表入门</strong>：数据源 4 条铁律、插入路径、四区域口诀（行分类/列对比/值计算）、刷新与 Ctrl+T 转表格</li>
+                <li>✅ <strong>计算与显示</strong>：8 种值汇总方式、数字格式、字段拖两次做占比、值显示方式（占比/累计/排名）、平均的陷阱</li>
+                <li>✅ <strong>分组与筛选</strong>：日期自动分组、数值步长分组、文本组合、切片器与日程表、报表连接、值/标签筛选与排序</li>
+                <li>✅ <strong>计算字段与计算项</strong>：自定义公式、字段名双击插入、计算字段 vs 辅助列、"平均值的平均≠整体平均"、GETPIVOTDATA</li>
+                <li>✅ <strong>透视图与看板</strong>：透视图与普通图的区别、图类型选择、切片器联动、经营看板排版、数据条、一键全部刷新与交付</li>
+            </ul>
+            <p style="margin-top:12px;">📌 <strong>操作规范要点回顾</strong>：</p>
+            <ul>
+                <li>🔸 建表前先检查"4 条铁律"：一维清单、表头唯一在首行、无空行空列、无合并单元格</li>
+                <li>🔸 数据源会变长就用 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd> 转表格，改完数据记得刷新</li>
+                <li>🔸 计算字段里字段名必须<strong>双击插入</strong>；涉及逐行平均时优先用源数据辅助列</li>
+                <li>🔸 看板配色不超过 4 种、切片器集中左上角、一张图只讲一件事、交付前全部刷新</li>
+                <li>🔸 筛选优先用切片器而非改源数据，保证源数据完整不被误删</li>
+            </ul>
+            <p style="margin-top:12px;">接下来进入 <a href="module6.html" style="color:var(--blue);font-weight:bold;">📒 模块6：操作规范与效率</a>，把前面所有模块串起来，养成高效、规范、不返工的职业好习惯！</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p>适用于中职电商专业数据分析课程 · 2026年春季学期· 寇亚彬老师授课</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块5 数据生成与测验题目
+// ================================================================
+
+// ============ 课次5-1 电商订单明细（60行） ============
+function downloadLesson5_1Data() {
+    const headers = ['订单号', '订单日期', '店铺', '省份', '类目', '商品名称', '数量', '单价', '订单金额', '订单状态', '客服'];
+    const shops = ['天猫旗舰店', '京东自营店', '抖音小店', '拼多多专卖店'];
+    const provs = ['广东', '浙江', '江苏', '北京', '上海', '四川', '湖北', '山东'];
+    const cats = ['女装', '男装', '美妆', '数码', '家居', '食品'];
+    const names = ['连衣裙', 'T恤', '面膜', '手机壳', '抱枕', '坚果', '卫衣', '口红', '充电宝', '保温杯', '衬衫', '零食大礼包'];
+    const status = ['已付款', '已发货', '已完成', '退款中'];
+    const kefu = ['小美', '小强', '阿杰', '丽丽'];
+    const prices = [99, 59, 39, 19, 29, 89, 129, 45, 69, 25];
+    const rows = [];
+    const start = new Date(2025, 0, 1);
+    for (let i = 0; i < 60; i++) {
+        const d = new Date(start);
+        d.setDate(start.getDate() + i * 3);
+        const dateStr = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+        const qty = (i % 5) + 1;
+        const price = prices[i % prices.length];
+        const amount = qty * price;
+        rows.push([
+            'D2025' + String(10001 + i),
+            dateStr,
+            shops[i % shops.length],
+            provs[i % provs.length],
+            cats[i % cats.length],
+            names[(i * 3) % names.length],
+            qty,
+            price,
+            amount,
+            status[i % status.length],
+            kefu[i % kefu.length]
+        ]);
+    }
+    downloadCSV('电商订单明细.csv', headers, rows);
+}
+
+// ============ 课次5-2 店铺商品销售明细（50行） ============
+function downloadLesson5_2Data() {
+    const headers = ['店铺', '品类', '商品', '月份', '销量', '销售额', '成本额'];
+    const shops = ['天猫旗舰店', '京东自营店', '抖音小店'];
+    const cats = ['女装', '男装', '美妆', '数码', '家居'];
+    const goods = ['连衣裙', 'T恤', '面膜', '手机壳', '抱枕', '坚果', '卫衣', '口红', '充电宝', '保温杯'];
+    const prices = [99, 59, 39, 19, 29, 89, 129, 45, 69, 25];
+    const rows = [];
+    for (let i = 0; i < 50; i++) {
+        const qty = (i % 8) + 1;
+        const price = prices[(i * 3) % prices.length];
+        const sales = qty * price;
+        const cost = Math.round(sales * 0.6);
+        rows.push([
+            shops[i % shops.length],
+            cats[i % cats.length],
+            goods[(i * 2) % goods.length],
+            (i % 12) + 1,
+            qty,
+            sales,
+            cost
+        ]);
+    }
+    downloadCSV('店铺商品销售明细.csv', headers, rows);
+}
+
+// ============ 课次5-3 多月份订单汇总数据（70行） ============
+function downloadLesson5_3Data() {
+    const headers = ['订单日期', '店铺', '品类', '省份', '销售额', '订单数'];
+    const shops = ['天猫旗舰店', '京东自营店', '抖音小店', '拼多多专卖店'];
+    const cats = ['女装', '男装', '美妆', '数码', '家居', '食品'];
+    const provs = ['广东', '浙江', '江苏', '北京', '上海', '四川', '湖北', '山东', '河南', '福建'];
+    const salesArr = [1200, 2300, 1800, 3500, 900, 1500, 2800, 4200, 1100, 2600];
+    const rows = [];
+    const start = new Date(2025, 0, 1);
+    for (let i = 0; i < 70; i++) {
+        const d = new Date(start);
+        d.setDate(start.getDate() + i * 5);
+        const dateStr = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+        rows.push([
+            dateStr,
+            shops[i % shops.length],
+            cats[i % cats.length],
+            provs[i % provs.length],
+            salesArr[i % salesArr.length],
+            (i % 9) + 1
+        ]);
+    }
+    downloadCSV('多月份订单汇总数据.csv', headers, rows);
+}
+
+// ============ 课次5-4 门店经营数据（60行） ============
+function downloadLesson5_4Data() {
+    const headers = ['门店', '城市', '月份', '销售额', '成本', '订单数', '退货额'];
+    const stores = ['旗舰体验店', '社区便利店', '校园店', '商圈店', '仓储会员店'];
+    const cities = ['杭州', '成都', '武汉', '西安', '南京'];
+    const salesArr = [12000, 18000, 9500, 22000, 15000];
+    const rows = [];
+    for (let i = 0; i < 60; i++) {
+        const sales = salesArr[i % salesArr.length];
+        const cost = Math.round(sales * 0.55);
+        const orders = (i % 20) + 5;
+        const refund = Math.round(sales * 0.03);
+        rows.push([
+            stores[i % stores.length],
+            cities[i % cities.length],
+            (i % 12) + 1,
+            sales,
+            cost,
+            orders,
+            refund
+        ]);
+    }
+    downloadCSV('门店经营数据.csv', headers, rows);
+}
+
+// ============ 课次5-5 电商月度经营数据（60行） ============
+function downloadLesson5_5Data() {
+    const headers = ['店铺', '月份', '销售额', '订单量', '客单价', '毛利额', '毛利率'];
+    const shops = ['天猫旗舰店', '京东自营店', '抖音小店'];
+    const salesArr = [32000, 28000, 45000, 38000, 50000, 42000];
+    const rows = [];
+    for (let i = 0; i < 60; i++) {
+        const sales = salesArr[i % salesArr.length];
+        const orders = (i % 30) + 20;
+        const avgPrice = Math.round(sales / orders);
+        const profit = Math.round(sales * 0.28);
+        const profitRate = (profit / sales * 100).toFixed(1) + '%';
+        rows.push([
+            shops[i % shops.length],
+            (i % 12) + 1,
+            sales,
+            orders,
+            avgPrice,
+            profit,
+            profitRate
+        ]);
+    }
+    downloadCSV('电商月度经营数据.csv', headers, rows);
+}
+
+// ================================================================
+//  测验题目（每课10道，共50道）
+// ================================================================
+
+// ===== 课次5-1 透视表入门 测验 =====
+const quiz5_1 = [
+    {
+        q: '数据透视表最适合处理下列哪种数据？',
+        opts: ['一维清单（每行一条记录）', '二维交叉表', '多张图片', '纯文本文章'],
+        ans: 0,
+        explain: '透视表要求数据源是"一维清单"：每行一条完整记录、每列一个字段。交叉表要先逆透视成清单。'
+    },
+    {
+        q: '建立数据透视表时，数据源出现下列哪种情况会导致问题？',
+        opts: ['表头在第一行', '数据连续无空行', '数据区域有合并单元格', '每列一个字段'],
+        ans: 2,
+        explain: '铁律之一：数据区域不能有合并单元格，合并会破坏"一维清单"结构导致分组汇总出错。'
+    },
+    {
+        q: '在"插入→数据透视表"后，选择放置位置一般初学者首选？',
+        opts: ['现有工作表', '新工作表', '桌面', 'U盘'],
+        ans: 1,
+        explain: '初学者一律选"新工作表"，最干净、不遮挡源数据；做看板时再选"现有工作表"。'
+    },
+    {
+        q: '透视表四个区域中，用于"真正要计算的数字"的是？',
+        opts: ['筛选器', '行', '列', '值'],
+        ans: 3,
+        explain: '口诀：行=分类、列=对比、值=计算。"值"区域放要汇总统计的数字。'
+    },
+    {
+        q: '行标签和列标签的本质是？',
+        opts: ['分组', '排序', '筛选', '计算'],
+        ans: 0,
+        explain: '行标签和列标签本质都是"分组"——把相同内容归到一起，再对每组的"值"做统计。'
+    },
+    {
+        q: '源数据修改后，让透视表更新应怎么做？',
+        opts: ['重新建表', '关闭再打开文件', '右键透视表→刷新（或Alt+F5）', '什么都不用做会自动变'],
+        ans: 2,
+        explain: '改完源数据要右键透视表→刷新或按 Alt+F5，透视表不会自动更新。'
+    },
+    {
+        q: '为了让"数据源变长也自动纳入统计"，建表前应该？',
+        opts: ['合并单元格', '按Ctrl+T转成表格', '删除空行', '把数据涂成绿色'],
+        ans: 1,
+        explain: '先按 Ctrl+T 把数据源转成"表格"，再建透视表，新增行会自动进入统计范围。'
+    },
+    {
+        q: '字段列表不小心关掉了，怎么找回？',
+        opts: ['重装Excel', '新建文件', '重启电脑', '点透视表→分析→字段列表按钮'],
+        ans: 3,
+        explain: '点透视表任意位置，顶部"数据透视表分析"选项卡最左侧的"字段列表"按钮即可找回。'
+    },
+    {
+        q: '想看"只看广东省的数据"，最合理的做法是？',
+        opts: ['把"省份"拖到筛选器再选择', '删掉其他省的行', '在源数据里删除其他省', '隐藏整列'],
+        ans: 0,
+        explain: '把"省份"拖到筛选器，用下拉框选"广东"即可，源数据保持完整可随时切回全部。'
+    },
+    {
+        q: '关于"经典数据透视表布局"，下列说法正确的是？',
+        opts: ['它会删除数据', '只能用于旧版Excel', '会锁定单元格', '它把字段列表变成可拖放区域，方便老用户'],
+        ans: 3,
+        explain: '右键透视表→"显示经典数据透视表布局"，字段列表变成熟悉的拖放区域，老老师更习惯。'
+    }
+];
+
+// ===== 课次5-2 计算与显示 测验 =====
+const quiz5_2 = [
+    {
+        q: '透视表"值"区域默认用什么方式汇总数值？',
+        opts: ['计数', '求和', '平均值', '最大值'],
+        ans: 1,
+        explain: '值区域默认是"求和"，适合金额、数量等可累加的数值。'
+    },
+    {
+        q: '什么情况下"值"会默认变成"计数"而不是"求和"？',
+        opts: ['数据全是数字', '用了筛选器', '数据太多', '该列混入了文本或空单元格'],
+        ans: 3,
+        explain: '当值列混入文本或空单元格（如金额里有"暂无"），Excel 无法相加就只能计数。'
+    },
+    {
+        q: '想在同一张表既看"销售额求和"又看"销售额占比"，正确做法是？',
+        opts: ['把销售额拖两次到值区域，第二份设"占总计百分比"', '把销售额复制两列到源数据', '用计算器算占比', '改源数据'],
+        ans: 0,
+        explain: '同一字段可拖多次到值区域，第二份在"值字段设置→值显示方式"选"占总计的百分比"。'
+    },
+    {
+        q: '"值显示方式"中"按某一字段汇总的累计值"常用于？',
+        opts: ['求平均', '找最大值', '逐月累加销售额', '计数'],
+        ans: 2,
+        explain: '"按某一字段汇总的累计值"（如按月份）可实现 1~12 月的滚动累计销售额。'
+    },
+    {
+        q: '关于"平均值的平均 ≠ 整体平均"，下列说法正确的是？',
+        opts: ['两者永远相等', '先把各组平均再平均会因样本量不同而偏离整体平均', '平均值不能用于透视表', '整体平均一定大于平均的平均'],
+        ans: 1,
+        explain: '各组订单量不同，"先平均再平均"会偏离"总销售额÷总订单数"，正确用平均值汇总或加辅助列。'
+    },
+    {
+        q: '给透视表数值设置货币格式，应在哪里设置才能刷新后保留？',
+        opts: ['直接设单元格格式', '改文件名', '改源数据格式', '值字段设置→数字格式'],
+        ans: 3,
+        explain: '应在"值字段设置→数字格式"设置，刷新后格式会保留；直接设单元格格式刷新后易丢失。'
+    },
+    {
+        q: '多个值字段叠在一起看串行，应改为？',
+        opts: ['表格形式显示', '删除字段', '合并单元格', '隐藏列'],
+        ans: 0,
+        explain: '在"值字段设置→布局与打印"选"表格形式显示"，每个值字段各占一列，清晰不串行。'
+    },
+    {
+        q: '"值显示方式→排名"的作用是？',
+        opts: ['按字母排', '隐藏数据', '给出降序名次', '计数'],
+        ans: 2,
+        explain: '"排名"会对各组按值降序给出名次，例如各店铺销售额排名第几。'
+    },
+    {
+        q: '想取消行标签上方的"分类汇总(小计)"，可以？',
+        opts: ['删数据', '右键标签→取消显示分类汇总，或设计选项卡关闭', '合并单元格', '刷新'],
+        ans: 1,
+        explain: '右键标签→"取消显示分类汇总"，或在"设计"选项卡的分类汇总里整体开关。'
+    },
+    {
+        q: '数值格式"0.0%"最适合用于显示？',
+        opts: ['金额', '数量', '订单号', '占比/比率'],
+        ans: 3,
+        explain: '百分比格式 0.0% 适合显示占比、毛利率等相对值，如 38.0%。'
+    }
+];
+
+// ===== 课次5-3 分组与筛选 测验 =====
+const quiz5_3 = [
+    {
+        q: '对"订单日期"字段右键没有"组合"选项，最可能的原因是？',
+        opts: ['日期太多', '没选值区域', '该列是文本不是真正的日期', '数据太少'],
+        ans: 2,
+        explain: '只有字段是真正的"日期格式"才能自动分组。文本型"2025年3月"要先转成日期。'
+    },
+    {
+        q: '想让销售额"每 500 元一档"分组，应使用的功能是？',
+        opts: ['数值组合（步长500）', '日期组合', '文本组合', '切片器'],
+        ans: 0,
+        explain: '把数值字段拖到行，右键→组合，步长填 500，即可每 500 元分一档。'
+    },
+    {
+        q: '把"广东、浙江、江苏"合并为"华东区"一组，属于？',
+        opts: ['日期组合', '数值组合', '值筛选', '文本手动组合(多选组合)'],
+        ans: 3,
+        explain: '按住 Ctrl 多选文本标签后右键→组合，即可把多个文本项归为一组。'
+    },
+    {
+        q: '切片器的最大优势是？',
+        opts: ['能删除数据', '点按钮即可直观筛选，比下拉框直观', '能计算', '能打印'],
+        ans: 1,
+        explain: '切片器是带按钮的可视化筛选器，点一下即筛选，比下拉框直观 10 倍。'
+    },
+    {
+        q: '想让"一个切片器同时控制多张透视表"，需要设置？',
+        opts: ['合并单元格', '刷新', '报表连接', '复制切片器'],
+        ans: 2,
+        explain: '右键切片器→"报表连接"，勾选要联动的其他透视表，即可一钮控多表。'
+    },
+    {
+        q: '"日程表/时间线"专门用于筛选哪类字段？',
+        opts: ['日期', '文本', '数字', '公式'],
+        ans: 0,
+        explain: '日程表(时间线)是专门给日期字段用的滑块筛选器，可按季/月/日拖动。'
+    },
+    {
+        q: '"值筛选→前10项"和"前10%"的区别是？',
+        opts: ['完全一样', '"前10项"是10行，"前10%"是总量的10%行数', '都只筛1行', '"前10%"筛10行'],
+        ans: 1,
+        explain: '"前10项"返回10行记录；"前10%"返回总记录数10%那么多行，数量可能不同。'
+    },
+    {
+        q: '标签筛选支持通配符，想匹配"广东、山东"可用？',
+        opts: ['?东', '#东', '%东', '*东'],
+        ans: 3,
+        explain: '标签筛选支持通配符 *（任意多字符），"*东"可匹配"广东、山东"。'
+    },
+    {
+        q: '在透视表上做筛选相比在源数据上筛选，好处是？',
+        opts: ['源数据会被改动', '能删除行', '源数据原封不动，只影响汇总视图', '筛选更快'],
+        ans: 2,
+        explain: '透视表筛选只改变汇总视图，源数据保持完整，更安全不易误删。'
+    },
+    {
+        q: '日期分组后想恢复成原始日期，应？',
+        opts: ['右键日期组→取消组合', '刷新', '删除数据', '重命名'],
+        ans: 0,
+        explain: '右键已分组的日期→"取消组合"，即可退回未分组的原始日期。'
+    }
+];
+
+// ===== 课次5-4 计算字段与计算项 测验 =====
+const quiz5_4 = [
+    {
+        q: '添加"客单价=销售额/订单数"这种自定义公式，应使用？',
+        opts: ['条件格式', '排序', '在源数据加列', '分析→字段、项目和集→计算字段'],
+        ans: 3,
+        explain: '通过"分析→字段、项目和集→计算字段"可在透视表内新增自定义公式字段。'
+    },
+    {
+        q: '在计算字段公式里插入字段名，正确做法是？',
+        opts: ['手打字段名', '从下方字段列表双击插入', '复制粘贴', '随便写'],
+        ans: 1,
+        explain: '字段名必须从参数框的字段列表"双击插入"，手打易拼错或带空格导致无效。'
+    },
+    {
+        q: '"计算项"和"计算字段"的主要区别是？',
+        opts: ['计算项是在同一字段内新建一项(如华南-华东)，计算字段是整列公式', '没有区别', '计算项用于求和', '计算字段不能刷新'],
+        ans: 0,
+        explain: '计算项是同一字段内部的比较，计算字段是对整个字段的自定义公式。'
+    },
+    {
+        q: '关于"平均值的平均 ≠ 整体平均"这个陷阱，正确应对是？',
+        opts: ['无所谓', '关闭刷新', '用平均值汇总方式，或在源数据加辅助列再透视', '多建几个计算字段'],
+        ans: 2,
+        explain: '计算字段是先汇总再除，不是逐行平均。需要逐行平均时应用平均值汇总或加辅助列。'
+    },
+    {
+        q: 'GETPIVOTDATA 函数的作用是？',
+        opts: ['删除透视表', '排序', '筛选', '稳定引用透视表结果，刷新重排后仍有效'],
+        ans: 3,
+        explain: 'GETPIVOTDATA 能按结构引用透视结果，透视表刷新、重排后引用依然有效。'
+    },
+    {
+        q: '想关掉 GETPIVOTDATA 的自动生成，应？',
+        opts: ['重装Excel', '分析→选项下拉→生成GetPivotData取消勾选', '删除公式', '刷新'],
+        ans: 1,
+        explain: '在"分析→选项(下拉)→生成 GetPivotData"取消勾选，即可关闭自动生成。'
+    },
+    {
+        q: '计算项公式报"找不到字段"，通常因为？',
+        opts: ['公式引用的项尚未存在于该字段中', '字段太多', '数据太少', '没刷新'],
+        ans: 0,
+        explain: '计算项引用的项必须先存在于字段中，否则报"找不到字段"，注意顺序。'
+    },
+    {
+        q: '计算字段相对"源数据加辅助列"的缺点是？',
+        opts: ['不能刷新', '会删除数据', '占用资源且是"先汇总再计算"，不能按类别逐行算', '不能设格式'],
+        ans: 2,
+        explain: '计算字段占用资源，且是对已汇总数字再计算，无法回到逐行，涉及逐行平均时应加辅助列。'
+    },
+    {
+        q: '在透视表外建"计算项"会怎样？',
+        opts: ['成功', '报错，计算项只能建在透视表内的字段上', '自动建表', '生成图表'],
+        ans: 1,
+        explain: '计算项只能建在透视表内部的某个字段上，不能建在普通单元格区域。'
+    },
+    {
+        q: '删除已添加的计算字段，应？',
+        opts: ['直接删单元格', '刷新', '重命名', '分析→字段、项目和集→计算字段→选它→删除'],
+        ans: 3,
+        explain: '在"计算字段"对话框的下拉里选目标字段，点"删除"即可移除该自定义字段。'
+    }
+];
+
+// ===== 课次5-5 数据透视图与仪表盘 测验 =====
+const quiz5_5 = [
+    {
+        q: '数据透视图与普通图表最大的区别是？',
+        opts: ['随透视表筛选自动联动', '颜色不同', '不能打印', '必须在新文件'],
+        ans: 0,
+        explain: '数据透视图会随透视表筛选自动联动，普通图表不会随筛选变化。'
+    },
+    {
+        q: '看"12个月销售走势"最适合用哪种透视图？',
+        opts: ['饼图', '散点图', '折线图', '雷达图'],
+        ans: 2,
+        explain: '折线图擅长展示趋势随时间的变化，月度走势首选折线图。'
+    },
+    {
+        q: '看"各品类销售占比"最适合用哪种图（不超过6类）？',
+        opts: ['柱形图', '饼图', '折线图', '气泡图'],
+        ans: 1,
+        explain: '占比结构用饼图最直观，但类别不宜超过 5~6 个，否则变成"彩虹饼"看不清。'
+    },
+    {
+        q: '让"一个切片器同时控制透视图和透视表"，需要？',
+        opts: ['合并单元格', '刷新', '重命名图', '报表连接'],
+        ans: 3,
+        explain: '右键切片器→"报表连接"，勾选要联动的透视图和透视表，一钮控全部。'
+    },
+    {
+        q: '经营看板排版时，切片器最合适放在？',
+        opts: ['左上角像控制台', '右下角', '隐藏不显示', '最底部'],
+        ans: 0,
+        explain: '看板规范：切片器集中放左上角，像控制台一样统一操控，老板一眼找到。'
+    },
+    {
+        q: '给透视表数值列加"数据条"是为了？',
+        opts: ['删除数据', '排序', '用长短直观比较大小', '计数'],
+        ans: 2,
+        explain: '条件格式→数据条用条形长短直观体现数值大小，一眼比出高低。'
+    },
+    {
+        q: '数据更新后，让看板所有图表同步更新应按？',
+        opts: ['Ctrl+S', '回车', 'Ctrl+Alt+F5（全部刷新）', '双击'],
+        ans: 2,
+        explain: '数据→全部刷新或 Ctrl+Alt+F5，可一次刷新所有关联的透视表与透视图。（注：此处正确快捷键为 Ctrl+Alt+F5）'
+    },
+    {
+        q: '透视图上占地方的"字段按钮"可以？',
+        opts: ['不能去掉', '自动消失', '要删数据', '右键图→隐藏图表上的字段按钮'],
+        ans: 3,
+        explain: '右键透视图→"隐藏图表上的字段按钮"，可让图更干净，适合放进看板。'
+    },
+    {
+        q: '关于看板配色，规范建议？',
+        opts: ['主色+2~3辅助色，不超过4种', '用满彩虹色', '越花越好', '只用黑色'],
+        ans: 0,
+        explain: '看板配色应统一，主色加 2~3 种辅助色，不超过 4 种，专业且易读。'
+    },
+    {
+        q: '把做好的看板交给老板，最合适的做法是？',
+        opts: ['直接发源文件不管', '删掉数据', '全部刷新后导出PDF或截图嵌入PPT', '只发文字'],
+        ans: 2,
+        explain: '交付前先"全部刷新"保证图数一致，再导出 PDF 或截图嵌入 PPT，干净专业。'
+    }
+];
+
+// ================================================================
+//  初始化所有测验
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-5-1', quiz5_1);
+    initQuiz('quiz-5-2', quiz5_2);
+    initQuiz('quiz-5-3', quiz5_3);
+    initQuiz('quiz-5-4', quiz5_4);
+    initQuiz('quiz-5-5', quiz5_5);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1625 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块3：数据处理技能 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏠 首页</a></li>
+            <li><a href="module1.html">📗 模块1</a></li>
+            <li><a href="module2.html">📘 模块2</a></li>
+            <li><a href="module3.html" class="active">📙 模块3</a></li>
+            <li><a href="module4.html">📕 模块4</a></li>
+            <li><a href="module5.html">📓 模块5</a></li>
+            <li><a href="module6.html">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-orange">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-badge">模块3 · 进阶 · 电商工作</div>
+        <h1>📙 数据处理技能</h1>
+        <p>拿到一份"脏数据"怎么办？<br>清洗、排序、筛选、预警，一步步把它变成能用的数据</p>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container">
+    <div class="module-progress">
+        <div class="progress-text" id="progressText">加载中...</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="3" data-total="5"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container">
+    <div class="lesson-list">
+
+        <!-- ============================================
+             课次 3-1：数据规范与表结构
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1">
+            <div class="lesson-header" onclick="toggleLesson(1)">
+                <div class="lesson-num">1</div>
+                <h3>数据规范与表结构 —— 让表格"能被机器读懂"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>在电商工作中，你拿到的表格往往来自不同的同事、系统、甚至手写记录。如果这些表格"长得很随意"，后面做排序、筛选、函数统计就会处处报错。<strong>规范，比技巧更重要</strong>——一张规范的表，能让 Excel 自动帮你干活；一张混乱的表，你每算一步都要手动修。这一课，我们先搞清楚"好表格长什么样"。</p>
+
+                        <h5>🔹 一维表 vs 二维表</h5>
+                        <p>这是最容易被搞混的概念。简单说：</p>
+                        <ul>
+                            <li><strong>一维表（清单式）</strong>：每一行是一条<strong>记录</strong>，每一列是一个<strong>字段</strong>。比如"1000 笔订单，每笔一行"。这是机器最爱、最适合分析的结构。</li>
+                            <li><strong>二维表（交叉表）</strong>：用行和列两个方向同时表达信息，比如"行是月份、列是商品"的销量矩阵。给人看很直观，但机器不好统计。</li>
+                        </ul>
+                        <div class="callout callout-info">
+                            <p>📌 记住一句话：<strong>要分析，用一维表；要汇报，可转二维表</strong>。Excel 的透视表能一键把一维表"变"成二维交叉表，但反过来就麻烦了。所以原始数据一定要存成一维表。</p>
+                        </div>
+
+                        <h5>🔹 一表一主题</h5>
+                        <p>一张表只放<strong>一类主题</strong>的数据。不要把"订单"和"库存"塞进同一张表，也不要把"汇总行"混在"明细行"里。订单表就只放订单，统计的事交给函数和透视表。</p>
+
+                        <h5>🔹 表头必须在第 1 行</h5>
+                        <ul>
+                            <li>字段名放在第 1 行，下面紧接数据，<strong>上方不要留空行</strong>（很多同学喜欢空一行再写表头，这会导致 Excel 认不出表头）。</li>
+                            <li>字段名要<strong>唯一、简短、不含单位</strong>：用"单价"而不是"单价(元)"，单位放到数字格式里。</li>
+                            <li>不要写重复表头：数据中间不要又插一行"订单号/姓名…"，那会毁掉整张表。</li>
+                        </ul>
+
+                        <h5>🔹 数据行、列要连续</h5>
+                        <p>数据行之间<strong>不要留空行</strong>，列之间<strong>不要留空列</strong>。一旦有空行，Excel 的"自动扩展""筛选范围"就会在这里断开。</p>
+
+                        <h5>🔹 不要合并单元格</h5>
+                        <p>合并单元格是"好看但坑多"的典型。它会影响排序、筛选、VLOOKUP、透视表。标题可以合并，<strong>数据区域绝对不要合并</strong>。</p>
+
+                        <h5>🔹 一列只放一种数据类型</h5>
+                        <p>同一列要么全是文本，要么全是数字，不要混着来。例如"金额"列里既有 99 又有"¥99"，Excel 就分不清谁是数字、谁要算。</p>
+
+                        <h5>🔹 数字不带单位，日期要是"真日期"</h5>
+                        <ul>
+                            <li>"¥99""99元""99 元"都要改成纯数字 <strong>99</strong>，再用<strong>单元格格式</strong>显示成货币。</li>
+                            <li>日期必须是可以计算的<strong>真日期</strong>（本质是数字），而不是文本"2025.3.5"。真日期才能做"本月销售额""两个日期差几天"这类计算。</li>
+                        </ul>
+
+                        <h5>🔹 真正的"表格"：Ctrl+T</h5>
+                        <p>选中数据区域按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd>，可以把普通区域变成 Excel 的<strong>智能表格（Table）</strong>。好处：</p>
+                        <ul>
+                            <li>自带<strong>结构化引用</strong>（用列名写公式，如 <code>=[@金额]*0.9</code>，比 A2 好懂）</li>
+                            <li>新增数据时<strong>自动扩展</strong>格式和公式，不用手动拖</li>
+                            <li>自带筛选按钮，样式清爽</li>
+                        </ul>
+
+                        <h5>🔹 冻结首行 / 首列</h5>
+                        <p>数据多时，滚动会看不见表头。用<strong>视图 → 冻结窗格 → 冻结首行</strong>，或选中 B2 后"冻结窗格"可同时冻结首行首列。</p>
+
+                        <h5>🔹 字段命名"四不原则"</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>不重名</h6><p>每个字段名唯一，不出现两个"备注"</p></div>
+                            <div class="fn-card"><h6>不夹单位</h6><p>用"单价"不用"单价元"，单位交给格式</p></div>
+                            <div class="fn-card"><h6>不写空行</h6><p>表头上不空行，数据间不空行</p></div>
+                            <div class="fn-card"><h6>不含特殊符</h6><p>避免空格、斜杠、括号混进字段名</p></div>
+                        </div>
+
+                        <h5>🔹 规范 vs 不规范 对照</h5>
+                        <table class="compare-table">
+                            <thead>
+                                <tr><th>❌ 不规范（Excel 讨厌）</th><th>✅ 规范（Excel 喜欢）</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>表头上方空两行</td><td>表头就在第 1 行</td></tr>
+                                <tr><td>数字写成 "99元"</td><td>纯数字 99 + 货币格式</td></tr>
+                                <tr><td>日期是文本 "2025.3.5"</td><td>真日期 2025/3/5</td></tr>
+                                <tr><td>中间插空行、插重复表头</td><td>数据连续，只有一行表头</td></tr>
+                                <tr><td>合并单元格存数据</td><td>不合并，每行一条记录</td></tr>
+                                <tr><td>一列里文本数字混着放</td><td>一列只放一种类型</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：把"不规范订单表"改成规范表</h4>
+                        <p>我们以下载的"不规范订单表"为例，练习规范化的完整流程：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content">下载"不规范订单表.csv"，用 Excel 打开，先整体<strong>观察</strong>：哪里有空行、哪里数字带了单位、哪里日期像文本。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>删空行</strong>：选中整张表，按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">G</kbd> → 定位条件 → 空值，右键删除整行。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>清单位</strong>：选中"单价""金额"列，按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">H</kbd>，查找"元"替换为空，数字就露出来了。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>修日期</strong>：选中日期列 → 数据 → 分列 → 分隔符号（不选任何符号直接下一步）→ 列数据格式选"日期 YMD"，把 "2025.3.5" 变成真日期。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>去重表头</strong>：把数据中间多出来的"重复表头"行整行删除。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>变智能表</strong>：选中区域按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd>，勾选"表包含标题"，变成带筛选按钮的表格。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>冻结表头</strong>：视图 → 冻结窗格 → 冻结首行，滚动时表头始终可见。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">保存为"<strong>规范订单表.xlsx</strong>"，这一份就是后续所有分析的干净底表。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：不规范订单表（含各类"坏习惯"）</h4>
+                        <p>这张表故意写得很"乱"：有空行、数字带"元"、日期是文本、姓名带多余空格、还有重复表头。下载后照着上面的步骤规范化它：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-3-1">
+                                <thead>
+                                    <tr><th>订单号</th><th>客户姓名</th><th>商品名称</th><th>数量</th><th>单价(元)</th><th>金额</th><th>下单日期</th><th>收货城市</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>DD20250301</td><td>张伟</td><td>保温杯</td><td>1</td><td>19元</td><td>19元</td><td>2025.1.1</td><td>北京</td></tr>
+                                    <tr><td>DD20250302</td><td> 李娜 </td><td>蓝牙耳机</td><td>2</td><td>26元</td><td>52元</td><td>2025.2.4</td><td>上海</td></tr>
+                                    <tr><td>DD20250303</td><td>王芳</td><td>运动鞋</td><td>3</td><td>33元</td><td>99元</td><td>2025.3.7</td><td>广州</td></tr>
+                                    <tr><td>DD20250304</td><td> 刘洋 </td><td>充电宝</td><td>4</td><td>40元</td><td>160元</td><td>2025.4.10</td><td>深圳</td></tr>
+                                    <tr><td>DD20250305</td><td>陈静</td><td>行李箱</td><td>5</td><td>47元</td><td>235元</td><td>2025.5.13</td><td>杭州</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共25条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_1Data()">📥 下载不规范订单表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd> 一键把区域变"智能表"，新增行自动套格式、公式自动下拉。</li>
+                            <li>表头上方千万别留空行，否则 Excel 会把第一行数据误当成表头。</li>
+                            <li>判断日期是不是"真日期"：把它<strong>右对齐</strong>就是真日期，<strong>左对齐</strong>多半是文本。</li>
+                            <li>字段名里不要带括号和单位，比如用"单价"而不是"单价(元)"。</li>
+                            <li>养成习惯：拿到任何表先按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">↓</kbd> 看看数据到哪一行，有没有藏着的空行。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>原始数据单存单放</strong>：不要在原表上直接改，复制一份"清洗底表"再操作。</li>
+                            <li><strong>表头第1行</strong>：字段名唯一、简短、不带单位、不加空格。</li>
+                            <li><strong>数据连续</strong>：行、列都不留空，不插重复表头。</li>
+                            <li><strong>数字纯数字</strong>：单位、货币符号交给单元格格式，不要写进单元格。</li>
+                            <li><strong>日期用真日期</strong>：统一用"年/月/日"，方便后续计算。</li>
+                            <li><strong>不用合并单元格存数据</strong>，数据区域保持"一维清单"。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 把"99元"当数字直接求和 → 带单位的文本不参与计算，结果永远为 0。</li>
+                            <li>❌ 表头上方空了一行 → Excel 识别不出表头，筛选和透视全乱。</li>
+                            <li>❌ 用文本"2025.3.5"当日期 → 不能算相差天数，也不能按"月"分组。</li>
+                            <li>❌ 在数据区合并单元格 → 排序时整块错位，VLOOKUP 找不到值。</li>
+                            <li>❌ 一列里混放文本和数字 → 函数统计时漏算文本那部分。</li>
+                            <li>❌ 不备份就直接改原表 → 改乱了无法回退，务必先复制底表。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>下载"不规范订单表"，完成以下规范化操作并保存：</p>
+                        <ol>
+                            <li>删除所有空行和中间的重复表头行</li>
+                            <li>把"单价""金额"列里的"元"字清除，变成纯数字</li>
+                            <li>把"下单日期"列用分列转成真日期（右对齐）</li>
+                            <li>清除"客户姓名"里多余的前后空格</li>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">T</kbd> 转为智能表，并冻结首行</li>
+                            <li>保存为"规范订单表.xlsx"</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>把规范后的一维订单表，用<strong>透视表</strong>（预习模块4）做成"各城市销售额"的二维交叉表。</li>
+                            <li>研究智能表的<strong>结构化引用</strong>：在"金额"右侧加一列"提成"，公式写 <code>=[@金额]*0.05</code>，观察是否自动填满。</li>
+                            <li>给规范表设置一个<strong>定义名称</strong>（公式 → 定义名称），让整张表可以被一个名字引用。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对数据规范的掌握：</p>
+                        <div id="quiz-3-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 3-2：数据清洗
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2">
+            <div class="lesson-header" onclick="toggleLesson(2)">
+                <div class="lesson-num">2</div>
+                <h3>数据清洗 —— 把脏数据洗干净</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>"清洗"就是把拿到的脏数据，修整成干净、可用、能分析的数据。电商日常里，客户资料、订单导出经常带着空格、符号、重复行。掌握清洗，你就比 80% 的同事更能"干活"。</p>
+
+                        <h5>🔹 三步清洗法：看 → 拆 → 统一</h5>
+                        <div class="flow-row">
+                            <div class="flow-node">① 看<br><small>整体浏览，找出问题</small></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-node">② 拆<br><small>分列、拆分、提取</small></div>
+                            <div class="flow-arrow">→</div>
+                            <div class="flow-node">③ 统一<br><small>格式、单位、去重</small></div>
+                        </div>
+                        <ul>
+                            <li><strong>看</strong>：先扫一遍，发现空格、单位、"¥"、乱日期、重复行在哪。</li>
+                            <li><strong>拆</strong>：用<strong>分列</strong>把混在一起的内容拆开（如"姓名-电话"拆两列）。</li>
+                            <li><strong>统一</strong>：统一格式、统一单位、删除重复项、填补缺失值。</li>
+                        </ul>
+
+                        <h5>🔹 删除重复项</h5>
+                        <p>路径：<strong>数据 → 删除重复项</strong>。关键是<strong>以哪几列为判重依据</strong>——勾选"订单号"就意味着"订单号相同的算重复"，只勾"手机号"则"同手机号算重复"。<strong>判重列选错，就会误删有用的不同记录。</strong></p>
+
+                        <h5>🔹 分列（文本拆分神器）</h5>
+                        <p>路径：<strong>数据 → 分列</strong>。两种模式：</p>
+                        <ul>
+                            <li><strong>分隔符号</strong>：按逗号、空格、横杠、"-"等把一列拆成多列。</li>
+                            <li><strong>固定宽度</strong>：按固定字符位置切分（如身份证前6后8）。</li>
+                            <li>顺带好处：<strong>分列最后一步选"常规"</strong>，能把"文本型数字"直接转成真数字！</li>
+                        </ul>
+
+                        <h5>🔹 TRIM 去首尾空格 + Ctrl+H 去所有空格</h5>
+                        <ul>
+                            <li><code>=TRIM(文本)</code> 去掉<strong>首尾及中间多余空格</strong>（只留单词间一个）。</li>
+                            <li><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">H</kbd> 查找替换：查找" "（空格）替换为空，可<strong>一次性去掉所有空格</strong>（含中间）。</li>
+                        </ul>
+
+                        <h5>🔹 CLEAN 清不可见字符</h5>
+                        <p>从网页/系统导出的数据常带看不见的换行符、制表符。<code>=CLEAN(文本)</code> 可清除这些<strong>不可打印字符</strong>，常与 TRIM 搭配：<code>=TRIM(CLEAN(A1))</code>。</p>
+
+                        <h5>🔹 文本型数字转数值的 4 种方法</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>① 分列</h6><p>数据→分列→直接完成，选常规即转数字</p></div>
+                            <div class="fn-card"><h6>② 选择性粘贴</h6><p>空单元格输入 1 → 复制 → 选中区域 → 选择性粘贴"乘/除"运算</p></div>
+                            <div class="fn-card"><h6>③ 绿色三角</h6><p>选中带绿标的单元格 → 点感叹号 → "转换为数字"</p></div>
+                            <div class="fn-card"><h6>④ 函数</h6><p><code>=VALUE(A1)</code> 或 <code>--A1</code>（两个减号）强制转数值</p></div>
+                        </div>
+
+                        <h5>🔹 不规范日期的处理</h5>
+                        <ul>
+                            <li>分列法：选中日期列 → 分列 → 不选分隔符直接下一步 → 列格式选"日期 YMD"，"2025.3.5"变真日期。</li>
+                            <li>重组法：若日期被拆成 年/月/日 三列，用 <code>=DATE(年,月,日)</code> 重新拼回真日期。</li>
+                        </ul>
+
+                        <h5>🔹 Ctrl+G 定位空值批量填充</h5>
+                        <p>路径：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">G</kbd> → 定位条件 → 空值，然后<strong>输入内容按 Ctrl+Enter</strong>，可一次性给所有空单元格填同一个值（如"未知""待补"）。</p>
+
+                        <h5>🔹 缺失值与 #N/A 的统一处理</h5>
+                        <p>空单元格、<code>#N/A</code> 会让统计出错。策略：缺失的文本填"未知/待补"，缺失的数字填 0 或用 <code>=IFERROR(原公式,"")</code> 把错误转成空，保证下游公式稳定。</p>
+
+                        <h5>🔹 清洗前后做"数据备份"</h5>
+                        <div class="callout callout-warn">
+                            <p>⚠️ 清洗是<strong>不可逆</strong>的修改。动手前一定先<strong>复制一份原始表</strong>命名为"原始_客户资料"，在副本上清洗，保留可追溯的底稿。</p>
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：清洗"客户资料脏数据"</h4>
+                        <p>这张表有：姓名带空格、手机号带"-"、金额带"¥"、日期写成"2025.3.5"、8 条重复行、还有空行。跟着做：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content"><strong>备份</strong>：复制工作表，命名为"原始_客户资料"，在另一份上操作。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>去姓名空格</strong>：在空白列写 <code>=TRIM(C2)</code>（C列为姓名），下拉，复制结果→选择性粘贴"值"覆盖原列。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>清手机号横杠</strong>：选中手机号列，<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">H</kbd>，查找"-"替换为空。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>去金额"¥"</strong>：选中累计消费列，<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">H</kbd>，查找"¥"替换为空，得到数字。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>修日期</strong>：选中注册日期列 → 数据 → 分列 → 直接下一步 → 列格式"日期 YMD"。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>删空行</strong>：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">G</kbd> → 定位条件 → 空值 → 右键删除整行。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>删重复项</strong>：数据 → 删除重复项 → 勾选"客户编号"（以编号判重）→ 确定，8 条重复被移除。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">检查每列类型：编号/手机号为文本，消费为数字，日期为真日期，保存为"清洗后客户资料.xlsx"。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：客户资料脏数据（含空格/-/¥/文本日期/重复/空行）</h4>
+                        <p>45 行，故意混入各种"脏东西"，请下载后完整清洗一遍：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-3-2">
+                                <thead>
+                                    <tr><th>客户编号</th><th>客户姓名</th><th>手机号</th><th>累计消费</th><th>注册日期</th><th>客户等级</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>KH1001</td><td>陈晓东 </td><td>138-1234-5678</td><td>¥1250.50</td><td>2025.1.1</td><td>普通会员</td></tr>
+                                    <tr><td>KH1002</td><td> 李美玲</td><td>139-2345-6789</td><td>¥880.00</td><td>2025.2.4</td><td>银卡会员</td></tr>
+                                    <tr><td>KH1003</td><td>王建国</td><td>137-3456-7890</td><td>¥3200.75</td><td>2025.3.7</td><td>金卡会员</td></tr>
+                                    <tr><td>KH1004</td><td> 张丽华</td><td>158-4567-8901</td><td>¥560.00</td><td>2025.4.10</td><td>钻石会员</td></tr>
+                                    <tr><td>KH1005</td><td>刘志强</td><td>136-5678-9012</td><td>¥1999.99</td><td>2025.5.13</td><td>普通会员</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共45条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_2Data()">📥 下载客户资料脏数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li><code>=TRIM(CLEAN(A1))</code> 是清洗文本的"黄金组合"，一次去掉空格和不可见字符。</li>
+                            <li>分列不仅能拆分，<strong>最后一步选"常规"还能顺手把文本数字转成数值</strong>。</li>
+                            <li>选择性粘贴"乘 1"：复制写了 1 的单元格，对目标区域选择性粘贴→运算→乘，批量转数字。</li>
+                            <li>删除重复项前，<strong>先想清楚以哪几列判重</strong>，判重列不同结果天差地别。</li>
+                            <li><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">G</kbd> 定位空值后，输入内容再按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Enter</kbd> 可批量填充。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>先备份再清洗</strong>：保留"原始_"副本，清洗在副本上进行。</li>
+                            <li><strong>判重列要选对</strong>：删除重复项前确认以哪些字段作为唯一标识。</li>
+                            <li><strong>统一格式</strong>：手机号统一为 11 位纯数字，金额统一为数值，日期统一为真日期。</li>
+                            <li><strong>缺失要标注</strong>：空值填"未知/待补"或 0，别留着让公式报错。</li>
+                            <li><strong>清洗留痕</strong>：可在备注列写明"已去空格/已转日期"，方便复核。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 不改备份直接清洗原表 → 改错了无法恢复，务必先复制底稿。</li>
+                            <li>❌ 删除重复项时<strong>勾错判重列</strong> → 把真正不同的记录当重复删掉。</li>
+                            <li>❌ 只去首尾空格，没去中间的 → 用 TRIM 不够时用 Ctrl+H 全替换空格。</li>
+                            <li>❌ "¥1250"当数字求和 → 带符号是文本，先替换掉"¥"再算。</li>
+                            <li>❌ 文本日期直接分组 → 先分列转成真日期，否则按"月"统计会失败。</li>
+                            <li>❌ 忽略 <code>#N/A</code> → 下游 VLOOKUP 找不到值会连锁报错，用 IFERROR 兜底。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>下载"客户资料脏数据"，独立完成清洗：</p>
+                        <ol>
+                            <li>复制一份命名为"原始_客户资料"作为备份</li>
+                            <li>用 TRIM 清除"客户姓名"的前后空格</li>
+                            <li>用 Ctrl+H 去掉"手机号"中的"-"</li>
+                            <li>用 Ctrl+H 去掉"累计消费"中的"¥"，转为数值</li>
+                            <li>用分列把"注册日期"转成真日期</li>
+                            <li>删除空行，再用"删除重复项"（以客户编号判重）去掉 8 条重复</li>
+                            <li>保存为"清洗后客户资料.xlsx"</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用 <code>=VALUE()</code> 和 <code>--</code> 两种方法，分别把"累计消费"列再转一次数值，对比结果。</li>
+                            <li>用 <strong>分列·固定宽度</strong> 把某个 18 位身份证号拆成"前6/中8/后4"三列，体会固定宽度的用法。</li>
+                            <li>对清洗后的表用 <code>=IFERROR()</code> 包裹一个查找公式，故意制造找不到的情况，观察错误如何被转成空值。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对数据清洗的掌握：</p>
+                        <div id="quiz-3-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================
+             课次 3-3：排序与筛选
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3">
+            <div class="lesson-header" onclick="toggleLesson(3)">
+                <div class="lesson-num">3</div>
+                <h3>排序与筛选 —— 快速找到你要的那批数据</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>一张 60 行的订单表，老板只问"广东省、已完成的、金额前 10 的单子"。你总不能一行行肉眼找。排序和筛选，就是 Excel 帮你"排好队、挑出来"的两把快刀。</p>
+
+                        <h5>🔹 排序前：先选中整行/整表！</h5>
+                        <p>这是<strong>新手最容易翻车</strong>的地方。如果你只点了一个单元格再排序，Excel 会问"是否扩展选定区域"：</p>
+                        <ul>
+                            <li>选"<strong>扩展选定区域</strong>"→ 整行一起动，数据不错位（✅ 正确）。</li>
+                            <li>选"以当前选定区域排序"→ 只有这一列动，<strong>其他列不动，整行数据就错位了</strong>（❌ 灾难）。</li>
+                        </ul>
+                        <div class="callout callout-danger">
+                            <p>🚨 血的教训：排序前一定<strong>选中一整列或整张表</strong>（点列标/表左上角），让 Excel 知道"整行是一家人，要一起移动"。</p>
+                        </div>
+
+                        <h5>🔹 单关键字与多关键字排序</h5>
+                        <ul>
+                            <li><strong>单关键字</strong>：数据 → 排序，选一个"主要关键字"（如订单金额），升序/降序。</li>
+                            <li><strong>多关键字</strong>：加"次要关键字"（如先按省份、再按金额），支持层层嵌套，先排主再排次。</li>
+                        </ul>
+
+                        <h5>🔹 自定义序列</h5>
+                        <p>默认的排序是按字母/数字。但"华东、华北、华南"或"初中高"这种<strong>业务顺序</strong>怎么办？用<strong>自定义序列</strong>（文件→选项→高级→编辑自定义列表，或排序时"次序→自定义序列"），告诉 Excel 你想要的先后。</p>
+
+                        <h5>🔹 按颜色 / 字体颜色排序</h5>
+                        <p>如果某些单元格被手动标了颜色，排序→次序选"单元格颜色"，可按颜色把同色行排到一起。</p>
+
+                        <h5>🔹 按行排序</h5>
+                        <p>极少数情况要按"行"排（转置后的表），排序→选项→按行排序。一般数据分析用不到，了解即可。</p>
+
+                        <h5>🔹 筛选：Ctrl+Shift+L</h5>
+                        <p>路径：<strong>数据 → 筛选</strong>，或快捷键 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">L</kbd>。表头出现下拉箭头，点击即可筛选。</p>
+                        <ul>
+                            <li><strong>文本筛选</strong>：包含、开头是、结尾是、等于，支持<strong>通配符</strong>（<code>*</code> 任意多字符、<code>?</code> 单个字符）。</li>
+                            <li><strong>数字筛选</strong>：前 10 项、高于平均值、介于、大于/小于。</li>
+                            <li><strong>日期筛选</strong>：本月、下月、期间（介于两个日期之间）。</li>
+                            <li><strong>按颜色筛选</strong>：按单元格/字体颜色挑出特定行。</li>
+                            <li><strong>搜索式筛选</strong>：在搜索框输入关键字，实时过滤。</li>
+                        </ul>
+
+                        <h5>🔹 多列叠加筛选</h5>
+                        <p>在"省份"筛"广东"，再在"状态"筛"已完成"，两个条件<strong>叠加</strong>，结果是"广东且已完成"的子集。列越多，筛得越精细。</p>
+
+                        <h5>🔹 高级筛选</h5>
+                        <p>当条件复杂（如"广东或江苏""金额>1000 且 已完成"），用<strong>数据 → 高级筛选</strong>。要点：</p>
+                        <ul>
+                            <li>先写好<strong>条件区域</strong>（表头 + 条件值，和原表隔开几行）。</li>
+                            <li>同一行的多个条件 = "<strong>与</strong>"（同时满足）。</li>
+                            <li>不同行的条件 = "<strong>或</strong>"（满足任一）。</li>
+                            <li>可勾选"<strong>选择不重复的记录</strong>"，顺带去重。</li>
+                        </ul>
+
+                        <h5>🔹 筛选后求和的坑 → 用 SUBTOTAL</h5>
+                        <div class="callout callout-warn">
+                            <p>⚠️ 筛选后如果对可见行用 <code>SUM()</code> 求和，<strong>它仍然会把隐藏行算进去</strong>！正确做法是用 <code>=SUBTOTAL(109, 区域)</code>，109 代表"求和且只算可见单元格"。这是筛选场景下的标准写法。</p>
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：在订单表中筛选与排序</h4>
+                        <p>以"电商订单明细"为例：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content"><strong>备份并选中整表</strong>：点表格左上角选中全部，避免排序错位。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>多关键字排序</strong>：数据 → 排序 → 主要关键字"省份"升序，添加条件"订单金额"降序。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>开启筛选</strong>：<kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">L</kbd>，表头出现下拉箭头。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>文本筛选</strong>：点"类目"箭头 → 文本筛选 → 包含 → 输入"数码"，只留数码类。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>数字筛选</strong>：点"订单金额" → 数字筛选 → 前 10 项（可改成"前 5 项"）。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>日期筛选</strong>：点"下单日期" → 日期筛选 → 本月（或"期间"选起止）。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>多列叠加</strong>：再点"省份"筛"广东"、"订单状态"筛"已完成"，得到精确子集。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>可见求和</strong>：在金额下方写 <code>=SUBTOTAL(109, H:H)</code>（假设金额在 H 列），随筛选实时变化。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商订单明细（60 行，字段干净）</h4>
+                        <p>字段已规范，方便你直接练习排序和筛选：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-3-3">
+                                <thead>
+                                    <tr><th>订单号</th><th>下单日期</th><th>店铺</th><th>类目</th><th>商品名称</th><th>数量</th><th>单价</th><th>订单金额</th><th>省份</th><th>订单状态</th><th>客服</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>EO2025030001</td><td>2025/3/1</td><td>天猫旗舰店</td><td>服饰</td><td>纯棉T恤</td><td>1</td><td>59</td><td>59</td><td>北京</td><td>待付款</td><td>客服小美</td></tr>
+                                    <tr><td>EO2025030002</td><td>2025/3/2</td><td>京东自营</td><td>数码</td><td>充电宝</td><td>2</td><td>199</td><td>398</td><td>上海</td><td>已付款</td><td>客服小杰</td></tr>
+                                    <tr><td>EO2025030003</td><td>2025/3/3</td><td>拼多多店</td><td>美妆</td><td>精华液</td><td>3</td><td>89</td><td>267</td><td>广东</td><td>已发货</td><td>客服小敏</td></tr>
+                                    <tr><td>EO2025030004</td><td>2025/3/4</td><td>抖音小店</td><td>家居</td><td>台灯</td><td>4</td><td>299</td><td>1196</td><td>江苏</td><td>已完成</td><td>客服阿强</td></tr>
+                                    <tr><td>EO2025030005</td><td>2025/3/5</td><td>天猫旗舰店</td><td>食品</td><td>坚果礼盒</td><td>5</td><td>45</td><td>225</td><td>浙江</td><td>退款中</td><td>客服小美</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_3Data()">📥 下载电商订单明细 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>排序前<strong>要么点列标、要么选中整表</strong>，永远别只点一个单元格就排。</li>
+                            <li><kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">L</kbd> 一键开关筛选，比点菜单快得多。</li>
+                            <li>筛选框里输入 <code>*东*</code> 可匹配"含'东'字"的所有省份（通配符）。</li>
+                            <li>想只保留筛选结果、删掉其余？筛选后按 <kbd class="kbd">F5</kbd>→定位可见单元格→复制粘贴到新表。</li>
+                            <li>筛选后求和记住 <code>=SUBTOTAL(109,区域)</code>，别用 SUM。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>排序前选整表</strong>：防止整行错位，这是数据事故的头号原因。</li>
+                            <li><strong>筛选替代删行</strong>：用筛选"看"子集，别急着删数据，删了难恢复。</li>
+                            <li><strong>复杂条件用高级筛选</strong>：或/与关系多时，条件区域写得清清楚楚。</li>
+                            <li><strong>可见求和用 SUBTOTAL</strong>：保证统计只算当前可见行。</li>
+                            <li><strong>业务顺序用自定义序列</strong>：地区、等级这类顺序交给自定义列表。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 只点一个单元格就排序 → 选"当前区域"导致<strong>整行错位</strong>，姓名和订单对不上。</li>
+                            <li>❌ 筛选后还用 <code>SUM()</code> 求和 → 隐藏行仍在计算，结果虚高。</li>
+                            <li>❌ 把"包含"和"等于"搞混 → "包含数码"会匹配"数码配件"，"等于数码"只匹配完全相等。</li>
+                            <li>❌ 高级筛选条件区域<strong>表头拼错</strong> → 与原表字段名不一致就筛不出东西。</li>
+                            <li>❌ 误把筛选当删除 → 以为隐藏的就是没了，其实数据还在，发给别人会露馅。</li>
+                            <li>❌ 忽略自定义序列 → 地区按拼音排，不符合业务汇报顺序。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>用"电商订单明细"完成：</p>
+                        <ol>
+                            <li>按"订单金额"降序排，找出金额最高的 3 单</li>
+                            <li>多关键字排序：先按"类目"升序，再按"数量"降序</li>
+                            <li>开启筛选，筛出"省份=广东 且 订单状态=已完成"的所有订单</li>
+                            <li>用数字筛选找出"订单金额前 10 项"</li>
+                            <li>用日期筛选选出"3 月 10 日之后"的订单</li>
+                            <li>在金额列下方用 <code>=SUBTOTAL(109,…)</code> 求筛选后的可见金额合计</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用<strong>高级筛选</strong>实现"省份=广东 或 江苏"的"或"条件（不同行写条件）。</li>
+                            <li>添加<strong>自定义序列</strong>"待付款,已付款,已发货,已完成,退款中"，按此业务顺序对"订单状态"排序。</li>
+                            <li>结合<strong>按颜色筛选</strong>：先手动给"退款中"标黄，再按黄色筛选出来单独分析。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对排序筛选的掌握：</p>
+                        <div id="quiz-3-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 3-4：条件格式
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4">
+            <div class="lesson-header" onclick="toggleLesson(4)">
+                <div class="lesson-num">4</div>
+                <h3>条件格式 —— 让数据自己"报警"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>条件格式，就是"给数据立规矩"：当某个条件满足时，Excel 自动给单元格上色、加图标、画数据条。库存快没了自动变红、达成率高的自动变绿——数据自己会"报警"，你一眼就能发现问题。</p>
+
+                        <h5>🔹 四大类（其实是五小类）</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>① 突出显示规则</h6><p>大于/小于/重复值/包含文本等，一键高亮</p></div>
+                            <div class="fn-card"><h6>② 最前最后规则</h6><p>前10项、高于平均值、前10%等</p></div>
+                            <div class="fn-card"><h6>③ 数据条</h6><p>在单元格里画长短不一的彩色条</p></div>
+                            <div class="fn-card"><h6>④ 色阶</h6><p>红→黄→绿渐变，看大小分布</p></div>
+                            <div class="fn-card"><h6>⑤ 图标集</h6><p>用 ↑↓ 红绿灯等图标表示趋势</p></div>
+                        </div>
+                        <p>路径：<strong>开始 → 条件格式</strong>。</p>
+
+                        <h5>🔹 公式规则（重点难点）</h5>
+                        <p>"新建规则 → 使用公式确定要设置格式的单元格"，这是最灵活也最容易写错的地方。核心掌握两点：</p>
+                        <ul>
+                            <li><strong>选中区域的写法</strong>：先选中要应用规则的范围，比如 <code>$A$2:$H$50</code>。</li>
+                            <li><strong>相对/绝对引用</strong>：公式基于"<strong>选中区域的左上角第一个单元格</strong>"来写。想让"整行随某列变化"，对该列用<strong>相对行、绝对列</strong>，例如 <code>=$H2&lt;10</code>（H 列绝对、行相对）。这样拖动时，每一行都拿自己的 H 列去比，<strong>整行一起变色</strong>。</li>
+                        </ul>
+                        <div class="formula-line">
+                            <span class="fn">公式规则</span> <code>=$H2&lt;10</code>
+                            <span class="arg">→ 选中 $A$2:$H$50，H 绝对列、2 相对行，逐行判断，整行标红</span>
+                        </div>
+                        <div class="callout callout-info">
+                            <p>💡 记忆口诀：<strong>"$</strong>锁住不变的部分"。列要固定就用 <code>$H</code>，行要跟着变就用 <code>2</code>（不带$）。想整行变色，就锁列不锁行。</p>
+                        </div>
+
+                        <h5>🔹 用 AND / OR / ISBLANK / COUNTIF 做复杂预警</h5>
+                        <ul>
+                            <li><code>=AND($D2&lt;$E2,$F2&gt;100)</code>：库存低于安全库存且近7日销量大 → 紧急。</li>
+                            <li><code>=OR($G2="退款中",$G2="已取消")</code>：订单状态异常 → 标黄。</li>
+                            <li><code>=ISBLANK($C2)</code>：某关键字段为空 → 提醒补录。</li>
+                            <li><code>=COUNTIF($A$2:$A$50,$A2)&gt;1</code>：商品编码出现超过 1 次 → 重复值标红。</li>
+                        </ul>
+
+                        <h5>🔹 管理规则、优先级与"停止如果为真"</h5>
+                        <p>开始 → 条件格式 → 管理规则，可以：调整<strong>优先级</strong>（谁先判断）、修改<strong>应用范围</strong>、勾选<strong>停止如果为真</strong>（满足上层规则就不再往下判，避免颜色打架）。</p>
+
+                        <h5>🔹 条件格式 vs 手动填色</h5>
+                        <div class="callout callout-warn">
+                            <p>⚠️ 手动填色是"死"的——数据变了颜色不变，还得人工改。条件格式是"活"的——数据一变，颜色自动跟着变。<strong>会动态变化的预警，必须用条件格式，不要用油漆桶手动涂。</strong></p>
+                        </div>
+
+                        <h5>🔹 克制使用，避免"彩虹表"</h5>
+                        <p>条件格式虽好，但满屏红绿黄蓝就成了"彩虹表"，反而看不清重点。一个表聚焦 1~2 个核心预警即可。</p>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：给库存表做"报警灯"</h4>
+                        <p>用"店铺商品库存与销售监控表"练习条件格式：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content"><strong>整行标红（库存低于安全库存）</strong>：选中 A2:I41 → 开始 → 条件格式 → 新建规则 → 使用公式 → 输入 <code>=$D2&lt;$E2</code> → 格式选红色填充。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>达成率色阶</strong>：选中"达成率"列 → 条件格式 → 色阶（红-黄-绿），一眼看高低。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>重复商品编码</strong>：选中商品编码列 → 条件格式 → 突出显示规则 → 重复值 → 标橙。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>数据条看销量</strong>：选中"月销量"列 → 条件格式 → 数据条，长短代表销量大小。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>管理规则</strong>：条件格式 → 管理规则，调整优先级，给"整行标红"设最高优先级并勾"停止如果为真"。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">保存为"库存预警表.xlsx"，修改几行库存数据，观察颜色是否自动变化。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：店铺商品库存与销售监控表（40 行）</h4>
+                        <p>字段含库存量、安全库存、近7日销量、月销量、达成率、状态预警，方便做条件格式：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-3-4">
+                                <thead>
+                                    <tr><th>商品编码</th><th>商品名称</th><th>类目</th><th>库存量</th><th>安全库存</th><th>近7日销量</th><th>月销量</th><th>达成率</th><th>状态预警</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>P10001</td><td>纯棉T恤</td><td>服饰</td><td>5</td><td>30</td><td>1</td><td>3</td><td>0.40</td><td>紧急补货</td></tr>
+                                    <tr><td>P10002</td><td>蓝牙耳机</td><td>数码</td><td>18</td><td>40</td><td>8</td><td>32</td><td>0.57</td><td>紧急补货</td></tr>
+                                    <tr><td>P10003</td><td>保湿面膜</td><td>美妆</td><td>31</td><td>50</td><td>15</td><td>75</td><td>0.74</td><td>紧急补货</td></tr>
+                                    <tr><td>P10004</td><td>收纳盒</td><td>家居</td><td>44</td><td>60</td><td>22</td><td>132</td><td>0.91</td><td>紧急补货</td></tr>
+                                    <tr><td>P10005</td><td>坚果礼盒</td><td>食品</td><td>57</td><td>20</td><td>29</td><td>87</td><td>1.08</td><td>正常</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共40条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_4Data()">📥 下载库存与销售监控表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>整行变色的公式，记住"<strong>锁列不锁行</strong>"：<code>=$H2&lt;10</code>，选中整块区域才有效。</li>
+                            <li>公式规则里引用的是"<strong>选中区左上角单元格</strong>"的坐标，写错行列号整片规则就偏了。</li>
+                            <li>"管理规则"里调优先级、改应用范围，比删了重加更高效。</li>
+                            <li>色阶、数据条最适合<strong>看分布</strong>；突出显示规则最适合<strong>抓异常</strong>。</li>
+                            <li>条件格式是"活"的，数据源一改颜色自动变，比手动涂色靠谱一万倍。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>动态预警用条件格式</strong>，绝不用手动填色应付。</li>
+                            <li><strong>整行变色锁列不锁行</strong>，公式引用对准左上角。</li>
+                            <li><strong>控制数量</strong>：一个表聚焦 1~2 个核心预警，别做彩虹表。</li>
+                            <li><strong>用管理规则</strong>理清优先级，必要时勾"停止如果为真"。</li>
+                            <li><strong>规则范围写准确</strong>，避免漏掉新增行（建议配合 Ctrl+T 智能表自动扩展）。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 公式规则只锁了行没锁列（如 <code>=A$2&lt;10</code>）→ 横向拖动时判断列乱套，颜色错位。</li>
+                            <li>❌ 选中区域左上角不是公式里写的单元格 → 整片规则偏移一行/一列。</li>
+                            <li>❌ 用<strong>手动填色</strong>代替条件格式 → 数据一变颜色不跟着变，预警失效。</li>
+                            <li>❌ 规则太多没设优先级 → 颜色互相覆盖，显示混乱。</li>
+                            <li>❌ 条件格式范围没覆盖新增行 → 新数据没报警，漏检。</li>
+                            <li>❌ 满屏五颜六色 → 重点被淹没，反而看不清。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>用"库存与销售监控表"完成：</p>
+                        <ol>
+                            <li>用公式规则 <code>=$D2&lt;$E2</code> 让"库存低于安全库存"的整行标红</li>
+                            <li>对"达成率"列应用红-黄-绿色阶</li>
+                            <li>用"突出显示规则→重复值"标出重复的商品编码</li>
+                            <li>对"月销量"列加数据条</li>
+                            <li>打开管理规则，将整行标红设为最高优先级并勾选"停止如果为真"</li>
+                            <li>修改某行库存低于安全库存，验证颜色是否自动变红</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用 <code>=AND($D2&lt;$E2,$F2&gt;50)</code> 做"库存告急且近期热销"的<strong>双重预警</strong>，整行标深红。</li>
+                            <li>用 <code>=ISBLANK($C2)</code> 对"类目为空"的行标黄，提醒补录。</li>
+                            <li>用<strong>图标集</strong>给"状态预警"加红绿灯图标（紧急=红，预警=黄，正常=绿）。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对条件格式的掌握：</p>
+                        <div id="quiz-3-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 3-5：数据验证
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5">
+            <div class="lesson-header" onclick="toggleLesson(5)">
+                <div class="lesson-num">5</div>
+                <h3>数据验证 —— 从源头保证数据质量</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>清洗是"事后补救"，数据验证是"事前预防"。在别人填表之前，你就定好规矩：这一列只能填男/女、手机号必须 11 位、商品编码不能重复……从源头卡住错误，后面的分析就省心了。（老版本 Excel 叫"数据有效性"，365 里叫"数据验证"，是一回事。）</p>
+
+                        <h5>🔹 入口与允许类型</h5>
+                        <p>路径：<strong>数据 → 数据验证</strong>（数据 → 数据验证 → 设置）。"允许"下拉里可选：</p>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>任何值</h6><p>取消限制（默认）</p></div>
+                            <div class="fn-card"><h6>整数 / 小数</h6><p>限定数字范围，如数量≥0</p></div>
+                            <div class="fn-card"><h6>序列</h6><p>下拉列表，最常用！</p></div>
+                            <div class="fn-card"><h6>日期 / 时间</h6><p>限定日期区间</p></div>
+                            <div class="fn-card"><h6>文本长度</h6><p>如手机号限 11 位</p></div>
+                            <div class="fn-card"><h6>自定义</h6><p>用公式写任意规则</p></div>
+                        </div>
+
+                        <h5>🔹 下拉列表（序列）</h5>
+                        <ul>
+                            <li><strong>直接输入</strong>：允许"序列"，来源写 <code>男,女</code>（英文逗号分隔）。</li>
+                            <li><strong>引用区域</strong>：来源选工作表里的一列（如 <code>=$A$2:$A$10</code>）。</li>
+                            <li><strong>定义名称做动态下拉</strong>：先把选项区定义为名称，来源写 <code>=名称</code>，选项增减自动更新。</li>
+                            <li><strong>INDIRECT 二级联动</strong>（挑战）：省份选"广东"→城市只出广东的市。用"定义名称 + INDIRECT(省份单元格)"实现。</li>
+                        </ul>
+
+                        <h5>🔹 输入信息与出错警告</h5>
+                        <ul>
+                            <li><strong>输入信息</strong>：选中单元格时弹提示，教用户怎么填（如"请选择男或女"）。</li>
+                            <li><strong>出错警告</strong>三种风格：<br>
+                                · <strong>停止</strong>：非法输入直接拦下，不许填（最严格）<br>
+                                · <strong>警告</strong>：弹窗询问"确定要填吗"，可取消<br>
+                                · <strong>信息</strong>：只提醒，不阻止</li>
+                        </ul>
+
+                        <h5>🔹 圈释无效数据</h5>
+                        <p>路径：数据 → 数据验证 → <strong>圈释无效数据</strong>。已存在的旧数据如果不符合规则，会用红圈标出来，方便你逐条修正。</p>
+
+                        <h5>🔹 自定义公式防重复 / 限长度</h5>
+                        <ul>
+                            <li>防重复录入：允许"自定义"，公式 <code>=COUNTIF($B$3:$B$100,B3)=1</code>（B3 在范围内唯一才允许）。</li>
+                            <li>限手机号 11 位：允许"自定义"，公式 <code>=LEN(C3)=11</code>。</li>
+                        </ul>
+
+                        <h5>🔹 用数据验证保护"表头不被改"</h5>
+                        <p>给表头行设置"自定义"公式 <code>=FALSE</code> 并选"停止"警告，别人就无法改表头；或配合<strong>保护工作表</strong>锁定表头区域。</p>
+
+                        <h5>🔹 重要提醒：只防输入不防粘贴</h5>
+                        <div class="callout callout-danger">
+                            <p>🚨 数据验证<strong>只拦"手输"，拦不住"粘贴"</strong>！别人把错数据 Ctrl+V 粘进来，验证规则不生效。要彻底防错，需配合"保护工作表"或事后用"圈释无效数据"复查。</p>
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：给"商品资料登记表"加验证</h4>
+                        <p>我们以"商品资料登记表"为例，从源头规范录入：</p>
+                        <div class="step-list">
+                            <div class="step-item">
+                                <div class="step-content"><strong>性别/类目下拉</strong>：选中"类目"列数据区 → 数据 → 数据验证 → 允许"序列" → 来源输入 <code>服饰,数码,美妆,家居,食品,母婴</code>。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>上架状态下拉</strong>：选中该列 → 序列 → 来源 <code>已上架,待上架,已下架</code>。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>进货价/零售价≥0</strong>：允许"小数"，数据"大于或等于"，最小值 0。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-item"><div class="step-content"><strong>商品编码防重复</strong>：允许"自定义"，公式 <code>=COUNTIF($A$3:$A$100,A3)=1</code>，出错警告选"停止"。</div></div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>输入信息</strong>：切到"输入信息"页，标题写"提示"，内容写"请按规范填写，类目请从下拉选择"。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>出错警告</strong>：切到"出错警告"页，样式"停止"，错误信息写"编码重复或格式不对，请检查！"。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content"><strong>圈释复查</strong>：数据 → 数据验证 → 圈释无效数据，把已有错误用红圈标出修正。</div>
+                            </div>
+                            <div class="step-item">
+                                <div class="step-content">保存为"商品资料登记表（带验证）.xlsx"，发给同事填写。</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：商品资料登记表（模板）+ 客户信息登记表</h4>
+                        <p>两张表都是"模板"：含列头、填写说明与示例，后面留空白行供填写。下载后给它们加上数据验证再使用：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-3-5">
+                                <thead>
+                                    <tr><th>商品编码</th><th>商品名称</th><th>类目</th><th>规格</th><th>单位</th><th>进货价</th><th>零售价</th><th>供应商</th><th>上架状态</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>P20001</td><td>纯棉T恤</td><td>服饰</td><td>M/L/XL</td><td>件</td><td>29</td><td>59</td><td>华盛服饰</td><td>已上架</td></tr>
+                                    <tr><td>P20002</td><td>蓝牙耳机</td><td>数码</td><td>标准</td><td>副</td><td>99</td><td>199</td><td>锐声电子</td><td>已上架</td></tr>
+                                    <tr><td>P20003</td><td>保湿面膜</td><td>美妆</td><td>10片/盒</td><td>盒</td><td>35</td><td>89</td><td>妍丽化妆品</td><td>待上架</td></tr>
+                                    <tr><td>P20004</td><td>收纳盒</td><td>家居</td><td>大号</td><td>个</td><td>12</td><td>29</td><td>宜家家居</td><td>已上架</td></tr>
+                                    <tr><td>P20005</td><td>坚果礼盒</td><td>食品</td><td>1kg</td><td>盒</td><td>45</td><td>99</td><td>三只松鼠</td><td>已上架</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共25条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_5Data()">📥 下载商品资料登记表 (CSV)</button>
+                        <div class="data-preview-wrap" style="margin-top:14px;">
+                            <table class="data-preview" id="preview-3-5b">
+                                <thead>
+                                    <tr><th>客户编号</th><th>客户姓名</th><th>性别</th><th>手机号</th><th>微信</th><th>客户等级</th><th>累计消费</th><th>注册日期</th><th>备注</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>KH2001</td><td>陈晓东</td><td>男</td><td>13812345678</td><td>cd_xm</td><td>普通会员</td><td>1250.50</td><td>2025/1/1</td><td></td></tr>
+                                    <tr><td>KH2002</td><td>李美玲</td><td>女</td><td>13923456789</td><td>lm_ling</td><td>银卡会员</td><td>880.00</td><td>2025/2/4</td><td></td></tr>
+                                    <tr><td>KH2003</td><td>王建国</td><td>男</td><td>13734567890</td><td>wj_guo</td><td>金卡会员</td><td>3200.75</td><td>2025/3/7</td><td>大客户</td></tr>
+                                    <tr><td>KH2004</td><td>张丽华</td><td>女</td><td>15845678901</td><td>zl_hua</td><td>钻石会员</td><td>560.00</td><td>2025/4/10</td><td></td></tr>
+                                    <tr><td>KH2005</td><td>刘志强</td><td>男</td><td>13656789012</td><td>lz_qiang</td><td>普通会员</td><td>1999.99</td><td>2025/5/13</td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共25条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson3_5bData()">📥 下载客户信息登记表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>下拉列表来源用英文逗号分隔，如 <code>男,女,未知</code>。</li>
+                            <li>想让下拉选项自动更新，先把它<strong>定义为名称</strong>，来源写 <code>=名称</code>。</li>
+                            <li>防重复录入：自定义公式 <code>=COUNTIF($A$3:$A$100,A3)=1</code>。</li>
+                            <li>限制手机号 11 位：自定义 <code>=LEN(C3)=11</code>。</li>
+                            <li>填表前用<strong>圈释无效数据</strong>复查历史数据，红圈一处都别漏。</li>
+                            <li>数据验证拦不住粘贴，重要表记得<strong>保护工作表</strong>。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>定好模板再下发</strong>：类目、状态等用下拉，减少乱填。</li>
+                            <li><strong>设输入信息与出错警告</strong>：教用户怎么填，错了一眼看到原因。</li>
+                            <li><strong>关键字段防重复</strong>：编码、手机号等用 COUNTIF 卡死唯一性。</li>
+                            <li><strong>只防输入不防粘贴</strong>：配合保护工作表或事后圈释复查。</li>
+                            <li><strong>表头加保护</strong>：用自定义 FALSE + 停止，防止表头被误改。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 下拉来源用了<strong>中文逗号</strong> → Excel 识别不了一个个选项，下拉为空。</li>
+                            <li>❌ 防重复公式范围写错 → 要么漏检要么误拦，确认 <code>$A$3:$A$100</code> 覆盖实际区域。</li>
+                            <li>❌ 以为验证能拦粘贴 → 别人 Ctrl+V 粘错数据，规则失效，要事后圈释。</li>
+                            <li>❌ 出错警告选成"信息" → 只提醒不阻止，非法数据照样进表。</li>
+                            <li>❌ 忘记设输入信息 → 用户不知怎么填，照样乱写。</li>
+                            <li>❌ 限长度却用"文本长度"配错列 → 应锁在手机号列，别套到姓名上。</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <p>下载两张登记表模板，完成以下验证设置：</p>
+                        <ol>
+                            <li>给"商品资料登记表"的"类目""上架状态"加下拉列表</li>
+                            <li>给"进货价""零售价"设置"小数≥0"</li>
+                            <li>给"商品编码"设自定义公式 <code>=COUNTIF($A$3:$A$100,A3)=1</code> 防重复，出错警告"停止"</li>
+                            <li>给"客户信息登记表"的"性别"加"男,女"下拉，"手机号"加 <code>=LEN(…)=11</code> 限制</li>
+                            <li>为两张表都设置"输入信息"提示</li>
+                            <li>用"圈释无效数据"复查示例行，修正发现的错误</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用<strong>定义名称 + INDIRECT</strong> 实现"省份→城市"的<strong>二级联动下拉</strong>：选"广东"后城市只出广州/深圳/东莞…</li>
+                            <li>把下拉选项区域定义为名称，实现<strong>动态下拉</strong>（增删选项后下拉自动更新）。</li>
+                            <li>给表头行设置自定义 <code>=FALSE</code> + 停止警告，再<strong>保护工作表</strong>，体验表头无法被修改。</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对数据验证的掌握：</p>
+                        <div id="quiz-3-5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结 -->
+<section class="container" style="padding-bottom:60px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <div class="content-block block-knowledge" style="border-left-color:var(--orange);">
+            <h4>🎯 模块3 学习总结</h4>
+            <p>恭喜你完成了模块3的学习！这一模块你拿起了 Excel 处理数据的"四件套"，从一份乱糟糟的脏数据，到能分析、能报警、能防错的干净表：</p>
+            <ul>
+                <li>✅ <strong>数据规范</strong>：一维表、表头第1行、数字不带单位、真日期、Ctrl+T 智能表、冻结窗格</li>
+                <li>✅ <strong>数据清洗</strong>：看→拆→统一，删除重复项、分列、TRIM/CLEAN、文本转数值、定位空值填充</li>
+                <li>✅ <strong>排序与筛选</strong>：整表排序防错位、多关键字、自定义序列、筛选叠加、SUBTOTAL 可见求和</li>
+                <li>✅ <strong>条件格式</strong>：五大类、公式规则锁列不锁行、AND/OR/COUNTIF 预警、管理规则优先级</li>
+                <li>✅ <strong>数据验证</strong>：下拉列表、出错警告、防重复、限长度，从源头卡住错误</li>
+            </ul>
+            <p style="margin-top:12px;">📌 <strong>操作规范要点回顾</strong>：</p>
+            <ul>
+                <li>🔸 表头第1行、数据连续、不合并、一列一类型、数字纯数字、日期用真日期</li>
+                <li>🔸 清洗前先备份原始表，判重列要选对</li>
+                <li>🔸 排序前选中整表，筛选后求和用 SUBTOTAL(109,…)</li>
+                <li>🔸 动态预警用条件格式（锁列不锁行），别用手动填色</li>
+                <li>🔸 数据验证只防输入不防粘贴，重要表配合保护或圈释复查</li>
+            </ul>
+            <p style="margin-top:12px;">接下来进入 <a href="module4.html" style="color:var(--orange);font-weight:bold;">📕 模块4：图表与可视化</a>，把清洗干净的数据变成一眼就懂的图表，让你的汇报更有说服力！</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p>适用于中职电商专业数据分析课程 · 2026年春季学期· 寇亚彬老师授课</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块3 数据生成与测验题目
+// ================================================================
+
+// ============ 课次3-1 不规范订单表（25行，含空行/单位/文本日期/空格） ============
+function makeOrderRow(i) {
+    const customers = ['张伟',' 李娜 ','王芳',' 刘洋 ','陈静','赵磊 ','杨敏',' 黄强','周婷','吴昊',' 徐丽','孙鹏','马超 ',' 朱琳','胡军',' 郭萍','何勇',' 罗静','高翔',' 林峰','郑爽 ',' 谢涛','韩雪',' 唐磊','冯娟'];
+    const products = ['保温杯','蓝牙耳机','运动鞋','充电宝','行李箱','面膜','机械键盘','笔记本','台灯','抱枕'];
+    const cities = ['北京','上海','广州','深圳','杭州','成都','武汉','西安','南京','重庆'];
+    const orderNo = 'DD' + (20250301 + i);
+    const name = customers[i % customers.length];
+    const prod = products[i % products.length];
+    const qty = (i % 5) + 1;
+    const price = (i * 7 + 19);
+    const amount = qty * price;
+    const date = `2025.${((i % 12) + 1)}.${((i * 3) % 28) + 1}`;
+    const city = cities[i % cities.length];
+    return [orderNo, name, prod, qty, price + '元', amount + '元', date, city];
+}
+
+function downloadLesson3_1Data() {
+    const headers = ['订单号', '客户姓名', '商品名称', '数量', '单价(元)', '金额', '下单日期', '收货城市'];
+    const rows = [];
+    const emptyAt = [5, 11, 17, 23];
+    for (let i = 0; i < 25; i++) {
+        if (emptyAt.indexOf(i) !== -1) {
+            rows.push(['', '', '', '', '', '', '', '']);
+        } else {
+            rows.push(makeOrderRow(i));
+        }
+    }
+    downloadCSV('不规范订单表.csv', headers, rows);
+}
+
+// ============ 课次3-2 客户资料脏数据（45行，含空格/-/¥/文本日期/重复/空行） ============
+function makeCustomerRow(i) {
+    const names = ['陈晓东','李美玲','王建国','张丽华','刘志强','杨秀英','赵俊杰','黄文军','周敏','吴海燕','孙磊','徐丽娜','马涛','朱晓明','胡静','郭鹏飞','何艳','罗志祥','高圆','林峰','郑爽','谢娜','韩磊','唐嫣','冯巩'];
+    const levels = ['普通会员','银卡会员','金卡会员','钻石会员'];
+    const phoneSeeds = ['13812345678','13923456789','13734567890','15845678901','13656789012','18867890123','18778901234','15289012345','13590123456','15501234567'];
+    const amounts = [1250.50, 880.00, 3200.75, 560.00, 1999.99, 450.50, 2680.00, 780.25, 1500.00, 320.80];
+    const name = names[i % names.length];
+    const lead = (i % 2 === 1) ? ' ' : '';
+    const trail = (i % 5 === 0) ? ' ' : '';
+    const phone = phoneSeeds[i % phoneSeeds.length];
+    const phoneCell = phone.slice(0, 3) + '-' + phone.slice(3, 7) + '-' + phone.slice(7, 11);
+    const date = `2025.${((i % 12) + 1)}.${((i * 3) % 28) + 1}`;
+    return [
+        'KH' + (1001 + i),
+        lead + name + trail,
+        phoneCell,
+        '¥' + amounts[i % amounts.length].toFixed(2),
+        date,
+        levels[i % levels.length]
+    ];
+}
+
+function downloadLesson3_2Data() {
+    const headers = ['客户编号', '客户姓名', '手机号', '累计消费', '注册日期', '客户等级'];
+    const rows = [];
+    for (let i = 0; i < 35; i++) {
+        rows.push(makeCustomerRow(i));
+    }
+    rows.push(['', '', '', '', '', '']);
+    rows.push(['', '', '', '', '', '']);
+    const dupIdx = [2, 5, 8, 11, 14, 17, 20, 23];
+    dupIdx.forEach(function (di) { rows.push(makeCustomerRow(di)); });
+    downloadCSV('客户资料脏数据.csv', headers, rows);
+}
+
+// ============ 课次3-3 电商订单明细（60行，字段干净） ============
+function downloadLesson3_3Data() {
+    const headers = ['订单号', '下单日期', '店铺', '类目', '商品名称', '数量', '单价', '订单金额', '省份', '订单状态', '客服'];
+    const shops = ['天猫旗舰店', '京东自营', '拼多多店', '抖音小店'];
+    const cats = ['服饰', '数码', '美妆', '家居', '食品', '母婴'];
+    const provinces = ['北京', '上海', '广东', '江苏', '浙江', '四川', '湖北', '山东', '福建', '河南'];
+    const statuses = ['待付款', '已付款', '已发货', '已完成', '退款中'];
+    const kf = ['客服小美', '客服小杰', '客服小敏', '客服阿强'];
+    const goods = {
+        '服饰': ['纯棉T恤', '牛仔裤', '连衣裙', '运动外套'],
+        '数码': ['蓝牙耳机', '充电宝', '机械键盘', '智能手表'],
+        '美妆': ['保湿面膜', '口红', '精华液', '防晒霜'],
+        '家居': ['收纳盒', '香薰蜡烛', '抱枕', '台灯'],
+        '食品': ['坚果礼盒', '巧克力', '咖啡豆', '饼干'],
+        '母婴': ['纸尿裤', '奶瓶', '婴儿湿巾', '童装']
+    };
+    const prices = [59, 199, 89, 299, 45, 128, 69, 159, 39, 99];
+    const rows = [];
+    for (let i = 0; i < 60; i++) {
+        const cat = cats[i % cats.length];
+        const qty = (i % 5) + 1;
+        const price = prices[i % prices.length];
+        rows.push([
+            'EO' + (2025030001 + i),
+            '2025/3/' + ((i % 30) + 1),
+            shops[i % shops.length],
+            cat,
+            goods[cat][i % 4],
+            qty,
+            price,
+            qty * price,
+            provinces[i % provinces.length],
+            statuses[i % statuses.length],
+            kf[i % kf.length]
+        ]);
+    }
+    downloadCSV('电商订单明细.csv', headers, rows);
+}
+
+// ============ 课次3-4 店铺商品库存与销售监控表（40行） ============
+function downloadLesson3_4Data() {
+    const headers = ['商品编码', '商品名称', '类目', '库存量', '安全库存', '近7日销量', '月销量', '达成率', '状态预警'];
+    const names4 = ['纯棉T恤', '蓝牙耳机', '保湿面膜', '收纳盒', '坚果礼盒', '牛仔裤', '充电宝', '精华液', '香薰蜡烛', '连衣裙', '机械键盘', '口红', '抱枕', '咖啡豆', '运动外套', '智能手表', '纸尿裤', '奶瓶', '婴儿湿巾', '童装'];
+    const cats4 = ['服饰', '数码', '美妆', '家居', '食品', '母婴'];
+    const safeStock = [30, 40, 50, 60, 20, 45];
+    const rows = [];
+    for (let i = 0; i < 40; i++) {
+        const ss = safeStock[i % safeStock.length];
+        const stock = (i * 13 % 80) + 5;
+        const last7 = (i * 7 % 50) + 1;
+        const month = last7 * (3 + (i % 4));
+        const rate = ((i * 17 % 60) + 40) / 100;
+        let warn = '正常';
+        if (stock < ss) warn = '紧急补货';
+        else if (stock < ss * 1.5) warn = '预警';
+        rows.push([
+            'P' + (10001 + i),
+            names4[i % names4.length],
+            cats4[i % cats4.length],
+            stock,
+            ss,
+            last7,
+            month,
+            rate,
+            warn
+        ]);
+    }
+    downloadCSV('库存与销售监控表.csv', headers, rows);
+}
+
+// ============ 课次3-5 商品资料登记表（25行：20示例+5空白） ============
+function downloadLesson3_5Data() {
+    const headers = ['商品编码', '商品名称', '类目', '规格', '单位', '进货价', '零售价', '供应商', '上架状态'];
+    const names5 = ['纯棉T恤', '蓝牙耳机', '保湿面膜', '收纳盒', '坚果礼盒', '牛仔裤', '充电宝', '精华液', '香薰蜡烛', '连衣裙', '机械键盘', '口红', '抱枕', '咖啡豆', '运动外套', '智能手表', '纸尿裤', '奶瓶', '婴儿湿巾', '童装'];
+    const cats5 = ['服饰', '数码', '美妆', '家居', '食品', '服饰', '数码', '美妆', '家居', '服饰', '数码', '美妆', '家居', '食品', '服饰', '数码', '母婴', '母婴', '母婴', '母婴'];
+    const specs = ['M/L/XL', '标准', '10片/盒', '大号', '1kg', 'S/M/L', '标准', '30ml', '简约', '均码', '有线', '3.5g', '北欧', '500g', '均码', 'GPS版', 'S/M/L', '宽口', '80抽', '90cm'];
+    const units = ['件', '副', '盒', '个', '盒', '件', '副', '盒', '个', '件', '副', '盒', '个', '盒', '件', '副', '包', '个', '包', '件'];
+    const inPrices = [29, 99, 35, 12, 45, 59, 69, 28, 19, 49, 129, 45, 15, 39, 79, 199, 59, 19, 25, 39];
+    const outPrices = [59, 199, 89, 29, 99, 129, 159, 89, 49, 99, 299, 99, 39, 89, 159, 399, 129, 49, 59, 99];
+    const suppliers = ['华盛服饰', '锐声电子', '妍丽化妆品', '宜家家居', '三只松鼠', '海澜之家', '小米科技', '欧莱雅', '名创优品', '优衣库', '罗技', '完美日记', '网易严选', '良品铺子', '安踏', '华为', '帮宝适', '贝亲', '好奇', '全棉时代'];
+    const status5 = ['已上架', '已上架', '待上架', '已上架', '已上架', '已上架', '已上架', '待上架', '已上架', '已上架', '已上架', '已上架', '已上架', '已上架', '待上架', '已上架', '已上架', '已上架', '待上架', '已上架'];
+    const rows = [];
+    for (let i = 0; i < 20; i++) {
+        rows.push([
+            'P' + (20001 + i),
+            names5[i], cats5[i], specs[i], units[i],
+            inPrices[i], outPrices[i], suppliers[i], status5[i]
+        ]);
+    }
+    for (let k = 0; k < 5; k++) {
+        rows.push(['', '', '', '', '', '', '', '', '']);
+    }
+    downloadCSV('商品资料登记表.csv', headers, rows);
+}
+
+// ============ 课次3-5 客户信息登记表（25行：20示例+5空白） ============
+function downloadLesson3_5bData() {
+    const headers = ['客户编号', '客户姓名', '性别', '手机号', '微信', '客户等级', '累计消费', '注册日期', '备注'];
+    const names5b = ['陈晓东', '李美玲', '王建国', '张丽华', '刘志强', '杨秀英', '赵俊杰', '黄文军', '周敏', '吴海燕', '孙磊', '徐丽娜', '马涛', '朱晓明', '胡静', '郭鹏飞', '何艳', '罗志祥', '高圆', '林峰'];
+    const wechat = ['cd_xm', 'lm_ling', 'wj_guo', 'zl_hua', 'lz_qiang', 'yx_ying', 'zj_jie', 'hw_jun', 'zm_min', 'wh_yan', 'sl_lei', 'xl_na', 'mt_tao', 'zx_ming', 'hj_jing', 'gp_fei', 'hy_yan', 'lz_xiang', 'gy_yuan', 'lf_feng'];
+    const levels5b = ['普通会员', '银卡会员', '金卡会员', '钻石会员'];
+    const phones5b = ['13812345678', '13923456789', '13734567890', '15845678901', '13656789012', '18867890123', '18778901234', '15289012345', '13590123456', '15501234567'];
+    const amounts5b = [1250.50, 880.00, 3200.75, 560.00, 1999.99, 450.50, 2680.00, 780.25, 1500.00, 320.80];
+    const rows = [];
+    for (let i = 0; i < 20; i++) {
+        const remark = (i === 2) ? '大客户' : '';
+        rows.push([
+            'KH' + (2001 + i),
+            names5b[i],
+            (i % 2 === 0 ? '男' : '女'),
+            phones5b[i % phones5b.length],
+            wechat[i],
+            levels5b[i % levels5b.length],
+            amounts5b[i % amounts5b.length].toFixed(2),
+            `2025/${((i % 12) + 1)}/${((i * 3) % 28) + 1}`,
+            remark
+        ]);
+    }
+    for (let k = 0; k < 5; k++) {
+        rows.push(['', '', '', '', '', '', '', '', '']);
+    }
+    downloadCSV('客户信息登记表.csv', headers, rows);
+}
+
+// ================================================================
+//  测验题目（每课10道，共50道）
+// ================================================================
+
+// ===== 课次3-1 数据规范与表结构 测验 =====
+const quiz3_1 = [
+    {
+        q: '关于"一维表"，下列说法正确的是？',
+        opts: ['每行可以放多种主题的数据', '每行是一条记录，最适合做数据分析', '一维表不能进行排序', '一维表就是合并后的表格'],
+        ans: 1,
+        explain: '一维表（清单式）每一行是一条记录、每一列是一个字段，机器最容易分析和统计，是原始数据的推荐结构。'
+    },
+    {
+        q: '规范的字段名应该满足什么要求？',
+        opts: ['带单位，如"单价(元)"', '可以重复出现', '唯一、简短、不带单位、写在第1行', '写在表格正中间'],
+        ans: 2,
+        explain: '规范字段名要唯一、简短、不含单位（单位交给单元格格式），并且放在第1行，上方不要留空行。'
+    },
+    {
+        q: '金额列里写着"99元"，正确的处理方式是？',
+        opts: ['改成纯数字 99，再用货币格式显示', '保持原样更直观', '把整列标红', '直接删除该列'],
+        ans: 0,
+        explain: '带单位的文本不参与计算。应先去掉"元"变成纯数字 99，再用单元格格式显示为货币。'
+    },
+    {
+        q: '怎样快速判断一个"日期"是不是真正的日期？',
+        opts: ['看字体大小', '看有没有货币符号', '看列宽', '右对齐一般是真日期，左对齐多是文本'],
+        ans: 3,
+        explain: '真日期本质是数字，默认右对齐；文本日期默认左对齐。这是最直观的判断方法。'
+    },
+    {
+        q: '选中数据区域后按 Ctrl+T 的作用是？',
+        opts: ['合并单元格', '把区域变成智能表，格式和公式自动扩展', '删除数据', '打开页眉页脚'],
+        ans: 1,
+        explain: 'Ctrl+T 把普通区域转为智能表（Table），支持结构化引用，新增数据时格式和公式自动扩展。'
+    },
+    {
+        q: '关于合并单元格，下列说法正确的是？',
+        opts: ['数据区域不建议合并，仅标题行可合并居中', '数据区域应大量使用合并', '合并让 VLOOKUP 更好用', '合并不影响排序和筛选'],
+        ans: 0,
+        explain: '仅在标题行使用合并居中，数据区域合并会破坏排序、筛选和函数计算。'
+    },
+    {
+        q: '同一列的数据应该遵循什么原则？',
+        opts: ['文本和数字可以混着放', '类型随意', '只放一种数据类型', '留空最好'],
+        ans: 2,
+        explain: '一列只放一种数据类型，混放会导致函数统计时漏算文本部分。'
+    },
+    {
+        q: '让表头在向下滚动时始终可见，应该？',
+        opts: ['隐藏其他列', '把表头放到表格最后', '缩小字号', '视图 → 冻结窗格 → 冻结首行'],
+        ans: 3,
+        explain: '数据多时用"冻结首行"，滚动时表头固定在顶部；也可选中 B2 后冻结窗格同时锁首行首列。'
+    },
+    {
+        q: '字段命名"四不原则"不包括以下哪一项？',
+        opts: ['不重名', '必须用英文', '不夹单位', '表头上不空行'],
+        ans: 1,
+        explain: '四不原则是不重名、不夹单位、不写空行、不含特殊符号；字段名用中文即可，不必英文。'
+    },
+    {
+        q: '"一表一主题"是指？',
+        opts: ['一张表只放一类主题的数据', '一张表尽量塞所有数据', '字段越多越好', '表头必须合并'],
+        ans: 0,
+        explain: '一张表只放一类主题（如只放订单），汇总的事交给函数和透视表，避免主题混杂。'
+    }
+];
+
+// ===== 课次3-2 数据清洗 测验 =====
+const quiz3_2 = [
+    {
+        q: '"三步清洗法"指的是？',
+        opts: ['看 → 拆 → 统一', '删除 → 修改 → 保存', '复制 → 粘贴 → 保存', '排序 → 筛选 → 求和'],
+        ans: 0,
+        explain: '清洗先整体"看"问题，再"拆"分提取，最后"统一"格式单位去重，即看→拆→统一。'
+    },
+    {
+        q: '使用"删除重复项"时，最关键的是？',
+        opts: ['随便勾几列', '明确以哪几列作为判重依据', '只删第一行', '按颜色判断'],
+        ans: 1,
+        explain: '判重列决定"什么样算重复"。勾选"订单号"就按订单号判重，选错会误删不同的有效记录。'
+    },
+    {
+        q: '关于"分列"功能，以下哪一项它做不到？',
+        opts: ['按分隔符号拆分', '把文本型数字顺手转成数值', '按固定宽度拆分', '把二维交叉表转成一维表'],
+        ans: 3,
+        explain: '分列用于拆分单列内容，不能把二维表转一维表（那要用透视/逆透视）。'
+    },
+    {
+        q: '用于去除单元格首尾及多余空格的函数是？',
+        opts: ['CLEAN', 'TRIM', 'LEFT', 'RIGHT'],
+        ans: 1,
+        explain: 'TRIM 去掉首尾和中间多余空格（只保留单词间一个），常与 CLEAN 搭配清洗文本。'
+    },
+    {
+        q: '用于清除从系统导出的不可见字符（换行符、制表符）的函数是？',
+        opts: ['CLEAN', 'TRIM', 'SUBSTITUTE', 'REPLACE'],
+        ans: 0,
+        explain: 'CLEAN 清除不可打印字符，常与 TRIM 组合：=TRIM(CLEAN(A1))。'
+    },
+    {
+        q: '把"文本型数字"转成真正数值，以下哪一项做法不对？',
+        opts: ['用分列最后选"常规"', '选择性粘贴"乘1"', '直接求和会自动转换', '用 VALUE() 或 --'],
+        ans: 2,
+        explain: '直接对文本型数字求和结果为 0，不会自动转换；需分列、选择性粘贴、VALUE 或 -- 处理。'
+    },
+    {
+        q: '按 Ctrl+G 定位空值后，要批量给所有空单元格填同一个值，应？',
+        opts: ['直接按回车', '双击单元格', '按 Delete', '输入内容后按 Ctrl+Enter'],
+        ans: 3,
+        explain: '定位空值后输入内容，再按 Ctrl+Enter 可一次性填充到所有选中的空单元格。'
+    },
+    {
+        q: '"清洗前先做数据备份"的正确做法是？',
+        opts: ['直接在原表上改', '备份是多余的', '先复制一份原始表，在副本上清洗', '只备份公式'],
+        ans: 2,
+        explain: '清洗是不可逆修改，务必先复制"原始_"底稿，在副本上操作以便追溯。'
+    },
+    {
+        q: '不规范日期"2025.3.5"应该怎么处理？',
+        opts: ['直接当日期使用', '删除该列', '用分列选"日期 YMD"或 DATE() 重组', '加引号变成文本'],
+        ans: 1,
+        explain: '分列最后一步选日期格式 YMD，可把"2025.3.5"转成真日期；也可用 DATE(年,月,日) 重组。'
+    },
+    {
+        q: '对于缺失值和 #N/A，合理的统一处理策略是？',
+        opts: ['忽略不管', '写成 #N/A 占位', '文本缺失填"未知/待补"，或用 IFERROR 兜底', '全部删行'],
+        ans: 2,
+        explain: '缺失文本填"未知/待补"，缺失数字填 0，公式可能报错时用 IFERROR 转成空，保证下游稳定。'
+    }
+];
+
+// ===== 课次3-3 排序与筛选 测验 =====
+const quiz3_3 = [
+    {
+        q: '排序之前应该先做什么，才能避免数据错位？',
+        opts: ['只点一个单元格就排', '选中整列或整张表再排', '先把其他列清空', '按 F5 键'],
+        ans: 1,
+        explain: '只点一个单元格排序，若选"当前区域"会导致整行错位。应选中整列或整表，让整行一起移动。'
+    },
+    {
+        q: '关于"多关键字排序"，下列说法正确的是？',
+        opts: ['只能按一个字段排序', '不能排序', '可设置主要关键字和次要关键字层层排序', '排序会删除数据'],
+        ans: 2,
+        explain: '多关键字排序支持主要+次要关键字，例如先按省份、再按金额，先排主后排次。'
+    },
+    {
+        q: '"自定义序列"（如华东、华北、华南）的主要用途是？',
+        opts: ['按拼音排序', '按业务需要的顺序排列数据', '删除数据', '合并单元格'],
+        ans: 0,
+        explain: '自定义序列让 Excel 按你设定的业务顺序（而非拼音/数字）排序，如地区、等级顺序。'
+    },
+    {
+        q: '快速开启/关闭"筛选"的快捷键是？',
+        opts: ['Ctrl+L', 'Alt+F', 'Ctrl+F', 'Ctrl+Shift+L'],
+        ans: 3,
+        explain: 'Ctrl+Shift+L 一键开关筛选，比点菜单更快；表头会出现下拉箭头。'
+    },
+    {
+        q: '在文本筛选中，代表"任意多个字符"的通配符是？',
+        opts: ['# 代表任意多字符', '* 代表任意多个字符', '? 代表任意多个字符', '& 是特殊符号'],
+        ans: 1,
+        explain: '* 匹配任意多个字符，? 匹配单个字符。例如 "*东*" 可匹配所有含"东"的内容。'
+    },
+    {
+        q: '数字筛选中的"前 10 项"可以？',
+        opts: ['只能显示前 3 项', '可设置为前 N 项（不一定是 10）', '只能筛选高于平均值', '不能筛选数字'],
+        ans: 0,
+        explain: '"前 10 项"是默认说法，点开后可改成前 5 项、前 20 项等任意数量。'
+    },
+    {
+        q: '高级筛选中，条件区域的"同一行"和"不同行"分别表示？',
+        opts: ['同一行是"或"，不同行是"与"', '不同行是"与"，同一行是"或"', '同一行是"与"，不同行是"或"', '都表示"与"'],
+        ans: 2,
+        explain: '高级筛选同一行的多个条件为"与"（同时满足），不同行的条件为"或"（满足任一）。'
+    },
+    {
+        q: '筛选后只对"可见行"求和，应该使用？',
+        opts: ['SUM()', 'AVERAGE()', 'COUNT()', 'SUBTOTAL(109, 区域)'],
+        ans: 3,
+        explain: 'SUM 会把隐藏行也算进去；SUBTOTAL(109,…) 只对可见单元格求和，是筛选场景的标准写法。'
+    },
+    {
+        q: '条件格式之外，排序时也可以？',
+        opts: ['不能按颜色排序', '只能按字体颜色排', '只能升序排', '可按单元格颜色排序'],
+        ans: 3,
+        explain: '排序→次序可选"单元格颜色"，把同色行排到一起；也能按字体颜色排序。'
+    },
+    {
+        q: '多列叠加筛选（如省份=广东 且 状态=已完成）的结果是？',
+        opts: ['多列条件叠加求交集的子集', '只能筛一列', '自动删除其余数据', '等同于排序'],
+        ans: 0,
+        explain: '在省份筛广东、状态筛已完成，多个条件叠加得到"广东且已完成"的交集子集。'
+    }
+];
+
+// ===== 课次3-4 条件格式 测验 =====
+const quiz3_4 = [
+    {
+        q: '条件格式的主要作用是？',
+        opts: ['让满足条件的单元格自动变色、加数据条或图标等', '只能手动填色', '只能改字体', '删除数据'],
+        ans: 0,
+        explain: '条件格式按规则自动设置格式，数据变化时颜色/图标自动跟着变，实现"数据报警"。'
+    },
+    {
+        q: '以下哪一项不属于条件格式的五大类？',
+        opts: ['突出显示单元格规则', '图表', '数据条', '色阶'],
+        ans: 1,
+        explain: '五大类为：突出显示规则、最前最后规则、数据条、色阶、图标集；图表不属于条件格式。'
+    },
+    {
+        q: '想让"库存低于安全库存"的整行变色，公式应写成？',
+        opts: ['=$H$2<10', '=H2<10', '=$H2<10（锁列不锁行）', '=H$2<10'],
+        ans: 2,
+        explain: '选中整块区域后，公式基于左上角单元格写；锁列不锁行（=$H2<10）能让每一行拿自己的 H 列判断，整行一起变色。'
+    },
+    {
+        q: '条件格式的"公式规则"中，公式是基于哪个单元格来写的？',
+        opts: ['区域的最后一行', '任意单元格', '第一列', '选中区域的左上角第一个单元格'],
+        ans: 3,
+        explain: '公式相对引用以选中区域左上角单元格为基准，写错行列号整片规则会偏移。'
+    },
+    {
+        q: '要把"重复出现的商品编码"标红，可以用？',
+        opts: ['COUNTIF 公式或"突出显示规则→重复值"', '只能手动找', '只能排序', '只能筛选'],
+        ans: 0,
+        explain: '可用"突出显示规则→重复值"一键标红，也可用 =COUNTIF($A$2:$A$50,$A2)>1 自定义公式。'
+    },
+    {
+        q: '与手动填色相比，条件格式的最大优势是？',
+        opts: ['两者没区别', '条件格式随数据自动变化，手动填色不变', '手动填色更智能', '都不能预警'],
+        ans: 1,
+        explain: '手动填色是"死"的，数据变了颜色不变；条件格式是"活"的，会自动跟随数据变化。'
+    },
+    {
+        q: '通过"管理规则"可以做什么？',
+        opts: ['只能删除规则', '只能添加规则', '调整优先级、修改应用范围、设置停止如果为真', '只能改颜色'],
+        ans: 2,
+        explain: '管理规则可调整优先级、修改应用范围、勾选"停止如果为真"，避免多条规则颜色打架。'
+    },
+    {
+        q: '使用"公式规则"让整行变色时，应该？',
+        opts: ['只选中一行', '只选中一列', '随便选', '选中整块区域（如 $A$2:$H$50）'],
+        ans: 3,
+        explain: '公式规则的作用范围由选中的区域决定，要整行变色必须选中整块数据区域。'
+    },
+    {
+        q: '使用条件格式时应注意？',
+        opts: ['避免"彩虹表"，聚焦 1~2 个核心预警', '颜色越多越好', '不用色阶', '不用图标集'],
+        ans: 0,
+        explain: '满屏五颜六色反而看不清重点，一个表聚焦 1~2 个核心预警即可。'
+    },
+    {
+        q: '"图标集"属于以下哪一类功能？',
+        opts: ['排序功能', '条件格式五大类之一', '数据验证', '数据透视表'],
+        ans: 1,
+        explain: '图标集（红绿灯、箭头等）是条件格式五大类之一，用于直观表示大小或趋势。'
+    }
+];
+
+// ===== 课次3-5 数据验证 测验 =====
+const quiz3_5 = [
+    {
+        q: 'Excel 365 中的"数据验证"，在老版本中叫什么？',
+        opts: ['数据有效性', '条件格式', '数据透视', '排序筛选'],
+        ans: 0,
+        explain: '新版本叫"数据验证"，旧版（如 2003/2010）叫"数据有效性"，本质上是同一功能。'
+    },
+    {
+        q: '设置下拉列表（序列）时，来源里的选项之间要用什么分隔？',
+        opts: ['空格', '英文逗号', '中文逗号', '分号'],
+        ans: 1,
+        explain: '序列来源用半角（英文）逗号分隔，如 男,女；用中文逗号 Excel 无法识别各个选项。'
+    },
+    {
+        q: '要防止"商品编码"重复录入，自定义公式可写为？',
+        opts: ['SUM($A$3:$A$100,A3)=1', 'IF($A$3:$A$100,A3)', 'COUNTIF($A$3:$A$100,A3)=1', 'LEN($A$3:$A$100)=1'],
+        ans: 2,
+        explain: '=COUNTIF($A$3:$A$100,A3)=1 表示当前编码在范围内唯一才允许录入，重复则报错。'
+    },
+    {
+        q: '数据验证最大的"盲区"是？',
+        opts: ['拦不住手输', '会删除数据', '不能筛选', '拦不住"粘贴"（Ctrl+V）'],
+        ans: 3,
+        explain: '数据验证只拦截手动输入，别人粘贴进来的错误数据不生效，需配合保护工作表或圈释复查。'
+    },
+    {
+        q: '出错警告选"停止"表示？',
+        opts: ['非法输入直接拦下、不许填写', '只提醒不阻止', '自动改成正确值', '忽略错误'],
+        ans: 0,
+        explain: '"停止"最严格，非法值直接禁止录入；"警告"可取消，"信息"只提醒。'
+    },
+    {
+        q: '限制"手机号"必须为 11 位，自定义公式可写为？',
+        opts: ['COUNTIF($C$3:$C$100,C3)=1', 'LEN(C3)=11', 'SUM(C3)=11', 'IFERROR(C3,0)'],
+        ans: 1,
+        explain: '=LEN(C3)=11 检查字符长度是否为 11，可配合"文本长度"或"自定义"使用。'
+    },
+    {
+        q: '"圈释无效数据"的作用是？',
+        opts: ['删除不符合规则的数据', '排序数据', '用红圈标出已存在但不符规则的数据', '筛选数据'],
+        ans: 2,
+        explain: '对已有的历史数据，圈释无效数据会用红圈标出违反验证规则的单元格，方便逐条修正。'
+    },
+    {
+        q: '实现"省份→城市"的二级联动下拉，通常会用到？',
+        opts: ['VLOOKUP', 'SUMIF', '数据透视表', 'INDIRECT + 定义名称'],
+        ans: 3,
+        explain: '二级联动先用定义名称管理各组城市，再用 INDIRECT(省份单元格) 动态引用对应名称。'
+    },
+    {
+        q: '想保护表头不被误改，可以用？',
+        opts: ['自定义公式 =FALSE 并设"停止"警告', '合并单元格', '筛选', '排序'],
+        ans: 0,
+        explain: '对表头设置自定义公式 =FALSE 且出错警告"停止"，任何修改都会被拒绝；也可配合保护工作表。'
+    },
+    {
+        q: '"输入信息"选项卡的作用是？',
+        opts: ['删除数据', '选中单元格时弹出提示，教用户如何填写', '自动填充', '排序'],
+        ans: 1,
+        explain: '输入信息会在用户选中单元格时弹出友好提示（如"请选择男或女"），减少乱填。'
+    }
+];
+
+// ================================================================
+//  初始化所有测验
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-3-1', quiz3_1);
+    initQuiz('quiz-3-2', quiz3_2);
+    initQuiz('quiz-3-3', quiz3_3);
+    initQuiz('quiz-3-4', quiz3_4);
+    initQuiz('quiz-3-5', quiz3_5);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,1664 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>模块2：公式与函数 - Excel学习平台</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>📊</text></svg>">
+</head>
+<body>
+
+<!-- 导航栏 -->
+<nav class="navbar">
+    <div class="container nav-flex">
+        <a href="index.html" class="logo">📊 Excel学习平台</a>
+        <button class="menu-toggle" id="menuToggle" aria-label="菜单">☰</button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="index.html">🏠 首页</a></li>
+            <li><a href="module1.html">📗 模块1</a></li>
+            <li><a href="module2.html" class="active">📘 模块2</a></li>
+            <li><a href="module3.html">📙 模块3</a></li>
+            <li><a href="module4.html">📕 模块4</a></li>
+            <li><a href="module5.html">📓 模块5</a></li>
+            <li><a href="module6.html">📒 模块6</a></li>
+        </ul>
+    </div>
+</nav>
+
+<!-- 模块头部 -->
+<header class="module-hero module-hero-blue">
+    <div class="container" style="position:relative;z-index:1;">
+        <div class="hero-badge">模块2 · 基础→进阶 · 生活→工作</div>
+        <h1>📘 公式与函数</h1>
+        <p>Excel 真正的威力在"算"上<br>学会公式，让数据自己算给你看</p>
+    </div>
+    <div class="hero-wave">
+        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+            <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,80 1440,60 L1440,120 L0,120 Z" fill="var(--bg)"/>
+        </svg>
+    </div>
+</header>
+
+<!-- 学习进度 -->
+<div class="container">
+    <div class="module-progress">
+        <div class="progress-text" id="progressText">加载中...</div>
+        <div class="progress-bar-bg">
+            <div class="progress-bar-fill" id="progressFill" style="width:0%" data-module="2" data-total="7"></div>
+        </div>
+    </div>
+</div>
+
+<!-- 课次内容 -->
+<div class="container">
+    <div class="lesson-list">
+
+        <!-- ============================================
+             课次 2-1：公式入门
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-1">
+            <div class="lesson-header" onclick="toggleLesson(1)">
+                <div class="lesson-num">1</div>
+                <h3>公式入门 —— 从"算总价"开始认识公式</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-1">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>在 Excel 里，"计算"不是用计算器按出来的，而是<strong>写一条公式</strong>，让 Excel 帮我们算。公式写一次，以后数据变了，结果会自动跟着变——这就是 Excel 最迷人的地方。</p>
+
+                        <h5>🔹 第一条规矩：公式必须以 <span class="kbd">=</span> 开头</h5>
+                        <p>所有公式、所有函数，前面都要加一个英文等号 <strong>=</strong>。不加等号，Excel 会把它当成普通文字。比如想算 3+5，要写 <code>=3+5</code>，而不是 <code>3+5</code>。</p>
+
+                        <h5>🔹 五种算术运算符</h5>
+                        <div class="shortcut-table">
+                            <table>
+                                <thead><tr><th>运算符</th><th>含义</th><th>例子</th><th>结果</th></tr></thead>
+                                <tbody>
+                                    <tr><td><span class="kbd">+</span></td><td>加</td><td><code>=2+3</code></td><td>5</td></tr>
+                                    <tr><td><span class="kbd">-</span></td><td>减</td><td><code>=10-4</code></td><td>6</td></tr>
+                                    <tr><td><span class="kbd">*</span></td><td>乘（星号）</td><td><code>=6*7</code></td><td>42</td></tr>
+                                    <tr><td><span class="kbd">/</span></td><td>除（斜杠）</td><td><code>=20/4</code></td><td>5</td></tr>
+                                    <tr><td><span class="kbd">^</span></td><td>乘方（幂）</td><td><code>=2^3</code></td><td>8</td></tr>
+                                    <tr><td><span class="kbd">%</span></td><td>百分比</td><td><code>=50%</code></td><td>0.5</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5>🔹 运算优先级（先算谁后算谁）</h5>
+                        <p>和数学一样，Excel 也讲"先乘除后加减"。规则是：</p>
+                        <div class="formula-line">括号 <span class="fn">( )</span> &gt; 乘方 <span class="fn">^</span> &gt; 乘除 <span class="fn">* /</span> &gt; 加减 <span class="fn">+ -</span></div>
+                        <ul>
+                            <li><code>=2+3*4</code> 先算 3×4=12，再加 2，结果是 <strong>14</strong></li>
+                            <li><code>=(2+3)*4</code> 先算括号里 2+3=5，再 ×4，结果是 <strong>20</strong></li>
+                        </ul>
+                        <div class="callout callout-info">💡 拿不准先算谁的时候，<strong>一律加括号</strong>！括号能让你的意图清清楚楚，也最不容易出错。</div>
+
+                        <h5>🔹 关键技巧：公式里用"单元格地址"，别用数字</h5>
+                        <p>这是新手最容易踩的坑。假设 B2 是单价、C2 是数量，<strong>正确写法</strong>是 <code>=B2*C2</code>，而不是 <code>=12.9*2</code>。</p>
+                        <ul>
+                            <li>用地址：以后你把 B2 的单价改成 15，金额会自动重算。</li>
+                            <li>用死数字：改了单价，公式还是 25.8，永远不会变——这就失去了 Excel 的意义。</li>
+                        </ul>
+
+                        <h5>🔹 编辑栏与 F2：查看和编辑公式</h5>
+                        <p>单元格里默认只显示<strong>计算结果</strong>，真正的公式藏在<strong>编辑栏</strong>（顶部 fx 那一行）。</p>
+                        <ul>
+                            <li>单击单元格 → 编辑栏里看到完整公式。</li>
+                            <li>双击单元格，或按 <span class="kbd">F2</span>，可以直接在单元格里修改公式。</li>
+                        </ul>
+
+                        <h5>🔹 一键看穿所有公式：<span class="kbd">Ctrl</span>+<span class="kbd">~</span></h5>
+                        <p>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">~</kbd>（波浪号，数字 1 左边那个键），整张表会从"显示结果"切换成"显示公式"，方便你检查哪里写错了。再按一次恢复原样。也可以用 <strong>公式</strong> 选项卡 → <strong>显示公式</strong>。</p>
+
+                        <h5>🔹 公式的复制与自动填充</h5>
+                        <p>写好第一个公式后，不用一个个重写。选中含公式的单元格，拖动右下角的<strong>填充柄</strong>（小绿十字）往下拉，Excel 会把公式"智能"地复制到每一行，地址自动顺延（这叫<strong>相对引用</strong>，下节课细讲）。</p>
+
+                        <h5>🔹 自动求和快捷键：<span class="kbd">Alt</span>+<span class="kbd">=</span></h5>
+                        <p>想对一列数求和？选中要放结果的空白单元格，按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">=</kbd>，Excel 会自动帮你写 <code>=SUM(...)</code> 并猜出要求和的区域，回车即可。</p>
+
+                        <h5>🔹 三个最常见的出错值</h5>
+                        <div class="callout callout-danger">
+                            <p>⚠️ 公式算不出来，单元格里出现这些奇怪的字，先别慌：</p>
+                            <ul>
+                                <li><code>#VALUE!</code> —— 把文字和数字硬算在一起，比如 <code>="苹果"+5</code></li>
+                                <li><code>#DIV/0!</code> —— 除以了 0，比如 <code>=10/0</code> 或分母单元格是空的</li>
+                                <li><code>#NAME?</code> —— Excel 看不懂你写的名字，通常是函数名拼错（<code>=SUMMA(...)</code>）或忘写引号</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：用公式算出超市小票的金额</h4>
+                        <p>我们用一份 20 行的"超市购物小票"来练手，金额列先留空，由你用公式填出来。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载下面的 CSV，把数据整理成表格：A列序号、B列商品名称、C列单价、D列数量、E列金额</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>E2</strong>，输入 <code>=C2*D2</code>（单价 × 数量），按 <kbd class="kbd">Enter</kbd>，应看到第 1 行金额</div></div>
+                            <div class="step-item"><div class="step-content">选中 E2，把鼠标移到单元格右下角，当出现<strong>小绿十字（填充柄）</strong>时，按住左键往下拖到 E21</div></div>
+                            <div class="step-item"><div class="step-content">观察：每一行的金额都自动算出来了，且公式从 <code>=C2*D2</code> 变成了 <code>=C3*D3</code>、<code>=C4*D4</code>……</div></div>
+                            <div class="step-item"><div class="step-content">单击 E2，看<strong>编辑栏</strong>，确认里面是 <code>=C2*D2</code> 而不是死数字</div></div>
+                            <div class="step-item"><div class="step-content">按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">~</kbd> 切换成"显示公式"模式，检查每一行的公式是否正确；再按一次切回结果</div></div>
+                            <div class="step-item"><div class="step-content">选中 <strong>E22</strong>（金额下方空单元格），按 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">=</kbd>，Excel 自动生成 <code>=SUM(E2:E21)</code>，回车得到总价</div></div>
+                            <div class="step-item"><div class="step-content">把 C2 的单价随便改一个数，看 E 列和总价是不是<strong>自动跟着变</strong>——这就对了！</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：超市购物小票（20 行生活用品）</h4>
+                        <p>下面是 20 行生活用品的小票，<strong>金额列留空</strong>，请下载后用公式 <code>=C2*D2</code> 把每一行的金额算出来，最后用 Alt+= 求总价。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-1">
+                                <thead>
+                                    <tr><th>序号</th><th>商品名称</th><th>单价</th><th>数量</th><th>金额</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>1</td><td>抽纸(心相印)</td><td>12.9</td><td>2</td><td></td></tr>
+                                    <tr><td>2</td><td>矿泉水(农夫山泉)</td><td>2</td><td>6</td><td></td></tr>
+                                    <tr><td>3</td><td>方便面(红烧牛肉)</td><td>4.5</td><td>3</td><td></td></tr>
+                                    <tr><td>4</td><td>牙膏(云南白药)</td><td>19.9</td><td>1</td><td></td></tr>
+                                    <tr><td>5</td><td>洗发水(海飞丝)</td><td>39.9</td><td>1</td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共20条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_1Data()">📥 下载超市购物小票数据 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>公式里出现 <code>#DIV/0!</code>，多半是分母单元格还是空的——先把分母数据填上</li>
+                            <li>双击填充柄可以<strong>一键填充到底</strong>（只要左边/上边有连续数据），比拖拽更快</li>
+                            <li>想看某个公式引用了哪些单元格？单击它，Excel 会用彩色框把引用的区域圈出来</li>
+                            <li>按 <kbd class="kbd">F2</kbd> 进入编辑后，用方向键在公式里移动光标，比用鼠标方便</li>
+                            <li>写错公式想重来？选中单元格按 <kbd class="kbd">Delete</kbd> 清空，再重新输入即可</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>公式一律引用单元格</strong>，不要直接写死数字，方便后续修改和复用</li>
+                            <li><strong>表头在第 1 行</strong>，金额等"算出来的列"也要有表头（如"金额""总价"）</li>
+                            <li><strong>数据连续存放</strong>，行与行之间不要留空行，否则自动填充和求和会断掉</li>
+                            <li>金额列<strong>保持为数值格式</strong>，不要手打成"￥25.8"这样的文字</li>
+                            <li>重要的计算表<strong>另存备份</strong>（如"小票计算_v2.xlsx"），公式改坏了还能找回</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 忘记写开头的 <code>=</code> → 写 <code>C2*D2</code> 变成普通文字，不会计算</li>
+                            <li>❌ 把乘号写成 <code>×</code> 或字母 <code>x</code> → Excel 只认 <code>*</code></li>
+                            <li>❌ 公式里直接写死数字 <code>=12.9*2</code> → 改了单价结果不变，白忙一场</li>
+                            <li>❌ 填充时只拖了公式却没覆盖全部行 → 部分行金额空白，求和少算</li>
+                            <li>❌ 把 <code>/</code> 写成中文顿号或反斜杠 → 报 <code>#NAME?</code> 错误</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>下载"超市购物小票"CSV，建立表格，用 <code>=C2*D2</code> 算第 1 行金额</li>
+                            <li>用<strong>填充柄</strong>把金额公式复制到全部 20 行</li>
+                            <li>按 <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">~</kbd> 切换到"显示公式"，截图检查 5 行公式</li>
+                            <li>在金额下方用 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">=</kbd> 求出所有商品的总价</li>
+                            <li>把第 1 行抽纸单价改成 <strong>15</strong>，确认金额和总价<strong>自动更新</strong></li>
+                            <li>新增一列"是否满 20 元"（金额≥20 写"是"，否则写"否"），用公式 <code>=IF(E2>=20,"是","否")</code> 实现（IF 下节课学，这里先试一试）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>增加一列"折扣价"，按"金额打 9 折"计算（提示：单价×数量×0.9，可以用 <code>=C2*D2*0.9</code>）</li>
+                            <li>用括号写一条公式：先算 (单价+2) 再乘以数量，体会括号改变优先级</li>
+                            <li>挑战：用一条公式直接算出"所有商品金额的平均值"（提示：<code>=AVERAGE(E2:E21)</code>，下节课会讲）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对公式入门的掌握：</p>
+                        <div id="quiz-2-1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 2-2：单元格引用
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-2">
+            <div class="lesson-header" onclick="toggleLesson(2)">
+                <div class="lesson-num">2</div>
+                <h3>单元格引用 —— 相对引用、绝对引用与 $ 符号</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-2">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>"引用"就是公式里写的那个单元格地址（如 A1）。Excel 在复制公式时，会根据引用方式<strong>自动调整或固定</strong>地址，这就是相对、绝对、混合三种引用的区别。</p>
+
+                        <h5>🔹 相对引用 A1（默认）</h5>
+                        <p>不加 <code>$</code> 的就是相对引用。公式往下复制时，行号会跟着变；往右复制时，列字母会跟着变。</p>
+                        <div class="demo-box">
+                            <div class="demo-title">例子：在 E2 写 =C2*D2，向下填充</div>
+                            <div class="formula-line">E2: <span class="fn">=</span><span class="arg">C2</span> * <span class="arg">D2</span></div>
+                            <div class="formula-line">E3: <span class="fn">=</span><span class="arg">C3</span> * <span class="arg">D3</span> &nbsp;（行号自动 +1）</div>
+                            <div class="demo-caption">↳ 适合"每一行都用自己的数据算"的场景</div>
+                        </div>
+
+                        <h5>🔹 绝对引用 $A$1（锁死不动）</h5>
+                        <p>在列字母和行号前都加 <code>$</code>，公式复制到哪，这个地址<strong>永远不变</strong>。常见于"折扣率""汇率"这种全表共用的固定值。</p>
+                        <div class="demo-box">
+                            <div class="demo-title">例子：折扣率锁在 $B$1，折后价 = 原价 × 数量 × 折扣率</div>
+                            <div class="formula-line">F2: <span class="fn">=</span><span class="arg">C2</span> * <span class="arg">D2</span> * <span class="arg">$B$1</span></div>
+                            <div class="formula-line">F3: <span class="fn">=</span><span class="arg">C3</span> * <span class="arg">D3</span> * <span class="arg">$B$1</span> &nbsp;（只有 C、D 变，$B$1 不动）</div>
+                            <div class="demo-caption">↳ 想改全场折扣？只改 B1 一个格子，整列折后价全变</div>
+                        </div>
+
+                        <h5>🔹 混合引用 $A1 与 A$1</h5>
+                        <p>只锁一半：<code>$A1</code> 锁列不锁行（往右复制列不变，往下复制行变）；<code>A$1</code> 锁行不锁列（往下复制行不变，往右复制列变）。做乘法表时特别好用。</p>
+
+                        <h5>🔹 F4：一键循环切换四种引用</h5>
+                        <p>编辑公式时，把光标放在地址上，连按 <kbd class="kbd">F4</kbd> 会在四种状态间循环：</p>
+                        <div class="flow-row">
+                            <span class="flow-node">A1</span><span class="flow-arrow">→</span>
+                            <span class="flow-node">$A$1</span><span class="flow-arrow">→</span>
+                            <span class="flow-node">A$1</span><span class="flow-arrow">→</span>
+                            <span class="flow-node">$A1</span><span class="flow-arrow">→</span>
+                            <span class="flow-node">A1</span>
+                        </div>
+
+                        <h5>🔹 三种引用对比</h5>
+                        <div class="compare-table">
+                            <table>
+                                <thead><tr><th>类型</th><th>写法</th><th>向下复制</th><th>典型用途</th></tr></thead>
+                                <tbody>
+                                    <tr><td>相对引用</td><td><code>A1</code></td><td>行号变</td><td>每行算自己的数据</td></tr>
+                                    <tr><td>绝对引用</td><td><code>$A$1</code></td><td>不变</td><td>折扣率、税率、单价表</td></tr>
+                                    <tr><td>混合引用</td><td><code>$A1</code> / <code>A$1</code></td><td>锁一半</td><td>乘法表、交叉表</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5>🔹 跨工作表引用：Sheet1!A1</h5>
+                        <p>公式要用<strong>另一个工作表</strong>的数据，写法是 <code>表名!单元格</code>。比如 Sheet2 的 B2 想引用 Sheet1 的 A1：</p>
+                        <div class="formula-line"><span class="fn">=</span><span class="arg">Sheet1!A1</span> * 2</div>
+                        <p>表名有空格或中文时要加单引号：<code>='销售数据'!A1</code>。</p>
+
+                        <h5>🔹 跨工作簿引用：[文件名.xlsx]Sheet1!A1</h5>
+                        <p>引用<strong>另一个 Excel 文件</strong>里的单元格，写法是 <code>[工作簿名]表名!单元格</code>：</p>
+                        <div class="formula-line"><span class="fn">=</span><span class="arg">[价格表.xlsx]Sheet1!B2</span></div>
+                        <div class="callout callout-warn">⚠️ 跨工作簿引用要求<strong>两个文件都打开</strong>，且源文件移动/改名后引用会断。正式交付建议把数据整合进同一个文件。</div>
+
+                        <h5>🔹 引用失效 #REF!</h5>
+                        <p>当你<strong>删除了公式所引用的行/列/工作表</strong>，Excel 找不到原来的位置，就会显示 <code>#REF!</code>。它一旦出现，原始引用就丢了，比 #N/A 更难修，所以删行前先检查有没有公式依赖它。</p>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：用绝对引用算全场折扣</h4>
+                        <p>一份 30 行电商商品表，折扣率放在固定单元格 <strong>$B$1</strong>，请算出每件商品的折后价。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载 CSV，整理成表格：A列商品、B列原价、C列数量；在 <strong>B1</strong> 单元格输入折扣率，例如 <code>0.9</code>（表示 9 折）</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>D2</strong>（折后价），输入 <code>=B2*C2*B1</code></div></div>
+                            <div class="step-item"><div class="step-content">把光标放在公式里的 <code>B1</code> 上，按 <kbd class="kbd">F4</kbd> 一次，把它变成 <code>$B$1</code>（绝对引用），回车</div></div>
+                            <div class="step-item"><div class="step-content">选中 D2，拖动填充柄到 D31，观察：C、B 列地址在变，但 <code>$B$1</code> 始终不变</div></div>
+                            <div class="step-item"><div class="step-content">把 B1 的折扣率改成 <code>0.8</code>，整列折后价应<strong>全部自动重算</strong></div></div>
+                            <div class="step-item"><div class="step-content">在 E2 写 <code>=D2-C2*C2</code> 算"让利金额"（折后价 - 原价×数量），填充到 E31</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：商品折扣计算表（30 行电商商品）</h4>
+                        <p>下面是 30 行电商商品，<strong>折扣率请自己放在 B1 单元格</strong>（如 0.9 表示九折），用 <code>=B2*C2*$B$1</code> 算出折后价。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-2">
+                                <thead>
+                                    <tr><th>商品</th><th>原价</th><th>数量</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>手机壳-硅胶透明</td><td>9.9</td><td>120</td></tr>
+                                    <tr><td>充电线-TypeC</td><td>12.9</td><td>80</td></tr>
+                                    <tr><td>蓝牙耳机-入门</td><td>39.9</td><td>45</td></tr>
+                                    <tr><td>手机支架-桌面</td><td>15.9</td><td>60</td></tr>
+                                    <tr><td>钢化膜-高清</td><td>8.9</td><td>150</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共30条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_2Data()">📥 下载商品折扣计算表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>不确定该不该加 <code>$</code>？问自己：<strong>复制后这个地址要不要跟着变？</strong> 不变的就锁</li>
+                            <li>编辑公式时按 <kbd class="kbd">F4</kbd> 循环切换，比手敲 <code>$</code> 快且不易错</li>
+                            <li>跨表引用时，直接<strong>用鼠标点</strong>目标单元格，Excel 会自动补全 <code>Sheet名!地址</code></li>
+                            <li>想引用整列？写 <code>B:B</code>（绝对列引用），但求和时要避开结果所在列防循环</li>
+                            <li>偶尔需要"半锁定"做九九表，就靠混合引用 <code>$A1</code> / <code>A$1</code></li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>共用参数单独放一格</strong>（折扣率、税率、汇率），并用绝对引用锁住，方便统一调整</li>
+                            <li>参数单元格要有<strong>清晰标注</strong>，如旁边写"折扣率(0.9=九折)"，别让同事猜</li>
+                            <li>跨表/跨簿引用<strong>越少越好</strong>，正式报表尽量合并到同一工作簿</li>
+                            <li>删除行/列前，先检查是否有公式引用它，避免产生 <code>#REF!</code></li>
+                            <li>工作表命名含中文或空格时，跨表引用要加<strong>单引号</strong></li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 折扣率没锁 <code>$</code> → 向下填充后变成 <code>B2、B3、B4…</code>，只有第一行算对</li>
+                            <li>❌ 把折扣率写死在公式里 <code>=B2*C2*0.9</code> → 想改全场折扣得改 30 个公式</li>
+                            <li>❌ 跨表引用忘了表名或写错 → 报 <code>#NAME?</code> 或 <code>#REF!</code></li>
+                            <li>❌ 删除了被引用的行 → 公式显示 <code>#REF!</code>，且原始引用无法自动恢复</li>
+                            <li>❌ 跨工作簿引用时源文件已关闭 → 显示 <code>#REF!</code> 或旧值</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>在 B1 输入折扣率 <code>0.85</code>（八五折），用 <code>=B2*C2*$B$1</code> 算 D2 折后价</li>
+                            <li>用 F4 把 B1 锁成 <code>$B$1</code>，再把公式填充到全部 30 行</li>
+                            <li>新增"折后总价"列 = 折后价 × 数量，观察是否也引用了 <code>$B$1</code></li>
+                            <li>把 B1 改成 <code>1</code>（不打折），确认所有折后价回到原价</li>
+                            <li>在另一个工作表 Sheet2 的 A1，用跨表引用 <code>=Sheet1!D2</code> 取第 1 个折后价</li>
+                            <li>把 B1 改成 <code>0.7</code>，截图折后价前 5 行，确认全部自动更新</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>做一个 9×9 乘法表：行标题 1~9、列标题 1~9，用<strong>混合引用</strong> <code>$A2*B$1</code> 一拖到底</li>
+                            <li>给不同商品设置<strong>不同折扣</strong>：在表格里加"折扣率"列，每行用自己的折扣率（相对引用），再算折后价</li>
+                            <li>挑战：用跨工作簿引用，把价格表.xlsx 里的成本价引过来算毛利（注意两个文件都要打开）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对单元格引用的掌握：</p>
+                        <div id="quiz-2-2"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 2-3：求和与统计函数
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-3">
+            <div class="lesson-header" onclick="toggleLesson(3)">
+                <div class="lesson-num">3</div>
+                <h3>求和与统计函数 —— SUM、AVERAGE、MAX、MIN、COUNT</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-3">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>函数就是 Excel 自带的"现成算法"。写法和公式一样以 <code>=</code> 开头，格式固定为 <strong>=函数名(参数1, 参数2, ...)</strong>。参数之间用英文逗号 <code>,</code> 隔开。</p>
+
+                        <div class="callout callout-info">💡 参数可以是<strong>具体数字</strong>（如 <code>=SUM(1,2,3)</code>）、<strong>单元格</strong>（如 <code>=SUM(A1)</code>），或<strong>区域</strong>（如 <code>=SUM(A1:A10)</code>）。最常用的是"区域"。</div>
+
+                        <h5>🔹 五大统计函数一览</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>SUM</h6><code>=SUM(A1:A10)</code><p>求和，把所有数字加起来</p></div>
+                            <div class="fn-card"><h6>AVERAGE</h6><code>=AVERAGE(A1:A10)</code><p>求平均值</p></div>
+                            <div class="fn-card"><h6>MAX</h6><code>=MAX(A1:A10)</code><p>找最大值</p></div>
+                            <div class="fn-card"><h6>MIN</h6><code>=MIN(A1:A10)</code><p>找最小值</p></div>
+                            <div class="fn-card"><h6>COUNT</h6><code>=COUNT(A1:A10)</code><p>数一数有几个数字</p></div>
+                        </div>
+
+                        <h5>🔹 SUM —— 求和</h5>
+                        <p>最常用。除了手动写，还可以用功能区 <strong>开始</strong> 选项卡里的 <strong>Σ 自动求和</strong> 按钮，或快捷键 <kbd class="kbd">Alt</kbd>+<kbd class="kbd">=</kbd>。</p>
+                        <div class="formula-line"><span class="fn">SUM</span>(<span class="arg">C2:C41</span>) &nbsp; 求 C2 到 C41 的总和</div>
+
+                        <h5>🔹 AVERAGE —— 平均值</h5>
+                        <div class="formula-line"><span class="fn">AVERAGE</span>(<span class="arg">C2:C41</span>) &nbsp; 相当于 =SUM(C2:C41)/COUNT(C2:C41)</div>
+
+                        <h5>🔹 MAX / MIN —— 最大 / 最小</h5>
+                        <p>用来找"最高分""最低销量"等。比如 <code>=MAX(D2:D41)</code> 找出数学最高分。</p>
+
+                        <h5>🔹 COUNT 家族：三个"数数"函数别搞混</h5>
+                        <div class="compare-table">
+                            <table>
+                                <thead><tr><th>函数</th><th>数什么</th><th>例子</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>COUNT</code></td><td>只数<strong>数字</strong>单元格</td><td>=COUNT(A1:A10) → 数字个数</td></tr>
+                                    <tr><td><code>COUNTA</code></td><td>数<strong>非空</strong>单元格（含文字）</td><td>=COUNTA(A1:A10) → 已填个数</td></tr>
+                                    <tr><td><code>COUNTBLANK</code></td><td>数<strong>空白</strong>单元格</td><td>=COUNTBLANK(A1:A10) → 空单元格数</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout callout-warn">⚠️ <code>COUNT</code> 只认数字！如果一列是"文本型数字"（带绿三角的那种），COUNT 会把它漏掉。要数全部内容用 <code>COUNTA</code>。</div>
+
+                        <h5>🔹 连续区域 vs 不连续区域</h5>
+                        <p>一次求多个不相邻区域，用逗号隔开：</p>
+                        <div class="formula-line"><span class="fn">SUM</span>(<span class="arg">A1:A5</span>, <span class="arg">C1:C5</span>) &nbsp; 把 A 列和 C 列两段分别求和后再相加</div>
+
+                        <h5>🔹 状态栏：不用写公式也能看统计</h5>
+                        <p>用鼠标<strong>选中一片数据</strong>，看 Excel 窗口最右下角的<strong>状态栏</strong>，会自动显示：平均值、计数、求和。右键状态栏还能切换显示哪些指标——临时看一眼数据特别快。</p>
+
+                        <h5>🔹 函数嵌套的雏形</h5>
+                        <p>函数里可以套函数。例如"求平均"其实就是"总和÷个数"：</p>
+                        <div class="formula-line"><span class="fn">SUM</span>(<span class="arg">A1:A5</span>) / <span class="fn">COUNT</span>(<span class="arg">A1:A5</span>) &nbsp; 和 AVERAGE 等价</div>
+                        <p>这就是"嵌套"思想的起点，后面的 IF、SUMIF 都是在这个基础上叠加的。</p>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：算一份班级成绩单的总分、平均分与极值</h4>
+                        <p>40 名同学，有语文/数学/英语/专业课四科成绩，<strong>总分和平均分留空</strong>，由你用函数算。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载 CSV，整理成表格：A学号、B姓名、C语文、D数学、E英语、F专业课、G总分、H平均分</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>G2</strong>（总分），输入 <code>=SUM(C2:F2)</code>，回车，得到第 1 名同学四科总分</div></div>
+                            <div class="step-item"><div class="step-content">选中 G2，双击填充柄自动填充到 G41（因为左边 B 列有连续姓名）</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>H2</strong>（平均分），输入 <code>=AVERAGE(C2:F2)</code>，回车并填充到 H41</div></div>
+                            <div class="step-item"><div class="step-content">在成绩区下方空白格，用 <code>=MAX(G2:G41)</code> 找最高总分，<code>=MIN(G2:G41)</code> 找最低总分</div></div>
+                            <div class="step-item"><div class="step-content">用 <code>=COUNT(C2:C41)</code> 数一数语文成绩共几条，再用 <code>=COUNTA(B2:B41)</code> 数人数，确认一致</div></div>
+                            <div class="step-item"><div class="step-content">选中 C2:F41 任意区域，看<strong>状态栏</strong>显示的平均值/计数/求和，和你的函数结果对照</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：班级期末成绩单（40 行）</h4>
+                        <p>下面是 40 名同学的成绩，<strong>总分、平均分两列留空</strong>，请用 SUM、AVERAGE 算出后填入，再用 MAX/MIN/COUNT 做整体分析。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-3">
+                                <thead>
+                                    <tr><th>学号</th><th>姓名</th><th>语文</th><th>数学</th><th>英语</th><th>专业课</th><th>总分</th><th>平均分</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>20250101</td><td>张伟</td><td>88</td><td>92</td><td>76</td><td>95</td><td></td><td></td></tr>
+                                    <tr><td>20250102</td><td>王芳</td><td>75</td><td>68</td><td>82</td><td>80</td><td></td><td></td></tr>
+                                    <tr><td>20250103</td><td>李娜</td><td>91</td><td>85</td><td>90</td><td>88</td><td></td><td></td></tr>
+                                    <tr><td>20250104</td><td>刘洋</td><td>60</td><td>55</td><td>63</td><td>70</td><td></td><td></td></tr>
+                                    <tr><td>20250105</td><td>陈静</td><td>83</td><td>79</td><td>88</td><td>91</td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共40条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_3Data()">📥 下载班级期末成绩单 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>写函数时按 <kbd class="kbd">Tab</kbd> 键可以<strong>自动补全</strong>函数名，避免拼错</li>
+                            <li>输入 <code>=SUM(</code> 后，直接<strong>用鼠标框选</strong>要求和的区域，比手敲地址准</li>
+                            <li>区域用<strong>整列引用</strong> <code>=SUM(C:C)</code> 最省事，但务必保证该列没有杂数据</li>
+                            <li>状态栏是"免公式快速预览"神器，临时判断数据量级超好用</li>
+                            <li>COUNT 和 COUNTA 结果不一致？多半是混进了文本，检查一下数据格式</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>表头清晰</strong>：总分、平均分等计算列都要有表头，别让看表的人猜</li>
+                            <li>统计区域要<strong>选全</strong>且<strong>不含表头</strong>（表头是文字，会被 COUNT 漏掉但 SUM 会当 0）</li>
+                            <li>人数/科数这类"计数"优先用 <code>COUNTA</code>，避免文本型数字被 COUNT 漏计</li>
+                            <li>函数参数用英文逗号；如果系统是中文标点，记得切换中英文</li>
+                            <li>关键统计结果（最高/最低/平均）可<strong>加粗或变色</strong>突出，但全表颜色不超过 4 种</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 求和区域把表头也圈进去了 → 表头是文字，SUM 当 0 处理虽不影响，但 COUNT 会少算</li>
+                            <li>❌ 把 <code>COUNT</code> 当"数人数"用 → 文本姓名它一个都不数，应用 <code>COUNTA</code></li>
+                            <li>❌ 函数名拼错或中文括号 → 报 <code>#NAME?</code></li>
+                            <li>❌ 参数用英文分号 <code>;</code> 而非逗号 <code>,</code> → 某些地区设置下才用分号，默认用逗号</li>
+                            <li>❌ 平均分写成 <code>=SUM/4</code> 而非 <code>=AVERAGE</code>，且没锁定列 → 填充后列错乱</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用 <code>=SUM(C2:F2)</code> 算第 1 名同学总分，填充到全班 40 行</li>
+                            <li>用 <code>=AVERAGE(C2:F2)</code> 算平均分，填充到全班</li>
+                            <li>在表下方用 <code>=MAX(G2:G41)</code> 和 <code>=MIN(G2:G41)</code> 找总分极值</li>
+                            <li>用 <code>=COUNT(C2:C41)</code> 数语文成绩条数，<code>=COUNTA(B2:B41)</code> 数人数</li>
+                            <li>用 <code>=SUM(C2:C41)/COUNT(C2:C41)</code> 验证语文平均分，和 AVERAGE 结果对照</li>
+                            <li>选中任意成绩区域，看状态栏的平均值/计数/求和，截图留存</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>新增"是否及格"列：四科平均分 ≥60 写"及格"，否则"不及格"（提示：<code>=IF(H2>=60,"及格","不及格")</code>，IF 下节课学）</li>
+                            <li>用 <code>=SUM(C2:C41,D2:D41,E2:E41,F2:F41)</code> 一次算出全班的"四科总得分"（不连续区域求和）</li>
+                            <li>挑战：算出"专业课"超过 90 分的人数（提示：配合下节课的 COUNTIF，<code>=COUNTIF(F2:F41,">90")</code>）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对求和统计函数的掌握：</p>
+                        <div id="quiz-2-3"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <!-- ============================================
+             课次 2-4：逻辑函数 IF
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-4">
+            <div class="lesson-header" onclick="toggleLesson(4)">
+                <div class="lesson-num">4</div>
+                <h3>逻辑函数 —— IF 让 Excel 会"判断"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-4">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>前面的函数只会"算数"，而 <strong>IF</strong> 函数让 Excel 学会"判断对错再做决定"——这正是从"计算器"升级到"小助手"的关键一步。</p>
+
+                        <h5>🔹 先认识：比较运算符</h5>
+                        <p>IF 的"条件"靠比较运算符写出，结果是 TRUE（真）或 FALSE（假）：</p>
+                        <div class="shortcut-table">
+                            <table>
+                                <thead><tr><th>运算符</th><th>含义</th><th>例子</th><th>结果</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>=</code></td><td>等于</td><td><code>=5=5</code></td><td>TRUE</td></tr>
+                                    <tr><td><code>&gt;</code></td><td>大于</td><td><code>=8&gt;3</code></td><td>TRUE</td></tr>
+                                    <tr><td><code>&lt;</code></td><td>小于</td><td><code>=2&lt;1</code></td><td>FALSE</td></tr>
+                                    <tr><td><code>&gt;=</code></td><td>大于等于</td><td><code>=6&gt;=6</code></td><td>TRUE</td></tr>
+                                    <tr><td><code>&lt;=</code></td><td>小于等于</td><td><code>=4&lt;=3</code></td><td>FALSE</td></tr>
+                                    <tr><td><code>&lt;&gt;</code></td><td>不等于</td><td><code>=5&lt;&gt;3</code></td><td>TRUE</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+                        <h5>🔹 IF 的三段式</h5>
+                        <div class="formula-line"><span class="fn">IF</span>(<span class="arg">条件</span>, <span class="arg">成立时返回</span>, <span class="arg">不成立时返回</span>)</div>
+                        <p>例如"金额≥99 包邮，否则不包邮"：</p>
+                        <div class="formula-line"><span class="fn">IF</span>(<span class="arg">C2&gt;=99</span>, <span class="arg">"包邮"</span>, <span class="arg">"不包邮"</span>)</div>
+                        <div class="callout callout-info">💡 返回的<strong>文字</strong>必须用<strong>英文双引号</strong>包起来；返回数字则不用引号。这是 IF 最常写错的地方。</div>
+
+                        <h5>🔹 TRUE / FALSE 是什么</h5>
+                        <p>比较表达式本身就会返回一个逻辑值。<code>=5&gt;3</code> 显示 TRUE，<code>=5&gt;8</code> 显示 FALSE。IF 正是拿这个真假来决定走哪条路。</p>
+
+                        <h5>🔹 AND / OR / NOT：把多个条件揉在一起</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>AND</h6><code>=AND(条件1,条件2)</code><p>全部为真才真（"而且"）</p></div>
+                            <div class="fn-card"><h6>OR</h6><code>=OR(条件1,条件2)</code><p>有一个真就真（"或者"）</p></div>
+                            <div class="fn-card"><h6>NOT</h6><code>=NOT(条件)</code><p>真假颠倒</p></div>
+                        </div>
+                        <p>例子：金额≥99 <strong>且</strong> 地区不是"偏远"才包邮：</p>
+                        <div class="formula-line"><span class="fn">IF</span>(<span class="fn">AND</span>(<span class="arg">C2&gt;=99</span>, <span class="arg">D2&lt;&gt;"偏远"</span>), <span class="arg">"包邮"</span>, <span class="arg">"不包邮"</span>)</div>
+
+                        <h5>🔹 IF 嵌套：做多级判断（成绩等级）</h5>
+                        <p>等级评定"优/良/中/及格/不及格"要一层套一层，从<strong>最高档往下写</strong>：</p>
+                        <div class="demo-box">
+                            <div class="demo-title">成绩 → 等级</div>
+                            <div class="formula-line"><span class="fn">IF</span>(<span class="arg">A1&gt;=90</span>,<span class="arg">"优"</span>,</div>
+                            <div class="formula-line">&nbsp;&nbsp;<span class="fn">IF</span>(<span class="arg">A1&gt;=80</span>,<span class="arg">"良"</span>,</div>
+                            <div class="formula-line">&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">IF</span>(<span class="arg">A1&gt;=70</span>,<span class="arg">"中"</span>,</div>
+                            <div class="formula-line">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fn">IF</span>(<span class="arg">A1&gt;=60</span>,<span class="arg">"及格"</span>,<span class="arg">"不及格"</span>))))</div>
+                            <div class="demo-caption">↳ 每多一级就多包一层 IF，括号数量要配对</div>
+                        </div>
+
+                        <h5>🔹 IFERROR：给公式加"安全气囊"</h5>
+                        <p>当公式可能报错（比如除以 0、查不到数据）时，用 IFERROR 指定"出错时显示什么"，避免满屏 <code>#DIV/0!</code>：</p>
+                        <div class="formula-line"><span class="fn">IFERROR</span>(<span class="arg">公式</span>, <span class="arg">"出错时显示的内容"</span>)</div>
+                        <p>例：<code>=IFERROR(B2/C2,"无数据")</code>，C2 为空时显示"无数据"而不是错误值。</p>
+
+                        <h5>🔹 电商里的 IF 业务判断</h5>
+                        <ul>
+                            <li><strong>是否包邮</strong>：订单金额≥包邮门槛 → "包邮"，否则"不包邮"</li>
+                            <li><strong>是否达标</strong>：销售额≥目标 → "达标"，否则"未达标"</li>
+                            <li><strong>是否超预算</strong>：实际支出&gt;预算 → "超预算"，否则"正常"</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：判定电商订单是否包邮</h4>
+                        <p>一份 35 行订单表，含金额和收货地区，<strong>是否包邮、判定结果留空</strong>，用 IF 判定。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载 CSV，整理成：A订单号、B客户、C金额、D收货地区、E是否包邮、F发货时效要求、G判定结果</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>E2</strong>，输入 <code>=IF(C2>=99,"包邮","不包邮")</code>（假设 99 元包邮），回车</div></div>
+                            <div class="step-item"><div class="step-content">选中 E2，填充到 E36，观察金额≥99 的显示"包邮"，其余"不包邮"</div></div>
+                            <div class="step-item"><div class="step-content">单击 <strong>G2</strong>，写复合判断：金额≥99 且地区≠"偏远" 才"正常发货"，否则"需补运费"：<br><code>=IF(AND(C2>=99,D2<>"偏远"),"正常发货","需补运费")</code></div></div>
+                            <div class="step-item"><div class="step-content">把 G2 填充到 G36，抽查几条：偏远地区即使金额高也应"需补运费"</div></div>
+                            <div class="step-item"><div class="step-content">在旁边空列试 IFERROR：<code>=IFERROR(C2/COUNT(...),"—")</code> 体会容错写法</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商订单发货判定表（35 行）</h4>
+                        <p>下面是 35 笔订单，<strong>是否包邮、判定结果两列留空</strong>，请用 IF / AND 判定（包邮门槛自定，如金额≥99 包邮，偏远地区不包邮）。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-4">
+                                <thead>
+                                    <tr><th>订单号</th><th>客户</th><th>金额</th><th>收货地区</th><th>是否包邮</th><th>发货时效要求</th><th>判定结果</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>DD2025001</td><td>晓梅</td><td>128</td><td>江浙沪</td><td></td><td>24小时</td><td></td></tr>
+                                    <tr><td>DD2025002</td><td>建国</td><td>56</td><td>江浙沪</td><td></td><td>48小时</td><td></td></tr>
+                                    <tr><td>DD2025003</td><td>丽娟</td><td>210</td><td>偏远地区</td><td></td><td>72小时</td><td></td></tr>
+                                    <tr><td>DD2025004</td><td>志强</td><td>89</td><td>华南</td><td></td><td>24小时</td><td></td></tr>
+                                    <tr><td>DD2025005</td><td>春燕</td><td>305</td><td>华北</td><td></td><td>24小时</td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共35条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_4Data()">📥 下载电商订单发货判定表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>IF 嵌套容易括号不配对，写完用 <kbd class="kbd">F2</kbd> 检查，Excel 会用<strong>颜色配对括号</strong></li>
+                            <li>文字比较大小写吗？默认<strong>不区分</strong>，但建议统一写法（如都用"包邮"两字）</li>
+                            <li>AND/OR 里可以继续套 AND/OR，做"三条件""四条件"都不在话下</li>
+                            <li>不确定条件对不对？先在空白格写 <code>=C2&gt;=99</code> 看返回 TRUE/FALSE，调对了再塞进 IF</li>
+                            <li>IFERROR 包裹查找函数（下节课 VLOOKUP）是黄金搭档，几乎必用</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li><strong>判断阈值写清楚</strong>：公式旁注明"99 元包邮""60 分及格"，方便他人理解</li>
+                            <li>返回的<strong>文字结果用统一措辞</strong>（如全用"包邮/不包邮"），别一会儿"是"一会儿"Y"</li>
+                            <li>IF 嵌套层级<strong>别超过 3~4 层</strong>，太深难维护，可用下节课的 IFS（365 版）或多列分步</li>
+                            <li>重要业务判断（是否达标）建议<strong>加一列原始数值</strong>留底，方便复核</li>
+                            <li>涉及金额的判定，阈值单元格单独放并<strong>绝对引用</strong>（复习上节课）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 文字没加引号 <code>=IF(C2>=99,包邮,不包邮)</code> → 报 <code>#NAME?</code>，应写 "包邮"</li>
+                            <li>❌ 用了中文引号 "" → Excel 不认，必须用<strong>英文双引号</strong></li>
+                            <li>❌ IF 嵌套括号数量不对 → 公式报错或不完整，注意左括号=右括号</li>
+                            <li>❌ 把 <code>&gt;</code> 写成 <code>&gt;=</code> 导致边界错判（如 99 元到底包不包邮）</li>
+                            <li>❌ AND/OR 参数写成一个整体 <code>=AND(C2>=99,D2<>"偏远")</code> 写成 <code>=AND(C2>=99 AND D2<>"偏远")</code> → 语法错</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用 <code>=IF(C2>=99,"包邮","不包邮")</code> 填"是否包邮"列，填充到 35 行</li>
+                            <li>用 AND 写判定结果：金额≥99 且非偏远 →"正常发货"，否则"需补运费"，填充</li>
+                            <li>把包邮门槛改成 <strong>199</strong>，确认"是否包邮"结果随之更新</li>
+                            <li>在旁边列用 <code>=IF(C2>=200,"急单","普通")</code> 标记"是否急单"</li>
+                            <li>用 IF 嵌套把金额分成"高(&gt;300)/中(100~300)/低(&lt;100)"三档</li>
+                            <li>抽查 5 条：偏远地区订单即便金额高，也应判为"需补运费"，确认无误</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>做一个"成绩等级评定表"：用 IF 嵌套把 0~100 分映射成 优/良/中/及格/不及格 五档</li>
+                            <li>综合判定"客户价值"：金额≥300 且 非偏远 → "VIP"，否则"普通"，用 AND 实现</li>
+                            <li>挑战：用 IFERROR 包裹一个会除零的公式，让出错时显示"—"而非错误值</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对逻辑函数 IF 的掌握：</p>
+                        <div id="quiz-2-4"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 2-5：条件统计函数
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-5">
+            <div class="lesson-header" onclick="toggleLesson(5)">
+                <div class="lesson-num">5</div>
+                <h3>条件统计函数 —— SUMIF、COUNTIF、SUMIFS、COUNTIFS</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-5">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>前面的 SUM/COUNT 是"全算"，而这节课的带 IF 的兄弟们是<strong>"只算满足条件的那部分"</strong>——电商日报、月报里 80% 的统计都靠它们。</p>
+
+                        <h5>🔹 SUMIF —— 按条件求和</h5>
+                        <div class="formula-line"><span class="fn">SUMIF</span>(<span class="arg">条件区域</span>, <span class="arg">条件</span>, <span class="arg">求和区域</span>)</div>
+                        <p>在"条件区域"里找符合条件的行，把对应"求和区域"的值加起来。例：求"店铺A"的总销售额：</p>
+                        <div class="formula-line"><span class="fn">SUMIF</span>(<span class="arg">C:C</span>, <span class="arg">"店铺A"</span>, <span class="arg">H:H</span>)</div>
+                        <div class="callout callout-info">💡 当"条件区域"和"求和区域"是同一列时，求和区域可省略，写成 <code>=SUMIF(C:C,"店铺A")</code>。</div>
+
+                        <h5>🔹 COUNTIF —— 按条件计数</h5>
+                        <div class="formula-line"><span class="fn">COUNTIF</span>(<span class="arg">区域</span>, <span class="arg">条件</span>)</div>
+                        <p>统计区域里满足某条件的单元格个数。例：统计"已发货"状态有多少单：</p>
+                        <div class="formula-line"><span class="fn">COUNTIF</span>(<span class="arg">I:I</span>, <span class="arg">"已发货"</span>)</div>
+
+                        <h5>🔹 条件怎么写（重点！）</h5>
+                        <div class="compare-table">
+                            <table>
+                                <thead><tr><th>想要的条件</th><th>写法</th><th>说明</th></tr></thead>
+                                <tbody>
+                                    <tr><td>等于某值</td><td><code>"手机"</code></td><td>直接写文本</td></tr>
+                                    <tr><td>大于 1000</td><td><code>">1000"</code></td><td>大于号放引号内</td></tr>
+                                    <tr><td>不等于"已取消"</td><td><code>"&lt;&gt;已取消"</code></td><td>不等于用 &lt;&gt;</td></tr>
+                                    <tr><td>包含"手机"</td><td><code>"*手机*"</code></td><td>★ 任意多个字符</td></tr>
+                                    <tr><td>单字符匹配</td><td><code>"手?"</code></td><td>? 代表单个字符</td></tr>
+                                    <tr><td>大于某单元格</td><td><code>">="&amp;B1</code></td><td>符号+&amp;连接单元格</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout callout-warn">⚠️ 带比较符号（&gt; &lt; &gt;=）或连接单元格（&amp;B1）时，必须用 <strong>&amp;</strong> 把符号和引用拼起来，且符号本身在引号里。</div>
+
+                        <h5>🔹 通配符 * 与 ?</h5>
+                        <ul>
+                            <li><code>*</code>（星号）= 任意<strong>多个</strong>字符：<code>"*手机*"</code> 能命中"华为手机""手机壳"</li>
+                            <li><code>?</code>（问号）= 任意<strong>一个</strong>字符：<code>"手机?"</code> 命中"手机1"但不命中"手机壳"</li>
+                        </ul>
+
+                        <h5>🔹 SUMIFS / COUNTIFS —— 多条件（求和区域在前！）</h5>
+                        <p>多个条件同时满足时才统计。注意<strong>参数顺序和 SUMIF 相反</strong>：求和/计数区域排在最前：</p>
+                        <div class="formula-line"><span class="fn">SUMIFS</span>(<span class="arg">求和区域</span>, <span class="arg">条件区域1</span>, <span class="arg">条件1</span>, <span class="arg">条件区域2</span>, <span class="arg">条件2</span>)</div>
+                        <div class="formula-line"><span class="fn">SUMIFS</span>(<span class="arg">H:H</span>, <span class="arg">C:C</span>, <span class="arg">"店铺A"</span>, <span class="arg">I:I</span>, <span class="arg">"已发货"</span>) &nbsp; 店铺A且已发货的销售额</div>
+                        <p>COUNTIFS 同理：<code>=COUNTIFS(C:C,"店铺A",I:I,"已发货")</code></p>
+
+                        <h5>🔹 AVERAGEIF / AVERAGEIFS</h5>
+                        <p>按条件求平均，结构和 SUMIF 一致：<code>=AVERAGEIF(C:C,"店铺A",H:H)</code>。</p>
+
+                        <h5>🔹 IF 与 SUMIF 的分工</h5>
+                        <div class="callout callout-ok">✅ 一句话分清：<strong>IF</strong> 是"对每一行逐行判断返回不同结果"；<strong>SUMIF/COUNTIF</strong> 是"跨很多行汇总出一个总数/总次数"。要逐行打标签用 IF，要算合计用 SUMIF。</div>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：用条件统计做电商订单分析</h4>
+                        <p>一份 60 行订单明细，含店铺、类目、金额、状态、客服。我们用 SUMIF/COUNTIF 算出各维度汇总。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载 CSV，整理成：A订单号、B订单日期、C店铺、D商品名称、E类目、F数量、G单价、H订单金额、I订单状态、J客服</div></div>
+                            <div class="step-item"><div class="step-content">在空白处写 <code>=SUMIF(C:C,"店铺A",H:H)</code> 求"店铺A"总销售额</div></div>
+                            <div class="step-item"><div class="step-content">把"店铺A"换成"店铺B""店铺C"，或用单元格引用，算出各店铺销售额</div></div>
+                            <div class="step-item"><div class="step-content">写 <code>=COUNTIF(I:I,"已取消")</code> 统计"已取消"订单数；用 <code>&lt;&gt;已取消</code> 统计有效订单数</div></div>
+                            <div class="step-item"><div class="step-content">用通配符 <code>=COUNTIF(E:E,"*手机*")</code> 统计类目中含"手机"的订单数</div></div>
+                            <div class="step-item"><div class="step-content">用多条件 <code>=SUMIFS(H:H,C:C,"店铺A",I:I,"已发货")</code> 算"店铺A且已发货"销售额</div></div>
+                            <div class="step-item"><div class="step-content">用 <code>=COUNTIFS(J:J,"小张",I:I,"已发货")</code> 统计客服"小张"的已发货业绩单数</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：电商订单明细（60 行）</h4>
+                        <p>下面是 60 行真实风格的订单明细，用于统计各店铺销售额、各状态订单数、各客服业绩。所有数据已给全，直接用条件统计函数分析。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-5">
+                                <thead>
+                                    <tr><th>订单号</th><th>订单日期</th><th>店铺</th><th>商品名称</th><th>类目</th><th>数量</th><th>单价</th><th>订单金额</th><th>订单状态</th><th>客服</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>ORD001</td><td>2025/3/1</td><td>店铺A</td><td>蓝牙耳机</td><td>数码</td><td>2</td><td>99</td><td>198</td><td>已发货</td><td>小张</td></tr>
+                                    <tr><td>ORD002</td><td>2025/3/1</td><td>店铺B</td><td>纯棉T恤</td><td>服饰</td><td>5</td><td>39</td><td>195</td><td>已付款</td><td>小李</td></tr>
+                                    <tr><td>ORD003</td><td>2025/3/2</td><td>店铺A</td><td>手机壳</td><td>数码</td><td>10</td><td>15</td><td>150</td><td>已发货</td><td>小张</td></tr>
+                                    <tr><td>ORD004</td><td>2025/3/2</td><td>店铺C</td><td>坚果礼盒</td><td>食品</td><td>3</td><td>88</td><td>264</td><td>已取消</td><td>小王</td></tr>
+                                    <tr><td>ORD005</td><td>2025/3/3</td><td>店铺B</td><td>运动鞋</td><td>服饰</td><td>1</td><td>199</td><td>199</td><td>已发货</td><td>小李</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共60条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_5Data()">📥 下载电商订单明细 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>条件区域、求和区域要<strong>一样长</strong>（如都是 2~61 行），否则会算错或漏算</li>
+                            <li>把条件（如"店铺A"）写进<strong>单独单元格</strong>，公式里用 <code>C:C,"店铺A"</code> 改成 <code>C:C,$M$1</code>，改条件不用改公式</li>
+                            <li>记不住 SUMIFS 参数顺序？口诀：<strong>"先求和区域，再成对条件"</strong></li>
+                            <li>统计金额区间可用两个 COUNTIF 相减：<code>=COUNTIF(H:H,"&gt;100")-COUNTIF(H:H,"&gt;500")</code></li>
+                            <li>通配符统计时要注意 <code>*</code> 会匹配"任意内容"，空单元格也会被 <code>*</code> 命中</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li>汇总表的<strong>条件值单独成格</strong>（店铺名、状态名），用绝对引用，避免硬编码</li>
+                            <li>区域尽量用<strong>整列引用 C:C</strong> 省事，但要确保该列没有无关的合计行/表头混入</li>
+                            <li>统计口径写清楚：是"已发货"还是"已付款"？口径不同结果差很多，报表要标注</li>
+                            <li>多条件统计优先用 SUMIFS/COUNTIFS，<strong>别用 SUMIF 硬套多个</strong>导致逻辑错</li>
+                            <li>重要汇总结果加<strong>合计校验</strong>：所有店铺销售额之和应等于总销售额</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ SUMIFS 把求和区域放错位置（放在条件后面）→ 结果 0 或报错，应放<strong>最前</strong></li>
+                            <li>❌ 大于号没加引号 <code>&gt;1000</code> 写成裸符号 → 应写 <code>">1000"</code></li>
+                            <li>❌ 引用单元格时漏了 &amp;：<code>">"B1</code> 应为 <code>">="&amp;B1</code></li>
+                            <li>❌ 条件区域和求和区域<strong>行数不一致</strong> → 统计结果错位</li>
+                            <li>❌ 用 COUNTIF 统计"订单金额&gt;1000 的数量"却把区域选成文本列 → 永远 0</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用 SUMIF 分别算出店铺A、店铺B、店铺C 的总销售额</li>
+                            <li>用 COUNTIF 统计"已取消"订单数，再用 <code>"&lt;&gt;已取消"</code> 统计有效订单数</li>
+                            <li>用 <code>"*手机*"</code> 通配符统计类目含"手机"的订单数</li>
+                            <li>用 SUMIFS 算"店铺A 且 已发货"的销售额</li>
+                            <li>用 COUNTIFS 统计客服"小张"的"已发货"业绩单数</li>
+                            <li>用 AVERAGEIF 算"店铺B"的平均订单金额，与总平均对照</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>统计"金额在 100~500 之间"的订单数（用两个 COUNTIF 相减）</li>
+                            <li>做一个"各客服业绩看板"：每个客服的已发货订单数 + 总销售额（SUMIFS+COUNTIFS）</li>
+                            <li>挑战：用 <code>SUMIFS</code> 配合日期条件 <code>">="&amp;某单元格</code> 算"3月1日之后"的销售额</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对条件统计函数的掌握：</p>
+                        <div id="quiz-2-5"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 2-6：查找与引用 VLOOKUP
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-6">
+            <div class="lesson-header" onclick="toggleLesson(6)">
+                <div class="lesson-num">6</div>
+                <h3>查找与引用 —— VLOOKUP 与它的伙伴们</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-6">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>日常工作中，"按编码查价格""按姓名查部门"是高频需求。<strong>VLOOKUP</strong> 就是干这个的：给一个"钥匙"，去表里<strong>竖着查找</strong>并返回对应信息。</p>
+
+                        <h5>🔹 VLOOKUP 四参数</h5>
+                        <div class="formula-line"><span class="fn">VLOOKUP</span>(<span class="arg">查找值</span>, <span class="arg">查找区域</span>, <span class="arg">返回第几列</span>, <span class="arg">0</span>)</div>
+                        <ul>
+                            <li><strong>查找值</strong>：你要拿去匹配的"钥匙"，如商品编码</li>
+                            <li><strong>查找区域</strong>：去哪张表里找，必须包含"钥匙列"和"要返回的列"</li>
+                            <li><strong>返回第几列</strong>：从查找区域<strong>最左列</strong>算起，第几列是你要的结果（1 就是钥匙本身那列）</li>
+                            <li><strong>第四参数 0</strong>：固定写 <code>0</code>，表示<strong>精确匹配</strong>（找不到就报错）。写 1 是模糊匹配，新手别用</li>
+                        </ul>
+                        <div class="demo-box">
+                            <div class="demo-title">例：按商品编码查单价</div>
+                            <div class="formula-line"><span class="fn">VLOOKUP</span>(<span class="arg">A2</span>, <span class="arg">$E$2:$G$31</span>, <span class="arg">3</span>, <span class="arg">0</span>)</div>
+                            <div class="demo-caption">↳ A2=要查的编码；E:G 是价格表（E编码/F名称/G单价），单价在第3列；0=精确匹配</div>
+                        </div>
+
+                        <h5>🔹 铁律 1：查找值必须在查找区域的第一列</h5>
+                        <p>VLOOKUP 只能往<strong>右</strong>找。所以你的查找区域，最左边必须是"钥匙列"（如商品编码）。如果钥匙在右边，要么调整列顺序，要么改用下面的 INDEX+MATCH。</p>
+
+                        <h5>🔹 铁律 2：查找区域要用 $ 锁定</h5>
+                        <p>因为要往下填充，查找区域必须<strong>绝对引用</strong> <code>$E$2:$G$31</code>，否则下拉后区域跑偏，查出一堆错。</p>
+
+                        <h5>🔹 铁律 3：第四参数用 0</h5>
+                        <p>绝大多数业务查询都要<strong>精确匹配</strong>，第四参数写 <code>0</code>（也可写 FALSE）。写 1/TRUE 会做"近似匹配"，极易查错。</p>
+
+                        <h5>🔹 #N/A 的五种常见原因</h5>
+                        <div class="callout callout-danger">
+                            <ul>
+                                <li>① 查找值在表里<strong>根本不存在</strong>（编码输错、多了空格）</li>
+                                <li>② 查找值有<strong>多余空格</strong>（"A001 "≠"A001"），用 TRIM 处理</li>
+                                <li>③ 查找区域<strong>没锁 $</strong>，下拉后区域错位</li>
+                                <li>④ 返回的列号<strong>超出</strong>了查找区域范围</li>
+                                <li>⑤ 数据类型不一致：一边是文本"001"、一边是数字 1，永远对不上</li>
+                            </ul>
+                        </div>
+
+                        <h5>🔹 用 IFERROR 包一层，优雅处理查不到</h5>
+                        <div class="formula-line"><span class="fn">IFERROR</span>(<span class="fn">VLOOKUP</span>(<span class="arg">A2</span>,<span class="arg">$E$2:$G$31</span>,<span class="arg">3</span>,<span class="arg">0</span>), <span class="arg">"未找到"</span>)</div>
+                        <p>查不到时显示"未找到"而不是刺眼的 <code>#N/A</code>。</p>
+
+                        <h5>🔹 更灵活的 INDEX + MATCH</h5>
+                        <p>VLOOKUP 只能向右找，INDEX+MATCH 可以<strong>左右随便找</strong>：</p>
+                        <div class="formula-line"><span class="fn">INDEX</span>(<span class="arg">返回列</span>, <span class="fn">MATCH</span>(<span class="arg">查找值</span>, <span class="arg">钥匙列</span>, <span class="arg">0</span>))</div>
+                        <p>MATCH 负责"钥匙在第几行"，INDEX 负责"取那行某列的值"，组合起来不受方向限制。</p>
+
+                        <h5>🔹 新版 XLOOKUP（Microsoft 365）</h5>
+                        <p>Excel 365 / 2021 提供了更简单的 <strong>XLOOKUP</strong>，不用数第几列、不用锁区域、能向左查：</p>
+                        <div class="formula-line"><span class="fn">XLOOKUP</span>(<span class="arg">查找值</span>, <span class="arg">钥匙列</span>, <span class="arg">返回列</span>)</div>
+                        <p>如果学校电脑还是旧版 Excel，先掌握 VLOOKUP，XLOOKUP 作为了解即可。</p>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：订单表按商品编码取价格</h4>
+                        <p>有两张表：<strong>商品价格表</strong>（编码/名称/类目/单价/成本）和 <strong>订单表</strong>（订单号/编码/数量/单价待填/金额）。我们要在订单表里按编码自动带出单价。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">同时打开两份 CSV（或放进同一个工作簿的两个 Sheet）</div></div>
+                            <div class="step-item"><div class="step-content">在订单表 D2（单价）输入 <code>=VLOOKUP(B2,价格表!$A$2:$E$31,4,0)</code> —— 第 4 列是单价</div></div>
+                            <div class="step-item"><div class="step-content">回车，应看到第 1 行订单对应的单价自动出现</div></div>
+                            <div class="step-item"><div class="step-content">选中 D2，填充到全部 40 行；抽查几条，确认价格带对了</div></div>
+                            <div class="step-item"><div class="step-content">在 E2 写 <code>=C2*D2</code> 算金额（数量×单价），填充</div></div>
+                            <div class="step-item"><div class="step-content">把其中一行订单的编码故意改错（如 A001→A00X），看是否出现 <code>#N/A</code></div></div>
+                            <div class="step-item"><div class="step-content">用 IFERROR 包住 VLOOKUP，让查不到时显示"未找到"，再改回正确编码</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：商品价格表（30 行）+ 订单表（40 行）</h4>
+                        <p>两份表配套使用：先在<strong>订单表</strong>的"单价"列用 VLOOKUP 按商品编码去<strong>价格表</strong>取单价，再算金额。价格表如下：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-6a">
+                                <thead>
+                                    <tr><th>商品编码</th><th>商品名称</th><th>类目</th><th>单价</th><th>成本</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>A001</td><td>蓝牙耳机</td><td>数码</td><td>99</td><td>55</td></tr>
+                                    <tr><td>A002</td><td>纯棉T恤</td><td>服饰</td><td>39</td><td>18</td></tr>
+                                    <tr><td>A003</td><td>手机壳</td><td>数码</td><td>15</td><td>6</td></tr>
+                                    <tr><td>A004</td><td>坚果礼盒</td><td>食品</td><td>88</td><td>50</td></tr>
+                                    <tr><td>A005</td><td>运动鞋</td><td>服饰</td><td>199</td><td>120</td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">价格表 显示前5条，共30条 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_6aData()">📥 下载商品价格表 (CSV)</button>
+                        <p style="margin-top:14px;">订单表（单价、金额留空，等你用 VLOOKUP + 乘法填）：</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-6b">
+                                <thead>
+                                    <tr><th>订单号</th><th>商品编码</th><th>数量</th><th>单价</th><th>金额</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>SO001</td><td>A001</td><td>2</td><td></td><td></td></tr>
+                                    <tr><td>SO002</td><td>A003</td><td>10</td><td></td><td></td></tr>
+                                    <tr><td>SO003</td><td>A005</td><td>1</td><td></td><td></td></tr>
+                                    <tr><td>SO004</td><td>A002</td><td>5</td><td></td><td></td></tr>
+                                    <tr><td>SO005</td><td>A004</td><td>3</td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">订单表 显示前5条，共40条 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_6bData()">📥 下载订单表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>返回列号<strong>数错</strong>是最常见的错，写公式前先在查找区域里从左往右数一遍</li>
+                            <li>查不到先别慌：用 <code>=TRIM(查找值)</code> 清掉空格，或检查两边数据类型是否一致</li>
+                            <li>想避免数错列，配合 <strong>表（Ctrl+T）</strong> 可用列名，但基础阶段先练手工数</li>
+                            <li>IFERROR 包 VLOOKUP 是<strong>标准姿势</strong>，正式报表几乎必加</li>
+                            <li>365 用户直接用 XLOOKUP，省去"锁区域+数第几列"两苦恼</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li>价格表、参数表这类<strong>基准数据单独放一个 Sheet</strong>，命名为"价格表""参数表"，别和明细混在一起</li>
+                            <li>VLOOKUP 的查找区域<strong>务必加 $ 绝对引用</strong>，否则填充后全盘错</li>
+                            <li>编码、ID 等"钥匙"列<strong>统一格式</strong>（都用文本或都用数字），防止对不上</li>
+                            <li>第四参数<strong>固定写 0</strong>（精确匹配），除非你明确要做区间匹配</li>
+                            <li>交付前抽查 3~5 条查找结果，确认带出的信息正确</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ 查找值不在查找区域第一列 → 永远查不到，应调整列序或换 INDEX+MATCH</li>
+                            <li>❌ 查找区域没加 $ → 下拉后区域漂移，结果乱套</li>
+                            <li>❌ 第四参数写成 1（模糊匹配）→ 查出不相关的值还以为对了</li>
+                            <li>❌ 返回列号超出范围（如区域只有 3 列却写 4）→ 报 <code>#REF!</code></li>
+                            <li>❌ 两边数据类型不一致（文本 vs 数字）→ 满屏 <code>#N/A</code></li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>在订单表 D2 用 <code>=VLOOKUP(B2,价格表!$A$2:$E$31,4,0)</code> 取单价，填充 40 行</li>
+                            <li>在 E2 用 <code>=C2*D2</code> 算金额，填充</li>
+                            <li>抽查 5 条，确认单价、金额与价格表一致</li>
+                            <li>把某一行编码改成错误值（如 A00X），观察 <code>#N/A</code>，再用 IFERROR 包成"未找到"</li>
+                            <li>新增"毛利"列 = 金额 - 数量×成本（成本用 VLOOKUP 取第 5 列）</li>
+                            <li>把价格表某商品单价改一下，确认订单表金额随之更新（引用生效）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用 <code>INDEX+MATCH</code> 实现"按商品名称（非首列）查单价"，体会它比 VLOOKUP 灵活</li>
+                            <li>若你用的是 365，把 VLOOKUP 改写成 XLOOKUP 完成同样的取价</li>
+                            <li>挑战：用 VLOOKUP 从价格表同时带出"类目"和"单价"两列，做商品明细看板</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对 VLOOKUP 的掌握：</p>
+                        <div id="quiz-2-6"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <!-- ============================================
+             课次 2-7：文本与日期函数
+             ============================================ -->
+        <div class="lesson-card" id="lesson-card-7">
+            <div class="lesson-header" onclick="toggleLesson(7)">
+                <div class="lesson-num">7</div>
+                <h3>文本与日期函数 —— 把数据"拆开再拼起来"</h3>
+                <span class="lesson-toggle">▼</span>
+            </div>
+            <div class="lesson-body" id="lesson-body-7">
+                <div class="lesson-body-inner">
+
+                    <!-- 知识讲解 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📖 知识讲解</h4>
+                        <p>真实数据常常"挤"在一个单元格里（如"浙江省杭州市西湖区"），或者格式乱七八糟。文本与日期函数就是帮你<strong>把它拆开、整理、再拼好</strong>的工具箱。</p>
+
+                        <h5>🔹 截取文本：LEFT / RIGHT / MID / LEN</h5>
+                        <div class="fn-cards">
+                            <div class="fn-card"><h6>LEFT</h6><code>=LEFT(文本, 3)</code><p>从左边取 3 个字符</p></div>
+                            <div class="fn-card"><h6>RIGHT</h6><code>=RIGHT(文本, 4)</code><p>从右边取 4 个字符</p></div>
+                            <div class="fn-card"><h6>MID</h6><code>=MID(文本, 2, 3)</code><p>从第 2 位起取 3 个</p></div>
+                            <div class="fn-card"><h6>LEN</h6><code>=LEN(文本)</code><p>数一数共几个字符</p></div>
+                        </div>
+                        <p>例：手机号 <code>13812345678</code>，取前 3 位运营商号段：<code>=LEFT(A2,3)</code> → <code>138</code>。</p>
+
+                        <h5>🔹 找位置：FIND / SEARCH</h5>
+                        <p>想知道"省""市"在哪个位置，用 FIND（区分大小写）/ SEARCH（不区分）：</p>
+                        <div class="formula-line"><span class="fn">FIND</span>(<span class="arg">"省"</span>, <span class="arg">A2</span>) &nbsp; 返回"省"字在文本中的位置</div>
+                        <p>配合 MID 就能"按关键字切分"，比如从"浙江省杭州市"取出"浙江"。</p>
+
+                        <h5>🔹 拼接：& 连接符 / CONCAT / TEXTJOIN</h5>
+                        <ul>
+                            <li><code>&amp;</code> 连接符：<code>=A2&amp;"-"&amp;B2</code> 把两格用短横拼起来</li>
+                            <li><code>CONCAT</code>：<code>=CONCAT(A2,B2)</code> 直接拼接多个文本</li>
+                            <li><code>TEXTJOIN</code>：<code>=TEXTJOIN("-",,A2:C2)</code> 用"-"把 A~C 拼起来，还能跳过空单元格</li>
+                        </ul>
+
+                        <h5>🔹 格式化显示：TEXT</h5>
+                        <p>把数字/日期按指定"格式代码"显示成文本：</p>
+                        <div class="formula-line"><span class="fn">TEXT</span>(<span class="arg">A1</span>, <span class="arg">"0000"</span>) &nbsp; 数字补零成 4 位，如 12 → "0012"</div>
+                        <div class="formula-line"><span class="fn">TEXT</span>(<span class="arg">A1</span>, <span class="arg">"yyyy年m月"</span>) &nbsp; 日期 → "2025年3月"</div>
+
+                        <h5>🔹 清洗：TRIM / CLEAN</h5>
+                        <ul>
+                            <li><code>TRIM</code>：去掉<strong>首尾多余空格</strong>、把中间多个空格合并成一个</li>
+                            <li><code>CLEAN</code>：去掉<strong>不可打印的换行/控制字符</strong>（从系统导出的脏数据常有）</li>
+                        </ul>
+
+                        <h5>🔹 大小写：UPPER / LOWER / PROPER</h5>
+                        <ul>
+                            <li><code>UPPER</code> 全大写、<code>LOWER</code> 全小写、<code>PROPER</code> 首字母大写（如英文名规范化）</li>
+                        </ul>
+
+                        <h5>🔹 日期函数家族</h5>
+                        <div class="compare-table">
+                            <table>
+                                <thead><tr><th>函数</th><th>作用</th><th>例子</th></tr></thead>
+                                <tbody>
+                                    <tr><td><code>TODAY()</code></td><td>今天日期</td><td>=TODAY()</td></tr>
+                                    <tr><td><code>NOW()</code></td><td>现在日期+时间</td><td>=NOW()</td></tr>
+                                    <tr><td><code>YEAR/MONTH/DAY</code></td><td>取年/月/日</td><td>=YEAR(A2)</td></tr>
+                                    <tr><td><code>WEEKDAY</code></td><td>星期几(1~7)</td><td>=WEEKDAY(A2,2)</td></tr>
+                                    <tr><td><code>DATEDIF</code></td><td>两日期差</td><td>=DATEDIF(开始,结束,"d")</td></tr>
+                                    <tr><td><code>EDATE</code></td><td>加减月数</td><td>=EDATE(A2,12)</td></tr>
+                                    <tr><td><code>EOMONTH</code></td><td>某月最后一天</td><td>=EOMONTH(A2,0)</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="callout callout-info">💡 <code>DATEDIF</code> 的第三参数："y"年差、"m"月差、"d"天差。它是隐藏函数，输的时候不会自动提示，但确实能用。</div>
+
+                        <h5>🔹 文本型数字 ⇄ 数值</h5>
+                        <p>从系统导出的数字常是"文本"（带绿三角），不能参与计算。互转小技巧：</p>
+                        <ul>
+                            <li>文本转数值：<code>--A2</code> 或 <code>A2*1</code>（两个减号把文本强转成数）</li>
+                            <li>数值转文本：<code>A2&amp;""</code>（连接空文本，变成文本）</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作步骤 -->
+                    <div class="content-block block-steps">
+                        <h4>🔧 操作步骤：从客户信息表里"拆"出有用字段</h4>
+                        <p>一份 40 行客户信息表，含手机号、所在省市区、注册日期等。<strong>所属省份、注册年月、入会天数、会员到期日留空</strong>，由你用文本/日期函数算。</p>
+                        <div class="step-list">
+                            <div class="step-item"><div class="step-content">下载 CSV，整理成：A客户编号、B姓名、C手机号、D所在省市区、E注册日期、F最近下单时间、G客户等级（及待填列）</div></div>
+                            <div class="step-item"><div class="step-content">取手机号前 3 位：在空列写 <code>=LEFT(C2,3)</code>，填充 40 行</div></div>
+                            <div class="step-item"><div class="step-content">取所属省份：<code>=LEFT(D2, FIND("省",D2))</code>（假设都是"X省…"格式），填充</div></div>
+                            <div class="step-item"><div class="step-content">取注册年月：<code>=TEXT(E2,"yyyy年m月")</code>，填充</div></div>
+                            <div class="step-item"><div class="step-content">算入会天数：<code>=DATEDIF(E2, TODAY(),"d")</code>，填充（今天减去注册日）</div></div>
+                            <div class="step-item"><div class="step-content">算会员到期日：<code>=EDATE(E2,12)</code>（注册日加 12 个月），填充</div></div>
+                            <div class="step-item"><div class="step-content">把"省"字用 <code>=SUBSTITUTE(省份单元格,"省","")</code> 去掉，得到纯省名</div></div>
+                        </div>
+                    </div>
+
+                    <!-- 练习数据 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习数据：客户信息表（40 行）</h4>
+                        <p>下面是 40 位客户的信息，<strong>所属省份、注册年月、入会天数、会员到期日四列留空</strong>，请用 LEFT/FIND/TEXT/DATEDIF/EDATE 算出来。</p>
+                        <div class="data-preview-wrap">
+                            <table class="data-preview" id="preview-2-7">
+                                <thead>
+                                    <tr><th>客户编号</th><th>姓名</th><th>手机号</th><th>所在省市区</th><th>注册日期</th><th>最近下单时间</th><th>客户等级</th><th>所属省份</th><th>注册年月</th><th>入会天数</th><th>会员到期日</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr><td>KH001</td><td>周敏</td><td>13812345678</td><td>浙江省杭州市西湖区</td><td>2024/3/15</td><td>2025/3/1</td><td>黄金</td><td></td><td></td><td></td><td></td></tr>
+                                    <tr><td>KH002</td><td>黄磊</td><td>13912345679</td><td>广东省深圳市南山区</td><td>2024/5/20</td><td>2025/2/18</td><td>白银</td><td></td><td></td><td></td><td></td></tr>
+                                    <tr><td>KH003</td><td>徐丽</td><td>13712345680</td><td>江苏省南京市鼓楼区</td><td>2023/11/8</td><td>2025/1/25</td><td>黄金</td><td></td><td></td><td></td><td></td></tr>
+                                    <tr><td>KH004</td><td>马涛</td><td>15812345681</td><td>四川省成都市武侯区</td><td>2024/8/2</td><td>2025/3/5</td><td>青铜</td><td></td><td></td><td></td><td></td></tr>
+                                    <tr><td>KH005</td><td>林芳</td><td>13612345682</td><td>北京市朝阳区</td><td>2024/1/12</td><td>2025/2/9</td><td>黄金</td><td></td><td></td><td></td><td></td></tr>
+                                </tbody>
+                            </table>
+                            <div class="data-more">显示前5条，共40条数据 ↓ 点击下载查看全部</div>
+                        </div>
+                        <button class="btn-download" onclick="downloadLesson2_7Data()">📥 下载客户信息表 (CSV)</button>
+                    </div>
+
+                    <!-- 技巧提示 -->
+                    <div class="content-block block-tips">
+                        <h4>💡 技巧提示</h4>
+                        <ul>
+                            <li>FIND 找不到会报 <code>#VALUE!</code>，配合 IFERROR 更稳；不区分大小写时用 SEARCH</li>
+                            <li>处理"省/市/区"拆分，先用 FIND 定位关键字位置，再用 MID 截取中间段</li>
+                            <li>TEXT 之后结果是<strong>文本</strong>，不能直接当数字算，需要再 <code>--</code> 转回</li>
+                            <li>DATEDIF 算年龄、会员天数、账期差都很顺手，记住第三个参数是"y/m/d"</li>
+                            <li>大量脏数据先 <code>TRIM+CLEAN</code> 洗一遍，再去重、查找，效率翻倍</li>
+                        </ul>
+                    </div>
+
+                    <!-- 操作规范 -->
+                    <div class="content-block block-norm">
+                        <h4>📐 操作规范（养成好习惯）</h4>
+                        <ul>
+                            <li>拆分出的"省份""年月"等<strong>派生列放在原列右侧</strong>，并加表头，保持表格整洁</li>
+                            <li>日期统一用 <code>年/月/日</code> 真实日期格式，<strong>别手打成文字</strong>，否则无法计算天数</li>
+                            <li>从系统导出数据后，先<strong>清洗（TRIM/CLEAN/转数值）</strong>再分析，避免脏数据坑人</li>
+                            <li>手机号、身份证等<strong>保留为文本</strong>，防止前导 0 丢失或变科学计数法</li>
+                            <li>派生列可标为"系统计算"用浅色底，和人工录入列区分</li>
+                        </ul>
+                    </div>
+
+                    <!-- 常见错误 -->
+                    <div class="content-block block-errors">
+                        <h4>⚠️ 常见错误</h4>
+                        <ul>
+                            <li>❌ MID 起算位置搞错：Excel 字符<strong>从 1 开始</strong>数，不是 0</li>
+                            <li>❌ 把日期当文本截：<code>LEFT(日期,4)</code> 截到的是<strong>序列号</strong>，应先 TEXT 再截</li>
+                            <li>❌ FIND 找不到关键字报 <code>#VALUE!</code> → 用 IFERROR 兜底或先确认数据格式</li>
+                            <li>❌ TEXT 结果当数字用 → 求和得到 0，记得 <code>--</code> 转回数值</li>
+                            <li>❌ 文本型数字直接相加 → 结果 0，用 <code>--</code> 或 <code>*1</code> 转数值</li>
+                        </ul>
+                    </div>
+
+                    <!-- 练习任务 -->
+                    <div class="content-block block-practice">
+                        <h4>📥 练习任务</h4>
+                        <ol>
+                            <li>用 <code>=LEFT(C2,3)</code> 提取手机号前 3 位（运营商号段），填充 40 行</li>
+                            <li>用 <code>=LEFT(D2, FIND("省",D2))</code> 提取所属省份，填充</li>
+                            <li>用 <code>=TEXT(E2,"yyyy年m月")</code> 生成"注册年月"，填充</li>
+                            <li>用 <code>=DATEDIF(E2,TODAY(),"d")</code> 算"入会天数"，填充</li>
+                            <li>用 <code>=EDATE(E2,12)</code> 算"会员到期日"（注册日+12个月），填充</li>
+                            <li>把省份里的"省"字用 SUBSTITUTE 去掉，得到纯省名（如"浙江""广东"）</li>
+                        </ol>
+                    </div>
+
+                    <!-- 挑战任务 -->
+                    <div class="content-block block-challenge">
+                        <h4>🏆 挑战任务（选做）</h4>
+                        <ol>
+                            <li>用 FIND+MID 从"浙江省杭州市西湖区"中<strong>单独取出"杭州市"</strong>（定位"省"和"市"之间）</li>
+                            <li>用 <code>=WEEKDAY(注册日期,2)</code> 判断客户都在星期几注册，统计各星期注册人数</li>
+                            <li>挑战：把"客户编号+姓名"用 TEXTJOIN 拼成"KH001-周敏"格式的会员卡号</li>
+                        </ol>
+                    </div>
+
+                    <!-- 理论测试 -->
+                    <div class="content-block block-knowledge">
+                        <h4>📝 理论测试</h4>
+                        <p>完成以下10道题，检验你对文本与日期函数的掌握：</p>
+                        <div id="quiz-2-7"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div><!-- /lesson-list -->
+</div><!-- /container -->
+
+<!-- 模块总结 -->
+<section class="container" style="padding-bottom:60px;">
+    <div style="max-width:900px;margin:0 auto;">
+        <div class="content-block block-knowledge" style="border-left-color:var(--blue);">
+            <h4>🎯 模块2 学习总结</h4>
+            <p>恭喜你完成了模块2的学习！这一模块你真正开始让 Excel "动起来算"，从最基础的公式一路学到了查找与文本处理：</p>
+            <ul>
+                <li>✅ <strong>公式入门</strong>：以 = 开头，运算符与优先级，单元格地址引用，显示公式与自动求和</li>
+                <li>✅ <strong>单元格引用</strong>：相对 / 绝对 / 混合引用，$ 符号与 F4，跨表跨簿引用，#REF! 防患</li>
+                <li>✅ <strong>求和统计</strong>：SUM、AVERAGE、MAX、MIN、COUNT 三兄弟，状态栏与函数嵌套雏形</li>
+                <li>✅ <strong>逻辑函数</strong>：IF 判断、AND/OR/NOT、IF 嵌套分级、IFERROR 容错，业务判断包邮/达标</li>
+                <li>✅ <strong>条件统计</strong>：SUMIF/COUNTIF 单条件，SUMIFS/COUNTIFS 多条件，通配符与条件写法</li>
+                <li>✅ <strong>查找引用</strong>：VLOOKUP 四参数铁律、#N/A 排查、IFERROR 兜底、INDEX+MATCH 与 XLOOKUP</li>
+                <li>✅ <strong>文本日期</strong>：LEFT/RIGHT/MID、& 拼接、TEXT 格式化、TRIM/CLEAN、日期函数与类型互转</li>
+            </ul>
+            <p style="margin-top:12px;">📌 <strong>操作规范要点回顾</strong>：</p>
+            <ul>
+                <li>🔸 公式一律引用单元格，别写死数字，方便修改与复用</li>
+                <li>🔸 共用参数（折扣率、阈值）单独放一格并绝对引用，统一调整</li>
+                <li>🔸 VLOOKUP 查找区域必须加 $、第四参数用 0（精确匹配）</li>
+                <li>🔸 条件统计的条件值单独成格，区域整列引用要干净无杂数据</li>
+                <li>🔸 文本数字先清洗转数值再计算，日期用真实日期格式而非文字</li>
+                <li>🔸 跨表/跨簿引用尽量少用，正式报表整合进同一工作簿</li>
+            </ul>
+            <p style="margin-top:12px;">接下来进入 <a href="module3.html" style="color:var(--blue);font-weight:bold;">📙 模块3：数据处理技能</a>，你将用排序、筛选、透视表等工具，把算好的数据进一步"整理成洞察"！</p>
+        </div>
+    </div>
+</section>
+
+<!-- 页脚 -->
+<footer class="footer">
+    <div class="container">
+        <p>📊 Excel从入门到精通 · 电商数据分析学习平台</p>
+        <p>适用于中职电商专业数据分析课程 · 2026年春季学期· 寇亚彬老师授课</p>
+    </div>
+</footer>
+
+<script src="js/main.js"></script>
+<script>
+// ================================================================
+//  模块2 数据生成与测验题目
+// ================================================================
+
+// ============ 课次2-1 超市购物小票（20行） ============
+const marketItems = [
+    ['抽纸(心相印)', 12.9, 2], ['矿泉水(农夫山泉)', 2, 6], ['方便面(红烧牛肉)', 4.5, 3],
+    ['牙膏(云南白药)', 19.9, 1], ['洗发水(海飞丝)', 39.9, 1], ['面包(桃李)', 8.8, 4],
+    ['牛奶(蒙牛)', 6.5, 5], ['电池(南孚5号)', 15, 2], ['垃圾袋', 9.9, 3], ['洗洁精', 12.5, 1],
+    ['毛巾', 16, 2], ['牙刷', 7.5, 4], ['纸巾(湿巾)', 13, 2], ['醋(镇江香醋)', 8.8, 1],
+    ['酱油(海天)', 11.9, 2], ['食用油(金龙鱼)', 69.9, 1], ['大米(5kg)', 45, 1], ['盐', 2.5, 5],
+    ['糖', 6.8, 2], ['零食(薯片)', 9.9, 3]
+];
+function downloadLesson2_1Data() {
+    const headers = ['序号', '商品名称', '单价', '数量', '金额'];
+    const rows = marketItems.map((it, i) => [i + 1, it[0], it[1], it[2], '']);
+    downloadCSV('超市购物小票.csv', headers, rows);
+}
+
+// ============ 课次2-2 商品折扣计算表（30行） ============
+const discountProducts = [
+    ['手机壳-硅胶透明', 9.9, 120], ['充电线-TypeC', 12.9, 80], ['蓝牙耳机-入门', 39.9, 45],
+    ['手机支架-桌面', 15.9, 60], ['钢化膜-高清', 8.9, 150], ['数据线-快充', 19.9, 70],
+    ['自拍杆-蓝牙', 29.9, 35], ['鼠标垫-加厚', 6.9, 200], ['收纳袋-旅行', 13.9, 55],
+    ['保温杯-316', 49.9, 40], ['雨伞-折叠', 25.9, 30], ['台灯-护眼', 59.9, 25],
+    ['键盘-机械', 89.9, 18], ['鼠标-无线', 45.9, 22], ['摄像头-高清', 79.9, 15],
+    ['路由器-千兆', 129, 12], ['充电宝-20000', 99.9, 20], ['耳机-降噪', 199, 10],
+    ['音箱-蓝牙', 149, 8], ['手表-智能', 299, 6], ['平板-保护套', 39.9, 28],
+    ['笔记本支架', 35.9, 33], ['理线器', 9.9, 110], ['桌面收纳盒', 18.9, 65],
+    ['香薰-无火', 22.9, 48], ['毛巾-竹纤维', 16.9, 58], ['运动水壶', 19.9, 72],
+    ['护手霜', 14.9, 90], ['面膜-补水', 29.9, 50], ['洗衣液-浓缩', 35.9, 42]
+];
+function downloadLesson2_2Data() {
+    const headers = ['商品', '原价', '数量'];
+    const rows = discountProducts.map(p => [p[0], p[1], p[2]]);
+    downloadCSV('商品折扣计算表.csv', headers, rows);
+}
+
+// ============ 课次2-3 班级期末成绩单（40行） ============
+const scoreNames = ['张伟', '王芳', '李娜', '刘洋', '陈静', '杨帆', '赵磊', '黄敏', '周强', '吴婷',
+    '徐杰', '孙丽', '马超', '朱琳', '胡军', '郭涛', '林峰', '何雪', '高鹏', '罗静',
+    '郑浩', '梁艳', '谢飞', '宋佳', '唐勇', '韩雪', '冯刚', '董洁', '程亮', '曹颖',
+    '邓超', '蒋雯', '沈鹏', '韩磊', '潘婷', '杜峰', '钟丽', '汪洋', '田甜', '范冰'];
+const scoreData = [
+    [88, 92, 76, 95], [75, 68, 82, 80], [91, 85, 90, 88], [60, 55, 63, 70], [83, 79, 88, 91],
+    [72, 84, 69, 77], [95, 90, 85, 93], [58, 62, 55, 66], [80, 76, 84, 82], [67, 71, 73, 78],
+    [89, 78, 92, 86], [64, 59, 68, 72], [77, 88, 75, 80], [52, 48, 60, 55], [85, 82, 79, 90],
+    [73, 69, 81, 76], [90, 94, 87, 91], [61, 65, 58, 70], [79, 73, 84, 83], [68, 77, 66, 74],
+    [93, 86, 89, 95], [57, 63, 54, 67], [81, 75, 78, 85], [70, 80, 72, 79], [86, 83, 90, 88],
+    [65, 60, 69, 71], [88, 79, 84, 92], [59, 66, 57, 68], [82, 87, 76, 81], [74, 70, 80, 77],
+    [91, 89, 86, 94], [63, 58, 64, 69], [78, 85, 73, 82], [55, 52, 61, 58], [84, 81, 83, 87],
+    [71, 76, 70, 75], [92, 83, 91, 89], [66, 64, 67, 72], [80, 79, 85, 84], [69, 74, 71, 76]
+];
+function downloadLesson2_3Data() {
+    const headers = ['学号', '姓名', '语文', '数学', '英语', '专业课', '总分', '平均分'];
+    const rows = scoreNames.map((nm, i) => {
+        const s = scoreData[i];
+        return ['202501' + String(i + 1).padStart(2, '0'), nm, s[0], s[1], s[2], s[3], '', ''];
+    });
+    downloadCSV('班级期末成绩单.csv', headers, rows);
+}
+
+// ============ 课次2-4 电商订单发货判定表（35行） ============
+const orderCustomers4 = ['晓梅', '建国', '丽娟', '志强', '春燕', '海涛', '美玲', '永康', '秀英', '文斌',
+    '雅芳', '志明', '桂兰', '建军', '小燕', '国华', '丽华', '德海', '凤霞', '俊杰',
+    '佳欣', '宏宇', '雪娇', '振东', '玉梅', '天磊', '欣怡', '子涵', '梦琪', '浩然',
+    '若曦', '晨阳', '一鸣', '思远', '雨桐'];
+const amounts35 = [128, 56, 210, 89, 305, 75, 160, 45, 220, 99, 180, 67, 140, 330, 58,
+    195, 88, 260, 72, 115, 240, 53, 175, 310, 90, 165, 82, 200, 48, 285, 130, 77, 255, 95, 150];
+const regions35 = ['江浙沪', '江浙沪', '偏远地区', '华南', '华北', '江浙沪', '华北', '华南', '西南', '江浙沪',
+    '华东', '华南', '华中', '西北', '江浙沪', '华北', '华南', '西南', '东北', '华东',
+    '华中', '西北', '华南', '华北', '江浙沪', '西南', '华南', '华东', '东北', '华北',
+    '华中', '江浙沪', '华南', '西北', '华东'];
+const shipTimes35 = ['24小时', '48小时', '72小时', '24小时', '24小时', '48小时', '72小时', '24小时', '48小时', '72小时',
+    '24小时', '48小时', '72小时', '24小时', '48小时', '72小时', '24小时', '48小时', '72小时', '24小时',
+    '48小时', '72小时', '24小时', '48小时', '72小时', '24小时', '48小时', '72小时', '24小时', '48小时',
+    '72小时', '24小时', '48小时', '72小时', '24小时'];
+function downloadLesson2_4Data() {
+    const headers = ['订单号', '客户', '金额', '收货地区', '是否包邮', '发货时效要求', '判定结果'];
+    const rows = [];
+    for (let i = 0; i < 35; i++) {
+        const no = 'DD2025' + String(i + 1).padStart(3, '0');
+        rows.push([no, orderCustomers4[i], amounts35[i], regions35[i], '', shipTimes35[i], '']);
+    }
+    downloadCSV('电商订单发货判定表.csv', headers, rows);
+}
+
+// ============ 课次2-5 电商订单明细（60行） ============
+const productPool = [
+    ['蓝牙耳机', '数码', 99], ['纯棉T恤', '服饰', 39], ['手机壳', '数码', 15], ['坚果礼盒', '食品', 88], ['运动鞋', '服饰', 199],
+    ['保温杯', '家居', 49], ['数据线', '数码', 19], ['洗发水', '日化', 39], ['笔记本', '文具', 25], ['面膜', '美妆', 29],
+    ['零食大礼包', '食品', 45], ['机械键盘', '数码', 89], ['卫衣', '服饰', 129], ['电动牙刷', '日化', 99], ['瑜伽垫', '运动', 59],
+    ['咖啡', '食品', 69], ['充电宝', '数码', 109], ['毛巾', '家居', 16], ['口红', '美妆', 159], ['篮球', '运动', 119]
+];
+const statusFirst5 = ['已发货', '已付款', '已发货', '已取消', '已发货'];
+const statusPool = ['已发货', '已付款', '已取消', '待发货', '已退款'];
+const kefuFirst5 = ['小张', '小李', '小张', '小王', '小李'];
+const kefuPool = ['小张', '小李', '小王', '小赵'];
+const qty60 = [2, 5, 10, 3, 1, 4, 8, 2, 6, 3, 5, 1, 7, 2, 9, 3, 4, 6, 2, 5,
+    8, 1, 3, 7, 2, 4, 6, 2, 5, 3, 9, 1, 4, 2, 8, 3, 5, 7, 2, 6,
+    4, 1, 3, 9, 2, 6, 5, 2, 4, 8, 1, 3, 7, 2, 5, 4, 1, 6, 2, 5];
+function downloadLesson2_5Data() {
+    const headers = ['订单号', '订单日期', '店铺', '商品名称', '类目', '数量', '单价', '订单金额', '订单状态', '客服'];
+    const rows = [];
+    const base = new Date(2025, 2, 1); // 2025/3/1
+    for (let i = 0; i < 60; i++) {
+        const p = productPool[i % productPool.length];
+        const qty = qty60[i];
+        const d = new Date(base);
+        d.setDate(base.getDate() + Math.floor(i / 2));
+        const dateStr = d.getFullYear() + '/' + (d.getMonth() + 1) + '/' + d.getDate();
+        const shop = '店铺' + String.fromCharCode(65 + (i % 3)); // A/B/C
+        const status = i < 5 ? statusFirst5[i] : statusPool[i % statusPool.length];
+        const kefu = i < 5 ? kefuFirst5[i] : kefuPool[i % kefuPool.length];
+        rows.push(['ORD' + String(i + 1).padStart(3, '0'), dateStr, shop, p[0], p[1], qty, p[2], qty * p[2], status, kefu]);
+    }
+    downloadCSV('电商订单明细.csv', headers, rows);
+}
+
+// ============ 课次2-6 商品价格表（30行） + 订单表（40行） ============
+const productMaster = [
+    ['A001', '蓝牙耳机', '数码', 99, 55], ['A002', '纯棉T恤', '服饰', 39, 18], ['A003', '手机壳', '数码', 15, 6],
+    ['A004', '坚果礼盒', '食品', 88, 50], ['A005', '运动鞋', '服饰', 199, 120], ['A006', '保温杯', '家居', 49, 25],
+    ['A007', '数据线', '数码', 19, 8], ['A008', '洗发水', '日化', 39, 18], ['A009', '笔记本', '文具', 25, 10],
+    ['A010', '面膜', '美妆', 29, 12], ['A011', '零食大礼包', '食品', 45, 22], ['A012', '机械键盘', '数码', 89, 45],
+    ['A013', '卫衣', '服饰', 129, 60], ['A014', '电动牙刷', '日化', 99, 48], ['A015', '瑜伽垫', '运动', 59, 28],
+    ['A016', '咖啡', '食品', 69, 32], ['A017', '充电宝', '数码', 109, 55], ['A018', '毛巾', '家居', 16, 7],
+    ['A019', '口红', '美妆', 159, 70], ['A020', '篮球', '运动', 119, 55], ['A021', '台灯', '家居', 79, 38],
+    ['A022', '鼠标', '数码', 59, 28], ['A023', '抱枕', '家居', 35, 15], ['A024', '香水', '美妆', 199, 90],
+    ['A025', '跑步机', '运动', 899, 500], ['A026', '茶叶', '食品', 128, 60], ['A027', 'U盘', '数码', 45, 20],
+    ['A028', '袜子', '服饰', 19, 8], ['A029', '水杯', '家居', 29, 13], ['A030', '护手霜', '美妆', 39, 16]
+];
+function downloadLesson2_6aData() {
+    const headers = ['商品编码', '商品名称', '类目', '单价', '成本'];
+    const rows = productMaster.map(p => [p[0], p[1], p[2], p[3], p[4]]);
+    downloadCSV('商品价格表.csv', headers, rows);
+}
+const codeIndex40 = [0, 2, 4, 1, 3, 5, 7, 9, 6, 8, 10, 12, 14, 11, 13, 15, 17, 19, 16, 18,
+    20, 22, 24, 21, 23, 25, 27, 29, 26, 28, 0, 2, 4, 1, 3, 5, 7, 9, 6, 8];
+const qty40 = [2, 10, 1, 5, 3, 4, 8, 2, 6, 3, 5, 1, 7, 2, 9, 3, 4, 6, 2, 5,
+    8, 1, 3, 7, 2, 4, 6, 2, 5, 3, 9, 1, 4, 2, 8, 3, 5, 7, 2, 6];
+function downloadLesson2_6bData() {
+    const headers = ['订单号', '商品编码', '数量', '单价', '金额'];
+    const rows = [];
+    for (let i = 0; i < 40; i++) {
+        const code = productMaster[codeIndex40[i]][0];
+        rows.push(['SO' + String(i + 1).padStart(3, '0'), code, qty40[i], '', '']);
+    }
+    downloadCSV('订单表.csv', headers, rows);
+}
+
+// ============ 课次2-7 客户信息表（40行） ============
+const custNames5 = ['周敏', '黄磊', '徐丽', '马涛', '林芳'];
+const custPhones5 = ['13812345678', '13912345679', '13712345680', '15812345681', '13612345682'];
+const custRegions5 = ['浙江省杭州市西湖区', '广东省深圳市南山区', '江苏省南京市鼓楼区', '四川省成都市武侯区', '北京市朝阳区'];
+const custRegDate5 = ['2024/3/15', '2024/5/20', '2024/11/8', '2024/8/2', '2024/1/12'];
+const custLast5 = ['2025/3/1', '2025/2/18', '2025/1/25', '2025/3/5', '2025/2/9'];
+const custLevel5 = ['黄金', '白银', '黄金', '青铜', '黄金'];
+const surnames = ['王', '李', '张', '刘', '陈', '杨', '赵', '黄', '周', '吴', '徐', '孙', '马', '朱', '胡', '郭', '林', '何', '高', '罗'];
+const givens = ['伟', '芳', '娜', '洋', '静', '敏', '磊', '强', '丽', '涛', '杰', '艳', '飞', '佳', '勇', '雪', '峰', '洁', '鹏', '静'];
+const regionPool = ['浙江省杭州市', '广东省深圳市', '江苏省南京市', '四川省成都市', '北京市朝阳区', '湖北省武汉市', '陕西省西安市', '山东省青岛市', '福建省厦门市', '湖南省长沙市'];
+function downloadLesson2_7Data() {
+    const headers = ['客户编号', '姓名', '手机号', '所在省市区', '注册日期', '最近下单时间', '客户等级', '所属省份', '注册年月', '入会天数', '会员到期日'];
+    const rows = [];
+    const regBase = new Date(2023, 0, 1);
+    const lastBase = new Date(2025, 0, 1);
+    for (let i = 0; i < 40; i++) {
+        let name, phone, region, regDate, last, level;
+        if (i < 5) {
+            name = custNames5[i]; phone = custPhones5[i]; region = custRegions5[i];
+            regDate = custRegDate5[i]; last = custLast5[i]; level = custLevel5[i];
+        } else {
+            name = surnames[i % surnames.length] + givens[(i * 3) % givens.length];
+            phone = '13' + String((i * 3) % 10) + '0000' + String(1000 + (i * 37) % 9000);
+            region = regionPool[i % regionPool.length] + '某区';
+            const rd = new Date(regBase); rd.setDate(regBase.getDate() + i * 37);
+            regDate = rd.getFullYear() + '/' + (rd.getMonth() + 1) + '/' + rd.getDate();
+            const ld = new Date(lastBase); ld.setDate(lastBase.getDate() + i * 11);
+            last = ld.getFullYear() + '/' + (ld.getMonth() + 1) + '/' + ld.getDate();
+            level = ['黄金', '白银', '青铜', '钻石'][i % 4];
+        }
+        rows.push(['KH' + String(i + 1).padStart(3, '0'), name, phone, region, regDate, last, level, '', '', '', '']);
+    }
+    downloadCSV('客户信息表.csv', headers, rows);
+}
+
+// ================================================================
+//  测验题目（每课10道，共70道）
+// ================================================================
+
+// ===== 课次2-1 公式入门 =====
+const quiz2_1 = [
+    { q: 'Excel 中所有的公式和函数必须以什么符号开头？', opts: ['=', '#', '@', '$'], ans: 0, explain: '所有公式都以英文等号 = 开头，不加等号 Excel 会当成普通文字。' },
+    { q: '想让 Excel 计算 3+5 的结果，单元格里应该输入？', opts: ['3+5', '=3+5', 'SUM(3,5)', '+3+5'], ans: 1, explain: '计算必须写 =3+5，只写 3+5 会被当作文本不计算。' },
+    { q: '在 Excel 公式里，乘号应该写成哪个符号？', opts: ['×', 'X', 'x', '*'], ans: 3, explain: 'Excel 的乘号是星号 *，不能用汉字乘号或字母 x。' },
+    { q: '公式 =2+3*4 的计算结果是？', opts: ['14', '20', '24', '10'], ans: 0, explain: '先乘除后加减，先算 3*4=12，再 2+12=14。' },
+    { q: '想让加法先算、乘法后算，正确的写法是？', opts: ['=2+3*4', '=2+(3*4)', '=(2+3)*4', '=2+3+4'], ans: 2, explain: '括号优先级最高，(2+3)*4 先算括号得 5，再 ×4=20。' },
+    { q: '公式里引用单元格地址（如 =B2*C2）而不是写死数字，最大好处是？', opts: ['改数据源后结果自动更新', '写起来更快', '显得专业', '避免出错值'], ans: 0, explain: '用地址引用，改了单价金额会自动重算，这是 Excel 的核心价值。' },
+    { q: '想在单元格里直接查看并编辑公式，应按哪个键？', opts: ['F1', 'F2', 'F3', 'F4'], ans: 1, explain: '按 F2 进入单元格编辑模式，也可以看顶部编辑栏里的完整公式。' },
+    { q: '一键把整张表从"显示结果"切换成"显示公式"的快捷键是？', opts: ['Ctrl+S', 'Ctrl+Enter', 'Alt+=', 'Ctrl+~'], ans: 3, explain: 'Ctrl+~ 可切换显示公式/显示结果，也可用"公式"选项卡→显示公式。' },
+    { q: '快速对一列数据求和的快捷键是？', opts: ['Ctrl+=', 'Alt+=', 'Ctrl+;', 'Alt+Enter'], ans: 1, explain: 'Alt+= 是自动求和，Excel 会自动写出 SUM 并猜区域。' },
+    { q: '公式中出现 #DIV/0! 通常说明？', opts: ['函数名拼错', '引用了文字', '除以了 0 或分母为空', '单元格被锁定'], ans: 2, explain: '#DIV/0! 表示除以零，常见原因是分母单元格为空或写了 /0。' }
+];
+
+// ===== 课次2-2 单元格引用 =====
+const quiz2_2 = [
+    { q: '相对引用 A1 向下填充时，会发生什么变化？', opts: ['行号变', '列字母变', '都不变', '变成 $B$1'], ans: 0, explain: '相对引用向下复制时行号会自动递增（A1→A2→A3）。' },
+    { q: '把"折扣率"锁在固定单元格，正确的绝对引用写法是？', opts: ['B1', '$B$1', 'B$1', '$B1'], ans: 1, explain: '$B$1 列和行都加 $ ，复制时地址永远不变。' },
+    { q: '混合引用 $A1 的含义是？', opts: ['全锁', '锁行不锁列', '全不锁', '锁列不锁行'], ans: 3, explain: '$A1 锁列不锁行，向右复制列不变，向下复制行会变。' },
+    { q: '编辑公式时连按 F4 的作用是？', opts: ['求和', '循环切换四种引用', '删除公式', '自动填充'], ans: 1, explain: 'F4 在 A1→$A$1→A$1→$A1→A1 之间循环切换。' },
+    { q: '在 Sheet2 引用 Sheet1 的 A1 单元格，正确写法是？', opts: ['A1@Sheet1', "'Sheet1'!A1", 'Sheet1!A1', 'Sheet1.A1'], ans: 2, explain: '跨表引用格式为 表名!单元格，无空格的表名不用加引号。' },
+    { q: '跨工作簿引用另一个文件的单元格，正确格式是？', opts: ['[文件.xlsx]Sheet1!A1', '文件.xlsx!A1', 'Sheet1!A1', 'A1[文件]'], ans: 0, explain: '跨工作簿引用要加方括号写文件名：[工作簿]表名!单元格。' },
+    { q: '删除了公式所引用的行之后，公式会显示什么错误？', opts: ['#N/A', '#VALUE!', '#REF!', '#NAME?'], ans: 2, explain: '引用失效会显示 #REF!，且原始引用丢失较难恢复。' },
+    { q: '希望公式复制时"列不变、行变"，应使用哪种引用？', opts: ['A1', 'A$1', '$A$1', '$A1'], ans: 3, explain: '$A1 锁列不锁行，正好满足列不变行变。' },
+    { q: '折扣率放在 $B$1，某商品折后价 = 原价×数量×折扣率，公式应为？', opts: ['=B2*C2*B1', '=B2*C2*$B$1', '=$B$2*C2', '=B2*C2*B$1'], ans: 1, explain: '折扣率必须绝对引用 $B$1，否则向下填充会错位。' },
+    { q: '当工作表名含有空格时，跨表引用要如何处理？', opts: ['加方括号', '加双引号', '加单引号', '不用处理'], ans: 2, explain: '含空格或中文的表名跨表引用需加单引号，如 =\'销售数据\'!A1。' }
+];
+
+// ===== 课次2-3 求和与统计函数 =====
+const quiz2_3 = [
+    { q: 'SUM 函数的主要作用是？', opts: ['求和', '求平均值', '计数', '找最大值'], ans: 0, explain: 'SUM 用于把区域里的数字全部加起来。' },
+    { q: '求 C2 到 C41 的总和，正确的写法是？', opts: ['=SUM(C2,C41)', '=SUM(C2-C41)', '=SUM(C2:C41)', '=SUM C2:C41'], ans: 2, explain: '连续区域用冒号 C2:C41 表示，参数用括号括起来。' },
+    { q: 'COUNT 函数统计的是？', opts: ['所有非空单元格', '空白单元格', '只统计文字', '只统计数字单元格'], ans: 3, explain: 'COUNT 只数数字单元格，文字它不会数。' },
+    { q: '想统计"已填内容"的单元格个数（含文字），应该用？', opts: ['COUNT', 'COUNTA', 'COUNTBLANK', 'SUM'], ans: 1, explain: 'COUNTA 统计非空单元格，无论文字还是数字都算。' },
+    { q: '在成绩表中找出"最高分"，应使用哪个函数？', opts: ['MIN', 'COUNT', 'MAX', 'SUM'], ans: 2, explain: 'MAX 返回最大值，MIN 返回最小值。' },
+    { q: '对不连续的两段区域 A1:A5 和 C1:C5 求和，正确写法是？', opts: ['=SUM(A1:A5,C1:C5)', '=SUM(A1:A5;C1:C5)', '=SUM(A1:A5 C1:C5)', '=SUM(A1:A5+C1:C5)'], ans: 0, explain: '多个区域用逗号隔开即可，Excel 会分别求和再相加。' },
+    { q: '平均分本质上等价于下面哪条公式？', opts: ['=SUM/85', '=MAX/COUNT', '=SUM(C2:C41)/COUNT(C2:C41)', '=MIN/COUNT'], ans: 2, explain: '平均值 = 总和 ÷ 个数，和 AVERAGE 等价。' },
+    { q: '选中一片数据后，窗口右下角的状态栏能直接看到？', opts: ['公式错误', '只有求和', '只有最大值', '平均值/计数/求和'], ans: 3, explain: '状态栏默认显示平均值、计数、求和，右键还能切换。' },
+    { q: '对一个完全空白的区域求平均，结果是？', opts: ['0', '#DIV/0!', '"空"', '不显示'], ans: 1, explain: 'AVERAGE 区域无数字会报 #DIV/0!（除零类错误）。' },
+    { q: '一列是姓名（文字），想数"共有多少人"，应用？', opts: ['COUNT', 'SUM', 'COUNTBLANK', 'COUNTA'], ans: 3, explain: '姓名是文字，COUNT 不数，要用 COUNTA 统计非空个数。' }
+];
+
+// ===== 课次2-4 逻辑函数 IF =====
+const quiz2_4 = [
+    { q: 'IF 函数的三段式参数顺序是？', opts: ['(条件, 成立时, 不成立时)', '(成立时, 条件, 不成立时)', '(不成立时, 条件, 成立时)', '(条件, 不成立时, 成立时)'], ans: 0, explain: 'IF(条件, 成立返回值, 不成立返回值)，条件永远在第一位。' },
+    { q: 'IF 返回的文字结果（如"包邮"）必须？', opts: ['加中文引号', '加英文双引号', '不用引号', '加方括号'], ans: 1, explain: '文字结果必须用英文双引号包裹，否则报 #NAME?。' },
+    { q: '公式 =IF(C2>=99,"包邮","不包邮")，当 C2=80 时结果是？', opts: ['包邮', 'FALSE', 'TRUE', '不包邮'], ans: 3, explain: '80<99 条件不成立，返回第三个参数"不包邮"。' },
+    { q: '需要"金额≥99 且 非偏远"才包邮，应组合使用？', opts: ['AND', 'OR', 'NOT', 'IF'], ans: 0, explain: 'AND 表示"而且"，多个条件同时为真才为真。' },
+    { q: '成绩≥90 评为"优"，正确的嵌套开头是？', opts: ['=IF(A1,"优")', '=IF("优",A1>=90)', '=IF(A1>=90,"优",...)', '=IF(A1>=90)'], ans: 2, explain: 'IF 第一个参数是条件 A1>=90，成立返回"优"。' },
+    { q: '用 IF 嵌套做"优/良/中/及格/不及格"多级判断时，一般从哪头开始写？', opts: ['最高档往下', '最低档往上', '任意顺序', '从中间'], ans: 0, explain: '习惯从最高档（≥90 为优）往下写，逻辑清晰且括号好配对。' },
+    { q: 'IFERROR 函数的主要作用是？', opts: ['查找', '求和', '容错处理', '计数'], ans: 2, explain: 'IFERROR(公式, 出错时显示) 给公式加安全气囊，避免满屏错误值。' },
+    { q: '比较"不等于"的运算符是？', opts: ['!=', '<>', '=~', '><'], ans: 3, explain: 'Excel 用 <> 表示不等于，不是编程语言里的 !=。' },
+    { q: '公式 =AND(TRUE, FALSE) 的结果是？', opts: ['TRUE', 'FALSE', '0', '1'], ans: 1, explain: 'AND 要求全部为真，有一个 FALSE 整体就是 FALSE。' },
+    { q: '判断"金额≥99 且 收货地区不是偏远"才包邮，正确写法是？', opts: ['=IF(C2>=99,"包邮",D2<>"偏远")', '=IF(C2>=99 AND D2<>"偏远","包邮")', '=IF(OR(C2>=99,D2<>"偏远"),"包邮")', '=IF(AND(C2>=99,D2<>"偏远"),"包邮","不包邮")'], ans: 3, explain: 'AND 把两个条件括起来，注意文字"偏远"要加引号。' }
+];
+
+// ===== 课次2-5 条件统计函数 =====
+const quiz2_5 = [
+    { q: 'SUMIF 的三个参数顺序是？', opts: ['(条件区域, 条件, 求和区域)', '(求和区域, 条件区域, 条件)', '(条件, 求和区域, 条件区域)', '(求和区域, 条件, 条件区域)'], ans: 0, explain: 'SUMIF(条件区域, 条件, 求和区域)，与 SUMIFS 不同。' },
+    { q: '用 SUMIF 求"金额>1000"的合计，条件该怎么写？', opts: ['>1000', '">1000"', '>1000 不用引号', '"1000"'], ans: 1, explain: '带比较符号的条件必须放在英文引号内：">1000"。' },
+    { q: '统计"已取消"状态的订单共有多少笔，应写？', opts: ['=IF(I:I,"已取消")', '=SUMIF(I:I,"已取消")', '=COUNT("已取消")', '=COUNTIF(I:I,"已取消")'], ans: 3, explain: 'COUNTIF(区域, 条件) 按条件计数，状态文字直接写在引号里。' },
+    { q: '通配符 *（星号）在条件中表示？', opts: ['任意多个字符', '单个字符', '数字', '空格'], ans: 0, explain: '* 代表任意多个字符，? 才代表单个字符。' },
+    { q: '想统计类目中"包含手机"的订单，条件应写？', opts: ['"手机"', '"?手机?"', '"*手机*"', '"手机*"'], ans: 2, explain: '"*手机*" 前后都加 *，能命中"华为手机""手机壳"等。' },
+    { q: '条件要"大于某个单元格 B1 的值"，正确写法是？', opts: ['">="&B1', '">"B1', '>=&B1', '">=B1"'], ans: 0, explain: '符号放引号、用 & 连接单元格：">="&B1。' },
+    { q: '相比 SUMIF，SUMIFS 的参数顺序区别是？', opts: ['条件排在最前', '求和区域排在最前', '没有区别', '求和区域排在最后'], ans: 1, explain: 'SUMIFS 第一个参数是求和区域，之后才是成对的区域与条件。' },
+    { q: '需要按多个条件计数，应使用？', opts: ['AVERAGEIF', 'SUMIFS', 'COUNTIF', 'COUNTIFS'], ans: 3, explain: 'COUNTIFS 支持多条件计数，参数同样是区域+条件成对出现。' },
+    { q: '统计"订单状态不是已取消"的订单数，条件应写？', opts: ['=COUNTIF(I:I,"已取消")', '=COUNTIF(I:I,"<>已取消")', '=COUNTIF(I:I,<>已取消)', '=COUNTIFS(I:I,"已取消")'], ans: 1, explain: '不等于用 <>，"<>已取消"表示排除已取消。' },
+    { q: '公式 =SUMIFS(H:H,C:C,"店铺A",I:I,"已发货") 的含义是？', opts: ['店铺A 或 已发货的销售额', '全部销售额', '店铺A 且 已发货的销售额', '店铺A 的已发货单数'], ans: 2, explain: 'SUMIFS 多条件是"且"的关系，即同时满足两个条件才求和。' }
+];
+
+// ===== 课次2-6 查找与引用 VLOOKUP =====
+const quiz2_6 = [
+    { q: 'VLOOKUP 第四参数写 0，表示？', opts: ['精确匹配', '模糊匹配', '找不到时', '返回 0'], ans: 0, explain: '第四参数 0（或 FALSE）表示精确匹配，业务查询几乎都用它。' },
+    { q: 'VLOOKUP 要求"查找值"必须位于查找区域的？', opts: ['最后一列', '第一列', '任意一列', '第二列'], ans: 1, explain: 'VLOOKUP 只能向右查找，所以钥匙列必须在查找区域最左边。' },
+    { q: '为什么查找区域通常要加 $ 绝对引用（如 $E$2:$G$31）？', opts: ['为了美观', '语法强制要求', '为了加快速度', '向下填充时区域不漂移'], ans: 3, explain: '不加 $ 下拉后区域会跟着下移，导致查错，必须锁定。' },
+    { q: '"返回第几列"是从哪里开始数的？', opts: ['原表最左列', '查找区域最左列算起', '从右往左数', '随便数'], ans: 1, explain: '列号从查找区域自身的最左列算第1列，不是整张表。' },
+    { q: '下面哪一项不是 #N/A 的常见原因？', opts: ['查找值在表中不存在', '查找值多了空格', '公式写得太长', '两边数据类型不一致'], ans: 2, explain: '#N/A 多因查不到：不存在、空格、类型不一致；长短不是原因。' },
+    { q: '想让 VLOOKUP 查不到时显示"未找到"而不是 #N/A，应配合？', opts: ['IFERROR', 'IF', 'SUMIF', 'TRIM'], ans: 0, explain: '用 IFERROR(VLOOKUP(...), "未找到") 优雅兜底。' },
+    { q: '当"钥匙列"在右边、无法向右查找时，应改用？', opts: ['VLOOKUP', 'SUMIF', 'INDEX+MATCH', 'COUNTIF'], ans: 2, explain: 'INDEX+MATCH 不受方向限制，可向左查找。' },
+    { q: 'XLOOKUP 是？', opts: ['旧版兼容函数', '只能向右查找', '必须数第几列', 'Microsoft 365 新版更灵活的查找函数'], ans: 3, explain: 'XLOOKUP 是 365/2021 新版，不用数第几列、能左右查找。' },
+    { q: '返回的列号超出了查找区域的范围，会怎样？', opts: ['返回 0', '显示 #REF!', '自动调整', '显示空白'], ans: 1, explain: '列号超出范围会报 #REF!，写公式前要先数清列数。' },
+    { q: '在订单表按商品编码去"价格表"取单价，正确写法是？', opts: ['=VLOOKUP(B2,价格表!A2:E31,4,0)', '=VLOOKUP(B2,A2:E31,4,0)', '=VLOOKUP(B2,价格表!$A$2:$E$31,4,0)', '=VLOOKUP(价格表!B2,A2:E31,4,0)'], ans: 2, explain: '跨表引用表名，且查找区域必须加 $ 绝对引用，单价在第4列。' }
+];
+
+// ===== 课次2-7 文本与日期函数 =====
+const quiz2_7 = [
+    { q: '从手机号（文本）左侧取前 3 位运营商号段，应用？', opts: ['=LEFT(A2,3)', '=RIGHT(A2,3)', '=MID(A2,3,3)', '=LEN(A2,3)'], ans: 0, explain: 'LEFT(文本, 位数) 从左边取指定个数的字符。' },
+    { q: '把"浙江省杭州市"从左边取 4 个字符，正确写法是？', opts: ['MID(文本,4)', 'RIGHT(文本,4)', 'LEFT(文本,4)', 'LEN(文本,4)'], ans: 2, explain: 'LEFT(文本, 4) 取前 4 个字符即"浙江杭州"。' },
+    { q: '在 Excel 中把两格内容拼接起来，使用的连接符是？', opts: ['|', '+', '^', '&'], ans: 3, explain: '用 & 连接，如 =A2&"-"&B2。' },
+    { q: '函数 TEXT(A1,"yyyy年m月") 的主要作用是？', opts: ['转成数值', '把日期按指定格式显示为文本', '取字符长度', '清除空格'], ans: 1, explain: 'TEXT 用格式代码把值格式化显示，结果是文本。' },
+    { q: '去掉单元格首尾多余空格、合并中间多空格，用哪个函数？', opts: ['CLEAN', 'LOWER', 'TRIM', 'SUBSTITUTE'], ans: 2, explain: 'TRIM 专门清理多余空格，CLEAN 清理不可打印字符。' },
+    { q: '返回今天日期的函数是？', opts: ['TODAY()', 'NOW()', 'DATE()', 'DAY()'], ans: 0, explain: 'TODAY() 返回当前日期，NOW() 还包含时间。' },
+    { q: '计算两个日期之间相差的天数，应使用？', opts: ['DAY(开始-结束)', 'DATE(开始,结束)', 'DATEDIF(开始,结束,"d")', 'TODAY()-开始'], ans: 2, explain: 'DATEDIF 第三参数 "d" 表示返回天数差。' },
+    { q: '在注册日期基础上加 12 个月（算会员到期日），用？', opts: ['EOMONTH(A2,12)', 'MONTH(A2,12)', 'DATE(A2,12)', 'EDATE(A2,12)'], ans: 3, explain: 'EDATE(日期, 月数) 返回指定月数之后的日期。' },
+    { q: '把文本型数字 "0012" 转成可计算的数值，小技巧是？', opts: ['A2&""', '--A2', 'TEXT(A2)', 'LEFT(A2)'], ans: 1, explain: '两个减号 -- 把文本强转为数值，A2&"" 反而是变文本。' },
+    { q: '找出"省"字在文本中的位置，应使用？', opts: ['SEARCH(省,A2)', 'MID("省",A2)', 'LEFT("省",A2)', 'FIND("省",A2)'], ans: 3, explain: 'FIND 查找字符位置，文字参数要加英文引号。' }
+];
+
+// ================================================================
+//  初始化所有测验
+// ================================================================
+document.addEventListener('DOMContentLoaded', function () {
+    initQuiz('quiz-2-1', quiz2_1);
+    initQuiz('quiz-2-2', quiz2_2);
+    initQuiz('quiz-2-3', quiz2_3);
+    initQuiz('quiz-2-4', quiz2_4);
+    initQuiz('quiz-2-5', quiz2_5);
+    initQuiz('quiz-2-6', quiz2_6);
+    initQuiz('quiz-2-7', quiz2_7);
+    updateProgressBar();
+});
+</script>
+</body>
+</html>
